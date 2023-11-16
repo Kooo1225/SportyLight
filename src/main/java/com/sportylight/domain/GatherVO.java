@@ -12,10 +12,12 @@ public class GatherVO {
     private int gatheringId;
     private int membersId;
     private String title;
-    
-    private Date dateTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    private LocalDateTime dateTime;
     private String description;
     private int headCount;
     private String address;
     private EnumVO type;
+    private Date regDate;
+    private Date updateDate;
 }

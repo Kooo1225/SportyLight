@@ -33,14 +33,17 @@ public class RootConfig {
 	@Bean
 	public DataSource dataSource() {
 		HikariConfig config = new HikariConfig();
-//		config.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//		config.setJdbcUrl("jdbc:mysql://localhost:3306/glory_db");
-
-		config.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-		config.setJdbcUrl("jdbc:log4jdbc:mysql://106.10.32.142:3306/sportylight_db");
-
+		config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		config.setJdbcUrl("jdbc:mysql://localhost:3306/sportylight_test_db");
+		
 		config.setUsername("sportylight");
-		config.setPassword("Sportylight1!");
+		config.setPassword("1234");
+
+//		config.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
+//		config.setJdbcUrl("jdbc:log4jdbc:mysql://106.10.32.142:3306/sportylight_db");
+//
+//		config.setUsername("sportylight");
+//		config.setPassword("Sportylight1!");
 
 		HikariDataSource dataSource = new HikariDataSource(config);
 		return dataSource;
