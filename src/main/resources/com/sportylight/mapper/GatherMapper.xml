@@ -31,4 +31,15 @@
 		where gathering_type = #{type};
 	</select>
 	
+	<insert id="insert">
+		insert into gathering(gathering_title, members_id, gathering_datetime, gathering_description, gathering_headcount, gathering_address, gathering_type)
+		values (#{title}, #{membersId}, #{dateTime}, #{description}, #{headCount}, #{address}, #{type})
+	</insert>
+	
+	<select id="read" resultMap="gatherMap">
+		select *
+		from gathering
+		where gathering_id = #{gatheringId}
+	</select>
+	
 </mapper>
