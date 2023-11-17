@@ -27,5 +27,15 @@ public class GatherServiceImpl implements GatherService {
 	public List<GatherVO> getTypeList(EnumVO type) {
 		return mapper.getTypeList(type);
 	}
+	
+	@Override
+	public void register(GatherVO vo) {
+		mapper.insert(vo);
+	}
+
+	@Override
+	public GatherVO get(int gatheringId) {
+		return mapper.read(gatheringId);
+	}
 		
 }

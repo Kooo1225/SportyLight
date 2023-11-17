@@ -12,4 +12,8 @@ public interface GatherMapper {
 	
 	public List<GatherVO> getTypeList(EnumVO type);
 	
+	public void insert(GatherVO vo); // gathering register를 위해 선언
+	
+	public GatherVO read(int gatheringId); // gathering detail를 위해 선언
+	
 }
