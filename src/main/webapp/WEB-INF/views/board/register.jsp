@@ -65,15 +65,7 @@ $(document).ready(function() {
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				<div class="form-group mx-auto main-select">
 					<input type="radio" id="select-health" name="type" value="헬스"><label for="select-health">헬스</label>
-					<button type="button" name="type">스포츠</button>
-						<div class="hidden-radios">
-							<input type="radio" id="select-sccoer" name="type" value="축구"><label for="select-sccoer">축구</label>
-						   	<input type="radio" id="select-baseball" name="type" value="야구"><label for="select-baseball">야구</label>
-						    <input type="radio" id="select-basketball" name="type" value="농구"><label for="select-basketball">농구</label>
-						    <input type="radio" id="select-badminton" name="type" value="배드민턴"><label for="select-badminton">배드민턴</label>
-						    <input type="radio" id="select-swimming" name="type" value="수영"><label for="select-swimming">수영</label>
-						    <input type="radio" id="select-futsal" name="type" value="풋살"><label for="select-futsal">풋살</label>
-						</div>
+					<input type="radio" id="select-sport" name="type" value="스포츠"><label for="select-sport">스포츠</label>
 					<input type="radio" id="select-climb" name="type" value="등산"><label for="select-climb">등산</label>
 					<input type="radio" id="select-run" name="type" value="러닝"><label for="select-run">러닝</label>
 				</div>

@@ -89,45 +89,11 @@
 	background: #7FDCBE;
 }
 
-/* register - 스포츠 버튼 */
-.main-select button {
-	width: 116px; 
-	height: 45px;
-	margin: 8px;
-	color: white;
-	background: #7FDCBE;
-	border-radius: 100px;
-	border: 0px solid #7FDCBE;
-	font-family: 'Noto Sans', sans-serif;  
-	font-size: 18px;
-}
-
 /* register - button 하버 */
 .main-select button:hover {
 	background: #518E7B;
 	transform: translateY(-5px);
 	box-shadow: 0px 15px 20px rgba(27, 39, 63, 0.4);
-}
-
-.hidden-radios {
-  display: none;
-  position: absolute;
-  top: 100%; /* 숨겨진 버튼을 주요 버튼 아래로 배치 */
-  left: 50%; /* 가운데 정렬을 위해 left 속성을 50%로 설정 */
-  transform: translateX(-50%); /* left 속성의 50%만큼 왼쪽으로 이동 */
-  display: none;
-  justify-content: center; /* 가운데 정렬 */
-  backdrop-filter: blur(5px); /* 호버 시 배경 블러 효과를 추가 */
-}
-
-.main-select button[name="sports"]:hover + .hidden-radios,
-.main-select button[name="sports"]:focus + .hidden-radios, 
-.hidden-radios:hover {
-  display: flex;
-}
-
-.hidden-radios input[type="radio"] {
-  display: inline;
 }
 
 .main-select {
@@ -214,7 +180,7 @@
     color: #fff;
 }
 
-/* register - (헬스, 등산, 러닝) 종목 버튼 디자인 */
+/* register - (헬스, 스포츠, 등산, 러닝) 종목 버튼 디자인 */
 .main-select input[type=radio] {
     display: none;
 }
@@ -247,7 +213,7 @@
     color: white;
 }
 
-/* register - (헬스, 등산, 러닝) 종목 버튼 디자인 하버 */
+/* register - (헬스, 스포츠, 등산, 러닝) 종목 버튼 디자인 하버 */
 .main-select input[type=radio]+label:hover {
 	background: #518E7B;
 	transform: translateY(-5px);
