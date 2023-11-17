@@ -82,7 +82,13 @@ p > i {
 		  	};
 					  
 		  	let map = new kakao.maps.Map(mapContainer, mapOption); // 두번째 인자는 지도의 위치를 어디에 둘 것인지 설정
-						
+			map.setDraggable(false);
+		  	
+		  	function setDraggable(draggable) {
+		  	    // 마우스 드래그로 지도 이동 가능여부를 설정합니다
+		  	    map.setDraggable(draggable);    
+		  	}
+		  	
 			// 마커
 			// 마커가 표시될 위치
 			var markerPosition = new kakao.maps.LatLng(36.0132159,127.7586034);
