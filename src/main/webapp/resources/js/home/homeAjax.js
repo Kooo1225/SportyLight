@@ -6,6 +6,22 @@ function createListCountTemplate(count) {
 }
 
 function createTypeListTemplate(gather) {
+	let localDateTime = gather.dateTime;
+
+	// LocalDateTime에서 날짜 정보 추출
+	let year = localDateTime.year;
+	let month = localDateTime.monthValue;
+	let day = localDateTime.dayOfMonth;
+	let hour = localDateTime.hour;
+	let minute = localDateTime.minute;
+	let second = localDateTime.second;	
+
+	let date = new Date(year, month - 1, day, hour, minute, second);
+	
+	let formattedDate = `${year}년 ${month}월 ${day}일 ${hour}시${minute}분`;
+
+
+	
 	return `
 		<div class="row" id="set1">
 		
@@ -26,7 +42,7 @@ function createTypeListTemplate(gather) {
 					<br>
 					
 					<span class="board-info">
-						인원 ${gather.headCount} 명 | ${gather.dateTime}
+						인원 ${gather.headCount} 명 | ${formattedDate}
 					</span>
 					
 				</div>

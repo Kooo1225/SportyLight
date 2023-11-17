@@ -24,10 +24,10 @@
 		
 		<!-- 카테고리  -->
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-			<li class="nav-item d-md-none d-lg-block"><a id="ct1" class="nav-link" href="#">헬스</a></li>
-			<li class="nav-item d-md-none d-lg-block"><a id="ct2" class="nav-link" href="#">스포츠</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct1" class="nav-link" value="헬스">헬스</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct2" class="nav-link" value="스포츠">스포츠</a></li>
 			<li class="nav-item d-md-none d-lg-block"><a id="ct3" class="nav-link" value="등산">등산</a></li>
-			<li class="nav-item d-md-none d-lg-block"><a id="ct4" class="nav-link" href="#">러닝</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct4" class="nav-link" value="러닝">러닝</a></li>
 		</ul>
 		
 	</div>
@@ -40,14 +40,12 @@
 
 	$(document).ready(function(e) {
 		
-		$("#ct3").on("click", async function(e) {
+		$(".nav-link").on("click", async function(e) {
 			$('.sidebar-board').empty();
 			$('.scroll-container').empty();
 			
 			const gatherList = await rest_get(BASE_URL + '/typelist?types=' + $(this).text());
 			gatherCount = Object.keys(gatherList).length;
-			
-			console.log(gatherList);
 			
 			let countEl = $(createListCountTemplate(gatherCount));
 			
@@ -58,8 +56,7 @@
  			$.each(gatherList, function(index, item) {
 				listEl = $(createTypeListTemplate(item));
 				$('.scroll-container').append(listEl);
- 			})
- 			
+ 			})	
 		})
 	})
 </script>
@@ -98,7 +95,8 @@
 									<br>
 									
 									<span class="board-info">
-										인원 ${gather.headCount} 명 | <fmt:formatDate value="${gather.dateTime}" pattern="yyyy년MM월dd일 hh시 mm분" />
+										인원 ${gather.headCount} 명 | <fmt:parseDate value="${gather.dateTime}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+										<fmt:formatDate pattern="yyyy년 MM월 dd일 HH시 mm분" value="${parsedDateTime}" />
 									</span>
 									
 								</div>
