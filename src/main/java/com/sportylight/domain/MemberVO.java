@@ -45,6 +45,15 @@ public class MemberVO {
 	private EnumVO gender;
 
 
+	private String newPassword;
+	
+	public EnumVO getGender() {
+        return gender;
+    }
+
+    public void setGender(EnumVO gender) {
+        this.gender = gender;
+    }
 
 	
 //	private List<AuthVO> authList;

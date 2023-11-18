@@ -55,6 +55,29 @@ public class MemberServiceImpl implements MemberService {
 //					.size(50, 50)
 //					.toFile(pngDest);
 //		}
+		
+		
 	}
+	
+	// 회원 정보 보기
+	@Override
+	public MemberVO getMember(String membersId) {
+
+		return mapper.read(membersId);
+
+	}
+
+	// 회원 정보 수정
+	@Override
+	public void updateMember(MemberVO updateMember) {
+		mapper.update(updateMember);
+	}
+	
+	// 회원 탈퇴 
+	@Override
+    public void withdrawlMember(String membersId) {
+        mapper.delete(membersId); // 회원 정보 삭제
+      
+    }
 	
 }
