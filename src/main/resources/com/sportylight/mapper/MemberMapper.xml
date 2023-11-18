@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sportylight.mapper.MemberMapper">
+	<!-- <resultMap id="authMap" type="com.sportylight.domain.AuthVO"> <result 
+		property="email" column="email" /> <result property="auth" column="auth" 
+		/> </resultMap> -->
+
+	<resultMap id="memberMap"
+		type="com.sportylight.domain.MemberVO">
+		<id property="membersId" column="members_Id" />
+		<result property="email" column="members_email" />
+		<result property="password" column="members_password" />
+		<result property="name" column="members_name" />
+		<result property="birth" column="members_birth" />
+		<result property="nickname" column="members_nickname" />
+		<result property="avatarPath" column="members_avatar_path" />
+		<result property="gender" column="members_gender" />
+		<!-- Alias 처리를 해주는거 reg_date라고 선언되어 있지만 실제 DB에는 regDate니까 이름이랑 데이터랑 연결함 -->
+		<!-- VO객체의 authList를 처리할 땐 Mapper 내의 resultMap 중 authMap ID를 가진 객체로 올라가서 
+			확인해라 -->
+		<!-- Collection 처리가 되어서 이름 같은 애들은 하나의 Collection에 여러 개의 값으로 들어감 -->
+		<!-- ex) Admin:Admin, Admin:Member, Admin:User << 이것들이 하나로 되는거지 -->
+		<!-- <collection property="authList" resultMap="authMap" /> -->
+	</resultMap>
+
+	<select id="read" resultMap="memberMap">
+		select m.members_id,
+		m.members_email,
+		m.members_password, m.members_name,
+		m.members_birth, m.members_nickname,
+		m.members_avatar_path, m.members_gender
+		from members m
+		where m.members_id = #{membersId}
+	</select>
+
+	<insert id="insert">
+		insert into members (members_id, members_email,
+		members_password, members_name,
+		members_birth, members_nickname,
+		members_avatar_path, members_gender)
+		values (#{membersId}, #{email},
+		#{password}, #{name},
+		#{birth}, #{nickname},
+		#{avatarPath}, #{gender})
+	</insert>
+
+	<update id="update">
+		update members
+		set members_nickname = #{nickname},
+		members_password = #{password}
+		where members_id = #{membersId}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM members WHERE members_id = #{membersId}
+	</delete>
+</mapper>
