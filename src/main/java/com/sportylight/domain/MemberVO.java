@@ -1,6 +1,9 @@
 package com.sportylight.domain;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -8,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -55,16 +59,15 @@ public class MemberVO {
         this.gender = gender;
     }
 
+	private List<AuthVO> authList;
 	
-//	private List<AuthVO> authList;
-//	
-//	public Collection<SimpleGrantedAuthority> getAuthorities() {
-//		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-//		
-//		for(AuthVO auth : authList) {
-//			authorities.add(new SimpleGrantedAuthority(auth.getAuth()));
-//		}
-//		
-//		return authorities;
-//	}
+	public Collection<SimpleGrantedAuthority> getAuthorities() {
+		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+		
+		for(AuthVO auth : authList) {
+			authorities.add(new SimpleGrantedAuthority(auth.getAuth()));
+		}
+		
+		return authorities;
+	}
 }
