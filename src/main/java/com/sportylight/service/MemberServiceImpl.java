@@ -29,14 +29,8 @@ public class MemberServiceImpl implements MemberService {
 	private PasswordEncoder pwEncoder; 
 	
 	@Override
-	public MemberVO checkEmail(String email) {		//email 중복체크
-		return mapper.checkEmail(email);
-	}
-	
-	@Override
-	public MemberVO checkNickname(String nickname) {		//nickname 중복체크
-		return mapper.checkNickname(nickname);
-
+	public MemberVO get(String email) {		
+		return mapper.read(email);
 	}
 	
 	//아이디 중복체크 mapper 접근
