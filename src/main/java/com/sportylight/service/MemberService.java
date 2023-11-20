@@ -8,7 +8,11 @@ import com.sportylight.domain.MemberVO;
 
 public interface MemberService {
 	
-	public MemberVO get(String email);
+	// 회원정보 email로 가져오기(email 중복체크)
+	public MemberVO checkEmail(String email);
+
+	// 회원정보 email로 가져오기
+	public MemberVO checkNickname(String nickname);
 	
 	public void register(MemberVO member, MultipartFile avatar) throws IOException;
 	
