@@ -53,19 +53,32 @@
 		<!-- 로그인 및 회원가입 버튼 -->
 		<sec:authorize access="isAnonymous()">
 		<div class="ml-auto">
-			<a id="login" href="/security/login" class="btn btn-link">로그인</a> <a id="join" href="/security/join" class="btn btn-link">회원가입</a>
+			<a id="login" href="/security/login" class="btn btn-link">로그인</a> 
+			<a id="join" href="/security/join" class="btn btn-link">회원가입</a>
 		</div>
 		</sec:authorize>
 		
 		<sec:authorize access="isAuthenticated()">
 		<div class="ml-auto">
-			<sec:authentication property="principal.username" var="nickname" />
-				<a href="/mypage?membersId=${member.membersId }">
+			<sec:authentication property="principal.member.nickname" var="nickname" />
+				<a id="login-nickname" href="/mypage?membersId=${member.membersId }">
 				<img src="/resources/images/home/cat.jpeg" 
-						class="home-avatar" /> ${nickname }님 ${member.membersId } 번
-				</a>
+						class="home-avatar" /> ${nickname }님 환영합니다.</a>
 				<a id="logout" href="/security/logout" class="btn btn-link">로그아웃</a>
 		</div>
 		</sec:authorize>
-		
 	</nav>
+	
+	<!-- 로그아웃 처리 -->
+	<form id="logoutForm" action="/security/logout" method="post">
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+	</form>
+
+	<script>
+	$(document).ready(function() {
+		$('#logout').click(function(e) {
+			e.preventDefault();
+			$('#logoutForm').submit();
+		});
+	});
+	</script>

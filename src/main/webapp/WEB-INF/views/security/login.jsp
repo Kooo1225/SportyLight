@@ -3,13 +3,6 @@
 
 <%@ include file="../layouts/joinHeader.jsp" %>
 
-<style>
-.cover {
-	display: flex;
-	justify-content: space-between;
-}
-</style>
-
 <h1 class="page-header"> WELCOME</h1><br>
 
 	<div class="panel panel-default">
@@ -30,12 +23,12 @@
 					<div class="form-group mx-auto">
 						<input type="password" name="password" placeholder=" 비밀번호를 입력해주세요." >
 					</div>
-					<div class="cover">
+					<div class="form-group mx-auto cover">
 						<div>
 							<input type="checkbox" name="remember-me"> 자동 로그인
 						</div>
 						<div>
-							<a href="#">아이디 찾기</a>
+							<a href="#">아이디 찾기 |</a>
 							<a href="#">비밀번호 찾기</a>
 						</div>
 					</div>
