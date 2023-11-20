@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -50,7 +51,21 @@
 
 
 		<!-- 로그인 및 회원가입 버튼 -->
+		<sec:authorize access="isAnonymous()">
 		<div class="ml-auto">
-			<a id="login" href="/" class="btn btn-link">로그인</a> <a id="logout" href="/" class="btn btn-link">회원가입</a>
+			<a id="login" href="/security/login" class="btn btn-link">로그인</a> <a id="join" href="/security/join" class="btn btn-link">회원가입</a>
 		</div>
+		</sec:authorize>
+		
+		<sec:authorize access="isAuthenticated()">
+		<div class="ml-auto">
+			<sec:authentication property="principal.username" var="nickname" />
+				<a href="/mypage?membersId=${member.membersId }">
+				<img src="/resources/images/home/cat.jpeg" 
+						class="home-avatar" /> ${nickname }님 ${member.membersId } 번
+				</a>
+				<a id="logout" href="/security/logout" class="btn btn-link">로그아웃</a>
+		</div>
+		</sec:authorize>
+		
 	</nav>

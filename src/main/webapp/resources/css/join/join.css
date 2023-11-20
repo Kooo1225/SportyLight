@@ -24,7 +24,7 @@
 }
 
 /* join - 생년월일 */
-.input-style input:not([type="radio"]:not([type="file"])) {
+.input-style input:not([type="radio"]):not([type="file"]):not([type="checkbox"]) {
 
 	width: 520px; 
 	height: 50px; 

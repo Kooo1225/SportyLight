@@ -18,13 +18,19 @@
 	margin: -15px 15px 8px 20px;
 }
 
+.home-avatar {
+	width: 55px;
+	height: 55px;
+	border-radius: 50%;
+}
+
 /*--------------------------------*/
 #menu1, #menu2, #menu3 {
 	margin-left: 30px;
 	margin-top: 5px;
 }
 
-#menu1, #menu2, #menu3, #login, #logout {
+#menu1, #menu2, #menu3, #login, #join, #logout {
 	color: #7fdcbe;
 	font-family: Noto Sans;
 	font-size: 23px;
@@ -45,7 +51,7 @@
 }
 
 /*--------------------------------*/
-#logout {
+#join, #logout {
 	margin-right: 20px;
 	margin-left: 20px;
 	padding-left: 20px;
@@ -53,13 +59,13 @@
 }
 
 @media screen and (max-width: 660px) {
-	#login, #logout {
+	#login, #join, #logout {
 		display: none;
 	}
 }
 
 /*--------------------------------*/
-#ct1, #ct2, #ct3, #ct4, #logout {
+#ct1, #ct2, #ct3, #ct4, #join, #logout {
 	font-family: "Noto Sans";
 	font-size: 23px;
 	font-weight: 400;
@@ -81,7 +87,7 @@
 }
 
 #ct1:active, #ct1:hover, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
-	#ct4:active, #ct4:hover, #logout:active, #logout:hover {
+	#ct4:active, #ct4:hover, #join:active, #join:hover, #logout:active, #logout:active {
 	background: #518e7b;
 	color: #fff;
 }
