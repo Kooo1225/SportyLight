@@ -62,8 +62,15 @@ public class SecurityController {
 		// 2. 아이디 중복확인
 		if(!errors.hasFieldErrors("email")) { // username 유효성 통과한 경우에
 			//DB에서 email을 검사
-			if(service.get(member.getEmail()) != null) { //중복일 때
+			if(service.checkEmail(member.getEmail()) != null) { //중복일 때
 				errors.rejectValue("email", "email 중복", "이미 사용중인 email입니다.");
+			} 
+		}
+		
+		if(!errors.hasFieldErrors("nickname")) { // username 유효성 통과한 경우에
+			//DB에서 nickname을 검사
+			if(service.checkNickname(member.getNickname()) != null) { //중복일 때
+				errors.rejectValue("nickname", "nickname 중복", "이미 사용중인 닉네임입니다.");
 			}
 		}
 		

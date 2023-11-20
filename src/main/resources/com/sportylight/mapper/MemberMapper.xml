@@ -28,13 +28,14 @@
 	</resultMap>
 
 	<select id="read" resultMap="memberMap">
-		select m.members_id,
-		m.members_email,
-		m.members_password, m.members_name,
-		m.members_birth, m.members_nickname,
-		m.members_avatar_path, m.members_gender
-		from members m
-		where m.members_id = #{membersId}
+		select * from members
+		where members_Id = #{membersId}
+	</select>
+	
+	<select id="checkEmail" resultMap="memberMap">
+		select members_email
+		from members
+		where members_email = #{email}
 	</select>
 	
 	<select id="readMypage" resultMap="memberMap">
@@ -43,6 +44,11 @@
 		where members_id = #{membersId}
 	</select>
 
+	<select id="checkNickname" resultMap="memberMap">
+		select members_nickname
+		from members
+		where members_nickname = #{nickname}
+	</select>
 	<insert id="insert">
 		<selectKey keyProperty="membersId" order="AFTER" resultType="Integer">
 	        SELECT LAST_INSERT_ID() AS membersId

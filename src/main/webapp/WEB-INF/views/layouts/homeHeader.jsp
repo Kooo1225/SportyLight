@@ -53,7 +53,8 @@
 		<!-- 로그인 및 회원가입 버튼 -->
 		<sec:authorize access="isAnonymous()">
 		<div class="ml-auto">
-			<a id="login" href="/security/login" class="btn btn-link">로그인</a> <a id="join" href="/security/join" class="btn btn-link">회원가입</a>
+			<a id="login" href="/" class="btn btn-link">로그인</a> <a id="logout" href="/security/join" class="btn btn-link">회원가입</a>
+
 		</div>
 		</sec:authorize>
 		
