@@ -19,13 +19,15 @@ public interface MemberService {
 	public void register(MemberVO member, MultipartFile avatar) throws IOException;
 	
 	// 회원 정보 조회
-    public MemberVO getMember(String membersId);
+    public MemberVO getMember(int membersId);
 
     // 회원 정보 수정
     void updateMember(MemberVO updateMember);
     
     // 회원 탈퇴
-    void withdrawlMember(String membersId);
+    void withdrawlMember(int membersId);
+    
+    public MemberVO get2(String email);
    
 	
 //	public int emailCheck(String email);

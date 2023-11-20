@@ -89,7 +89,7 @@
 							
 								<div class="board-info-wrapper" style="width: 100%;">
 								
-									<span class="board-title">${gather.title}</span> 
+									<span class="board-title"><a href="/board/detail?gatheringId=${gather.gatheringId}">${gather.title}</a></span> 
 									<span class="board-category">${gather.type}</span> 
 									
 									<br>

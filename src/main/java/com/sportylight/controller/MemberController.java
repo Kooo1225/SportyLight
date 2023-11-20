@@ -1,6 +1,7 @@
 package com.sportylight.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +13,7 @@ import org.springframework.validation.Errors;
 
 import com.sportylight.domain.EnumVO;
 import com.sportylight.domain.MemberVO;
+import com.sportylight.security.domain.CustomUser;
 import com.sportylight.service.MemberService;
 
 @Controller
@@ -23,18 +25,20 @@ public class MemberController {
 	private MemberService memberService;
 
 	  @GetMapping
-	    public String myPage(@RequestParam("membersId") String membersId, Model model) {
-	        // 받아온 ID로 조회
+	    public void myPage(@AuthenticationPrincipal CustomUser customUser, Model model) {
+		  	int membersId = customUser.getMembersId();
+		  
+		  	// 받아온 ID로 조회
 	        MemberVO member = memberService.getMember(membersId);
 	        // 모델에 담아서 뷰 반환
 	        model.addAttribute("member", member);
-	        model.addAttribute("newPassword", new MemberVO()); // 새로운 비밀번호를 받기 위한
-	        return "mypage/mypage";
+//	        model.addAttribute("newPassword", new MemberVO()); // 새로운 비밀번호를 받기 위한
+//	        return "mypage/mypage";
 	    }
 
 	    // 회원 정보 수정 페이지로 이동
 	    @GetMapping("/update")
-	    public String update(@RequestParam("membersId") String membersId, Model model) {
+	    public String update(@RequestParam("membersId") int membersId, Model model) {
 	        // 받아온 ID로 조회
 	        MemberVO member = memberService.getMember(membersId);
 	        // 모델에 담아서 뷰 반환
@@ -66,7 +70,7 @@ public class MemberController {
 
 	    // 회원 탈퇴 페이지로 이동
 	    @GetMapping("/withdrawl")
-	    public String withdrawPage(@RequestParam("membersId") String membersId, Model model) {
+	    public String withdrawPage(@RequestParam("membersId") int membersId, Model model) {
 	        MemberVO member = memberService.getMember(membersId);
 	        model.addAttribute("member", member);
 	        return "mypage/withdrawl";
@@ -74,7 +78,7 @@ public class MemberController {
 
 	    // 회원 탈퇴 처리
 	    @PostMapping("/withdrawl")
-	    public String withdraw(@RequestParam("membersId") String membersId) {
+	    public String withdraw(@RequestParam("membersId") int membersId) {
 	        memberService.withdrawlMember(membersId);
 	        return "redirect:/"; // 탈퇴 후 홈페이지로 리다이렉트
 	    }

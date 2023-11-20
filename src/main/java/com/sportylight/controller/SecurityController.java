@@ -3,6 +3,8 @@ package com.sportylight.controller;
 import java.io.File;
 import java.io.IOException;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -49,8 +51,8 @@ public class SecurityController {
 			@Valid
 			@ModelAttribute("member") MemberVO member,
 			Errors errors,
-			MultipartFile avatar) throws IOException{
-		
+			MultipartFile avatar) throws IOException, ServletException{
+	
 		// 1. 비밀번호, 비밀번호 확인 일치여부
 		if(!member.getPassword().equals(member.getPassword2())) {
 			//에러 추가
@@ -79,7 +81,6 @@ public class SecurityController {
 		
 		// DB에 저장
 		service.register(member, avatar); // null
-		
 		return "redirect:/";
 	}
 	
