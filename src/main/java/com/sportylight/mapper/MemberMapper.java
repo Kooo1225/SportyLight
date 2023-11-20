@@ -5,12 +5,9 @@ import com.sportylight.domain.MemberVO;
 
 public interface MemberMapper {
 
-	public MemberVO read(String membersId);
+	public MemberVO read(String email);
 	
-	public MemberVO checkEmail(String email);
-	
-	public MemberVO checkNickname(String nickname);
-
+	public MemberVO readMypage(int membersId);
 
 	public void insert(MemberVO member);
 
