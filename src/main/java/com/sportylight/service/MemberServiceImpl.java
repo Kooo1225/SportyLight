@@ -29,8 +29,13 @@ public class MemberServiceImpl implements MemberService {
 //	private PasswordEncoder pwEncoder; // 비밀번호 암호화에서 에러나서 읻단 주석처리
 	
 	@Override
-	public MemberVO get(String membersID) {		
-		return mapper.read(membersID);
+	public MemberVO checkEmail(String email) {		//email 중복체크
+		return mapper.checkEmail(email);
+	}
+	
+	@Override
+	public MemberVO checkNickname(String nickname) {		//nickname 중복체크
+		return mapper.checkNickname(nickname);
 	}
 	
 	//아이디 중복체크 mapper 접근

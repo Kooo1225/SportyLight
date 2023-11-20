@@ -19,32 +19,32 @@ $("#file").on('change',function(){
 			<input type="file" id="file">
 			<div class="form-group check">
 				<form:input path="email" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
-				<form:errors path="email" cssClass="error" />
+				<form:errors path="email" cssClass="error mx-auto" />
 			</div>
 			<div class="form-group mx-auto">
 				<form:password path="password" placeholder=" 비밀번호를 작성해주세요."></form:password>
-				<form:errors path="password" cssClass="error" />
+				<form:errors path="password" cssClass="error mx-auto" />
 			</div>
 			<div class="form-group mx-auto">
 				<form:password path="password2" placeholder=" 비밀번호를 확인해주세요."></form:password>
-				<form:errors path="password2" cssClass="error" />
+				<form:errors path="password2" cssClass="error mx-auto" />
 			</div>
 			<div class="form-group mx-auto">
 				<form:input path="name" placeholder="이름을 입력해주세요."></form:input>
-				<form:errors path="name" cssClass="error" />
+				<form:errors path="name" cssClass="error mx-auto" />
 			</div>
 			<div class="form-group mx-auto select">
 				<i class="fa-sharp fa-regular fa-calendar-days fa-2x" style="color: #518E7B;"></i>
-				<input type="date" id="date" name="birth"> 
+				<input type="date" id="date" name="birth">
 				<i class="fa-solid fa-venus-double fa-2x" style="color: #518E7B;"></i>
 				<form:radiobutton path="gender" id="select" value="male"></form:radiobutton><label for="select">남자</label> 
 				<form:radiobutton path="gender" id="select2" value="female"></form:radiobutton><label for="select2">여자</label>
-				<form:errors path="birth" cssClass="error"></form:errors>
-				<form:errors path="gender" cssClass="error"></form:errors>
+				<form:errors path="birth" cssClass="error mx-auto"></form:errors>
+				<form:errors path="gender" cssClass="error2 mx-auto"></form:errors>
 			</div>
 			<div class="form-group mx-auto check">
 				<form:input path="nickname" placeholder=" 닉네임"></form:input>
-				<form:errors path="nickname" cssClass="error"></form:errors>
+				<form:errors path="nickname" cssClass="error mx-auto"></form:errors>
 			</div>
 		</div>
 
