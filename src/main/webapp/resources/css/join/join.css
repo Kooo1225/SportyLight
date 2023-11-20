@@ -38,9 +38,9 @@
 
 /* join - 생년월일 */
 .input-style #date {
-	width: 280px; 
+	width: 260px; 
 	height: 50px;
-	margin: 0 10px 0 5px;
+	margin: 0 15px 0 5px;
 }
 
 /* join, register - 제출버튼 */
@@ -255,10 +255,22 @@
 }
 
 /* -----에러메시지----- */
+.error2 {
+	color: red;
+	font-size: 0.9rem;
+	display: block;
+	text-align: right;
+	width: 520px;
+    margin-right: 300px;
+    margin-top: 3px;
+}
+
 .error {
 	color: red;
 	font-size: 0.9rem;
+	display: block;
+	text-align: left;
+	width: 520px;
+    margin-top: 3px;
 }
-
-/* ------------프로필 사진 업로드 버튼 ------------*/
 
