@@ -63,11 +63,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http.authorizeRequests()
 			.antMatchers("/security/profile").authenticated() 
+			.antMatchers("/security/findId").permitAll()
 			.antMatchers("/board/register",
 						 "/board/detail",
 						 "/mypage",
-						 "/mypage/mypageupdate",
-						 "/mypage/withdrawl").authenticated();
+						 "/mypage/update",
+						 "/mypage/withdrawal").authenticated();
 
 		
 		http.formLogin()

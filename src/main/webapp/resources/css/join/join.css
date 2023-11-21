@@ -265,13 +265,23 @@
     margin-top: 3px;
 }
 
-.error {
-	color: red;
-	font-size: 0.9rem;
-	display: block;
-	text-align: left;
-	width: 520px;
-    margin-top: 3px;
+#error {
+    width: 520px;
+    height:20px;
+    background: white;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    border: 1px solid white; /* 테두리 색상을 흰색으로 설정 */
+    font-size: 15px;
+    margin: 0px;
+    
+}
+.input-style input[class="error"]::placeholder {
+    color: red; /* 플레이스홀더의 색상을 빨간색으로 설정 */
+}
+
+#error:focus {
+	outline:none;
 }
 
 /* login - 자동로그인, 아이디/비밀번호 찾기 버튼 디자인 */
@@ -280,4 +290,69 @@
     justify-content: space-evenly;
     width: 970px;
   }
+
+
+/* ------------findId ------------*/
+
+
+#name2 {
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	border: 1px solid #7FDCBE;
+	text-align: center;
+	font-family: sans-serif;
+    font-color: #727272;
+	font-size: 20px;
+	font-weight: 0;
+	outline: none;
+	width: 50%;
+	height: 52px;
+}
+
+.form-group1 {
+	width: 520px;
+	padding-bottom: 10px;
+	position: relative;
+}
+
+.form-group2 {
+	width: 520px;
+	padding: 30px 0 30px 0 ;
+	position: relative;
+}
+
+#date2 {
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	border: 1px solid #7FDCBE;
+	text-align: center;
+	font-family: sans-serif;
+    font-color: #727272;
+	font-size: 20px;
+	font-weight: 0;
+	outline: none;
+	width: 50%;
+	height: 52px;
+	padding-right: 20px;
+	margin: 0 46px 0 15px;
+}
+
+#id-find {
+	width: 179px;
+	height: 52px;
+	margin: 20px;
+	color: white;
+	background: #7FDCBE;
+	font-size: 20px;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 700;
+	border-radius: 10px;
+	border: 0px solid #7FDCBE;
+}
+
+#id-find:hover {
+	background: #518E7B;
+}
 

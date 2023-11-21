@@ -17,7 +17,9 @@
 
 <body>
 
-	<form id="withdrawalForm" action="/mypage/withdrawl" method="post"> 
+	<form id="withdrawalForm" action="/mypage/withdrawal" method="post">
+		<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
 
 		<div class="panel2 panel-default">
 			<div class="form-group3 mx-auto check">
@@ -29,23 +31,22 @@
 				</div>
 				<!-- 비밀번호  -->
 				<div class="form-group5 mx-auto check">
-					<input class="password" type="password" placeholder="비밀번호를 입력해주세요.">
+					<input type="password" id="password0" name="password"
+						placeholder="비밀번호를 입력해주세요" required>
 				</div>
-				<!-- 비밀번호 확인  -->
-				<div class="form-group6 mx-auto check">
-					<input class="password2" type="password" placeholder="비밀번호를 확인해주세요.">
-				</div>
+
 				<!-- 버튼  -->
 				<div class="row mx-auto">
 					<div class="col-6 text-right">
 						<div class="form-group mx-auto submitButton">
-							<button type="submit" class="btn btn-info" >확인</button>
+							<button type="submit" class="btn btn-info">확인</button>
 						</div>
 					</div>
 					<div class="col-6 text-left">
 						<div class="form-group mx-auto submitButton"
 							style="margin-left: -10px;">
-                            <a href="/mypage?membersId=${member.membersId}" class="btn btn-info">취소</a>
+							<button type="button" class="btn btn-info"
+								onclick="location.href='/mypage?membersId=${member.membersId }'">취소</button>
 						</div>
 					</div>
 				</div>
