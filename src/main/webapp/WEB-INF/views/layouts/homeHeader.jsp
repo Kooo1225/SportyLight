@@ -63,7 +63,7 @@
 			<sec:authentication property="principal.member.nickname" var="nickname" />
 				<a id="login-nickname" href="/mypage?membersId=${member.membersId }">
 				<img src="/resources/images/home/cat.jpeg" 
-						class="home-avatar" style="margin-right:4px;" /> ${nickname}님</a>
+						class="home-avatar" /> ${nickname }님 환영합니다.</a>
 				<a id="logout" href="/security/logout" class="btn btn-link">로그아웃</a>
 		</div>
 		</sec:authorize>

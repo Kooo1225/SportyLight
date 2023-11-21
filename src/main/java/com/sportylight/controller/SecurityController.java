@@ -2,7 +2,6 @@ package com.sportylight.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -10,9 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -85,30 +82,6 @@ public class SecurityController {
 		// DB에 저장
 		service.register(member, avatar); // null
 		return "redirect:/";
-	}
-	
-	@GetMapping("/findId")
-	public void findId() {
-
-	}
-
-	@PostMapping("/findId")
-	public String findId2(@DateTimeFormat(pattern = "yyyy-MM-dd") Date birth, String name,
-			Model model) {
-		System.out.println(birth + name);
-
-		MemberVO foundMember = service.findId(birth,name);
-
-		System.out.println(foundMember);
-		
-		if (foundMember == null)	{
-			model.addAttribute("result", "false");
-		} else {
-			model.addAttribute("result", "true");
-			model.addAttribute("email", foundMember.getEmail());
-		}
-	
-	  return "security/findId";
 	}
 	
 	@GetMapping("/avatar/{size}/{email}")  

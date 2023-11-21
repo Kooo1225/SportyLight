@@ -66,15 +66,15 @@
 	<nav id="container3-fluid" style="padding: 0px;"
 		class="navbar navbar-expand-sm navbar-light bg-light">
 		
-		<div class="sidebar" style="height: 100%;">
+		<div class="sidebar">
 			
 
 			<div class="sidebar-board">
 				<span class="board-txt">모임</span> <span class="board-total">${count} 건</span>
 			</div>
 			<!--------------프로필사진------------------>
-			<div class="col-sm-12" style="height: 100%;">
-				<div class="scroll-container" style="height: 700px;">
+			<div class="col-sm-12">
+				<div class="scroll-container">
 				
 					<c:forEach var="gather" items="${GatherList}">
 						<div class="row" id="set1">
@@ -105,17 +105,14 @@
 							
 						</div>
 					</c:forEach>
-					
 				</div>
 			</div>
 		</div>
+		
 		<!-------------------Kakao Maps--------------------->
 		<div class="col-sm-12" id="map" style="left: 425px; width: calc(100vw - 425px); height: 100%; position: absolute;"></div>
-	
-		</nav>
-		
+	</nav>
 </div>
-
 
 </body>
 

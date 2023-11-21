@@ -23,51 +23,51 @@ import lombok.NoArgsConstructor;
 public class MemberVO {
 	private int membersId;
 	@NotBlank(message = "사용자 email은 필수항목입니다.")
-	@Email(message = "email 형식에 맞지 않습니다.")
-	@Size(min = 4, message = "사용자 email은 4글자 이상이어야 합니다.")
+	@Email(message="email 형식에 맞지 않습니다.")
+	@Size(min = 4, message="사용자 email은 4글자 이상이어야 합니다.")
 	private String email;
-
+		
 	@NotBlank(message = "사용자 비밀번호는 필수항목입니다.")
 	private String password;
-
+	
 	@NotBlank(message = "비밀번호 확인는 필수항목입니다.")
 	private String password2;
-
+	
 	@NotBlank(message = "사용자 이름은 필수항목입니다.")
 	private String name;
-
+	
 	@NotNull(message = "사용자 생년월일은 필수항목입니다.")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date birth;
-
+	
 	@NotBlank(message = "사용자 닉네임은 필수항목입니다.")
 	private String nickname;
-
+	
 	private String avatarPath;
-
+	
 	@NotNull(message = "사용자 성별은 필수항목입니다.")
 	private EnumVO gender;
 
+
 	private String newPassword;
-	private String newPassword2;
-
+	
 	public EnumVO getGender() {
-		return gender;
-	}
+        return gender;
+    }
 
-	public void setGender(EnumVO gender) {
-		this.gender = gender;
-	}
+    public void setGender(EnumVO gender) {
+        this.gender = gender;
+    }
 
 	private List<AuthVO> authList;
-
+	
 	public Collection<SimpleGrantedAuthority> getAuthorities() {
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-
-		for (AuthVO auth : authList) {
+		
+		for(AuthVO auth : authList) {
 			authorities.add(new SimpleGrantedAuthority(auth.getAuth()));
 		}
-
+		
 		return authorities;
 	}
 }

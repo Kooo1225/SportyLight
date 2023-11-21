@@ -62,10 +62,10 @@
 				#{avatarPath}, #{gender})
 	</insert>
 
-	<update id="updatePassword">
+	<update id="update">
 		update members
-		set members_password = #{newPassword}
-		
+		set members_nickname = #{nickname},
+		members_password = #{password}
 		where members_id = #{membersId}
 	</update>
 
@@ -86,11 +86,5 @@
 		values(#{membersId}, #{auth})
 	</insert>
 	
-	<select id="findId" resultMap="memberMap">
-    SELECT *
-    FROM members
-    WHERE members_name = #{name}
-      AND members_birth = #{birth}
-    </select>
 	
 </mapper>

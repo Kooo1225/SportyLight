@@ -20,7 +20,7 @@
 
     <div class="container">
         <header class="jumbotron mb-0 rounded-0">
-            <a href="/" style="text-decoration:none;"><h1>SportyLight</h1></a>
+            <h1>SportyLight</h1>
         </header>
  
 <nav id="mypagemenu"
@@ -31,8 +31,7 @@
 			<li class="nav-item d-md-none d-lg-block "><a id="myct2"
 				class="nav-link" href="/mypage/update?membersId=${membersId}">회원 정보 변경</a></li>
 			<li class="nav-item d-md-none d-lg-block "><a id="myct3"
-				class="nav-link" href="/mypage/withdrawal?membersId=${membersId}">회원 탈퇴 하기</a></li>
+				class="nav-link" href="/mypage/withdrawl?membersId=${membersId}">회원 탈퇴 하기</a></li>
 		</ul>
 		</nav>
-		
 		
