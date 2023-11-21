@@ -24,7 +24,13 @@
 	<select id="getList" resultMap="gatherMap">
 		select * from gathering
 	</select>
-
+	
+	<select id="getMyList" resultMap="gatherMap">
+		select * 
+		from gathering 
+		where members_id = #{membersId}
+	</select>
+	
 	<select id="getTypeList" resultMap="gatherMap">
 		select *
 		from gathering

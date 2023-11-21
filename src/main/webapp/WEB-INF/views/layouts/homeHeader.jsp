@@ -43,7 +43,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a id="menu1" class="nav-link" href="/">모임</a></li>
-				<li class="nav-item"><a id="menu2" class="nav-link" href="/">목록</a></li>
+				<li class="nav-item"><a id="menu2" class="nav-link" href="/board/list">목록</a></li>
 				<li class="nav-item"><a id="menu3" class="nav-link" href="/">대회</a></li>
 			</ul>
 		</div>

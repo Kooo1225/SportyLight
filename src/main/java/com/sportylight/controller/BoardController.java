@@ -23,6 +23,13 @@ public class BoardController {
 	@Autowired
 	private GatherService service;
 	
+	@GetMapping("/list")
+	public void mylist(Model model) { /* , @RequestParam("membersId") int membersId */
+		int membersId = 23;
+		log.info("list");
+		model.addAttribute("list", service.getMyList(membersId));
+	}
+	
 	@GetMapping("/register")
 	public void register() {
 		log.info("register");
