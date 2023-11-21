@@ -96,12 +96,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		return repo;
 	}
-	
-	@Bean
-	public RememberMeServices rememberMeServices(CustomUserDetailsService customUserDetailService) {
-	    PersistentTokenBasedRememberMeServices services =
-	        new PersistentTokenBasedRememberMeServices("myKey", customUserDetailService, persistentTokenRepository());
-	    services.setParameter("remember-me");  // HTML form field name
-	    return services;
-	}
 }

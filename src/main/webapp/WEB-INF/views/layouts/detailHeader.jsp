@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -31,7 +32,8 @@
 <body>
 	<!-- 로고 -->
 	<nav id="container" class="navbar navbar-expand-sm navbar-light bg-light">
-	  <a id="logo" class="navbar-brand" href="/">SportyLight</a>
+	  <a id="logo" class="navbar-brand" href="/">
+	  	<img src="/resources/images/layouts/logo.png"></a>
 	  
 	  <!-- 메뉴 -->
 	  <div class="collapse navbar-collapse" id="navbarNav">
@@ -42,12 +44,39 @@
 	    </ul>
 	  </div>
 	  	
+	  
 	  <!-- 로그인 및 회원가입 버튼 -->
-	  <div class="ml-auto">
-	    <a id="login" href="/" class="btn btn-link">로그인</a>
-	    <a id="logout" href="/" class="btn btn-link">회원가입</a>
-	  </div>
+	  <sec:authorize access="isAnonymous()">
+		  <div class="ml-auto">
+		    <a id="login" href="/security/login" class="btn btn-link">로그인</a>
+		    <a id="logout" href="/security/join" class="btn btn-link">회원가입</a>
+		  </div>
+	  </sec:authorize>
+	  
+	  <sec:authorize access="isAuthenticated()">
+		  <div class="ml-auto">
+		  	<sec:authentication property="principal.member.nickname" var="nickname" />
+			    <a id="login-nickname" href="/mypage?membersId=${member.membersId }">
+					<img src="/resources/images/home/cat.jpeg" 
+							class="home-avatar" /> ${nickname }님 환영합니다.</a>
+			    <a id="logout" href="/security/logout" class="btn btn-link">로그아웃</a>
+		  </div>
+	  </sec:authorize>
 	</nav>
+	
+	<!-- 로그아웃 처리 -->
+	<form id="logoutForm" action="/security/logout" method="post">
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+	</form>
+
+	<script>
+	$(document).ready(function() {
+		$('#logout').click(function(e) {
+			e.preventDefault();
+			$('#logoutForm').submit();
+		});
+	});
+	</script>
 
 	<div class="container">
 	

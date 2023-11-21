@@ -274,3 +274,10 @@
     margin-top: 3px;
 }
 
+/* login - 자동로그인, 아이디/비밀번호 찾기 버튼 디자인 */
+.cover {
+    display: flex;
+    justify-content: space-evenly;
+    width: 970px;
+  }
+
