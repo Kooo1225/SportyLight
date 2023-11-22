@@ -30,7 +30,7 @@
 
 </head>
 
-<body>
+<body style="overflow-y: hidden">
 
 	<!-- 로고 -->
 	<nav id="container" class="navbar navbar-expand-sm navbar-light bg-light">
@@ -62,8 +62,7 @@
 		<div class="ml-auto">
 			<sec:authentication property="principal.member.nickname" var="nickname" />
 				<a id="login-nickname" href="/mypage?membersId=${member.membersId }">
-				<img src="/resources/images/home/cat.jpeg" 
-						class="home-avatar" style="margin-right:4px;" /> ${nickname}님</a>
+					<img src="/resources/images/home/cat.jpeg" class="home-avatar" style="margin-right:4px;" />${nickname}님</a>
 				<a id="logout" href="/security/logout" class="btn btn-link">로그아웃</a>
 		</div>
 		</sec:authorize>
