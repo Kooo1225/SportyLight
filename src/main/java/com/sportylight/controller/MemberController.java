@@ -30,15 +30,15 @@ public class MemberController {
 	
 
 	  @GetMapping
-	    public void myPage(@AuthenticationPrincipal CustomUser customUser, Model model) {
+	    public String myPage(@AuthenticationPrincipal CustomUser customUser, Model model) {
 		  	int membersId = customUser.getMembersId();
 		  
 		  	// 받아온 ID로 조회
 	        MemberVO member = memberService.getMember(membersId);
 	        // 모델에 담아서 뷰 반환
 	        model.addAttribute("member", member);
-//	        model.addAttribute("newPassword", new MemberVO()); // 새로운 비밀번호를 받기 위한
-//	        return "mypage/mypage";
+
+	        return "mypage/mypage";
 	    }
 
 	    // 회원 정보 수정 페이지로 이동
