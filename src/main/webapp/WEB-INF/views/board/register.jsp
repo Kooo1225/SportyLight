@@ -7,6 +7,21 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services"></script>
 
+<style>
+.input-style #register-title {
+    margin-top: 10px;
+}
+
+#sample5_address {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    }
+    
+.register-text {
+    margin-top: 5px;
+}
+
+</style>
 <script>
 $(document).ready(function() {
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div
@@ -63,7 +78,7 @@ $(document).ready(function() {
 		<div class="panel-body">
 			<form action="/board/register" method="post">
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-				<div class="form-group mx-auto main-select">
+				<div class="form-group mx-auto main-select" style="margin-bottom:0;">
 					<input type="radio" id="select-health" name="type" value="헬스"><label for="select-health">헬스</label>
 					<input type="radio" id="select-sport" name="type" value="스포츠"><label for="select-sport">스포츠</label>
 					<input type="radio" id="select-climb" name="type" value="등산"><label for="select-climb">등산</label>
@@ -92,8 +107,8 @@ $(document).ready(function() {
 
 			<input type="hidden" name="membersId" value="1" />
 
-			<div class="form-group mx-auto submitButton">
-					<button type="submit">REGISTER</button>
+			<div class="form-group mx-auto submitButton" >
+					<button type="submit" style="margin-top:10px;">REGISTER</button>
 				</div>
 			</form>
 		</div>
