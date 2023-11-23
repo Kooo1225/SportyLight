@@ -16,10 +16,10 @@ public class MessageController {
 	
 	@MessageMapping("/hello/room1")
 	@SendTo("/subscribe/message/room1")
-	public MessageVO sendMessage(MessageVO message, @Header("simpSessionId") String sessionId) {
+	public String sendMessage(String message) {
 		System.out.println(message);
-		System.out.println("Received message ID : " + sessionId);
-		message.setSendDate(new Date());
+
+//		message.setSendDate(new Date());
 		
 		return message;
 	}

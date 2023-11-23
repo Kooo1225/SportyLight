@@ -2,6 +2,8 @@
 
 <%@ include file="layouts/homeHeader.jsp" %>
 
+<div class=></div>
+
 <input type="text" id="messageInput" placeholder="Type your message">
 <button id="sendButton">Send</button>
 
