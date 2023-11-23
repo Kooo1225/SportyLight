@@ -25,6 +25,7 @@ public class RootConfig {
 
 	@Bean
 	public DataSourceTransactionManager transactionManager() {
+		System.out.println("DataSourceManager Load");
 		DataSourceTransactionManager manager = new DataSourceTransactionManager(dataSource());
 		
 		return manager;
@@ -32,6 +33,7 @@ public class RootConfig {
 	
 	@Bean
 	public DataSource dataSource() {
+		System.out.println("Hikari Load");
 		HikariConfig config = new HikariConfig();
 //		config.setDriverClassName("com.mysql.cj.jdbc.Driver");
 //		config.setJdbcUrl("jdbc:mysql://localhost:3306/glory_db");
@@ -49,6 +51,7 @@ public class RootConfig {
 
 	@Bean
 	public SqlSessionFactory sqlSessionFactory() throws Exception {
+		System.out.println("SqlSessionFactory Load");
 		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 
 		sqlSessionFactory.setConfigLocation(applicationContext.getResource("classpath:/mybatis-config.xml"));

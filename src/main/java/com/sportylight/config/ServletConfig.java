@@ -20,11 +20,13 @@ public class ServletConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		System.out.println("ResourceHandler done");
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
+		System.out.println("Resolver Done");
 		InternalResourceViewResolver bean = new InternalResourceViewResolver();
 		
 		bean.setViewClass(JstlView.class);
