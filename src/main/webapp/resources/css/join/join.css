@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap');
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap')
+	;
 
 .container {
 	text-align: center;
@@ -7,6 +9,7 @@
 /* header - jumbotron */
 .jumbotron {
 	background-color: white;
+	padding-bottom: 10px;
 }
 
 /* header - SportyLight 큰 로고 */
@@ -23,38 +26,56 @@
 	font-size: 20px;
 }
 
-/* join - 생년월일 */
-.input-style input:not([type="radio"]):not([type="file"]):not([type="checkbox"]) {
+input[type=file]::file-selector-button {
+	color: #5E5D5D;
+  width: 150px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid #7FDCBE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  text-align: left;
+}
 
-	width: 520px; 
-	height: 50px; 
+#file {
+	margin:0 235px 20px 0;
+	
+}
+
+/* join - 생년월일 */
+.input-style input:not([type="radio"]):not([type="file"]):not([type="checkbox"])
+	{
+	width: 520px;
+	height: 50px;
 	margin: 5px;
-	background: white; 
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-	border-radius: 10px; 
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
 	border: 1px #7FDCBE solid;
 	font-size: 15px;
 }
 
 /* join - 생년월일 */
 .input-style #date {
-	width: 260px; 
+	width: 260px;
 	height: 50px;
 	margin: 0 15px 0 5px;
 }
 
 /* join, register - 제출버튼 */
 .submitButton button {
-	width: 179px; 
-	height: 52px; 
+	width: 179px;
+	height: 52px;
 	margin: 20px;
 	color: white;
-	background: #7FDCBE; 
-	font-size: 28px; 
-	font-family: 'Noto Sans', sans-serif; 
-	font-weight: 700; 
+	background: #7FDCBE;
+	font-size: 28px;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 700;
 	word-wrap: break-word;
-	border-radius: 10px; 
+	border-radius: 10px;
 	border: 0px solid #7FDCBE
 }
 
@@ -66,7 +87,7 @@
 /* join, register - 제목 */
 .page-header {
 	color: #7FDCBE;
-	font-family: 'Noto Sans', sans-serif;  
+	font-family: 'Noto Sans', sans-serif;
 }
 
 /* join - 중복확인 위치 */
@@ -79,7 +100,7 @@
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	background: #CFF8EB;  
+	background: #CFF8EB;
 	border-radius: 10px;
 	border: 1px solid #7FDCBE;
 }
@@ -91,14 +112,14 @@
 
 /* register - 스포츠 버튼 */
 .main-select button {
-	width: 116px; 
+	width: 116px;
 	height: 45px;
 	margin: 8px;
 	color: white;
 	background: #7FDCBE;
 	border-radius: 100px;
 	border: 0px solid #7FDCBE;
-	font-family: 'Noto Sans', sans-serif;  
+	font-family: 'Noto Sans', sans-serif;
 	font-size: 18px;
 }
 
@@ -110,24 +131,23 @@
 }
 
 .hidden-radios {
-  display: none;
-  position: absolute;
-  top: 100%; /* 숨겨진 버튼을 주요 버튼 아래로 배치 */
-  left: 50%; /* 가운데 정렬을 위해 left 속성을 50%로 설정 */
-  transform: translateX(-50%); /* left 속성의 50%만큼 왼쪽으로 이동 */
-  display: none;
-  justify-content: center; /* 가운데 정렬 */
-  backdrop-filter: blur(5px); /* 호버 시 배경 블러 효과를 추가 */
+	display: none;
+	position: absolute;
+	top: 100%; /* 숨겨진 버튼을 주요 버튼 아래로 배치 */
+	left: 50%; /* 가운데 정렬을 위해 left 속성을 50%로 설정 */
+	transform: translateX(-50%); /* left 속성의 50%만큼 왼쪽으로 이동 */
+	display: none;
+	justify-content: center; /* 가운데 정렬 */
+	backdrop-filter: blur(5px); /* 호버 시 배경 블러 효과를 추가 */
 }
 
-.main-select button[name="sports"]:hover + .hidden-radios,
-.main-select button[name="sports"]:focus + .hidden-radios, 
-.hidden-radios:hover {
-  display: flex;
+.main-select button[name="sports"]:hover+.hidden-radios, .main-select button[name="sports"]:focus+.hidden-radios,
+	.hidden-radios:hover {
+	display: flex;
 }
 
 .hidden-radios input[type="radio"] {
-  display: inline;
+	display: inline;
 }
 
 .main-select {
@@ -135,69 +155,69 @@
 }
 
 .input-style #register-title {
-	margin-top: 50px; 
+	margin-top: 50px;
 }
 
 /* register - 모임 인원 */
 .num {
-	width: 74px; 
+	width: 74px;
 	height: 50px;
-	margin: 0 70px 0 5px; 
-	background: white; 
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-	border-radius: 10px; 
+	margin: 0 70px 0 5px;
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
 	border: 1px solid #7FDCBE;
 }
 
 /* register - 모임 날짜 */
 .date {
-	width: 280px; 
+	width: 280px;
 	height: 50px;
 	margin-left: 5px;
-	background: white; 
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-	border-radius: 10px; 
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
 	border: 1px solid #7FDCBE;
 }
 
 /* register - 주소 검색 시 카카오맵 */
 .register-address {
-	width:520px;
-	height:300px;
+	width: 520px;
+	height: 300px;
 	margin: 10px auto;
-	display:none
+	display: none
 }
 
 /* register - 게시글 메모란 */
 .register-text {
-	width: 520px; 
-	height: 150px; 
-	margin-top: 10px; 
-	background: white; 
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-	border-radius: 10px; 
+	width: 520px;
+	height: 150px;
+	margin-top: 10px;
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
 	border: 1px solid #7FDCBE;
 	resize: none;
 }
 
 /* join - 성별 버튼 디자인 */
 .select input[type=radio] {
-    display: none;
+	display: none;
 }
 
 .select input[type=radio]+label {
-    display: inline-block;
-    cursor: pointer;
-    height: 50px;
-    width: 60px;
-    margin: 0;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-    border-radius: 10px;
-    border: 1px solid #7FDCBE;
-    line-height: 50px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 13px;
+	display: inline-block;
+	cursor: pointer;
+	height: 50px;
+	width: 60px;
+	margin: 0;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	border: 1px solid #7FDCBE;
+	line-height: 50px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 13px;
 }
 
 .select input[id=select]+label {
@@ -205,32 +225,33 @@
 }
 
 .select input[type=radio]+label {
-    background-color: #fff;
-    color: #333;
+	background-color: #fff;
+	color: #333;
 }
+
 .select input[type=radio]:checked+label {
-    background-color: #518E7B;
-    border: 1px solid #518E7B;
-    color: #fff;
+	background-color: #518E7B;
+	border: 1px solid #518E7B;
+	color: #fff;
 }
 
 /* register - (헬스, 등산, 러닝) 종목 버튼 디자인 */
 .main-select input[type=radio] {
-    display: none;
+	display: none;
 }
 
 .main-select input[type=radio]+label {
-    display: inline-block;
-    cursor: pointer;
-    height: 45px;
-    width: 116px; 
-    margin: 8px;
-    border-radius: 100px;
-    border: 0px solid #7FDCBE;
-    line-height: 45px;
-    text-align: center;
-    font-family: 'Noto Sans', sans-serif; 
-    font-size: 18px;
+	display: inline-block;
+	cursor: pointer;
+	height: 45px;
+	width: 116px;
+	margin: 8px;
+	border-radius: 100px;
+	border: 0px solid #7FDCBE;
+	line-height: 45px;
+	text-align: center;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 18px;
 }
 
 .main-select input[id=select]+label {
@@ -238,13 +259,14 @@
 }
 
 .main-select input[type=radio]+label {
-    background-color: #7FDCBE;
-    color: white;
+	background-color: #7FDCBE;
+	color: white;
 }
+
 .main-select input[type=radio]:checked+label {
-    background-color: #518E7B;
-    border: 0px solid #518E7B;
-    color: white;
+	background-color: #518E7B;
+	border: 0px solid #518E7B;
+	color: white;
 }
 
 /* register - (헬스, 등산, 러닝) 종목 버튼 디자인 하버 */
@@ -261,40 +283,37 @@
 	display: block;
 	text-align: right;
 	width: 520px;
-    margin-right: 300px;
-    margin-top: 3px;
+	margin-right: 300px;
+	margin-top: 3px;
 }
 
 #error {
-    width: 520px;
-    height:20px;
-    background: white;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-    border-radius: 10px;
-    border: 1px solid white; /* 테두리 색상을 흰색으로 설정 */
-    font-size: 15px;
-    margin: 0px;
-    
+	width: 520px;
+	height: 20px;
+	background: white;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+	border-radius: 10px;
+	border: 1px solid white; /* 테두리 색상을 흰색으로 설정 */
+	font-size: 15px;
+	margin: 0px;
 }
+
 .input-style input[class="error"]::placeholder {
-    color: red; /* 플레이스홀더의 색상을 빨간색으로 설정 */
+	color: red; /* 플레이스홀더의 색상을 빨간색으로 설정 */
 }
 
 #error:focus {
-	outline:none;
+	outline: none;
 }
 
 /* login - 자동로그인, 아이디/비밀번호 찾기 버튼 디자인 */
 .cover {
-    display: flex;
-    justify-content: space-evenly;
-    width: 970px;
-  }
-
+	display: flex;
+	justify-content: space-evenly;
+	width: 970px;
+}
 
 /* ------------findId ------------*/
-
-
 #name2 {
 	background: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -302,7 +321,7 @@
 	border: 1px solid #7FDCBE;
 	text-align: center;
 	font-family: sans-serif;
-    font-color: #727272;
+	font-color: #727272;
 	font-size: 20px;
 	font-weight: 0;
 	outline: none;
@@ -318,7 +337,7 @@
 
 .form-group2 {
 	width: 520px;
-	padding: 30px 0 30px 0 ;
+	padding: 30px 0 30px 0;
 	position: relative;
 }
 
@@ -329,7 +348,7 @@
 	border: 1px solid #7FDCBE;
 	text-align: center;
 	font-family: sans-serif;
-    font-color: #727272;
+	font-color: #727272;
 	font-size: 20px;
 	font-weight: 0;
 	outline: none;
@@ -355,4 +374,3 @@
 #id-find:hover {
 	background: #518E7B;
 }
-
