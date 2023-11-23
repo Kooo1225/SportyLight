@@ -66,7 +66,7 @@
 	<nav id="container3-fluid" style="padding: 0px;"
 		class="navbar navbar-expand-sm navbar-light bg-light">
 		
-		<div class="sidebar" style="height: 100%;">
+		<div class="sidebar">
 			
 
 			<div class="sidebar-board">
@@ -91,7 +91,7 @@
 							
 								<div class="board-info-wrapper" style="width: 100%;">
 								
-									<span class="board-title"><a href="/board/detail?gatheringId=${gather.gatheringId}">${gather.title}</a></span> 
+									<span class="board-title"><a href="#" onclick="setCenter()">${gather.title}</a></span> 
 									<span class="board-category">${gather.type}</span> 
 									
 									<br>
@@ -113,16 +113,11 @@
 		</div>
 		<!-------------------Kakao Maps--------------------->
 		<div class="col-sm-12" id="map" style="left: 425px; width: calc(100vw - 425px); height: 100%; position: absolute;"></div>
-	
-		</nav>
-		
+	</nav>
 </div>
 
 
 </body>
-
-
-
 
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services"></script>
 <script>
@@ -131,12 +126,12 @@
 		center : new kakao.maps.LatLng(33.450701, 126.570667),
 		level : 3
 	};
+	
 	var map = new kakao.maps.Map(container, options);
 	
 	/* -------------사용자 현재위치로 이동---------------- */	
 	if (navigator.geolocation) {
 	    navigator.geolocation.getCurrentPosition(function(position) {
-	        
 	        var lat = position.coords.latitude,
 	            lon = position.coords.longitude; 
 	        var position = new kakao.maps.LatLng(lat, lon); 
@@ -145,9 +140,7 @@
 	      });
 	    
 	} else { 
-		
 	    var position = new kakao.maps.LatLng(33.450701, 126.570667);    
-	    
 	    displayPosition(position);
 	}
 
@@ -169,17 +162,11 @@
             },
         </c:forEach>
     ];
-	var imageHealthSrc = "/resources/images/home/health.png", // 마커이미지 주소
-		imageSportsSrc = "/resources/images/home/sports.png",
-		imageHikingSrc = "/resources/images/home/hiking.png",
-		imageRunSrc = "/resources/images/home/run.png",
-	    imageSize = new kakao.maps.Size(64, 69), // 마커이미지 크기
+	var imageSrc = "/resources/images/home/placeholder.png", // 마커이미지 주소
+	    imageSize = new kakao.maps.Size(44, 46), // 마커이미지 크기
 	    imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지 옵션
 	    
-	var markerHealthImage = new kakao.maps.MarkerImage(imageHealthSrc, imageSize, imageOption);
-	var markerSportsImage = new kakao.maps.MarkerImage(imageSportsSrc, imageSize, imageOption);
-	var markerHikingImage = new kakao.maps.MarkerImage(imageHikingSrc, imageSize, imageOption);
-	var markerRunImage = new kakao.maps.MarkerImage(imageRunSrc, imageSize, imageOption);
+	var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 	
 /* -----------------주소를 좌표로 변환하여 마커를 생성하는 함수---------------- */
     function createMarker(position) {
@@ -188,18 +175,6 @@
         geocoder.addressSearch(position.address, function(result, status) {
             if (status == kakao.maps.services.Status.OK) {
             	
-            	var markerImage;
-
-                if (position.type == '헬스') {
-                    markerImage = markerHealthImage;
-                } else if (position.type == '스포츠') {
-                    markerImage = markerSportsImage;
-                } else if (position.type == '등산') {
-                    markerImage = markerHikingImage;
-                } else {
-                	markerImage = markerRunImage;
-                }
-                
             	var marker = new kakao.maps.Marker({
                     position: new kakao.maps.LatLng(result[0].y, result[0].x),
 					image: markerImage
@@ -207,6 +182,17 @@
             	
             	marker.setMap(map);
             	
+            	var contentsImage;
+            	
+            	if (position.type == '헬스') {
+            		contentsImage = "/resources/images/home/health.png"	
+            	} else if (position.type == '스포츠') {
+            		contentsImage = "/resources/images/home/sports.png"
+            	} else if(position.type == '등산') {
+            		contentsImage = "/resources/images/home/hiking.png"
+            	} else 
+            		contentsImage = "/resources/images/home/run.png"
+            		
             	var contents = document.createElement('div');
             	contents.innerHTML = 
             	'<div class="wrap">' +
@@ -216,7 +202,7 @@
 	            	'		</div>' +
 	            	'		<div class="body">' +
 	            	'			<div class="img">' +
-            	  	'                <img src="/resources/images/home/cat.jpeg" width="73" height="70">' +
+            	  	'                <img src="' + contentsImage + '" width="70" height="70">' +
 	                '           </div>' + 
 	                '            <div class="content">' + 
 	                '                <div class="addr">' + position.address + '</div>' + 
@@ -242,7 +228,12 @@
                 
                 $(contents).find('.close').on('click', function() {
                 	customOverlay.setMap(null);
-                }); 
+                });
+                
+                function setCenter() {
+            		var moveLatLon = new kakao.maps.LatLng(result[0].y, result[0].x);
+            		map.setCenter(moveLatLon);
+            	}
             }
         });
     }
@@ -254,6 +245,7 @@
     function closeCustomOverlay() {
     	customOverlay.setMap(null);
     };
+    
 </script>
 
 
