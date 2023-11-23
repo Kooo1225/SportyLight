@@ -12,9 +12,7 @@
 				class="fa-solid fa-quote-right"></i></b>
 		</h5>
 	</div> 
-	
-	
- <div class="testbox mx-auto">
+
 	
 	<div class="place">
 		<i class="fa-solid fa-map-location-dot icon" style="color: #7FDCBE"></i> 
@@ -31,7 +29,7 @@
 		<fmt:formatDate pattern="yyyy년 MM월 dd일(EE) HH시 mm분"
 			value="${parsedDateTime}" />
 	</div>
-	</div>
+
 	<div class="form-group mx-auto" id="map"
 		style="width: 400px; height: 300px; background: gray; border-radius: 30px"></div>
 	

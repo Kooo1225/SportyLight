@@ -1,0 +1,80 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap')
+	;
+
+.jumbotron {
+	padding-top: 20px;
+}
+
+/* 전체 틀 */
+.panel {
+	border: 1px solid #7FDCBE;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 30px;
+	width: 550px;
+}
+
+/* Gathering */
+h1 {
+	margin-top: 10px;
+}
+
+/* 제목 */
+.title {
+	margin-top: 15px;
+	padding-top: 10px;
+	font-family: Noto Sans;
+}
+/* 장소  */
+.place {
+	margin-bottom: 3px;
+
+	
+}
+/*  인원  */
+.gathermember{
+	margin-bottom: 3px;
+}
+/* 날짜 */
+.meetingtime{
+	margin-bottom: 10px;
+	
+}
+/* 내용 */
+.description {
+	/* background: #eafff8; */
+	width: 400px;
+	height: 150px;
+	border-radius: 30px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	padding : 10px 30px 10px 30px;
+}
+
+.testbox {
+	/* background: #eafff8; */
+	width: 400px;
+	border-radius: 30px;
+	margin-bottom: 17px;
+	
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    margin: 20px 20px;
+    color: white;
+    background: #7FDCBE;
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 0px solid #7FDCBE;
+}
+
+.btn:hover, .btm:active, button:focus {
+   background: #17a2b8;
+   color: white;
+   outline: none;
+    box-shadow: none;
+}
