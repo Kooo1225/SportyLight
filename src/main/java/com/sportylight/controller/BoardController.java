@@ -1,5 +1,7 @@
 package com.sportylight.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,11 +25,15 @@ public class BoardController {
 	@Autowired
 	private GatherService service;
 	
-	@GetMapping("/list")
-	public void mylist(Model model) { /* , @RequestParam("membersId") int membersId */
-		int membersId = 23;
-		log.info("list");
-		model.addAttribute("list", service.getMyList(membersId));
+	@GetMapping("/mylist")
+	public void mylist(int membersId, Model model) {
+		log.info("mylist");
+		
+		List<GatherVO> result = service.getMyList(membersId);
+		model.addAttribute("membersId", membersId);
+		
+		
+		model.addAttribute("mylist", result);
 	}
 	
 	@GetMapping("/register")
