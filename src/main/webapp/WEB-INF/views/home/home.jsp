@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/resources/css/layouts/main.css" />
 <link rel="stylesheet" href="/resources/css/home/sidebar.css">
 
-<nav id="container2" class="navbar navbar-expand-sm navbar-light bg-light">
+<nav id="container2" class="navbar navbar-expand-sm navbar-light bg-white">
 	<div class="collapse navbar-collapse" id="secondmenu">
 
 		<!-- 검색창 -->
@@ -64,7 +64,7 @@
 <!-- 사이드바 -->
 <div class="row-fluid">
 	<nav id="container3-fluid" style="padding: 0px;"
-		class="navbar navbar-expand-sm navbar-light bg-light">
+		class="navbar navbar-expand-sm navbar-light bg-white">
 		
 		<div class="sidebar" style="height: 100%;">
 			
