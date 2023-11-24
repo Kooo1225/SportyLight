@@ -3,11 +3,11 @@
 	;
 
 #container {
-	border-bottom: 0.3px solid rgba(0, 0, 0, 0.30);
+	border-bottom: 0.3px solid #D9D9D9;
 }
 
 #container2 {
-	border-bottom: 0.3px solid rgba(0, 0, 0, 0.30);
+	border-bottom: 0.3px solid #D9D9D9;
 	padding: 15px;
 }
 
@@ -19,8 +19,8 @@
 }
 
 .home-avatar {
-	width: 55px;
-	height: 55px;
+	width: 48px;
+	height: 48px;
 	border-radius: 50%;
 }
 
@@ -36,6 +36,15 @@
 	font-size: 23px;
 	font-weight: 400;
 	text-decoration: none;
+}
+
+#login-nickname {
+	color: #7fdcbe;
+	font-family: Noto Sans;
+	font-size: 18px;
+	font-weight: 400;
+	text-decoration: none;
+ 
 }
 
 #menu1:active, #menu1:hover, #menu2:active, #menu2:hover, #menu3:active,
@@ -87,7 +96,7 @@
 }
 
 #ct1:active, #ct1:hover, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
-	#ct4:active, #ct4:hover, #join:active, #join:hover, #logout:active, #logout:active {
+	#ct4:active, #ct4:hover, #join:active, #join:hover, #logout:active, #logout:hover {
 	background: #518e7b;
 	color: #fff;
 }
@@ -119,3 +128,38 @@ button {
 	outline: none;
 	margin-top: 10px;
 }
+
+/* home.jsp 마커 overlay css */
+ .wrap {position: absolute;left: 0;bottom: 70px;width: 288px;height: 132px;margin-left: -149px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Noto Sans";line-height: 1.5;}
+ .wrap * {padding: 0;margin: 0;}
+ .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+ .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+ .info .title {padding: 5px 0 30px 10px;height: 30px;background: #518e7b;border-bottom: 1px solid #518e7b;font-size: 18px;font-weight: bold;}
+ .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+ .info .close:hover {cursor: pointer;}
+ .info .body {position: relative;overflow: hidden;}
+ .info .content {position: relative;margin: 13px 0 0 90px;height: 75px;}
+ .desc .addr {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+ .desc .type {font-size: 11px;color: #888;margin-top: -2px;}
+ .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+ .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+ .info .link {color: #5085BB;}
+ /*---------------------------------------------------------------------------  */
+
+/* home.jsp 오른쪽 하단 register button */
+.register-button {
+	z-index:2;
+	position:absolute;
+	right: 60px; 
+	bottom: 250px;
+}
+
+.register-button i {
+	color: #7fdcbe;
+}
+
+.register-button i:hover {
+	color: #518e7b;
+}
+
+ 

@@ -42,13 +42,12 @@
 
 </head>
 
-<body>
+<body style="overflow-y: hidden">
 
 	<!-- 로고 -->
-	<nav id="container"
-		class="navbar navbar-expand-sm navbar-light bg-light">
-		<a id="logo" class="navbar-brand" href="/"> <img
-			src="/resources/images/layouts/logo.png">
+	<nav id="container" class="navbar navbar-expand-sm navbar-light bg-white">
+		<a id="logo" class="navbar-brand" href="/"> 
+			<img src="/resources/images/layouts/logo.png">
 		</a>
 
 
@@ -76,22 +75,32 @@
 
 		<!-- 로그인 및 회원가입 버튼 -->
 		<sec:authorize access="isAnonymous()">
-			<div class="ml-auto">
-				<a id="login" href="/security/login" class="btn btn-link">로그인</a> <a
-					id="join" href="/security/join" class="btn btn-link">회원가입</a>
-			</div>
+      <div class="ml-auto">
+        <a id="login" href="/security/login" class="btn btn-link">로그인</a> 
+        <a id="join" href="/security/join" class="btn btn-link">회원가입</a>
+      </div>
 		</sec:authorize>
 
 		<sec:authorize access="isAuthenticated()">
-			<div class="ml-auto">
-				<sec:authentication property="principal.username" var="nickname" />
-				<sec:authentication property="principal.member.membersId"
-					var="membersId" />
-				<a href="/mypage?membersId=${member.membersId }"> <img
-					src="/resources/images/home/cat.jpeg" class="home-avatar" />
-					${nickname }님 ${membersId } 번
-				</a> <a id="logout" href="/security/logout" class="btn btn-link">로그아웃</a>
-			</div>
+      <div class="ml-auto">
+        <sec:authentication property="principal.member.nickname" var="nickname" />
+          <a id="login-nickname" href="/mypage?membersId=${member.membersId }">
+            <img src="/resources/images/home/cat.jpeg" class="home-avatar" style="margin-right:4px;" />${nickname}님</a>
+          <a id="logout" href="/security/logout" class="btn btn-link">로그아웃</a>
+      </div>
 		</sec:authorize>
-
 	</nav>
+	
+	<!-- 로그아웃 처리 -->
+	<form id="logoutForm" action="/security/logout" method="post">
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+	</form>
+
+	<script>
+	$(document).ready(function() {
+		$('#logout').click(function(e) {
+			e.preventDefault();
+			$('#logoutForm').submit();
+		});
+	});
+	</script>

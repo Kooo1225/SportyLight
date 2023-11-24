@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sportylight.mapper.ChattingMapper">
+
+	<resultMap id="chattingMap" type="com.sportylight.domain.MessageVO">
+		<id property="chattingId" column="chatting_id" />
+		<result property="chattingId" column="chatting_id"/>
+		<result property="gatheringId" column="gathering_id" />
+		<result property="membersId" column="members_id" />
+		<result property="message" column="chatting_message" />
+		<result property="sendDate" column="chatting_date" />
+		<result property="userName" column="members_nickname" />
+		<result property="headCount" column="members_avatar_path" />
+	</resultMap>
+
+	<select id="beforeChatRead" resultMap="chattingMap">
+		select c.chatting_id, c.gathering_id, c.chatting_message, c.chatting_date, m.members_nickname, m.members_avatar_path
+		from chatting c left join members m on c.members_id = m.members_id
+		where c.gathering_id = #{gatheringId};
+	</select>
+	
+</mapper>
