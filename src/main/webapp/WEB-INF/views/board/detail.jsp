@@ -99,6 +99,13 @@ p > i {
 				    	${gather.description }</p>
 				</div>
 			</div>
+			
+			<div class="d-flex justify-content-between">
+			    <div class="">홈으로</div>
+			    <div class="p-2">신청</div>
+			    <div class="p-2">채팅</div>
+			</div>
+			
 		</div>
 	</div>
 </html>

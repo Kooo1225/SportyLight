@@ -62,12 +62,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().ignoringAntMatchers("/api/**");
 		
 		http.authorizeRequests()
+			.antMatchers("/security/profile").authenticated() 
+			.antMatchers("/security/findId").permitAll()
 			.antMatchers("/board/register",
 						 "/board/detail",
 						 "/board/mylist",
 						 "/mypage",
-						 "/mypage/mypageupdate",
-						 "/mypage/withdrawl").authenticated();
+						 "/mypage/update",
+						 "/mypage/withdrawal").authenticated();
 
 		
 		http.formLogin()
@@ -95,13 +97,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		repo.setDataSource(dataSource);
 		
 		return repo;
-	}
-	
-	@Bean
-	public RememberMeServices rememberMeServices(CustomUserDetailsService customUserDetailService) {
-	    PersistentTokenBasedRememberMeServices services =
-	        new PersistentTokenBasedRememberMeServices("myKey", customUserDetailService, persistentTokenRepository());
-	    services.setParameter("remember-me");  // HTML form field name
-	    return services;
 	}
 }
