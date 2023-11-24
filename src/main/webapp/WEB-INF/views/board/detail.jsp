@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../layouts/detailHeader.jsp"%>
-<link rel="stylesheet" href="/resources/css/board/board.css" />
+<link rel="stylesheet" href="/resources/css/board/detail.css" />
 
 
 

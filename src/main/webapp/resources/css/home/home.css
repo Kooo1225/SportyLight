@@ -2,13 +2,9 @@
 	url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap")
 	;
 
+/* 홈헤더 */
 #container {
 	border-bottom: 0.3px solid #D9D9D9;
-}
-
-#container2 {
-	border-bottom: 0.3px solid #D9D9D9;
-	padding: 15px;
 }
 
 /*--------------------------------*/
@@ -23,8 +19,7 @@
 	height: 48px;
 	border-radius: 50%;
 }
-
-/*--------------------------------*/
+/*-----------두번째 카테고리---------------*/
 #menu1, #menu2, #menu3 {
 	margin-left: 30px;
 	margin-top: 5px;
@@ -59,21 +54,8 @@
 	}
 }
 
-/*--------------------------------*/
-#join, #logout {
-	margin-right: 20px;
-	margin-left: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
-}
 
-@media screen and (max-width: 660px) {
-	#login, #join, #logout {
-		display: none;
-	}
-}
-
-/*--------------------------------*/
+/*-----------첫번째 카테고리---------------*/
 #ct1, #ct2, #ct3, #ct4, #join, #logout {
 	font-family: "Noto Sans";
 	font-size: 23px;
@@ -106,7 +88,27 @@
 		display: none;
 	}
 }
+/*--------------------------------*/
+#join, #logout {
+	margin-right: 20px;
+	margin-left: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
 
+@media screen and (max-width: 660px) {
+	#login, #join, #logout {
+		display: none;
+	}
+}
+
+/* 세컨 메뉴 */
+#container2 {
+	border-bottom: 0.3px solid #D9D9D9;
+	padding: 15px;
+}
+
+/* 검색창 */
 input {
 	border-radius: 10px;
 	border: 2px solid #7fdcbe;
@@ -129,24 +131,138 @@ button {
 	margin-top: 10px;
 }
 
-/* home.jsp 마커 overlay css */
- .wrap {position: absolute;left: 0;bottom: 70px;width: 288px;height: 132px;margin-left: -149px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Noto Sans";line-height: 1.5;}
- .wrap * {padding: 0;margin: 0;}
- .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
- .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
- .info .title {padding: 5px 0 30px 10px;height: 30px;background: #518e7b;border-bottom: 1px solid #518e7b;font-size: 18px;font-weight: bold;}
- .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
- .info .close:hover {cursor: pointer;}
- .info .body {position: relative;overflow: hidden;}
- .info .content {position: relative;margin: 13px 0 0 90px;height: 75px;}
- .desc .addr {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
- .desc .type {font-size: 11px;color: #888;margin-top: -2px;}
- .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
- .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
- .info .link {color: #5085BB;}
- /*---------------------------------------------------------------------------  */
+/* 사이드바 */
 
-/* home.jsp 오른쪽 하단 register button */
+.sidebar-info-title {
+	color: #000;
+	font-family: Noto Sans;
+	font-size: 25px;
+	font-weight: 400;
+	padding: 15px 25px 2px 25px;
+}
+
+.text-total {
+	padding: 0px 10px 20px 23px;
+	border-bottom: 0.3px solid rgba(0, 0, 0, 0.30);
+	margin-top: 10px;
+}
+
+#detail {
+	padding: 30px 0px 0px 0px;
+}
+/* 사진 */
+#set1 {
+	border-bottom: 0.3px solid #D9D9D9;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#set1:hover {
+	background: #dadada;
+	cursor: pointer;
+}
+.board-avatar {
+	width: 89px;
+	height: 89px;
+	margin: 25px 27px 27px 23px;
+	border-radius: 30px;
+}
+
+/* 내용 */
+
+.txt-total {
+	color: #7FDCBE;
+	font-family: Noto Sans;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.sidebar {
+	padding: 0px;
+	border-right: 0.3px solid rgba(0, 0, 0, 0.30);
+	width: 425px;
+	position: relative;
+	height: 100vh;
+}
+
+.sidebar-board {
+	padding: 15px 0px 15px 0px;
+	border-bottom: 0.3px solid #D9D9D9;
+}
+
+.board-txt {
+	color: #000;
+	font-family: Noto Sans;
+	font-size: 22px;
+	padding: 20px 5px 0px 25px;
+	font-weight: 400;
+}
+
+.board-total {
+	color: #787878;
+	font-family: Noto Sans;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.board-title {
+	color: #000;
+	font-family: Noto Sans;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+.board-category {
+	color: #787878;
+	font-family: Noto Sans;
+	font-size: 16px;
+	font-weight: 400;
+	margin: 0 0 0 6px;
+}
+
+.board-info {
+	display: inline-block;
+	color: #787878;
+	font-family: Noto Sans;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 0 0 5px 0;
+}
+
+/* 사이드바 스크롤바 */
+.scroll-container {
+	max-height: 80vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	margin-left: 0;
+}
+
+.scroll-container::-webkit-scrollbar {
+	width: 15px;
+	background: #EEE;
+	left: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+	background: #C2C2C2;
+}
+.col-sm-12 {
+	padding-right: 0 !important; /* 중요도 설정 */
+	padding-left: 0 !important;
+}
+
+.col-4 {
+	padding-left: 0 !important;
+}
+
+
+/* 오른쪽 하단 register button */
+
 .register-button {
 	z-index:2;
 	position:absolute;
@@ -162,4 +278,27 @@ button {
 	color: #518e7b;
 }
 
+/* home.jsp 마커 overlay css */
+ .wrap {position: absolute;left: 0;bottom: 70px;width: 288px;height: 132px;margin-left: -149px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Noto Sans";line-height: 1.5;}
+ .wrap * {padding: 0;margin: 0;}
+ .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+ .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+ .info .title {padding: 5px 0 30px 10px;height: 30px;background: #518e7b;border-bottom: 1px solid #518e7b;font-size: 18px;font-weight: bold;}
+ .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+ .info .close:hover {cursor: pointer;}
+ .info .body {position: relative;overflow: hidden;}
+ .info .content {position: relative;margin: 13px 0 0 90px;height: 75px;}
+ .desc .addr {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+ .desc .type {font-size: 11px;color: #888;margin-top: -2px;}
+ .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+ .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+ .info .link {color: #5085BB;}
+
  
+
+
+
+
+
+
+
