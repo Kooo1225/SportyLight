@@ -130,7 +130,7 @@ button {
 }
 
 /* home.jsp 마커 overlay css */
- .wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
+ .wrap {position: absolute;left: 0;bottom: 70px;width: 288px;height: 132px;margin-left: -149px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Noto Sans";line-height: 1.5;}
  .wrap * {padding: 0;margin: 0;}
  .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
  .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
@@ -145,4 +145,21 @@ button {
  .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
  .info .link {color: #5085BB;}
  /*---------------------------------------------------------------------------  */
+
+/* home.jsp 오른쪽 하단 register button */
+.register-button {
+	z-index:2;
+	position:absolute;
+	right: 60px; 
+	bottom: 250px;
+}
+
+.register-button i {
+	color: #7fdcbe;
+}
+
+.register-button i:hover {
+	color: #518e7b;
+}
+
  
