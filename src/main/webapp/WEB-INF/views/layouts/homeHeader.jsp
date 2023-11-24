@@ -45,10 +45,9 @@
 <body style="overflow-y: hidden">
 
 	<!-- 로고 -->
-	<nav id="container"
-		class="navbar navbar-expand-sm navbar-light bg-light">
-		<a id="logo" class="navbar-brand" href="/"> <img
-			src="/resources/images/layouts/logo.png">
+	<nav id="container" class="navbar navbar-expand-sm navbar-light bg-white">
+		<a id="logo" class="navbar-brand" href="/"> 
+			<img src="/resources/images/layouts/logo.png">
 		</a>
 
 

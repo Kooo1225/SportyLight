@@ -1,111 +1,134 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ include file="../layouts/detailHeader.jsp" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ include file="../layouts/detailHeader.jsp"%>
+<link rel="stylesheet" href="/resources/css/board/board.css" />
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap');
 
-.panel-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
 
-.panel-body > .form-group {
-    margin-bottom: 20px;
-    text-align: left; 
-}
 
-/* gatheringTitle margin */
-h5 { margin: 5px 0px 20px 0px;}
-
-/* gatheringAddress, Headcount, Datetime style */
-p { 
-	margin: 0px 0px 10px 0px; 
-	line-height: 120%; 
-}
-
-/* icon style */
-p > i {
-	color: #518e7b; 
-	margin-bottom:0;
-}
-
-</style>
-
-	<div class="panel panel-default">
-		<div class="panel-body" style="text-align: center; margin:100px">
-		<h1><i class="fa-solid fa-arrow-up-right-from-square" style="color: #7fdcbe;"></i> Gathering</h1>
-			<div class="form-group mx-auto">
-				<div style="width: 590px; height: 160px; border: 1px solid #f7f7f7; border-radius: 30px; background: #f7f7f7; padding: 10px;">
-				    <h5><b>${gather.title}</b></h5>
-				    
-				    <p><i class="fa-solid fa-map-location-dot icon"></i> ${gather.address }</p>
-				    <p><i class="fa-solid fa-user-group icon"></i> 모집인원 : ${gather.headCount}명</p>
-				    <p><i class="fa-solid fa-clock icon"></i>  
-				    		<fmt:parseDate value="${gather.dateTime}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
-							<fmt:formatDate pattern="yyyy년 MM월 dd일(EE) HH시 mm분" value="${parsedDateTime}" />
-				</div>
-			</div>
-			
-			<div class="form-group mx-auto" id="map" style="width:590px; height:400px; background:gray; border-radius: 30px"></div>
-			
-			<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services"></script>
-			<script>
-			// GeoCode
-			
-			let geocoder = new kakao.maps.services.Geocoder();
-			let address = '${gather.address}';
-			
-			geocoder.addressSearch(address, function(result, status) {
-				if(status == kakao.maps.services.Status.OK) {
-					var coords = new kakao.maps.LatLng(result[0].y, result[0].x); // 지도의 중심좌표와 마커의 위치
-					var marker = new kakao.maps.Marker({
-						map: map,
-						position: coords
-					});
-					map.setCenter(coords);
-				}
-			});
-			
-			let mapContainer = document.getElementById('map'); 
-		  	//  지도 제어 코딩
-		  	let mapOption= {
-				  center: new kakao.maps.LatLng(36.0132159,127.7586034), 
-				  level: 3 
-		  	};
-					  
-		  	let map = new kakao.maps.Map(mapContainer, mapOption); // 두번째 인자는 지도의 위치를 어디에 둘 것인지 설정
-		  	map.setDraggable(false);
-		  	
-		  	function setDraggable(draggable) {
-		  	    // 마우스 드래그로 지도 이동 가능여부를 설정합니다
-		  	    map.setDraggable(draggable);    
-		  	}
-		  	
-		  	var marker = new kakao.maps.Marker({
-		  		map: map,
-		  		position: new kakao.maps.LatLng(36.0132159,127.7586034)
-		  	});
-		  	marker.setMap(map);
-			
-			</script>
-			
-			<div class="form-group mx-auto">
-				<div style="width: 590px; height: 160px; border: 1px solid #f7f7f7; border-radius: 30px; background: #f7f7f7; padding: 10px;">
-				    <p><i class="fa-solid fa-quote-left icon"></i><br>
-				    	${gather.description }</p>
-				</div>
-			</div>
-			
-			<div class="d-flex justify-content-between">
-			    <div class="">홈으로</div>
-			    <div class="p-2">신청</div>
-			    <div class="p-2">채팅</div>
-			</div>
-			
+<div class="container-fluid" style="padding: 0;">
+	<div class="row">
+		<!---------------- 첫번째 상자---------------->
+		<div class="col-md-1" style="padding:0;">
+			<div id="container1">
+               <img src="/resources/images/detail/1example.png" id="firstimg">
+            </div>
 		</div>
+		<!---------------- 두번째 상자---------------->
+		<div class="col-md-3 text-center" style="padding:35px 50px 50px 50px;">
+			<div id="container2">
+               <img src="/resources/images/detail/24example.png" id="secondimg">
+            </div>
+            
+             <a href="/board/detail?gatheringId=${gather.gatheringId-1}"><i class="fa-solid fa-angles-left" 
+             style="position:absolute; right: -70px; top:300px;color:#7FDCBE;font-size: 35px; z-index: 2;"></i></a>
+		</div>
+		<!---------------- 세번째 상자---------------->
+		<div class="col-md-4 text-center" style="padding:0 100px; z-index: 1;">
+			<div id="container3">
+			
+			<div>
+					<h5 class="title">
+						<b><i class="fa-solid fa-quote-left"></i> ${gather.title} <i
+							class="fa-solid fa-quote-right"></i></b>
+					</h5>
+				</div>
+				<div class="place">
+					<i class="fa-solid fa-map-location-dot icon" style="color: #7FDCBE"></i>
+					&nbsp;${gather.address}
+				</div>
+				<div class="gathermember">
+					<i class="fa-solid fa-user-group icon" style="color: #7FDCBE"></i>
+					&nbsp;모집인원 :${gather.headCount}명
+				</div>
+				<div class="meetingtime">
+					<i class="fa-solid fa-clock icon"
+						style="color: #7FDCBE; margin-right: 5px;"></i>
+					<fmt:parseDate value="${gather.dateTime}"
+						pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+					<fmt:formatDate pattern="yyyy년 MM월 dd일(EE) HH시 mm분"
+						value="${parsedDateTime}" />
+				</div>
+				<div class="form-group mx-auto" id="map"
+					style="width: 400px; height: 300px; background: gray; border-radius: 30px;"></div>
+
+				<script
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services"></script>
+				<script>
+					// GeoCode
+					let geocoder = new kakao.maps.services.Geocoder();
+					let address = '${gather.address}';
+
+					geocoder.addressSearch(address, function(result, status) {
+						if (status == kakao.maps.services.Status.OK) {
+							var coords = new kakao.maps.LatLng(result[0].y,
+									result[0].x); // 지도의 중심좌표와 마커의 위치
+							var marker = new kakao.maps.Marker({
+								map : map,
+								position : coords
+							});
+							map.setCenter(coords);
+						}
+					});
+					let mapContainer = document.getElementById('map');
+					//  지도 제어 코딩
+					let mapOption = {
+						center : new kakao.maps.LatLng(36.0132159, 127.7586034),
+						level : 3
+					};
+					let map = new kakao.maps.Map(mapContainer, mapOption); // 두번째 인자는 지도의 위치를 어디에 둘 것인지 설정
+					map.setDraggable(false);
+					function setDraggable(draggable) {
+						// 마우스 드래그로 지도 이동 가능여부를 설정합니다
+						map.setDraggable(draggable);
+					}
+					var marker = new kakao.maps.Marker({
+						map : map,
+						position : new kakao.maps.LatLng(36.0132159,
+								127.7586034)
+					});
+					marker.setMap(map);
+				</script>
+				<div class="description mx-auto">${gather.description }</div>
+			
+			</div>
+             <a href="/board/detail?gatheringId=${gather.gatheringId+1}"><i class="fa-solid fa-angles-right" 
+             style="position:absolute; right: 40px; top:300px;color:#7FDCBE;font-size: 35px;"></i></a>
+		</div>
+		
+		<!---------------- 네번째 상자---------------->
+		<div class="col-md-3 text-center" style="padding:35px 50px 50px 50px;">
+			<div id="container4">
+               <img src="/resources/images/detail/24example.png" id="fourimg">
+            </div>
+		</div>
+		<!---------------- 다섯번째 상자---------------->
+		
+		<div class="col-md-1 text-right" style="padding:0;">
+			<div id="container5" >
+               <img src="/resources/images/detail/5example.png" id="fiveimg">
+            </div>
+		</div>
+
 	</div>
-</html>
+</div>
+</div>
+
+<div class="container" style="margin-top: 20px;">
+
+	<a href="/"><button type="button" class="btn">홈</button> </a>
+	<button type="button" class="btn">신청</button>
+	<button type="button" class="btn">채팅</button>
+</div>
+
+
+
+
+
+ 
+
+			 
+
+
+

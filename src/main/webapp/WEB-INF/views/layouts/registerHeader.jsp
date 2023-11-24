@@ -20,7 +20,7 @@
 
 <body>
 	<div class="container">
-		<header class="jumbotron mb-0 rounded-0">
+		<header class="jumbotron mb-0 rounded-0" style="padding-bottom:20px;">
 			<a href="/" style="text-decoration:none;"><h1>SportyLight</h1></a>
 			<p>Play Sports with others</p>
 		</header>
