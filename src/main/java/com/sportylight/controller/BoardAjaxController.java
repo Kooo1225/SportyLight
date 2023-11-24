@@ -24,4 +24,10 @@ public class BoardAjaxController {
 		return service.getMyList(membersId);
 	}
 	
+	@GetMapping("/mystate")
+	public List<GatherVO> MyStateList(@RequestParam int membersId) {
+
+		return service.getMyState(membersId);
+	}
+	
 }

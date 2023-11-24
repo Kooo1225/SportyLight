@@ -62,9 +62,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().ignoringAntMatchers("/api/**");
 		
 		http.authorizeRequests()
-			.antMatchers("/security/profile").authenticated() 
 			.antMatchers("/board/register",
 						 "/board/detail",
+						 "/board/mylist",
 						 "/mypage",
 						 "/mypage/mypageupdate",
 						 "/mypage/withdrawl").authenticated();

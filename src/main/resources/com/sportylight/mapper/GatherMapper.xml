@@ -13,6 +13,7 @@
 		<result property="headCount" column="gathering_headcount" />
 		<result property="address" column="gathering_address" />
 		<result property="type" column="gathering_type" />
+		<result property="state" column="gathering_state"/>
 	</resultMap>
 
 	<select id="get" resultMap="gatherMap">
@@ -29,6 +30,14 @@
 		select * 
 		from gathering 
 		where members_id = #{membersId}
+	</select>
+	
+	<select id="getMyState" resultMap="gatherMap">
+		select gm.*, g.gathering_title, g.gathering_datetime, g.gathering_description, g.gathering_headcount, 
+		g.gathering_address, g.gathering_type
+		from gathering_members gm left join gathering g  
+		on g.gathering_id = gm.gathering_id
+		where gm.members_id = #{membersId}
 	</select>
 	
 	<select id="getTypeList" resultMap="gatherMap">

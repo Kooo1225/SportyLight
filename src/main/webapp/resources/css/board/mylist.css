@@ -87,3 +87,22 @@ width: 226px;
 	word-wrap: break-word;
 	
 }
+
+.mylist-gather-wrapper {
+	width: 873px; 
+	height: 173px; 
+	margin: 10px 0 10px 0;
+}
+
+#btn1:active, #btn1:hover, #btn2:active, #btn2:hover, #btn3:active, #btn3:hover,
+	#join:active, #join:hover, #logout:active, #logout:active {
+	background: #518e7b;
+	color: #fff;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1055px) {
+	#ct1, #ct2, #ct3, #ct4 {
+		display: none;
+	}
+}

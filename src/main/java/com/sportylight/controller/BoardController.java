@@ -29,11 +29,25 @@ public class BoardController {
 	public void mylist(int membersId, Model model) {
 		log.info("mylist");
 		
-		List<GatherVO> result = service.getMyList(membersId);
+		List<GatherVO> mylist = service.getMyList(membersId);
+		
+		
 		model.addAttribute("membersId", membersId);
+		model.addAttribute("mylist", mylist);
 		
 		
-		model.addAttribute("mylist", result);
+	}
+	
+	@GetMapping("/mystate")
+	public void mystate(int membersId, Model model) {
+		log.info("mystate");
+		
+		
+		List<GatherVO> mystate = service.getMyState(membersId);
+		
+		model.addAttribute("membersId", membersId);
+		model.addAttribute("mystate", mystate);
+		
 	}
 	
 	@GetMapping("/register")

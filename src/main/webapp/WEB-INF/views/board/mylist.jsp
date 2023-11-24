@@ -19,41 +19,66 @@
 	</div>
 	
 	<script src="/resources/js/home/rest.js"></script>
+	<script src="/resources/js/home/boardAjax.js" ></script>
+	
 	<script>
 	const MYLIST_URL = "/api/board"
-			
+	const MYSTATE_URL = "/api/board"
 	$(document).ready(function(e) {
+		
+		$("#btn1").on("click", async function(e) {
+			$('.mylist-gather-container').empty();
+			const myState = await rest_get(MYSTATE_URL + "/mystate?membersId=" + ${membersId});
+			console.log(myState);
 			
+			let listEl;
+			
+			$.each(myState, function(index, item) {
+				listEl = $(MyStateTemplate(item));
+				$('.mylist-gather-container').append(listEl);
+ 			})	
+		})
+		
 		$("#btn2").on("click", async function(e) {
 			$('.mylist-gather-container').empty();
 			
 			const myList = await rest_get(MYLIST_URL + "/mylist?membersId=" + ${membersId});
 			console.log(myList);
+			
+			let listEl;
+			
+			$.each(myList, function(index, item) {
+				listEl = $(MyListTemplate(item));
+				$('.mylist-gather-container').append(listEl);
+ 			})	
 		})
+		
+		
 	})
 	</script>
 	
 	<div class="mylist-border mx-auto">
-		<div class="mylist-gather-container mx-auto"></div>
-		<c:forEach var="mylist" items="${mylist}">
-			<div class="mylist-gather-wrapper mx-auto"
-				style="width: 873px; height: 173px; margin: 10px 0 10px 0;">
-				<div class="mylist-gather-title">
-					<span class="mylist-gather-title-main">${mylist.title }</span> <span
-						class="mylist-gather-title-type">${mylist.type }</span>
+		<div class="mylist-gather-container mx-auto">
+			
+			<c:forEach var="mystate" items="${mystate}">
+				<div class="mylist-gather-wrapper mx-auto">
+					<div class="mylist-gather-title">
+						<span class="mylist-gather-title-main">${mystate.title }</span> <span
+							class="mylist-gather-title-type">${mystate.type }</span>
+					</div>
+					<div class="mylist-gather-dateTime">
+						${mystate.headCount}명 |
+						<fmt:parseDate value="${mystate.dateTime}"
+							pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+						<fmt:formatDate pattern="yyyy년 MM월 dd일(EE) HH시 mm분"
+							value="${parsedDateTime}" />
+					</div>
+					<div class="mylist-gather-description"> ${mtstate.description}</div>
 				</div>
-				<div class="mylist-gather-dateTime">
-					${mylist.headCount}명 |
-					<fmt:parseDate value="${mylist.dateTime}"
-						pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
-					<fmt:formatDate pattern="yyyy년 MM월 dd일(EE) HH시 mm분"
-						value="${parsedDateTime}" />
-				</div>
-				<div class="mylist-gather-description"> ${mylist.description}</div>
-			</div>
-		</c:forEach>
+			</c:forEach>
+			
+		</div>
 	</div>
-</div>
 
 
 </body>

@@ -48,7 +48,7 @@
 				<sec:authorize access="isAuthenticated()">
 				
 					<li class="nav-item">
-					<a id="menu2" class="nav-link" href="/board/mylist?membersId=${membersId}">목록 ${membersId}</a>
+					<a id="menu2" class="nav-link" href="/board/mylist?membersId=${membersId}">목록</a>
 					</li>
 				</sec:authorize>
 				<li class="nav-item"><a id="menu3" class="nav-link" href="/">대회</a></li>
@@ -70,7 +70,7 @@
 		
 				<a href="/mypage?membersId=${member.membersId }">
 				<img src="/resources/images/home/cat.jpeg" 
-						class="home-avatar" /> ${nickname }님 ${membersId }z번
+						class="home-avatar" /> ${nickname }님 ${membersId }번
 				</a>
 				<a id="logout" href="/security/logout" class="btn btn-link">로그아웃</a>
 		</div>
