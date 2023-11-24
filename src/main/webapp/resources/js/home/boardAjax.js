@@ -28,7 +28,7 @@ function MyListTemplate(mylist) {
 }
 
 function MyStateTemplate(mystate) {
-	let stateCount = Object.keys(myState).length;
+	let stateCount = mystate.length;
 	let localDateTime = mystate.dateTime;
 
 	// LocalDateTime에서 날짜 정보 추출
@@ -42,6 +42,17 @@ function MyStateTemplate(mystate) {
 	let date = new Date(year, month - 1, day, hour, minute, second);
 	
 	let formattedDate = `${year}년 ${month}월 ${day}일 ${hour}시${minute}분`;
+	
+	let state;
+	
+	if(`${mystate.state}` == 0) {
+	  state=`<div> 승인중.. </div>`;
+	}else if(`${mystate.state}` == 1) {
+	  state=`<div> 승인완료 </div>`;
+	}else if(`${mystate.state}` == -1) {
+	  state=`<div> 기각 </div>`;
+	}
+	
 	return `
 		<div class="mylist-gather-wrapper mx-auto">
 			<div class="mylist-gather-title">
@@ -52,7 +63,8 @@ function MyStateTemplate(mystate) {
 				${stateCount}명 | ${formattedDate}
 			</div>
 			<div class="mylist-gather-description"> ${mystate.description}</div>
-			<div> 현재상태 ${mystate.state} </div>
+			${state}
 		</div>
 	`;
+	
 }

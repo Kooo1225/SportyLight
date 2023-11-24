@@ -52,8 +52,7 @@
 				$('.mylist-gather-container').append(listEl);
  			})	
 		})
-		
-		
+		$("#btn1").trigger("click");
 	})
 	</script>
 	
@@ -73,12 +72,13 @@
 						<fmt:formatDate pattern="yyyy년 MM월 dd일(EE) HH시 mm분"
 							value="${parsedDateTime}" />
 					</div>
-					<div class="mylist-gather-description"> ${mtstate.description}</div>
+					<div class="mylist-gather-description"> ${mystate.description}</div>
 				</div>
 			</c:forEach>
 			
 		</div>
 	</div>
+</div>
 
 
 </body>

@@ -11,6 +11,7 @@
 
 <link rel="stylesheet" href="/resources/css/layouts/main.css" />
 <link rel="stylesheet" href="/resources/css/home/sidebar.css">
+<link rel="stylesheet" href="/resources/css/board/mylist.css">
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
