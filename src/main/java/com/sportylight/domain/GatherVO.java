@@ -20,4 +20,5 @@ public class GatherVO {
     private int headCount;
     private String address;
     private EnumVO type;
+    private int state;
 }

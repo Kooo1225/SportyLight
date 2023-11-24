@@ -29,6 +29,16 @@ public class GatherServiceImpl implements GatherService {
 	}
 	
 	@Override
+	public List<GatherVO> getMyList(int membersId) {
+		return mapper.getMyList(membersId);
+	}
+	
+	@Override
+	public List<GatherVO> getMyState(int membersId) {
+		return mapper.getMyState(membersId);
+	}
+	
+	@Override
 	public void register(GatherVO vo) {
 		mapper.insert(vo);
 	}

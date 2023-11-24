@@ -24,9 +24,16 @@ public class GatherMapperTest {
 	@Autowired
 	private GatherMapper mapper;
 	
+//	@Test
+//	public void test() {
+//		List<GatherVO> vo = mapper.getTypeList(EnumVO.등산);
+//		
+//		log.info(vo);
+//	}
+//	
 	@Test
-	public void test() {
-		List<GatherVO> vo = mapper.getTypeList(EnumVO.등산);
+	public void test2() {
+		List<GatherVO> vo = mapper.getMyState(23);
 		
 		log.info(vo);
 	}

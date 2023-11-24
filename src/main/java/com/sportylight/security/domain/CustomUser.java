@@ -2,13 +2,16 @@ package com.sportylight.security.domain;
 
 import java.util.Collection;
 
-import com.sportylight.domain.MemberVO;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
+import com.sportylight.domain.MemberVO;
+
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class CustomUser extends User {
 	private MemberVO member;
 
