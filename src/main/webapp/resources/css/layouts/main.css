@@ -146,5 +146,20 @@ button {
  .info .link {color: #5085BB;}
  /*---------------------------------------------------------------------------  */
 
+/* home.jsp 오른쪽 하단 register button */
+.register-button {
+	z-index:2;
+	position:absolute;
+	right: 60px; 
+	bottom: 250px;
+}
+
+.register-button i {
+	color: #7fdcbe;
+}
+
+.register-button i:hover {
+	color: #518e7b;
+}
 
  

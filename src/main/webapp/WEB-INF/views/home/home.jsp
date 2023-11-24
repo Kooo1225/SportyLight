@@ -65,19 +65,14 @@
 <div class="row-fluid">
 	<nav id="container3-fluid" style="padding: 0px;"
 		class="navbar navbar-expand-sm navbar-light bg-light">
-		
 		<div class="sidebar">
-			
-
 			<div class="sidebar-board">
 				<span class="board-txt">모임</span> 
 				<span class="board-total">${count} 건</span>
-				<span><a href="/board/register" class="board-register"><i class="fa-solid fa-arrow-up-right-from-square fa-sm"> 모임등록</i></a></span>
 			</div>
 			<!--------------프로필사진------------------>
 			<div class="col-sm-12" style="height: 100%;">
 				<div class="scroll-container" style="height: 100%;">
-				
 					<c:forEach var="gather" items="${GatherList}">
 						<div class="row" id="set1">
 							<div class="col-4">
@@ -90,36 +85,33 @@
 							<div class="col-8" id="detail">
 							
 								<div class="board-info-wrapper" style="width: 100%;">
-								
-									<span class="board-title"><a href="#" onclick="setCenter()">${gather.title}</a></span> 
+									<span class="board-title"><a href="#" onclick="setCenter('${gather.address}')">${gather.title}</a></span> 
 									<span class="board-category">${gather.type}</span> 
-									
 									<br>
-									
 									<span class="board-info">
 										인원 ${gather.headCount} 명 | <fmt:parseDate value="${gather.dateTime}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
 										<fmt:formatDate pattern="yyyy년 MM월 dd일 HH시 mm분" value="${parsedDateTime}" />
 									</span>
-									
+									<br>
+									<span class="board-info"><a href="/board/detail?gatheringId=${gather.gatheringId}">상세보기</a></span>
 								</div>
-								
 							</div>
-							
 						</div>
 					</c:forEach>
-					
 				</div>
 			</div>
 		</div>
 		<!-------------------Kakao Maps--------------------->
 		<div class="col-sm-12" id="map" style="left: 425px; width: calc(100vw - 425px); height: 100%; position: absolute;"></div>
+		<div class="register-button">
+			<a href="/board/register"><i class="fa-solid fa-circle-plus fa-beat fa-3x"></i></a>
+		</div>
 	</nav>
 </div>
 
-
 </body>
 
-<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services"></script>
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services,clusterer"></script>
 <script>
 	var container = document.getElementById('map');
 	var options = {
@@ -129,12 +121,25 @@
 	
 	var map = new kakao.maps.Map(container, options);
 	
+	/* title 클릭 시 해당 마커 중심좌표로 이동 */
+	function setCenter(address) {
+	    var geocoder = new kakao.maps.services.Geocoder();
+
+	    geocoder.addressSearch(address, function(result, status) {
+	        if (status === kakao.maps.services.Status.OK) {
+	            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+	            map.setLevel(3);
+	            map.setCenter(coords);
+	        }
+	    });
+	}
+	
 	/* -------------사용자 현재위치로 이동---------------- */	
 	if (navigator.geolocation) {
 	    navigator.geolocation.getCurrentPosition(function(position) {
-	        var lat = position.coords.latitude,
-	            lon = position.coords.longitude; 
-	        var position = new kakao.maps.LatLng(lat, lon); 
+	        var latitude = position.coords.latitude,
+	            longitude = position.coords.longitude; 
+	        var position = new kakao.maps.LatLng(latitude, longitude); 
 	        
 	        displayPosition(position);
 	      });
@@ -149,7 +154,6 @@
 	} 
 	
 /* --------------------GatherList별 마커 생성-------------------------- */	
-	let geocoder = new kakao.maps.services.Geocoder();
 
 	// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열
 	 var positions = [
@@ -169,6 +173,12 @@
 	var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 	
 /* -----------------주소를 좌표로 변환하여 마커를 생성하는 함수---------------- */
+	var clusterer = new kakao.maps.MarkerClusterer({
+		map: map,
+		averageCenter: true,
+		minLevel: 6
+	});
+	
     function createMarker(position) {
         var geocoder = new kakao.maps.services.Geocoder();
         
@@ -180,7 +190,7 @@
 					image: markerImage
             	});
             	
-            	marker.setMap(map);
+            	clusterer.addMarker(marker);
             	
             	var contentsImage;
             	
@@ -219,21 +229,24 @@
 				    content: contents,
 				    yAnchor: 2
 				});	
-                
 				customOverlay.setMap(null);
                 
                 kakao.maps.event.addListener(marker, 'click', function() {
                 	customOverlay.setMap(map);
+                	customOverlay.setRange(300);
                 }); 
                 
                 $(contents).find('.close').on('click', function() {
                 	customOverlay.setMap(null);
                 });
                 
-                function setCenter() {
-            		var moveLatLon = new kakao.maps.LatLng(result[0].y, result[0].x);
-            		map.setCenter(moveLatLon);
-            	}
+                kakao.maps.event.addListener(map, 'zoom_changed', function() {
+                	var level = map.getLevel();
+                	
+                	if(level >= 5) {
+                		customOverlay.setMap(null);
+                	}
+                });
             }
         });
     }
@@ -242,17 +255,4 @@
         createMarker(positions[i]);
     }
     
-    function closeCustomOverlay() {
-    	customOverlay.setMap(null);
-    };
-    
 </script>
-
-
-
-
-
-
-
-
-

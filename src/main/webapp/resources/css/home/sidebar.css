@@ -71,23 +71,6 @@
 	font-weight: 400;
 }
 
-.board-register {
-	font-family: Noto Sans;
-	font-size: 23px;
-	font-weight: 400;
-	color: #fff;
-	background: #7fdcbe;
-	border-radius: 10px;
-	text-decoration: none;
-	margin-left: 150px;
-	padding: 3px 10px 3px 10px;
-}
-.board-register:active, .board-register:hover {
-	background: #518e7b;
-	color: #fff;
-	text-decoration: none;
-}
-
 .board-title {
 	color: #000;
 	font-family: Noto Sans;
