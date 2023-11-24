@@ -12,11 +12,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MessageVO {
-	private int no;
-	private String memberId;
-	private int srNo;
-	private String chatContent;
+	private int chattingId;
+	private int gatheringId;
+	private int membersId;
+
+	private String message;
 	private Date sendDate;
 	
-	private String validYN;
+	private String userName;	
+	private String avatarPath;
 }
