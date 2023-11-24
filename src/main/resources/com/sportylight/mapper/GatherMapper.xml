@@ -38,6 +38,7 @@
 		from gathering_members gm left join gathering g  
 		on g.gathering_id = gm.gathering_id
 		where gm.members_id = #{membersId}
+		and gm.members_state in (-1, 0, 1)
 	</select>
 	
 	<select id="getTypeList" resultMap="gatherMap">
