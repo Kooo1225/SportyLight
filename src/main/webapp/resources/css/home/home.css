@@ -9,7 +9,7 @@
 
 /*--------------------------------*/
 #logo img {
-	max-width: 300px;
+	max-width: 200px;
 	height: auto;
 	margin: -15px 15px 8px 20px;
 }
@@ -28,8 +28,8 @@
 #menu1, #menu2, #menu3, #login, #join, #logout {
 	color: #7fdcbe;
 	font-family: Noto Sans;
-	font-size: 23px;
-	font-weight: 400;
+	font-size: 18px;
+	font-weight: 600;
 	text-decoration: none;
 }
 
@@ -58,23 +58,22 @@
 /*-----------첫번째 카테고리---------------*/
 #ct1, #ct2, #ct3, #ct4, #join, #logout {
 	font-family: "Noto Sans";
-	font-size: 23px;
+	font-size: 18px;
 	font-weight: 400;
 	color: #fff;
 	background: #7fdcbe;
-	border-radius: 100px
+	border-radius: 100px;
+	height: 38px;
 }
 
 #ct1, #ct3, #ct4 {
 	margin-left: 40px;
-	padding-left: 40px;
-	padding-right: 40px;
+	padding: 6px 30px 0 30px;
 }
 
 #ct2 {
 	margin-left: 40px;
-	padding-left: 32.5px;
-	padding-right: 32.5px;
+	padding: 6px 21px 6px 21px;
 }
 
 #ct1:active, #ct1:hover, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
@@ -105,7 +104,7 @@
 /* 세컨 메뉴 */
 #container2 {
 	border-bottom: 0.3px solid #D9D9D9;
-	padding: 15px;
+	padding: 12px 12px 12px 16px;s
 }
 
 /* 검색창 */
@@ -114,8 +113,8 @@ input {
 	border: 2px solid #7fdcbe;
 	background: #fff;
 	box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.25);
-	width: 380px;
-	height: 53px;
+	width: 300px;
+	height: 43px;
 	top: 122px;
 	left: 29px;
 	border-radius: 10px;
@@ -124,22 +123,21 @@ input {
 
 button {
 	position: absolute;
-	left: 330px;
 	border: 2px;
 	background-color: #fff;
 	outline: none;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 /* 사이드바 */
 
-.sidebar-info-title {
+/* .sidebar-info-title {
 	color: #000;
 	font-family: Noto Sans;
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: 400;
 	padding: 15px 25px 2px 25px;
-}
+} */
 
 .text-total {
 	padding: 0px 10px 20px 23px;
@@ -156,6 +154,7 @@ button {
 	width: 100%;
 	margin-left: 0;
 	margin-right: 0;
+	height: 140px;
 }
 
 #set1:hover {
@@ -163,10 +162,10 @@ button {
 	cursor: pointer;
 }
 .board-avatar {
-	width: 89px;
-	height: 89px;
-	margin: 25px 27px 27px 23px;
-	border-radius: 30px;
+    width: 83px;
+    height: 83px;
+    margin: 33px 27px 27px 17px;
+    border-radius: 30px;
 }
 
 /* 내용 */
@@ -185,7 +184,7 @@ button {
 .sidebar {
 	padding: 0px;
 	border-right: 0.3px solid rgba(0, 0, 0, 0.30);
-	width: 425px;
+	width: 380px;
 	position: relative;
 	height: 100vh;
 }
@@ -198,7 +197,7 @@ button {
 .board-txt {
 	color: #000;
 	font-family: Noto Sans;
-	font-size: 22px;
+	font-size: 18px;
 	padding: 20px 5px 0px 25px;
 	font-weight: 400;
 }
@@ -213,14 +212,14 @@ button {
 .board-title {
 	color: #000;
 	font-family: Noto Sans;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 400;
 }
 
 .board-category {
 	color: #787878;
 	font-family: Noto Sans;
-	font-size: 16px;
+	font-size: 12px;
 	font-weight: 400;
 	margin: 0 0 0 6px;
 }
@@ -229,7 +228,7 @@ button {
 	display: inline-block;
 	color: #787878;
 	font-family: Noto Sans;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 400;
 	padding: 0 0 5px 0;
 }

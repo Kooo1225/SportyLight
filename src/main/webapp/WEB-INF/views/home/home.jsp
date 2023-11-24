@@ -13,7 +13,7 @@
 		<!-- 검색창 -->
 		<div>
 			<input type="text">
-			<button>
+			<button style="left:260px;">
 				<svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
             		<circle cx="12" cy="12" r="11" fill="white" stroke="#7FDCBE" stroke-width="2" />
             		<line x1="20.7071" y1="20.2929" x2="28.7071" y2="28.2929" stroke="#7FDCBE" stroke-width="2" />
@@ -62,7 +62,7 @@
 
 <!-- 사이드바 -->
 <div class="row-fluid">
-	<nav id="container3-fluid" style="padding: 0px;" class="navbar navbar-expand-sm navbar-light bg-light">
+	<nav id="container3-fluid" style="padding: 0px;" class="navbar navbar-expand-sm navbar-light bg-white">
 		<div class="sidebar">
 			<div class="sidebar-board">
 				<span class="board-txt">모임</span> 
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 		<!-------------------Kakao Maps--------------------->
-		<div class="col-sm-12" id="map" style="left: 425px; width: calc(100vw - 425px); height: 100%; position: absolute;"></div>
+		<div class="col-sm-12" id="map" style="left: 380px; width: calc(100vw - 325px); height: 100%; position: absolute;"></div>
 		<div class="register-button">
 			<a href="/board/register"><i class="fa-solid fa-circle-plus fa-beat fa-3x"></i></a>
 		</div>
