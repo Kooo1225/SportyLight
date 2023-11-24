@@ -4,27 +4,30 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sportylight.domain.EnumVO;
 import com.sportylight.domain.GatherVO;
 import com.sportylight.service.GatherService;
 
 @RestController
-@RequestMapping("/api/home")
-public class HomeAjaxController {
+@RequestMapping("/api/board")
+public class BoardAjaxController {
 	
 	@Autowired
-	public GatherService service;
+	GatherService service;
 	
-	@GetMapping("/typelist")
-	public List<GatherVO> HikingList(@RequestParam String types) {
-		EnumVO type = EnumVO.valueOf(types);
-	
-		return service.getTypeList(type); //데이터를 반환해주어야 함 
+	@GetMapping("/mylist")
+	public List<GatherVO> MyUploadList(@RequestParam int membersId) {
+
+		return service.getMyList(membersId);
 	}
+	
+	@GetMapping("/mystate")
+	public List<GatherVO> MyStateList(@RequestParam int membersId) {
+
+		return service.getMyState(membersId);
+	}
+	
 }
