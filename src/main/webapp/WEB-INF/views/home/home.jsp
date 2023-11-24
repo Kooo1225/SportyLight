@@ -64,7 +64,7 @@
 <!-- 사이드바 -->
 <div class="row-fluid">
 	<nav id="container3-fluid" style="padding: 0px;"
-		class="navbar navbar-expand-sm navbar-light bg-light">
+		class="navbar navbar-expand-sm navbar-light bg-white">
 		
 		<div class="sidebar">
 			
