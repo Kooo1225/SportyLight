@@ -1,5 +1,7 @@
 package com.sportylight.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +24,31 @@ public class BoardController {
 	
 	@Autowired
 	private GatherService service;
+	
+	@GetMapping("/mylist")
+	public void mylist(int membersId, Model model) {
+		log.info("mylist");
+		
+		List<GatherVO> mylist = service.getMyList(membersId);
+		
+		
+		model.addAttribute("membersId", membersId);
+		model.addAttribute("mylist", mylist);
+		
+		
+	}
+	
+	@GetMapping("/mystate")
+	public void mystate(int membersId, Model model) {
+		log.info("mystate");
+		
+		
+		List<GatherVO> mystate = service.getMyState(membersId);
+		
+		model.addAttribute("membersId", membersId);
+		model.addAttribute("mystate", mystate);
+		
+	}
 	
 	@GetMapping("/register")
 	public void register() {

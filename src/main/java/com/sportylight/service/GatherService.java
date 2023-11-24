@@ -10,6 +10,10 @@ public interface GatherService {
 	
 	public List<GatherVO> getTypeList(EnumVO type);
 	
+	public List<GatherVO> getMyList(int membersId);
+	
+	public List<GatherVO> getMyState(int membersId);
+	
 	public void register(GatherVO vo); // gathering register를 위해 선언
 	 
 	public GatherVO get(int gatheringId); // gathering detail를 위해 선언
