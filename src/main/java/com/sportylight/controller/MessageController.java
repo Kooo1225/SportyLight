@@ -29,7 +29,8 @@ public class MessageController {
 	
 	@RequestMapping("/chat")
 	public String testChat(Model model) {
-		model.addAttribute("list", service.beforeChatRead(1));
+		System.out.println(service.beforeChatRead(31));
+		model.addAttribute("list", service.beforeChatRead(31));
 		
 		return "chat";
 	}
