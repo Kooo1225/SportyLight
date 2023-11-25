@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 
 <%@ include file="../layouts/registerHeader.jsp" %>
 
@@ -104,10 +105,11 @@ $(document).ready(function() {
 				<div class="form-group mx-auto">
 					<textarea class="register-text" name="description" placeholder=" 게시글에 대한 자세한 정보를 작성해주세요..."></textarea>
 				</div>
+				
+				<sec:authentication property="principal.member.membersId" var="membersId" />
+					<input type="hidden" name="membersId" value="${membersId }" />
 
-			<input type="hidden" name="membersId" value="1" />
-
-			<div class="form-group mx-auto submitButton" >
+				<div class="form-group mx-auto submitButton" >
 					<button type="submit" style="margin-top:10px;">REGISTER</button>
 				</div>
 			</form>

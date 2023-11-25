@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+
 <%@ include file="../layouts/detailHeader.jsp"%>
 <link rel="stylesheet" href="/resources/css/board/board.css" />
 
@@ -40,7 +42,7 @@
 				</div>
 				<div class="gathermember">
 					<i class="fa-solid fa-user-group icon" style="color: #7FDCBE"></i>
-					&nbsp;모집인원 :${gather.headCount}명
+					&nbsp;모집인원 : ${gather.headCount}명
 				</div>
 				<div class="meetingtime">
 					<i class="fa-solid fa-clock icon"
@@ -118,7 +120,14 @@
 <div class="container" style="margin-top: 20px;">
 
 	<a href="/"><button type="button" class="btn">홈</button> </a>
-	<button type="button" class="btn">신청</button>
+	
+	<sec:authentication property="principal.member.membersId" var="membersId" />
+		<c:if test="${membersId == gather.membersId }">
+			<button type="button" class="btn">관리</button>
+		</c:if>
+		<c:if test="${membersId != gather.membersId }">
+			<button type="button" class="btn">신청</button>
+		</c:if>
 	<button type="button" class="btn">채팅</button>
 </div>
 
