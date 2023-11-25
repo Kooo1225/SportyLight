@@ -21,6 +21,9 @@ public interface MemberService {
 	public MemberVO getMember(int membersId);
 
 	// 회원 정보 수정
+	void updateMp (int membersId, String avatarPath, String nickname);
+	
+	// 회원 비번 수정
 	void updatePassword(int membersId, String newPassword);
 
 	// 회원 탈퇴

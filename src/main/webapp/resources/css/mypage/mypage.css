@@ -56,6 +56,12 @@
 	border-radius: 50%;
 	margin: 35px 400px 0px 400px;
 }
+.profile2-fluid {
+	width: 192px;
+	height: 191px;
+	border-radius: 50%;
+	margin: 35px 400px 0px 400px;
+}
 
 #profile-image {
 	width: 100%;

@@ -48,17 +48,7 @@ public class MemberVO {
 	@NotNull(message = "사용자 성별은 필수항목입니다.")
 	private EnumVO gender;
 
-	private String newPassword;
-	private String newPassword2;
-
-	public EnumVO getGender() {
-		return gender;
-	}
-
-	public void setGender(EnumVO gender) {
-		this.gender = gender;
-	}
-
+	
 	private List<AuthVO> authList;
 
 	public Collection<SimpleGrantedAuthority> getAuthorities() {

@@ -68,6 +68,13 @@
 		
 		where members_id = #{membersId}
 	</update>
+	
+	<update id="updateMp">
+		update members
+		set members_avatar_path = #{avatarPath}, members_nickname = #{nickname}
+		
+		where members_id = #{membersId}
+	</update>
 
 	<delete id="delete">
 		DELETE FROM members WHERE members_id = #{membersId}

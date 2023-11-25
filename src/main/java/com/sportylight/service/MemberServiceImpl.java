@@ -75,10 +75,16 @@ public class MemberServiceImpl implements MemberService {
 
 	}
 
-	// 회원 정보 수정
+	// 회원 비번 수정
 	@Override
 	public void updatePassword(int membersId, String newPassword) {
 		mapper.updatePassword(membersId, newPassword);
+	}
+	
+	// 회원 정보 수정
+	@Override
+	public void updateMp(int membersId, String avatarPath, String nickname) {
+		mapper.updateMp(membersId, avatarPath, nickname);
 	}
 
 	// 회원 탈퇴
