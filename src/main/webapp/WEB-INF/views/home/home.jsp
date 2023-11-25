@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/resources/css/layouts/main.css" />
 <link rel="stylesheet" href="/resources/css/home/sidebar.css">
 
+
 <nav id="container2" class="navbar navbar-expand-sm navbar-light bg-white">
 	<div class="collapse navbar-collapse" id="secondmenu">
 
