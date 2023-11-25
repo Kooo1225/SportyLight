@@ -1,6 +1,29 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap')
 	;
+.container {
+	text-align: center;
+}
+
+/* header - jumbotron */
+.jumbotron {
+	background-color: white;
+	padding-bottom: 10px;
+}
+
+/* header - SportyLight 큰 로고 */
+.jumbotron h1 {
+	margin-bottom: 20px;
+	color: #7FDCBE;
+	font-size: 60px;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+/* header - SportyLight 밑 문장 */
+.jumbotron p {
+	color: #7FDCBE;
+	font-size: 20px;
+}
 
 .jumbotron {
 	padding-top: 20px;

@@ -4,8 +4,9 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ include file="../layouts/joinHeader.jsp"%>
 
+     <link rel="stylesheet" href="/resources/css/security/findId.css"/>
 
-<h1 class="page-header">FIND ID</h1>
+<h1 class="page2-header">FIND ID</h1>
 <br>
 
 <div class="mx-auto">

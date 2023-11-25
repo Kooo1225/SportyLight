@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@ include file="../layouts/joinHeader.jsp" %>
+<link rel="stylesheet" href="/resources/css/security/login.css"/>
 
 <h1 class="page-header"> WELCOME</h1><br>
 

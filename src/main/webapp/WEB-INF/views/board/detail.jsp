@@ -4,7 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 
 <%@ include file="../layouts/detailHeader.jsp"%>
-<link rel="stylesheet" href="/resources/css/board/board.css" />
+<link rel="stylesheet" href="/resources/css/board/detail.css" />
 
 
 

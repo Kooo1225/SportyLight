@@ -1,0 +1,196 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap')
+	;
+
+.container {
+	text-align: center;
+}
+
+/* header - jumbotron */
+.jumbotron {
+	background-color: white;
+	padding-bottom: 10px;
+}
+
+/* header - SportyLight 큰 로고 */
+.jumbotron h1 {
+	margin-bottom: 20px;
+	color: #7FDCBE;
+	font-size: 60px;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+/* header - SportyLight 밑 문장 */
+.jumbotron p {
+	color: #7FDCBE;
+	font-size: 20px;
+}
+
+input[type=file]::file-selector-button {
+	color: #5E5D5D;
+  width: 150px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid #7FDCBE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  text-align: left;
+}
+
+#file {
+	margin:0 235px 20px 0;
+	
+}
+
+/* join - 생년월일 */
+.input-style input:not([type="radio"]):not([type="file"]):not([type="checkbox"])
+	{
+	width: 520px;
+	height: 50px;
+	margin: 5px;
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	border: 1px #7FDCBE solid;
+	font-size: 15px;
+}
+
+/* join - 생년월일 */
+.input-style #date {
+	width: 260px;
+	height: 50px;
+	margin: 0 15px 0 5px;
+}
+
+/* join - 제출버튼 */
+.submitButton button {
+	width: 179px;
+	height: 52px;
+	margin: 20px;
+	color: white;
+	background: #7FDCBE;
+	font-size: 28px;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 700;
+	word-wrap: break-word;
+	border-radius: 10px;
+	border: 0px solid #7FDCBE
+}
+
+/* join - 제출버튼 하버 */
+.submitButton button:hover {
+	background: #518E7B;
+}
+
+/* join - 제목 */
+.page-header {
+	color: #7FDCBE;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+/* join - 중복확인 위치 */
+.check {
+	position: relative;
+}
+
+/* join - 중복확인 버튼 */
+.check-btn {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: #CFF8EB;
+	border-radius: 10px;
+	border: 1px solid #7FDCBE;
+}
+
+/* join - 중복확인 버튼 하버 */
+.check button:hover {
+	background: #7FDCBE;
+}
+
+
+
+/* join - 성별 버튼 디자인 */
+.select input[type=radio] {
+	display: none;
+}
+
+.select input[type=radio]+label {
+	display: inline-block;
+	cursor: pointer;
+	height: 50px;
+	width: 60px;
+	margin: 0;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	border: 1px solid #7FDCBE;
+	line-height: 50px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.select input[id=select]+label {
+	margin: 0 13px 0 0;
+}
+
+.select input[type=radio]+label {
+	background-color: #fff;
+	color: #333;
+}
+
+.select input[type=radio]:checked+label {
+	background-color: #518E7B;
+	border: 1px solid #518E7B;
+	color: #fff;
+}
+
+
+/* -----에러메시지----- */
+.error2 {
+	color: red;
+	font-size: 0.9rem;
+	display: block;
+	text-align: right;
+	width: 520px;
+	margin-right: 300px;
+	margin-top: 3px;
+}
+
+.error {
+	color: red;
+	font-size: 0.9rem;
+	display: block;
+	text-align: left;
+	width: 520px;
+    margin-top: 3px;
+}
+
+#error {
+    width: 520px;
+    height:20px;
+    background: white;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    border: 1px solid white; /* 테두리 색상을 흰색으로 설정 */
+    font-size: 15px;
+    margin: 0 0 0 300px;
+}
+
+.input-style input[class="error"]::placeholder {
+	color: red; /* 플레이스홀더의 색상을 빨간색으로 설정 */
+}
+
+#error:focus {
+	outline: none;
+}
+
+/* login - 자동로그인, 아이디/비밀번호 찾기 버튼 디자인 */
+.cover {
+	display: flex;
+	justify-content: space-evenly;
+	width: 970px;
+}
+
