@@ -68,7 +68,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 						 "/board/detail",
 						 "/mypage",
 						 "/mypage/update",
-						 "/mypage/withdrawal").authenticated();
+						 "/mypage/withdrawal",
+						 "/chat").authenticated();
 
 		
 		http.formLogin()

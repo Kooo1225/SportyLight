@@ -19,6 +19,6 @@ public class MessageVO {
 	private String message;
 	private Date sendDate;
 	
-	private String userName;	
+	private String nickName;	
 	private String avatarPath;
 }
