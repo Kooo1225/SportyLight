@@ -66,7 +66,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.antMatchers("/security/findId").permitAll()
 			.antMatchers("/board/register",
 						 "/board/detail",
-						 "/board/mylist",
 						 "/mypage",
 						 "/mypage/update",
 						 "/mypage/withdrawal").authenticated();

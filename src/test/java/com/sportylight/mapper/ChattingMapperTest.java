@@ -26,7 +26,7 @@ public class ChattingMapperTest {
 	
 	@Test
 	public void test() {
-		List<MessageVO> vo = mapper.beforeChatRead(1);
+		List<MessageVO> vo = mapper.beforeChatRead(31);
 
 		log.info(vo);
 	}

@@ -78,10 +78,6 @@ function connect() {
 $(document).ready(function() {
 	connect();
 	
-	var testNickName = '${list.userName}';
-	var testMsg = '${list.message}';
-	
-	displayMessage(testNickName, testMsg);
 	
 	$('#sendButton').click(function() {
 		sendMessage();

@@ -287,15 +287,24 @@ input[type=file]::file-selector-button {
 	margin-top: 3px;
 }
 
-#error {
+.error {
+	color: red;
+	font-size: 0.9rem;
+	display: block;
+	text-align: left;
 	width: 520px;
-	height: 20px;
-	background: white;
-	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-	border-radius: 10px;
-	border: 1px solid white; /* 테두리 색상을 흰색으로 설정 */
-	font-size: 15px;
-	margin: 0px;
+    margin-top: 3px;
+}
+
+#error {
+    width: 520px;
+    height:20px;
+    background: white;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    border: 1px solid white; /* 테두리 색상을 흰색으로 설정 */
+    font-size: 15px;
+    margin: 0 0 0 300px;
 }
 
 .input-style input[class="error"]::placeholder {
