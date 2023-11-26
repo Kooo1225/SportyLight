@@ -16,6 +16,8 @@ public interface GatherMapper {
 	
 	public List<GatherVO> getMyState(int membersId); // 내가 신청한 모임글
 	
+	public List<GatherVO> getJoinCount(int membersId); // 내가 신청한 모임글
+	
 	public void insert(GatherVO vo); // gathering register를 위해 선언
 	
 	public GatherVO read(int gatheringId); // gathering detail를 위해 선언

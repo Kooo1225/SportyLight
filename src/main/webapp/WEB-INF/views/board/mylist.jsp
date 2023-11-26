@@ -18,8 +18,6 @@
 					모임</a></li>
 			<li class="nav-mylist-item"><a class="nav-mylist-link" id ="btn2">내가
 					올린 모임</a></li>
-			<li class="nav-mylist-item"><a class="nav-mylist-link" id ="btn3">찜한
-					모임</a></li>
 		</ul>
 	</div>
 	
@@ -64,7 +62,7 @@
 	<div class="mylist-border mx-auto">
 		<div class="mylist-gather-container mx-auto">
 			
-			<c:forEach var="mystate" items="${mystate}">
+			<c:forEach var="mystate" items="${myState}">
 				<div class="mylist-gather-wrapper mx-auto">
 					<div class="mylist-gather-title">
 						<span class="mylist-gather-title-main">${mystate.title }</span> <span

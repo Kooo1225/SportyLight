@@ -29,11 +29,11 @@ public class BoardController {
 	public void mylist(int membersId, Model model) {
 		log.info("mylist");
 		
-		List<GatherVO> mylist = service.getMyList(membersId);
+		List<GatherVO> myList = service.getMyList(membersId);
 		
 		
 		model.addAttribute("membersId", membersId);
-		model.addAttribute("mylist", mylist);
+		model.addAttribute("myList", myList);
 		
 		
 	}
@@ -43,11 +43,10 @@ public class BoardController {
 		log.info("mystate");
 		
 		
-		List<GatherVO> mystate = service.getMyState(membersId);
+		List<GatherVO> myState = service.getMyState(membersId);
 		
 		model.addAttribute("membersId", membersId);
-		model.addAttribute("mystate", mystate);
-		
+		model.addAttribute("myState", myState);
 	}
 	
 	@GetMapping("/register")

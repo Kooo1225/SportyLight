@@ -56,14 +56,14 @@ public class MemberServiceImpl implements MemberService {
 		AuthVO auth = new AuthVO(member.getMembersId(), "ROLE_USER");
 		mapper.insertAuth(auth);
 
-//		if(!avatar.isEmpty()) { //아바타 넣는 부분에서 null값이 들어갔을 때 에러가 나서 주석처리
-//			
-//			File pngDest = new File(AVATAR_UPLOAD_DIR, member.getEmail() + ".png"); // png 파일 넣는 부분
-//			
-//			Thumbnails.of(avatar.getInputStream())
-//					.size(50, 50)
-//					.toFile(pngDest);
-//		}
+		if(!avatar.isEmpty()) { //아바타 넣는 부분에서 null값이 들어갔을 때 에러가 나서 주석처리
+			
+			File pngDest = new File(AVATAR_UPLOAD_DIR, member.getEmail() + ".png"); // png 파일 넣는 부분
+			
+			Thumbnails.of(avatar.getInputStream())
+					.size(50, 50)
+					.toFile(pngDest);
+		}
 
 	}
 

@@ -41,6 +41,13 @@
 		and gm.gathering_state in (-1, 0, 1)
 	</select>
 	
+	<select id="getJoinCount" resultMap="gatherMap">
+		select gathering_id, COUNT(gathering_id) as cnt from gathering_members gm
+		where gathering_state in (1, 2)
+		group by gathering_id
+	</select>
+
+	
 	<select id="getTypeList" resultMap="gatherMap">
 		select *
 		from gathering

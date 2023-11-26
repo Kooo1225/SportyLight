@@ -28,7 +28,9 @@ function MyListTemplate(mylist) {
 }
 
 function MyStateTemplate(mystate) {
-	let stateCount = mystate.length;
+	let stateCount = Object(mystate).length;
+	console.log(mystate);
+	
 	let localDateTime = mystate.dateTime;
 
 	// LocalDateTime에서 날짜 정보 추출
@@ -60,7 +62,7 @@ function MyStateTemplate(mystate) {
 				<span class="mylist-gather-title-type">${mystate.type }</span>
 			</div>
 			<div class="mylist-gather-dateTime">
-				${stateCount}명 | ${formattedDate}
+				${stateCount} / ${mystate.headCount} 명| ${formattedDate}
 			</div>
 			<div class="mylist-gather-description"> ${mystate.description}</div>
 			${state}
