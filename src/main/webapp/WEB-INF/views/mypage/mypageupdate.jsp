@@ -23,7 +23,7 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 		<!-- -------------------------프로필--------------------------------------->
 		<div class="profile-fluid mx-auto"> 
 	       <img src="${member.avatarPath}" id="profile-image" name="avatarPath" alt="프로필 사진">
-           <img src="resources/images/home/cat.jpeg" name="avatarPath" id="profile2-image" alt="기본 이미지">
+           <img src="/resources/images/home/cat.jpeg" name="avatarPath" id="profile2-image" alt="기본 이미지">
               <script>
 				 var memberProfile = "${member.avatarPath}";
                  if (memberProfile === null || memberProfile === "") {

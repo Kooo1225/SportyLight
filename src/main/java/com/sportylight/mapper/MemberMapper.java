@@ -26,6 +26,9 @@ public interface MemberMapper {
 			 @Param("membersId") int membersId, @Param("newPassword") String newPassword);
 
 	public void delete(int membersId);
+	
+	public void deleteAuth(int membersId);
+	
 
 //	public int emailCheck(String email);
 

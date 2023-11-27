@@ -2,6 +2,7 @@ package com.sportylight.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -112,7 +113,8 @@ public class MemberController {
 	    	 String encoderPw = passwordEncoder.encode(newPassword);
 	            memberService.updatePassword(membersId, encoderPw);
 	    	 System.out.println("비밀번호 변경 완료 ");
-	    	 
+	    	// 4. 로그아웃
+		    	SecurityContextHolder.clearContext(); // 현재 사용자의 인증 정보를 제거
 	       
 	    	return "/security/logout";
 
@@ -144,7 +146,10 @@ public class MemberController {
 	    	 System.out.println("현재 비밀번호가 맞습니다.");
 	    	
 	       //2.디비에서 삭제
+	    	 memberService.withdrawalAuth(membersId);
 	    	 memberService.withdrawalMember(membersId);
+	    	// 3. 로그아웃
+	    	SecurityContextHolder.clearContext(); // 현재 사용자의 인증 정보를 제거
 	        return "redirect:/"; // 탈퇴 후 홈페이지로 리다이렉트
 	    }
 

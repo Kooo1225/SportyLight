@@ -28,6 +28,9 @@ public interface MemberService {
 
 	// 회원 탈퇴
 	void withdrawalMember(int membersId);
+	
+	void withdrawalAuth(int membersId);
+	
 
 	public MemberVO get2(String email);
 

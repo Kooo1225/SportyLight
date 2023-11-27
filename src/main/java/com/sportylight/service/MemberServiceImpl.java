@@ -93,6 +93,13 @@ public class MemberServiceImpl implements MemberService {
 		mapper.delete(membersId); // 회원 정보 삭제
 
 	}
+	
+	// 회원 탈퇴
+		@Override
+		public void withdrawalAuth(int membersId) {
+			mapper.deleteAuth(membersId); // 회원 정보 삭제
+
+		}
 
 	// 아이디찾기
 	@Override

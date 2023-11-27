@@ -20,7 +20,7 @@
 		<!-- -------------------------프로필사진--------------------------------------- -->
 		<div class="profile-fluid mx-auto"> 
 	       <img src="${member.avatarPath}" id="profile-image" alt="프로필 사진">
-           <img src="resources/images/home/cat.jpeg" id="profile2-image" alt="기본 이미지">
+           <img src="/resources/images/home/cat.jpeg" id="profile2-image" alt="기본 이미지">
               <script>
 				 var memberProfile = "${member.avatarPath}";
                  if (memberProfile === null || memberProfile === "") {
