@@ -115,11 +115,12 @@
 
 	</div>
 </div>
-</div>
 
 <div class="container" style="margin-top: 20px;">
 
-	<a href="/"><button type="button" class="btn">홈</button> </a>
+	<a href="/">
+		<button type="button" class="btn">홈</button> 
+	</a>
 	
 	<sec:authentication property="principal.member.membersId" var="membersId" />
 		<c:if test="${membersId == gather.membersId }">
@@ -128,8 +129,37 @@
 		<c:if test="${membersId != gather.membersId }">
 			<button type="button" class="btn">신청</button>
 		</c:if>
-	<button type="button" class="btn">채팅</button>
+		
+	<button type="submit" class="btn" onclick="createChattingElement()">채팅</button>
 </div>
+
+<script>
+	function createChattingElement() {
+		let f = document.createElement('form');
+
+		let gatherIdObj;
+		gatherIdObj = document.createElement('input');
+		gatherIdObj.setAttribute('type', 'hidden');
+		gatherIdObj.setAttribute('name', 'gatheringId');
+		gatherIdObj.setAttribute('value', ${gather.gatheringId});
+		
+		let CSRFToken;
+		CSRFToken = document.createElement('input');
+		CSRFToken.setAttribute('type', 'hidden');
+		CSRFToken.setAttribute('name', '${_csrf.parameterName}');
+		CSRFToken.setAttribute('value', '${_csrf.token}');
+		
+		console.log(${gather.gatheringId});
+		
+		f.appendChild(gatherIdObj);
+		f.appendChild(CSRFToken);
+		f.setAttribute('method', 'post');
+		f.setAttribute('action', '../chat');
+		document.body.appendChild(f);
+		f.submit();
+	}
+
+</script>
 
 
 

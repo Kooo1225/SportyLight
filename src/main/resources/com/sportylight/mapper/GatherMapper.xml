@@ -5,7 +5,7 @@
 
 	<resultMap id="gatherMap" type="com.sportylight.domain.GatherVO">
 		<id property="gatheringId" column="gathering_id" />
-		<result property="gatheringId" column="gatheringid" />
+		<result property="gatheringId" column="gathering_id" />
 		<result property="membersId" column="members_id" />
 		<result property="title" column="gathering_title" />
 		<result property="dateTime" column="gathering_datetime" />

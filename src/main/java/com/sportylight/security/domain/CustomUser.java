@@ -31,4 +31,8 @@ public class CustomUser extends User {
 	public String getNickName() {
 		return member.getNickname();
 	}
+	
+	public String getAvatarPath() {
+		return member.getAvatarPath();
+	}
 }
