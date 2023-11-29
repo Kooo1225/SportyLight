@@ -20,7 +20,7 @@
 		<!-- -------------------------프로필사진--------------------------------------- -->
 		<div class="profile-fluid mx-auto"> 
 	       <img src="${member.avatarPath}" id="profile-image" alt="프로필 사진">
-           <img src="/resources/images/home/cat.jpeg" id="profile2-image" alt="기본 이미지">
+           <img src="/resources/images/home/cat.jpeg" id="profile3-image" alt="기본 이미지">
               <script>
 				 var memberProfile = "${member.avatarPath}";
                  if (memberProfile === null || memberProfile === "") {
@@ -58,9 +58,9 @@
 				         value="<fmt:formatDate value='${member.birth}' pattern='yyyy-MM-dd' />" readonly> 
 				<i class="fa-solid fa-venus-double fa-2x" style="color: #518E7B;"></i> 
 				<!-- 여성 라디오 버튼 -->
-				   <input id="select" name="gender" value="male" readonly>
+				   <input id="select" name="gender" value="남" readonly>
 				<!-- 남성 라디오 버튼 -->
-				   <input id="select2" name="gender" value="female" readonly>
+				   <input id="select2" name="gender" value="여" readonly>
 			</div>
 			  <script>
 				  // 회원 정보에서 성별을 가져와 초기 색상 설정
