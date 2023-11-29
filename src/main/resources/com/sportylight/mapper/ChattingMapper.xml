@@ -10,14 +10,39 @@
 		<result property="membersId" column="members_id" />
 		<result property="message" column="chatting_message" />
 		<result property="sendDate" column="chatting_date" />
-		<result property="userName" column="members_nickname" />
-		<result property="headCount" column="members_avatar_path" />
+		<result property="nickName" column="members_nickname" />
+		<result property="avatarPath" column="members_avatar_path" />
+	</resultMap>
+	
+	<resultMap id="gatherMap" type="com.sportylight.domain.GatherVO">
+		<id property="gatheringId" column="gathering_id" />
+		<result property="gatheringId" column="gathering_id" />
+		<result property="membersId" column="members_id" />
+		<result property="title" column="gathering_title" />
+		<result property="dateTime" column="gathering_datetime" />
+		<result property="description" column="gathering_description" />
+		<result property="headCount" column="gathering_headcount" />
+		<result property="address" column="gathering_address" />
+		<result property="type" column="gathering_type" />
+		<result property="state" column="gathering_state"/>
 	</resultMap>
 
 	<select id="beforeChatRead" resultMap="chattingMap">
-		select c.chatting_id, c.gathering_id, c.chatting_message, c.chatting_date, m.members_nickname, m.members_avatar_path
+		select c.chatting_id, c.gathering_id, m.members_id, c.chatting_message, c.chatting_date, m.members_nickname, m.members_avatar_path
 		from chatting c left join members m on c.members_id = m.members_id
-		where c.gathering_id = #{gatheringId};
+		where c.gathering_id = #{gatheringId}
+		order by c.chatting_id;
 	</select>
 	
+	
+	<insert id="insert">
+		insert into chatting(members_id, gathering_id, chatting_message, chatting_date)
+		values (#{membersId}, #{gatheringId}, #{message}, #{sendDate});
+	</insert>
+	
+	<select id="getChattingList" resultMap="gatherMap">
+		select g.*
+		from gathering_members gm left join gathering g on gm.gathering_id = g.gathering_id
+		where gm.members_id = #{membersId} and gm.gathering_state in (1,2);
+	</select>
 </mapper>

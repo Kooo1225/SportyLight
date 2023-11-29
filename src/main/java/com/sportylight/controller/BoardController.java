@@ -66,9 +66,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/detail")
-	public void registerDetail(
-			@RequestParam("gatheringId") int gatheringId,
-			Model model) {
+	public void registerDetail( @RequestParam("gatheringId") int gatheringId, Model model) {
 		
 		model.addAttribute("gather", service.get(gatheringId));
 	}
