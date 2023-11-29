@@ -18,6 +18,7 @@
 		<result property="nickname" column="members_nickname" />
 		<result property="avatarPath" column="members_avatar_path" />
 		<result property="gender" column="members_gender" />
+		<result property="oauth" column="oauth"/>
 		<collection property="authList" resultMap="authMap" />
 		<!-- Alias 처리를 해주는거 reg_date라고 선언되어 있지만 실제 DB에는 regDate니까 이름이랑 데이터랑 연결함 -->
 		<!-- VO객체의 authList를 처리할 땐 Mapper 내의 resultMap 중 authMap ID를 가진 객체로 올라가서 
@@ -55,11 +56,11 @@
 	        SELECT LAST_INSERT_ID() AS membersId
 	    </selectKey>
 	
-		insert into members (members_id, members_email, members_password, members_name, members_birth, members_nickname,members_avatar_path, members_gender)
+		insert into members (members_id, members_email, members_password, members_name, members_birth, members_nickname,members_avatar_path, members_gender, oauth)
 		values (#{membersId}, #{email},
 				#{password}, #{name},
 				#{birth}, #{nickname},
-				#{avatarPath}, #{gender})
+				#{avatarPath}, #{gender}, #{oauth})
 	</insert>
 
 	<update id="updatePassword">

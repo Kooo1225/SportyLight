@@ -2,7 +2,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ include file="../layouts/homeHeader.jsp" %>
 
 <link rel="stylesheet" href="/resources/css/home/home.css">
@@ -76,7 +76,7 @@
 						<div class="row" id="set1">
 							<div class="col-4">
 								<div class="sidebar-board-get">
-									<img src="/resources/images/home/cat.jpeg" class="board-avatar" />
+									<img src="/security/avatar/m/${gather.membersId}" class="board-avatar" />
 								</div>
 							</div>
 							

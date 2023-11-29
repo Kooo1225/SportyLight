@@ -13,7 +13,7 @@ $("#file").on('change',function(){
 
 <div class="mx-auto">
 	<form:form modelAttribute="member"
-		action="/security/join?_csrf=${_csrf.token }" method="post">
+		action="/security/join?_csrf=${_csrf.token }" method="post" enctype="multipart/form-data">
 		<div class="input-style">
 		
 			<div class="form-group check">
@@ -39,8 +39,8 @@ $("#file").on('change',function(){
 				
 				<i class="fa-solid fa-venus-double fa-2x" style="color: #518E7B;"></i>
 				
-				<form:radiobutton path="gender" id="select" value="male"></form:radiobutton><label for="select">남자</label> 
-				<form:radiobutton path="gender" id="select2" value="female"></form:radiobutton><label for="select2">여자</label>
+				<form:radiobutton path="gender" id="select" value="male"></form:radiobutton><label for="select">남</label> 
+				<form:radiobutton path="gender" id="select2" value="female"></form:radiobutton><label for="select2">여</label>
 				<form:errors path="birth" cssClass="error mx-auto"></form:errors>
 				<form:errors path="gender" cssClass="error2 mx-auto"></form:errors>
 			</div>
@@ -49,7 +49,7 @@ $("#file").on('change',function(){
 				<form:errors path="nickname" cssClass="error mx-auto"></form:errors>
 			</div>
 			
-			<input type="file" name="file" id="file">
+			<input type="file" name="avatar" id="file">
 		</div>
 
 		<div class="form-group mx-auto submitButton">

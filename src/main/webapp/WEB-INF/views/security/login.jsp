@@ -42,7 +42,8 @@
 						</div>
 					</div>
 					<div class="form-group mx-auto submitButton">
-							<button type="submit">LOG-IN</button>
+							<button type="submit">LOG-IN</button><br>
+							<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=ad5f045a6d90afc878186d9093e76908&redirect_uri=http://localhost:8080/security/kakao/callback"><img src="/resources/images/layouts/kakao_login_button.png"/></a>
 					</div>
 				</div>
 			</form>
