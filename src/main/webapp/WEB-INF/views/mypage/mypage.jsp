@@ -15,14 +15,13 @@
 }
 </style>
 
-<body>
 	<div class="panel panel-default">
 
 		<!-- -------------------------프로필사진--------------------------------------- -->
 
 		<div class="profile-fluid mx-auto">
 
-			<img id="profile-image" src="resources/images/home/cat.jpeg"
+			<img id="profile-image" src="/security/avatar/l/${member.membersId} "
 				alt="프로필 사진">
 		</div>
 

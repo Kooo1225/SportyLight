@@ -14,12 +14,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class MemberVO {
 	private int membersId;
 	@NotBlank(message = "사용자 email은 필수항목입니다.")
@@ -47,6 +49,8 @@ public class MemberVO {
 
 	@NotNull(message = "사용자 성별은 필수항목입니다.")
 	private EnumVO gender;
+	
+	private String oauth;
 
 	private String newPassword;
 	private String newPassword2;
