@@ -14,6 +14,7 @@
 		<result property="address" column="gathering_address" />
 		<result property="type" column="gathering_type" />
 		<result property="state" column="gathering_state"/>
+		<result property="participate" column="participate"/>
 	</resultMap>
 
 	<select id="get" resultMap="gatherMap">
@@ -23,7 +24,7 @@
 	</select>
 
 	<select id="getList" resultMap="gatherMap">
-		select * from gathering
+		select * from view_gathering
 	</select>
 	
 	<select id="getMyList" resultMap="gatherMap">
@@ -54,7 +55,7 @@
 	
 	<select id="read" resultMap="gatherMap">
 		select *
-		from gathering
+		from view_gathering
 		where gathering_id = #{gatheringId}
 	</select>
 	

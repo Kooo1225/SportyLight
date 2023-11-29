@@ -92,7 +92,12 @@
 										<fmt:formatDate pattern="yyyy년 MM월 dd일 HH시 mm분" value="${parsedDateTime}" />
 									</span>
 									<br>
+									<c:if test="${gather.headCount == gather.participate}">
+										<span class="board-info"><b>모임마감</b></span>
+									</c:if>
+									<c:if test="${gather.headCount != gather.participate}">
 									<span class="board-info"><a href="/board/detail?gatheringId=${gather.gatheringId}">상세보기</a></span>
+									</c:if>
 								</div>
 							</div>
 						</div>
@@ -161,7 +166,9 @@
             	id: '${gather.gatheringId}',
                 title: '${gather.title}',
                 address: '${gather.address}',
-                type: '${gather.type}'
+                type: '${gather.type}',
+                headCount: '${gather.headCount}',
+                participate: '${gather.participate}'
             },
         </c:forEach>
     ];
@@ -214,9 +221,10 @@
             	  	'                <img src="' + contentsImage + '" width="70" height="70">' +
 	                '           </div>' + 
 	                '            <div class="content">' + 
-	                '                <div class="addr">' + position.address + '</div>' + 
-	                '                <div class="type addr">' + position.type + '</div>' + 
-	                '                <div><a href="/board/detail?gatheringId='+ position.id + '" class="link">모임 신청</a></div>' + 
+	                '                <div class="addr"><b>' + position.address + '</b></div>' + 
+	                '                <div class="type addr"><b>' + position.type + '</b></div>' + 
+	                (position.headCount === position.participate ? '<span><b>모임마감</b></span>' : '<span><a href="/board/detail?gatheringId='+ position.id + '" class="link">모임 신청</a></span>') +
+	               	'				 <span><i class="fa-solid fa-user-group"></i> ' + position.participate + ' / ' + position.headCount +'명</span>' + 
 	                '            </div>' + 
 	                '        </div>' +
 	                '    </div>' +    
