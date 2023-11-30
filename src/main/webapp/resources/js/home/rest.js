@@ -27,9 +27,11 @@ async function rest_delete(url) {
   try {
     let res = await fetch(url, { method: "DELETE" });
     return await res.text();	// res.json();
-  } catch(e) {
+  } 
+  catch(e) {
     console.log(e);
   }
+}
 
 async function rest_post(url, gatheringId, membersId) {
 	const data = {

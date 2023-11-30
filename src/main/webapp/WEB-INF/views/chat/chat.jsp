@@ -17,7 +17,7 @@
 						<div class="row" id="set1">
 							<div class="col-2">
 								<div class="sidebar-board-get">
-									<img src="/resources/images/home/cat.jpeg" id="profile1-image" alt="기본 이미지">
+									<img src="/security/avatar/sm/${list.membersId}" id="profile1-image" alt="기본 이미지">
 								</div>
 							</div>
 	
@@ -86,7 +86,7 @@ function connect() {
 				displayMyMessage(currentTime, decodeMessage);
 			}
 			else {
-				displayOtherMessage(message.nickName, currentTime, decodeMessage);
+				displayOtherMessage(message.nickName, currentTime, decodeMessage, message.avatarPath);
 			}
 		})
 		
@@ -107,14 +107,14 @@ function sendMessage() {
 							membersId: ${customUser.getMembersId()},
 							message: encodeMessage,
 							nickName: principalName,
-							avatarPath: '${customUser.getAvatarPath()}'
+							avatarPath: '/security/avatar/sm/' + ${customUser.getMembersId()}
 						}));
 		
 		document.getElementById("messageInput").value='';
 	}
 }
 	
-function displayOtherMessage(nickName, currentTime, message) {
+function displayOtherMessage(nickName, currentTime, message, avatarPath) {
 	var chatContainer = $('#chat-container');
 	
 	var messageDiv = $('<div>');
@@ -125,7 +125,7 @@ function displayOtherMessage(nickName, currentTime, message) {
 	colDiv.css({ padding: '0', top: '15px' });
 	
 	var imgDiv = $('<img>');
-	imgDiv.attr('src', '/resources/images/home/cat.jpeg');
+	imgDiv.attr('src', avatarPath);
 	imgDiv.attr('id', 'profile2-image');
 	
 	var colDiv2 = $('<div>').addClass('col-md-11');
@@ -179,24 +179,23 @@ function displayPreviousMessage() {
 				message: '${chat.message}',
 				nickName: '${chat.nickName}',
 				sendDate: formatTime('${chat.sendDate}'),
-				avatarPath: '${chat.avatarPath}'
+				avatarPath: '/security/avatar/sm/' + ${chat.membersId}
 			}, 
 			</c:forEach> 
 		];
 	
-	console.log(chatList);
 	displayDate();
 	
 	/* 이 부분 수정해야함! */
 	$.each(chatList, function(index, item) {
-		console.log(item);
+
 		var decodeMessage = decodeURIComponent(escape(atob(item.message)));
 		
 		if (item.nickName == principalName) {
 			displayMyMessage(item.sendDate, decodeMessage);
 		}
 		else {
-			displayOtherMessage(item.nickName, item.sendDate, decodeMessage);
+			displayOtherMessage(item.nickName, item.sendDate, decodeMessage, item.avatarPath);
 		}	
 	});
 }

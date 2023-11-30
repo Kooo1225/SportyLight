@@ -38,7 +38,7 @@ function MyListTemplate(mylist) {
 			</div>
 			
 			<div class="mylist-dateTime">
-				${mylist.cnt} / ${mylist.headCount}명 | ${formattedDate}
+				${mylist.participate} / ${mylist.headCount}명 | ${formattedDate}
 			</div>
 			
 			<div class="d-flex justify-content-between mb-3">
@@ -98,7 +98,7 @@ function MyStateTemplate(mystate) {
 			</div>
 			
 			<div class="mylist-dateTime">
-				${mystate.cnt} / ${mystate.headCount} 명| ${formattedDate}
+				${mystate.participate} / ${mystate.headCount} 명| ${formattedDate}
 			</div>
 			
 			<div class="d-flex justify-content-between mb-3">

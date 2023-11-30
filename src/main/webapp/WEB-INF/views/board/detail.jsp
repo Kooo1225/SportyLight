@@ -41,7 +41,7 @@
 					<div id="container3">
 						<div class="row mx-auto"style="width: 550px; padding: 22px 30px 0 30px;">
 							<div class="col-md-6"style="padding: 0; width: 200px; margin-top: 12px;">
-							    <div><img src="/resources/images/home/cat.jpeg" id="profile-image"alt="기본 이미지"></div>
+							    <div><img src="/security/avatar/sm/${gather.membersId }" id="profile-image"alt="기본 이미지"></div>
 								     <div style="border: 2px solid rgba(0, 0, 0, .075); border-radius: 15px;">
 									     <div class="gathermember0">
 										     <i class="fa-solid fa-check" style="color: #7FDCBE;"></i>&nbsp;&nbsp;모집인원 : ${gather.headCount}명
@@ -114,7 +114,7 @@
                                  <sec:authentication property="principal.member.membersId" var="membersId" />
 							     <c:if test="${membersId == gather.membersId }"> <button type="button" class="btn0">관리</button></c:if>
 							     <c:if test="${membersId != gather.membersId }"> <button type="button" class="btn0">신청</button></c:if>
-							 <button type="button" class="btn0">채팅</button>
+							 	 <button type="button" class="btn0" onclick="getState(${membersId}, ${gather.gatheringId})")>채팅</button>
 						</div>
 					</div>
 				</cite>
@@ -141,8 +141,6 @@
 	</div>
 </div>
 </body>
-
-
 
 <script src="/resources/js/home/rest.js"></script>
 <script>

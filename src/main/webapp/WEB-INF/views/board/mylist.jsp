@@ -24,7 +24,7 @@
 		</div>
 	
 		<script src="/resources/js/home/rest.js"></script>
-		<script src="/resources/js/home/boardAjax.js"></script>
+		<script src="/resources/js/board/boardAjax.js"></script>
 	
 		<script>
 		const MYLIST_URL = "/api/board"
