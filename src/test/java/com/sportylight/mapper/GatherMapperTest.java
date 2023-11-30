@@ -12,6 +12,7 @@ import com.sportylight.config.RootConfig;
 import com.sportylight.config.SecurityConfig;
 import com.sportylight.domain.EnumVO;
 import com.sportylight.domain.GatherVO;
+import com.sportylight.domain.SearchVO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -30,14 +31,27 @@ public class GatherMapperTest {
 //		log.info(vo);
 //	}
 //	
-	@Test
+//	@Test
 	public void test2() {
 		List<GatherVO> vo = mapper.getMyState(23);
 		
 		log.info(vo);
 	}
 	
-
+	@Test
+	public void testSearch() {
+		SearchVO search = new SearchVO();
+		
+		search.setKeyword("갈비찜");
+		search.setOption("TC");
+		
+		List<GatherVO> list = mapper.getSearch(search);
+		
+		for(GatherVO gather: list) {
+			log.info(gather);
+		}
+	}
+	
 }
 
 

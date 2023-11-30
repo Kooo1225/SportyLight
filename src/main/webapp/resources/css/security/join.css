@@ -28,15 +28,15 @@
 
 input[type=file]::file-selector-button {
 	color: #5E5D5D;
-  width: 150px;
-  height: 30px;
-  background: #fff;
-  border: 1px solid #7FDCBE;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 5px;
-  text-align: left;
+	width: 200px;
+    height: 46px;
+	background: #fff;
+	border: 1px solid #7FDCBE;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 5px;
+	text-align: left;
 }
 
 #file {

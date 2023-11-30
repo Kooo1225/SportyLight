@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sportylight.domain.GatherVO;
+import com.sportylight.domain.SearchVO;
 import com.sportylight.service.GatherService;
 
 @Controller
@@ -20,6 +21,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String Home(Model model) {
+
 		List<GatherVO> vo = service.getList();
 		
 		System.out.println(vo);
@@ -29,6 +31,4 @@ public class HomeController {
 		
 		return "home/home";
 	}
-	
-
 }

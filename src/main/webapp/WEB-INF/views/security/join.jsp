@@ -8,7 +8,52 @@ $("#file").on('change',function(){
 	  var fileName = $("#file").val();
 	  $(".upload-name").val(fileName);
 	});
+	
+
 </script>
+
+ <style>
+	div#aa {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%; /* 50%로 변경하여 원 모양이 됨 */
+        background: url('/resources/images/home/basketball-ball.png') center/cover; /* 이미지 경로를 설정 */
+        animation: bounce 3s infinite, spin 3s linear infinite;
+        z-index: 2;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            bottom: 0px;
+            animation-timing-function: ease-out;
+        }
+
+        50% {
+            bottom: 200px;
+            animation-timing-function: ease-in;
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+     #basketballHoop {
+        position: absolute;
+        width: 25vw;
+        height: auto; /* 높이 자동 조정 */
+        bottom: 0; /* 농구골대를 아래에 배치 */
+        left: 10px; /* 오른쪽으로 이동할 거리 조정 */
+        z-index: 2;
+    }
+
+</style>
 <h1 class="page-header"> JOIN</h1><br>
 
 <div class="mx-auto">
@@ -51,7 +96,11 @@ $("#file").on('change',function(){
 			
 			<input type="file" name="avatar" id="file">
 		</div>
-
+		
+		 <div id="aa"></div>
+		 <div><img id="basketballHoop" src="/resources/images/home/hoop.png" alt="Basketball Hoop"></div>
+		 <div class="runner"></div>
+		
 		<div class="form-group mx-auto submitButton">
 			<button type="submit" class="btn btn-info">JOIN</button>
 		</div>

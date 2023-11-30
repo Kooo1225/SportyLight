@@ -27,6 +27,27 @@
 		select * from view_gathering
 	</select>
 	
+	<select id="getSearch" resultMap="gatherMap">
+		select * from gathering
+		<where>
+			<trim prefixOverrides = "OR">
+				<foreach item="option" collection="optionArr">
+					<trim prefix="OR">
+						<choose>
+		 					<when test="option == 'T'.toString()">
+	 							gathering_title like CONCAT('%', #{keyword}, '%')
+							</when>
+	 						<when test="option == 'C'.toString()">
+		 						gathering_description like CONCAT('%', #{keyword}, '%')
+	 						</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</where>
+		
+	</select>
+	
 	<select id="getMyList" resultMap="gatherMap">
 		select * 
 		from gathering 

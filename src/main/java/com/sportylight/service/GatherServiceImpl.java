@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.sportylight.domain.EnumVO;
 import com.sportylight.domain.GatherVO;
+import com.sportylight.domain.SearchVO;
 import com.sportylight.mapper.GatherMapper;
 
 import lombok.AllArgsConstructor;
@@ -21,6 +22,11 @@ public class GatherServiceImpl implements GatherService {
 	@Override
 	public List<GatherVO> getList() {
 		return mapper.getList();
+	}
+	
+	@Override
+	public List<GatherVO> getSearch(SearchVO search) {
+		return mapper.getSearch(search);
 	}
 	
 	@Override
