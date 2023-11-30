@@ -13,13 +13,23 @@
 
 		<!-- 검색창 -->
 		<div>
-			<input type="text">
-			<button style="left:260px;">
-				<svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
-            		<circle cx="12" cy="12" r="11" fill="white" stroke="#7FDCBE" stroke-width="2" />
-            		<line x1="20.7071" y1="20.2929" x2="28.7071" y2="28.2929" stroke="#7FDCBE" stroke-width="2" />
-            	</svg>
-			</button>
+			<form id="searchForm" method="get" class="d-flex">
+				<select name="option" class="form-select rounded-0 ml-1">
+					<option value="">-- 검색대상선택 --</option>
+					<option value="T">제목</option>
+					<option value="C">내용</option>
+					<option value="TC">제목+내용</option>
+				</select>
+				<div>
+					<input type="text" name="keyword"/>
+					<button style="left:260px;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
+		            	<circle cx="12" cy="12" r="11" fill="white" stroke="#7FDCBE" stroke-width="2" />
+		            	<line x1="20.7071" y1="20.2929" x2="28.7071" y2="28.2929" stroke="#7FDCBE" stroke-width="2" />
+		            	</svg>
+					</button>
+				</div>
+			</form>
 		</div>
 		
 		<!-- 카테고리  -->
@@ -58,6 +68,46 @@
 				$('.scroll-container').append(listEl);
  			})	
 		})
+		
+		let searchForm = $('#searchForm');
+		$('#searchForm button').on('click', async function(e) {
+			e.preventDefault();
+			
+			var option = searchForm.find('option:selected');
+			if (!option.val()) {
+				alert('검색 종류를 선택하세요.');
+				option.focus();
+				return false; 
+			}
+
+			var keyword = searchForm.find('input[name="keyword"]');
+			if (!keyword.val()) {
+				alert('키워드를 입력하세요.');
+				keyword.focus();
+				return false;
+			}
+			
+			if(option.val() && keyword.val()) {
+				$('.sidebar-board').empty();
+				$('.scroll-container').empty();
+				
+				const gatherList = await rest_get(BASE_URL+'/search?option=' + option.val()+ '&keyword=' + keyword.val());
+				console.log(gatherList);
+				gatherCount = Object.keys(gatherList).length;
+				
+				let countEl = $(createListCountTemplate(gatherCount));
+				
+				$('.sidebar-board').append(countEl);
+				
+	 			let listEl;
+				
+	 			$.each(gatherList, function(index, item) {
+					listEl = $(createTypeListTemplate(item));
+					$('.scroll-container').append(listEl);
+	 			})	
+			}
+
+		});
 	})
 </script>
 
