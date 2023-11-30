@@ -59,3 +59,5 @@ $("#file").on('change',function(){
 </div>
 
 </body>
+
+<%@ include file="../layouts/footer.jsp"%>
