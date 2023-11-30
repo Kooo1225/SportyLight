@@ -74,10 +74,16 @@ public class MemberServiceImpl implements MemberService {
 
 	}
 
-	// 회원 정보 수정
+	// 회원 비번 수정
 	@Override
 	public void updatePassword(int membersId, String newPassword) {
 		mapper.updatePassword(membersId, newPassword);
+	}
+	
+	// 회원 정보 수정
+	@Override
+	public void updateMp(int membersId, String avatarPath, String nickname) {
+		mapper.updateMp(membersId, avatarPath, nickname);
 	}
 
 	// 회원 탈퇴
@@ -86,6 +92,13 @@ public class MemberServiceImpl implements MemberService {
 		mapper.delete(membersId); // 회원 정보 삭제
 
 	}
+	
+	// 회원 탈퇴
+		@Override
+		public void withdrawalAuth(int membersId) {
+			mapper.deleteAuth(membersId); // 회원 정보 삭제
+
+		}
 
 	// 아이디찾기
 	@Override

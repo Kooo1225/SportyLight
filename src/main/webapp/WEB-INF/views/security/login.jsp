@@ -43,10 +43,45 @@
 					</div>
 					<div class="form-group mx-auto submitButton">
 							<button type="submit">LOG-IN</button><br>
-							<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=ad5f045a6d90afc878186d9093e76908&redirect_uri=http://localhost:8080/security/kakao/callback"><img src="/resources/images/layouts/kakao_login_button.png"/></a>
+							 <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=ad5f045a6d90afc878186d9093e76908&redirect_uri=http://localhost:8080/security/kakao/callback"><img src="/resources/images/layouts/kakao_login_button.png"/></a>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
+	
+	<div id="carouselExampleControls" class="carousel slide mx-auto" data-ride="carousel"
+	style="width:400px; height:200px;">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/resources/images/layouts/login1.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/resources/images/layouts/login2.png" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/resources/images/layouts/login3.png" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/resources/images/layouts/login4.png" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<script>
+  $(document).ready(function() {
+    $('#carouselControls').carousel({
+      interval: 2000 // 2초마다 슬라이드 넘김
+    });
+  });
+</script>
 </body>
+
+<%@ include file="../layouts/footer.jsp"%>

@@ -52,17 +52,7 @@ public class MemberVO {
 	
 	private String oauth;
 
-	private String newPassword;
-	private String newPassword2;
-
-	public EnumVO getGender() {
-		return gender;
-	}
-
-	public void setGender(EnumVO gender) {
-		this.gender = gender;
-	}
-
+	
 	private List<AuthVO> authList;
 
 	public Collection<SimpleGrantedAuthority> getAuthorities() {
