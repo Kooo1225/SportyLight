@@ -82,8 +82,16 @@ public class MemberServiceImpl implements MemberService {
 	
 	// 회원 정보 수정
 	@Override
-	public void updateMp(int membersId, String avatarPath, String nickname) {
-		mapper.updateMp(membersId, avatarPath, nickname);
+	public void updateMp(int membersId, String nickname,MultipartFile avatar) throws IOException {
+		mapper.updateMp(membersId, nickname);
+         if(!avatar.isEmpty()) { 
+			
+			File pngDest = new File(AVATAR_UPLOAD_DIR, membersId + ".png"); // png 파일 넣는 부분
+			
+			Thumbnails.of(avatar.getInputStream())
+					.size(50, 50)
+					.toFile(pngDest);
+		}
 	}
 
 	// 회원 탈퇴

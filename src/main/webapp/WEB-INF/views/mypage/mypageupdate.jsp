@@ -16,28 +16,16 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 
 </style>
 
-<form action="/mypage/update" method="post">
-<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
+<form action="/mypage/update?_csrf=${_csrf.token }" method="post" enctype="multipart/form-data">
+
 <div class="panel panel-default">
 	    <div class="input-style2" style="padding: 50px 0 50px 0;">
 		<!-- -------------------------프로필--------------------------------------->
 		<div class="profile-fluid mx-auto"> 
-	       <img src="${member.avatarPath}" id="profile-image" name="avatarPath" alt="프로필 사진">
-           <img src="/resources/images/home/cat.jpeg" name="avatarPath" id="profile2-image" alt="기본 이미지">
-              <script>
-				 var memberProfile = "${member.avatarPath}";
-                 if (memberProfile === null || memberProfile === "") {
-					document.getElementById('profile-image').style.display = 'none';
-				    document.getElementById('profile2-image').style.display = 'block'; 
-				    console.log("프로필 존재 안함")
-				 } else  { // 이미지가 존재할때
-					document.getElementById('profile-image').src = memberProfile;
-				    document.getElementById('profile2-image').style.display = 'none';
-				    console.log("프로필 존재")
-				 }  
-			  </script>
+	       <img src="/security/avatar/sm/${membersId}" class="home-avatar2"/>
 		</div>
-             <input type="file" id="profile-fluid" name="avatarPath" accept="image/*">
+             <input type="file" name="avatar" id="profile-fluid">
 		<!-- -------------------------이름--------------------------------------- -->		
 		<div class="form-group mx-auto check">
 			      <!-- 민트박스  -->

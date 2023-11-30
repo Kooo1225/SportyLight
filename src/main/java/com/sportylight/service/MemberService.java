@@ -21,7 +21,7 @@ public interface MemberService {
 	public MemberVO getMember(int membersId);
 
 	// 회원 정보 수정
-	void updateMp (int membersId, String avatarPath, String nickname);
+	void updateMp (int membersId, String nickname,  MultipartFile avatar) throws IOException;;
 	
 	// 회원 비번 수정
 	void updatePassword(int membersId, String newPassword);
