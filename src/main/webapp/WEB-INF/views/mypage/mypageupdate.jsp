@@ -23,7 +23,7 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 	    <div class="input-style2" style="padding: 50px 0 50px 0;">
 		<!-- -------------------------프로필--------------------------------------->
 		<div class="profile-fluid mx-auto"> 
-	       <img src="/security/avatar/sm/${membersId}" class="home-avatar2"/>
+	       <img src="/security/avatar/sm/${member.membersId}" class="home-avatar2"/>
 		</div>
              <input type="file" name="avatar" id="profile-fluid">
 		<!-- -------------------------이름--------------------------------------- -->		

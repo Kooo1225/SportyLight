@@ -18,7 +18,7 @@
 	<div class="panel panel-default">
 		<!-- -------------------------프로필사진--------------------------------------- -->
 		<div class="profile-fluid mx-auto"> 
-		  <img src="/security/avatar/sm/${membersId }" class="home-avatar"/>
+		  <img src="/security/avatar/sm/${member.membersId }" class="home-avatar"/>
 		</div>		
 		<div class="input-style" style="padding: 50px 0 50px 0;">
 			<!-- -------------------------이름--------------------------------------- -->
