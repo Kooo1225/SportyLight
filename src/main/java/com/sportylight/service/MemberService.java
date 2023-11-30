@@ -21,10 +21,16 @@ public interface MemberService {
 	public MemberVO getMember(int membersId);
 
 	// 회원 정보 수정
+	void updateMp (int membersId, String nickname,  MultipartFile avatar) throws IOException;;
+	
+	// 회원 비번 수정
 	void updatePassword(int membersId, String newPassword);
 
 	// 회원 탈퇴
 	void withdrawalMember(int membersId);
+	
+	void withdrawalAuth(int membersId);
+	
 
 	public MemberVO get2(String email);
 

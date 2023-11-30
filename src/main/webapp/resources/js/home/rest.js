@@ -30,4 +30,23 @@ async function rest_delete(url) {
   } catch(e) {
     console.log(e);
   }
+
+async function rest_post(url, gatheringId, membersId) {
+	const data = {
+		gatheringId: gatheringId,
+		membersId: membersId
+	};
+
+	try {
+		let res = await fetch(url, {
+			method : "POST",
+			headers : { "Content-Type" : "application/json" },
+			body: JSON.stringify(data), 
+		});
+				
+		return await res.json();
+	}
+	catch(e) {
+		console.log(e);
+	}		
 }

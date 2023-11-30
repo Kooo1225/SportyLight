@@ -27,7 +27,7 @@ function createTypeListTemplate(gather) {
 		
 			<div class="col-4">
 				<div class="sidebar-board-get">
-					<img src="/resources/images/home/cat.jpeg" class="board-avatar" />
+					<img src="/security/avatar/m/${gather.membersId}" class="board-avatar" />
 				</div>
 			</div>
 			

@@ -6,11 +6,14 @@ import org.apache.ibatis.annotations.Param;
 
 import com.sportylight.domain.EnumVO;
 import com.sportylight.domain.GatherVO;
+import com.sportylight.domain.SearchVO;
 
 public interface GatherMapper {
 	public GatherVO get(int gatheringNo);
 	
 	public List<GatherVO> getList();
+	
+	public List<GatherVO> getSearch(SearchVO search);
 	
 	public List<GatherVO> getTypeList(EnumVO type);
 	
@@ -31,5 +34,7 @@ public interface GatherMapper {
 	public void insert(GatherVO vo); // gathering register를 위해 선언
 	
 	public GatherVO read(int gatheringId); // gathering detail를 위해 선언
+	
+	public int getState(@Param("gatheringId") int gatheringId, @Param("membersId") int membersId);
 	
 }

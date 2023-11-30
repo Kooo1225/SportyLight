@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -63,13 +64,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http.authorizeRequests()
 			.antMatchers("/security/profile").authenticated() 
+			.antMatchers("/mypage/update").authenticated()
 			.antMatchers("/security/findId").permitAll()
 			.antMatchers("/board/register",
 						 "/board/detail",
 						 "/board/mylist",
 						 "/mypage",
-						 "/mypage/update",
-						 "/mypage/withdrawal").authenticated();
+						 "/mypage/withdrawal",
+						 "/chat").authenticated();
 
 		
 		http.formLogin()
@@ -97,5 +99,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		repo.setDataSource(dataSource);
 		
 		return repo;
+	}
+	
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManager();
 	}
 }

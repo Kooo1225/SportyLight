@@ -15,6 +15,7 @@
 		<result property="type" column="gathering_type" />
 		<result property="state" column="gathering_state"/>
 		<result property="deleteYn" column="delete_yn"/>
+		<result property="participate" column="participate"/>
 
 	</resultMap>
 
@@ -25,7 +26,28 @@
 	</select>
 
 	<select id="getList" resultMap="gatherMap">
+		select * from view_gathering
+	</select>
+	
+	<select id="getSearch" resultMap="gatherMap">
 		select * from gathering
+		<where>
+			<trim prefixOverrides = "OR">
+				<foreach item="option" collection="optionArr">
+					<trim prefix="OR">
+						<choose>
+		 					<when test="option == 'T'.toString()">
+	 							gathering_title like CONCAT('%', #{keyword}, '%')
+							</when>
+	 						<when test="option == 'C'.toString()">
+		 						gathering_description like CONCAT('%', #{keyword}, '%')
+	 						</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</where>
+		
 	</select>
 	
 	<select id="getMyList" resultMap="gatherMap">
@@ -62,10 +84,10 @@
 	
 	<select id="read" resultMap="gatherMap">
 		select *
-		from gathering
+		from view_gathering
 		where gathering_id = #{gatheringId}
 	</select>
-	
+  
 	<update id="update">
 		update gathering set
 			gathering_title = #{title},
@@ -98,5 +120,11 @@
 		where gathering_id = #{gatheringId}
 		and members_id = #{membersId}
 	</delete>
+
+	<select id="getState" resultType="int">
+		select gathering_state
+		from gathering_members
+		where gathering_id = #{gatheringId} and members_id = #{membersId};
+	</select>
 	
 </mapper>

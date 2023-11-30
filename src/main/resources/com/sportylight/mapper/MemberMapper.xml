@@ -7,7 +7,7 @@
 		<result property="membersId" column="members_id" />
 		<result property="auth" column="auth" />
 	</resultMap>
-	
+
 	<resultMap id="memberMap"
 		type="com.sportylight.domain.MemberVO">
 		<id property="membersId" column="members_id" />
@@ -18,6 +18,7 @@
 		<result property="nickname" column="members_nickname" />
 		<result property="avatarPath" column="members_avatar_path" />
 		<result property="gender" column="members_gender" />
+		<result property="oauth" column="oauth"/>
 		<collection property="authList" resultMap="authMap" />
 		<!-- Alias 처리를 해주는거 reg_date라고 선언되어 있지만 실제 DB에는 regDate니까 이름이랑 데이터랑 연결함 -->
 		<!-- VO객체의 authList를 처리할 땐 Mapper 내의 resultMap 중 authMap ID를 가진 객체로 올라가서 
@@ -29,68 +30,86 @@
 
 	<select id="read" resultMap="memberMap">
 		select * from members
-		where members_Id = #{membersId}
+		where
+		members_Id = #{membersId}
 	</select>
 
 	<select id="checkEmail" resultMap="memberMap">
 		select members_email
-		from members
+		from
+		members
 		where members_email = #{email}
 	</select>
-	
+
 	<select id="checkNickname" resultMap="memberMap">
 		select members_nickname
 		from members
 		where members_nickname = #{nickname}
 	</select>
-	
+
 	<select id="readMypage" resultMap="memberMap">
 		select *
 		from members
-		where members_id = #{membersId}
+		where
+		members_id = #{membersId}
 	</select>
 
 	<insert id="insert">
-		<selectKey keyProperty="membersId" order="AFTER" resultType="Integer">
-	        SELECT LAST_INSERT_ID() AS membersId
-	    </selectKey>
-	
-		insert into members (members_id, members_email, members_password, members_name, members_birth, members_nickname,members_avatar_path, members_gender)
+		<selectKey keyProperty="membersId" order="AFTER"
+			resultType="Integer">
+			SELECT LAST_INSERT_ID() AS membersId
+		</selectKey>
+
+		insert into members (members_id, members_email, members_password,
+		members_name, members_birth, members_nickname,members_avatar_path,
+		members_gender)
 		values (#{membersId}, #{email},
-				#{password}, #{name},
-				#{birth}, #{nickname},
-				#{avatarPath}, #{gender})
+		#{password}, #{name},
+		#{birth}, #{nickname},
+		#{avatarPath}, #{gender})
 	</insert>
 
 	<update id="updatePassword">
 		update members
 		set members_password = #{newPassword}
-		
+
 		where members_id = #{membersId}
 	</update>
 
-	<delete id="delete">
-		DELETE FROM members WHERE members_id = #{membersId}
+	<update id="updateMp">
+		update members
+		set  members_nickname = #{nickname}
+
+		where members_id = #{membersId}
+	</update>
+
+	<delete id="delete" >
+		DELETE FROM members WHERE
+		members_id = #{membersId}
 	</delete>
-	
-	<select id="read2" resultMap ="memberMap">
+
+	<delete id="deleteAuth">
+		DELETE FROM members_auth WHERE members_id = #{membersId}
+	</delete>
+
+	<select id="read2" resultMap="memberMap">
 		select m.*, auth
-		from 
-			members m left outer join members_auth ma 
-			on m.members_id = ma.members_id
+		from
+		members m left outer join members_auth ma
+		on m.members_id = ma.members_id
 		where m.members_email = #{email}
 	</select>
-	
+
 	<insert id="insertAuth">
 		insert into members_auth(members_id, auth)
 		values(#{membersId}, #{auth})
 	</insert>
-	
+
 	<select id="findId" resultMap="memberMap">
-    SELECT *
-    FROM members
-    WHERE members_name = #{name}
-      AND members_birth = #{birth}
-    </select>
-	
+		SELECT *
+		FROM members
+		WHERE members_name = #{name}
+		AND members_birth = #{birth}
+	</select>
+
 </mapper>

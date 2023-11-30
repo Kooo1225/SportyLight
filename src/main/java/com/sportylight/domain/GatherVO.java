@@ -23,5 +23,5 @@ public class GatherVO {
     private int state;
     private int deleteYn;
     private int cnt;
-
+    private int participate;
 }

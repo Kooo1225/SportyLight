@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sportylight.domain.GatherVO;
+import com.sportylight.domain.IdVO;
 import com.sportylight.service.GatherService;
 
 import retrofit2.http.POST;
@@ -49,4 +50,11 @@ public class BoardAjaxController {
 	public void deleteMyState (int gatheringId, int membersId) {
 		service.deleteMyState(gatheringId, membersId);
 	}
+
+	@PostMapping("/getstate")
+	public int getState(@RequestBody IdVO id) {
+		return service.getState(id.getGatheringId(),id.getMembersId());
+	}
+	
+
 }

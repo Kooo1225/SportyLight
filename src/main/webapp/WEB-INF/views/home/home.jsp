@@ -2,7 +2,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@ include file="../layouts/homeHeader.jsp" %>
 
 <link rel="stylesheet" href="/resources/css/home/home.css">
@@ -13,13 +13,25 @@
 
 		<!-- 검색창 -->
 		<div>
-			<input type="text">
-			<button style="left:260px;">
-				<svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
-            		<circle cx="12" cy="12" r="11" fill="white" stroke="#7FDCBE" stroke-width="2" />
-            		<line x1="20.7071" y1="20.2929" x2="28.7071" y2="28.2929" stroke="#7FDCBE" stroke-width="2" />
-            	</svg>
-			</button>
+			<form id="searchForm" method="get" class="d-flex">
+				<div class="selectBox">
+					<select name="option" class="selectForm">
+						<option value="">--검색 선택--</option>
+						<option value="T">제목</option>
+						<option value="C">내용</option>
+						<option value="TC">제목+내용</option>
+					</select>
+				</div>
+				<div>
+					<input type="text" name="keyword" style="width:230px"/>
+					<button style="left:320px;">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
+		            	<circle cx="12" cy="12" r="11" fill="white" stroke="#7FDCBE" stroke-width="2" />
+		            	<line x1="20.7071" y1="20.2929" x2="28.7071" y2="28.2929" stroke="#7FDCBE" stroke-width="2" />
+		            	</svg>
+					</button>
+				</div>
+			</form>
 		</div>
 		
 		<!-- 카테고리  -->
@@ -58,6 +70,46 @@
 				$('.scroll-container').append(listEl);
  			})	
 		})
+		
+		let searchForm = $('#searchForm');
+		$('#searchForm button').on('click', async function(e) {
+			e.preventDefault();
+			
+			var option = searchForm.find('option:selected');
+			if (!option.val()) {
+				alert('검색 종류를 선택하세요.');
+				option.focus();
+				return false; 
+			}
+
+			var keyword = searchForm.find('input[name="keyword"]');
+			if (!keyword.val()) {
+				alert('키워드를 입력하세요.');
+				keyword.focus();
+				return false;
+			}
+			
+			if(option.val() && keyword.val()) {
+				$('.sidebar-board').empty();
+				$('.scroll-container').empty();
+				
+				const gatherList = await rest_get(BASE_URL+'/search?option=' + option.val()+ '&keyword=' + keyword.val());
+				console.log(gatherList);
+				gatherCount = Object.keys(gatherList).length;
+				
+				let countEl = $(createListCountTemplate(gatherCount));
+				
+				$('.sidebar-board').append(countEl);
+				
+	 			let listEl;
+				
+	 			$.each(gatherList, function(index, item) {
+					listEl = $(createTypeListTemplate(item));
+					$('.scroll-container').append(listEl);
+	 			})	
+			}
+
+		});
 	})
 </script>
 
@@ -76,23 +128,29 @@
 						<div class="row" id="set1">
 							<div class="col-4">
 								<div class="sidebar-board-get">
-									<img src="/resources/images/home/cat.jpeg" class="board-avatar" />
+									<img src="/security/avatar/m/${gather.membersId}" class="board-avatar" />
 								</div>
 							</div>
 							
 							<!---------------------------------------->
 							<div class="col-8" id="detail">
 							
-								<div class="board-info-wrapper" style="width: 100%;">
-									<span class="board-title"><a href="#" onclick="setCenter('${gather.address}')">${gather.title}</a></span> 
-									<span class="board-category">${gather.type}</span> 
+								<div class="board-info-wrapper" style="width: 100%;position: relative; bottom: 12px;left: -4px;">
+								    <span class="board-category">[${gather.type}]</span> 
+								    <br>
+									<span class="board-title"><a href="#" onclick="setCenter('${gather.address}')">${gather.title}</a></span> 									
 									<br>
 									<span class="board-info">
 										인원 ${gather.headCount} 명 | <fmt:parseDate value="${gather.dateTime}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
 										<fmt:formatDate pattern="yyyy년 MM월 dd일 HH시 mm분" value="${parsedDateTime}" />
 									</span>
 									<br>
-									<span class="board-info"><a href="/board/detail?gatheringId=${gather.gatheringId}">상세보기</a></span>
+									<c:if test="${gather.headCount == gather.participate}">
+										<span class="board-info"><b>모임마감</b></span>
+									</c:if>
+									<c:if test="${gather.headCount != gather.participate}">
+									<span class="board-info"><a href="/board/detail?gatheringId=${gather.gatheringId}">상세보기 ></a></span>
+									</c:if>
 								</div>
 							</div>
 						</div>
@@ -161,7 +219,9 @@
             	id: '${gather.gatheringId}',
                 title: '${gather.title}',
                 address: '${gather.address}',
-                type: '${gather.type}'
+                type: '${gather.type}',
+                headCount: '${gather.headCount}',
+                participate: '${gather.participate}'
             },
         </c:forEach>
     ];
@@ -214,9 +274,10 @@
             	  	'                <img src="' + contentsImage + '" width="70" height="70">' +
 	                '           </div>' + 
 	                '            <div class="content">' + 
-	                '                <div class="addr">' + position.address + '</div>' + 
-	                '                <div class="type addr">' + position.type + '</div>' + 
-	                '                <div><a href="/board/detail?gatheringId='+ position.id + '" class="link">모임 신청</a></div>' + 
+	                '                <div class="addr"><b>' + position.address + '</b></div>' + 
+	                '                <div class="type addr"><b>' + position.type + '</b></div>' + 
+	                (position.headCount === position.participate ? '<span><b>모임마감</b></span>' : '<span><a href="/board/detail?gatheringId='+ position.id + '" class="link">모임 신청</a></span>') +
+	               	'				 <span><i class="fa-solid fa-user-group"></i> ' + position.participate + ' / ' + position.headCount +'명</span>' + 
 	                '            </div>' + 
 	                '        </div>' +
 	                '    </div>' +    

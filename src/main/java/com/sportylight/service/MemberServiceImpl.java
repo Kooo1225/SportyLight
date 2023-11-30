@@ -56,15 +56,12 @@ public class MemberServiceImpl implements MemberService {
 		AuthVO auth = new AuthVO(member.getMembersId(), "ROLE_USER");
 		mapper.insertAuth(auth);
 
-		if(!avatar.isEmpty()) { //아바타 넣는 부분에서 null값이 들어갔을 때 에러가 나서 주석처리
-			
-			File pngDest = new File(AVATAR_UPLOAD_DIR, member.getEmail() + ".png"); // png 파일 넣는 부분
-			
+		if(!avatar.isEmpty()) { 
+			File pngDest = new File(AVATAR_UPLOAD_DIR, member.getMembersId() + ".png"); // png 파일 넣는 부분
 			Thumbnails.of(avatar.getInputStream())
 					.size(50, 50)
 					.toFile(pngDest);
 		}
-
 	}
 
 	// 회원 정보 보기
@@ -75,10 +72,24 @@ public class MemberServiceImpl implements MemberService {
 
 	}
 
-	// 회원 정보 수정
+	// 회원 비번 수정
 	@Override
 	public void updatePassword(int membersId, String newPassword) {
 		mapper.updatePassword(membersId, newPassword);
+	}
+	
+	// 회원 정보 수정
+	@Override
+	public void updateMp(int membersId, String nickname,MultipartFile avatar) throws IOException {
+		mapper.updateMp(membersId, nickname);
+         if(!avatar.isEmpty()) { 
+			
+			File pngDest = new File(AVATAR_UPLOAD_DIR, membersId + ".png"); // png 파일 넣는 부분
+			
+			Thumbnails.of(avatar.getInputStream())
+					.size(50, 50)
+					.toFile(pngDest);
+		}
 	}
 
 	// 회원 탈퇴
@@ -87,6 +98,13 @@ public class MemberServiceImpl implements MemberService {
 		mapper.delete(membersId); // 회원 정보 삭제
 
 	}
+	
+	// 회원 탈퇴
+		@Override
+		public void withdrawalAuth(int membersId) {
+			mapper.deleteAuth(membersId); // 회원 정보 삭제
+
+		}
 
 	// 아이디찾기
 	@Override
