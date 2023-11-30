@@ -30,11 +30,28 @@ public class GatherMapperTest {
 //		log.info(vo);
 //	}
 //	
+//	@Test
+//	public void test2() {
+//		List<GatherVO> vo = mapper.getMyList(1);
+//		
+//		for(GatherVO g : vo) {
+//			g.setCnt(mapper.getJoinCount(g.getGatheringId()));
+//		}
+//		
+//		log.info(vo);
+//
+//	}
+	
+//	@Test
+//	public void test3() {
+//		mapper.removeGathering(46);
+//		mapper.removeState(46);
+//	}
+	
 	@Test
-	public void test2() {
-		List<GatherVO> vo = mapper.getMyState(23);
+	public void test4() {
+		mapper.deleteMyState(65, 54);
 		
-		log.info(vo);
 	}
 	
 
