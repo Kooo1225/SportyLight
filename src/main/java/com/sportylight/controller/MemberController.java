@@ -1,5 +1,7 @@
 package com.sportylight.controller;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 
@@ -34,7 +37,7 @@ public class MemberController {
 	
 
 	  @GetMapping
-	    public String myPage(@AuthenticationPrincipal CustomUser customUser, Model model) {
+	    public String myPage(@AuthenticationPrincipal CustomUser customUser, MultipartFile avatar,Model model) {
 		  	int membersId = customUser.getMembersId();
 		  
 		  	// 받아온 ID로 조회
@@ -62,11 +65,11 @@ public class MemberController {
 
 	 // 회원 정보 수정 처리
 	    @PostMapping("/update")
-	    	public String savempupdate(@AuthenticationPrincipal CustomUser customUser,String avatarPath,String nickname) {
+	    	public String savempupdate(@AuthenticationPrincipal CustomUser customUser,String nickname,MultipartFile avatar) throws IOException {
 	    	int membersId = customUser.getMembersId();
 	    	 MemberVO db2VO = memberService.getMember(membersId);
 	    	 
-	    	 memberService.updateMp(membersId, avatarPath, nickname);
+	    	 memberService.updateMp(membersId, nickname, avatar);
 	    	 
 	    	return "mypage/mypage";
 

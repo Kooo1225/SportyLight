@@ -133,9 +133,10 @@
 							<!---------------------------------------->
 							<div class="col-8" id="detail">
 							
-								<div class="board-info-wrapper" style="width: 100%;">
-									<span class="board-title"><a href="#" onclick="setCenter('${gather.address}')">${gather.title}</a></span> 
-									<span class="board-category">${gather.type}</span> 
+								<div class="board-info-wrapper" style="width: 100%;position: relative; bottom: 12px;left: -4px;">
+								    <span class="board-category">[${gather.type}]</span> 
+								    <br>
+									<span class="board-title"><a href="#" onclick="setCenter('${gather.address}')">${gather.title}</a></span> 									
 									<br>
 									<span class="board-info">
 										인원 ${gather.headCount} 명 | <fmt:parseDate value="${gather.dateTime}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
@@ -146,7 +147,7 @@
 										<span class="board-info"><b>모임마감</b></span>
 									</c:if>
 									<c:if test="${gather.headCount != gather.participate}">
-									<span class="board-info"><a href="/board/detail?gatheringId=${gather.gatheringId}">상세보기</a></span>
+									<span class="board-info"><a href="/board/detail?gatheringId=${gather.gatheringId}">상세보기 ></a></span>
 									</c:if>
 								</div>
 							</div>
