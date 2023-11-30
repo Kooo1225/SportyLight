@@ -17,4 +17,6 @@ public interface GatherService {
 	public void register(GatherVO vo); // gathering register를 위해 선언
 	 
 	public GatherVO get(int gatheringId); // gathering detail를 위해 선언
+	
+	public int getState(int gatheringId, int membersId);
 }

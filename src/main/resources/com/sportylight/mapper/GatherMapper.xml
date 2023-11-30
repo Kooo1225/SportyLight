@@ -59,4 +59,10 @@
 		where gathering_id = #{gatheringId}
 	</select>
 	
+	<select id="getState" resultType="int">
+		select gathering_state
+		from gathering_members
+		where gathering_id = #{gatheringId} and members_id = #{membersId};
+	</select>
+	
 </mapper>

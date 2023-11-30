@@ -46,7 +46,7 @@
 			<div class="col-12 col-md-12" id="inputbox">
 				<div class="row mx-auto">
 					<textarea class="col-12 col-md-10" id="messageInput" placeholder="Type your message"></textarea>
-					<button class="col-12 col-md-2" id="sendButton">Send</button>
+					<button type="submit" class="col-12 col-md-2" id="sendButton">Send</button>
 				</div>
 			</div>
 

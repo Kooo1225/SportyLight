@@ -131,13 +131,14 @@
 		<c:if test="${membersId != gather.membersId }">
 			<button type="button" class="btn">신청</button>
 		</c:if>
-		
-	<button type="submit" class="btn" onclick="createChattingElement()">채팅</button>
+		<button type="submit" class="btn" onclick="getState(${membersId}, ${gather.gatheringId })">채팅</button>
+	
 </div>
 
+<script src="/resources/js/home/rest.js"></script>
 <script>
-	function createChattingElement() {
-		let f = document.createElement('form');
+	function createChattingElement() {		
+ 		let f = document.createElement('form');
 
 		let gatherIdObj;
 		gatherIdObj = document.createElement('input');
@@ -150,15 +151,27 @@
 		CSRFToken.setAttribute('type', 'hidden');
 		CSRFToken.setAttribute('name', '${_csrf.parameterName}');
 		CSRFToken.setAttribute('value', '${_csrf.token}');
-		
-		console.log(${gather.gatheringId});
-		
+				
 		f.appendChild(gatherIdObj);
 		f.appendChild(CSRFToken);
 		f.setAttribute('method', 'post');
 		f.setAttribute('action', '../chat');
 		document.body.appendChild(f);
-		f.submit();
+		f.submit(); 
+	}
+	
+	async function getState(membersId, gatheringId) {
+		const URL = "/api/board/getstate"
+		
+		let state = await rest_post(URL, ${gather.gatheringId}, membersId);
+
+		if (state === 2 || state === 1) {
+			createChattingElement();
+		}
+		else {
+			alert("권한이 부여되지 않았습니다.");
+			return;
+		}
 	}
 
 </script>

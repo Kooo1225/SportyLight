@@ -47,5 +47,10 @@ public class GatherServiceImpl implements GatherService {
 	public GatherVO get(int gatheringId) {
 		return mapper.read(gatheringId);
 	}
+	
+	@Override
+	public int getState(int gatheringId, int membersId) {
+		return mapper.getState(gatheringId, membersId);
+	}
 		
 }
