@@ -111,5 +111,5 @@
 		WHERE members_name = #{name}
 		AND members_birth = #{birth}
 	</select>
-
+	
 </mapper>

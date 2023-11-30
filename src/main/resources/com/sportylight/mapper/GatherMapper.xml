@@ -52,7 +52,7 @@
 	<select id="getMyList" resultMap="gatherMap">
 		select *
 		from view_gathering_manager v
-		where v.members_id = #{membersId} and v.gathering_state = 2;
+
 	</select>
 	
 	<select id="getMyState" resultMap="gatherMap">
@@ -120,7 +120,15 @@
 	<select id="getState" resultType="int">
 		select gathering_state
 		from gathering_members
-		where gathering_id = #{gatheringId} and members_id = #{membersId};
+		where gathering_id = #{gatheringId} and members_id = #{membersId}
 	</select>
+	
+	<select id="getManagerList" resultMap="gatherMap">
+		select *
+		from view_gathering_manager
+		where gathering_id = #{gatheringId}
+	</select>
+	
+	
 	
 </mapper>

@@ -116,4 +116,17 @@ public class BoardController {
 		return "redirect:/board/mylist?membersId=" + membersId;
 
 	}
+	
+	@GetMapping("/manage")
+	public void manage(int membersId, Model model) {
+		log.info("mylist");
+		
+		List<GatherVO> myList = service.getMyList(membersId);
+		
+		model.addAttribute("membersId", membersId);
+		model.addAttribute("myList", myList);
+		
+		
+	}
+	
 }

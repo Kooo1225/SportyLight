@@ -28,4 +28,5 @@ public interface GatherService {
 	public GatherVO get(int gatheringId); // gathering detail를 위해 선언
 	
 	public int getState(int gatheringId, int membersId);
+	
 }
