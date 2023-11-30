@@ -18,18 +18,7 @@
 	<div class="panel panel-default">
 		<!-- -------------------------프로필사진--------------------------------------- -->
 		<div class="profile-fluid mx-auto"> 
-	       <img src="${member.avatarPath}" id="profile-image" alt="프로필 사진">
-           <img src="/security/avatar/m/${member.membersId}" id="profile3-image" alt="기본 이미지">
-              <script>
-				 var memberProfile = "${member.avatarPath}";
-                 if (memberProfile === null || memberProfile === "") {
-					document.getElementById('profile-image').style.display = 'none';
-				    document.getElementById('profile2-image').style.display = 'block'; 
-				 } else  { // 이미지가 존재할때
-					document.getElementById('profile-image').src = memberProfile;
-				    document.getElementById('profile2-image').style.display = 'none';
-				 }
-			  </script>
+		  <img src="/security/avatar/sm/${member.membersId }" class="home-avatar"/>
 		</div>		
 		<div class="input-style" style="padding: 50px 0 50px 0;">
 			<!-- -------------------------이름--------------------------------------- -->

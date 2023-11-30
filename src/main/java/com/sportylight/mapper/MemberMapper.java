@@ -20,7 +20,7 @@ public interface MemberMapper {
 	public void insert(MemberVO member);
 
 	public void updateMp (
-			@Param("membersId") int membersId, @Param("avatarPath") String avatarPath, @Param("nickname") String nickname);
+			@Param("membersId") int membersId, @Param("nickname") String nickname);
 	
 	public void updatePassword(
 			 @Param("membersId") int membersId, @Param("newPassword") String newPassword);
