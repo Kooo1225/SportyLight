@@ -21,7 +21,7 @@ import net.coobird.thumbnailator.Thumbnails;
 @Log4j
 public class MemberServiceImpl implements MemberService {
 
-	public static final String AVATAR_UPLOAD_DIR = "c:/upload/avatar";
+	public static final String AVATAR_UPLOAD_DIR = "/home/avatar";
 
 	@Autowired
 	MemberMapper mapper;

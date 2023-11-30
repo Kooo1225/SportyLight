@@ -16,7 +16,6 @@
 		<result property="state" column="gathering_state"/>
 		<result property="deleteYn" column="delete_yn"/>
 		<result property="participate" column="participate"/>
-
 	</resultMap>
 
 	<select id="get" resultMap="gatherMap">
@@ -26,7 +25,8 @@
 	</select>
 
 	<select id="getList" resultMap="gatherMap">
-		select * from view_gathering
+		select * from view_gathering_manager
+		where gathering_state != 3;
 	</select>
 	
 	<select id="getSearch" resultMap="gatherMap">
@@ -47,34 +47,30 @@
 				</foreach>
 			</trim>
 		</where>
-		
 	</select>
 	
 	<select id="getMyList" resultMap="gatherMap">
-		select g.*
-		from gathering_members gm left join gathering g on gm.gathering_id = g.gathering_id
-		where gm.members_id = #{membersId} and gm.gathering_state = 2;
+		select *
+		from view_gathering_manager v
+		where v.members_id = #{membersId} and v.gathering_state = 2;
 	</select>
 	
 	<select id="getMyState" resultMap="gatherMap">
-		select gm.*, g.gathering_title, g.gathering_datetime, g.gathering_description, g.gathering_headcount, 
-		g.gathering_address, g.gathering_type
-		from gathering_members gm left join gathering g  
-		on g.gathering_id = gm.gathering_id
-		where gm.members_id = #{membersId}
-		and gm.gathering_state in (-1, 0, 1, 3)
+		select *
+		from view_gathering_manager v
+		where v.members_id = #{membersId} and v.gathering_state in (-1, 0, 1)
 	</select>
 	
 	<select id="getJoinCount" resultType="int">
-		select COUNT(gathering_id) as cnt 
-		from gathering_members gm
-		where gathering_state in (1, 2) and gathering_id = #{gatheringId};
+		select participate
+		from view_gathering 
+		where gathering_id = #{gatheringId};
 	</select>
 	
 	<select id="getTypeList" resultMap="gatherMap">
 		select *
-		from gathering
-		where gathering_type = #{type};
+		from view_gathering_manager v
+		where v.gathering_type = #{type} and v.gathering_state != 3;
 	</select>
 	
 	<insert id="insert">

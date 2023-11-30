@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sportylight.domain.GatherVO;
-import com.sportylight.domain.IdVO;
+import com.sportylight.domain.GatherMembersVO;
 import com.sportylight.service.GatherService;
 
 import retrofit2.http.POST;
@@ -26,20 +26,13 @@ public class BoardAjaxController {
 	
 	@GetMapping("/mylist")
 	public List<GatherVO> MyUploadList(@RequestParam int membersId) {
-
 		return service.getMyList(membersId);
 	}
 	
 	@GetMapping("/mystate")
 	public List<GatherVO> MyStateList(@RequestParam int membersId) {
-
 		return service.getMyState(membersId);
 	}
-//	@GetMapping("/joincount")
-//	public List<GatherVO> getJoinCount(@RequestParam int membersId) {
-//
-//		return service.getJoinCount(membersId);
-//	}
 	
 	@GetMapping("/remove")
 	public void remove (@RequestParam int gatheringId) {
@@ -52,7 +45,7 @@ public class BoardAjaxController {
 	}
 
 	@PostMapping("/getstate")
-	public int getState(@RequestBody IdVO id) {
+	public int getState(@RequestBody GatherMembersVO id) {
 		return service.getState(id.getGatheringId(),id.getMembersId());
 	}
 	
