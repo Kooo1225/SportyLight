@@ -21,5 +21,7 @@ public class GatherVO {
     private String address;
     private EnumVO type;
     private int state;
+    private int deleteYn;
+    private int cnt;
     private int participate;
 }

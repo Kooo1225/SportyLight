@@ -31,11 +31,10 @@ public class BoardController {
 	public void mylist(int membersId, Model model) {
 		log.info("mylist");
 		
-		List<GatherVO> mylist = service.getMyList(membersId);
-		
+		List<GatherVO> myList = service.getMyList(membersId);
 		
 		model.addAttribute("membersId", membersId);
-		model.addAttribute("mylist", mylist);
+		model.addAttribute("myList", myList);
 		
 		
 	}
@@ -45,11 +44,10 @@ public class BoardController {
 		log.info("mystate");
 		
 		
-		List<GatherVO> mystate = service.getMyState(membersId);
+		List<GatherVO> myState = service.getMyState(membersId);
 		
 		model.addAttribute("membersId", membersId);
-		model.addAttribute("mystate", mystate);
-		
+		model.addAttribute("myState", myState);
 	}
 	
 	@GetMapping("/register")
@@ -70,5 +68,52 @@ public class BoardController {
 	@GetMapping("/detail")
 	public void registerDetail(@RequestParam("gatheringId") int gatheringId, Model model) {	
 		model.addAttribute("gather", service.get(gatheringId));
+	}
+
+	@GetMapping("/modify")
+	public void modify(
+			@RequestParam("gatheringId") int gatheringId,
+			Model model) {
+		
+		model.addAttribute("gather", service.get(gatheringId));
+	}
+	
+	@PostMapping("/modify")
+	public String modify(
+		GatherVO vo,
+		RedirectAttributes rttr) {
+		
+		log.info("modify:" + vo);
+		
+		if (service.modify(vo)) {
+			// Flash --> 1회성으로 정보를 전달한다.
+			rttr.addFlashAttribute("result", "success");
+			
+		}
+		
+		return "redirect:/board/mylist?membersId=" + vo.getMembersId();
+	}
+	
+	@GetMapping("/remove")
+	public void remove (@RequestParam int gatheringId, Model model) {
+		
+		log.info("remove : " + gatheringId);
+		model.addAttribute("gatheringId", gatheringId);
+		service.remove(gatheringId);
+	}
+	
+	@GetMapping("/delete")
+	public String delete(
+			int gatheringId, int membersId,
+			RedirectAttributes rttr) {
+	
+		log.info("delete..." + gatheringId + ", " + membersId);
+		
+		if (service.deleteMyState(gatheringId, membersId)) {
+			rttr.addFlashAttribute("result", "success");
+		}
+		
+		return "redirect:/board/mylist?membersId=" + membersId;
+
 	}
 }

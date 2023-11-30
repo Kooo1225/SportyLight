@@ -57,9 +57,7 @@ public class MemberServiceImpl implements MemberService {
 		mapper.insertAuth(auth);
 
 		if(!avatar.isEmpty()) { 
-			
 			File pngDest = new File(AVATAR_UPLOAD_DIR, member.getMembersId() + ".png"); // png 파일 넣는 부분
-			
 			Thumbnails.of(avatar.getInputStream())
 					.size(50, 50)
 					.toFile(pngDest);

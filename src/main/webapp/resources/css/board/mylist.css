@@ -18,7 +18,7 @@
 	background: #7FDCBE; 
 	border-radius: 100px;
 	display: flex;
-	align-items: center;
+	text-align: center;
 	justify-content: center;
 	margin: 0 15px 0 15px;
 }
@@ -38,19 +38,18 @@
 	border-radius: 30px; 
 	border: 2px #7FDCBE solid;
 }
-.mylist-gather-box {
+.mylist-box {
 	width: 1015px; 
-	height: 226px; 
+	height: auto; 
 	background: white; 
-	border-bottom: 0.30px black solid; 
 	margin: 20px 0 20px 0;
 }
 
-.mylist-gather-title {
+.mylist-title {
 	width: 461px; 
 	height: 47px;
 }
-.mylist-gather-title-main {
+.mylist-title-main {
 	color: black; 
 	font-size: 22px; 
 	font-family: Noto Sans; 
@@ -58,7 +57,7 @@
 	word-wrap: break-word;
 }
 
-.mylist-gather-title-type{
+.mylist-title-type{
 	color: #787878; 
 	font-size: 18px; 
 	font-family: Noto Sans; 
@@ -66,7 +65,7 @@
 	word-wrap: break-word;
 }
 
-.mylist-gather-dateTime {
+.mylist-dateTime {
 	width: 546px; 
 	height: 25px; 
 	color: #787878; 
@@ -76,7 +75,7 @@
 	word-wrap: break-word;
 }
 
-.mylist-gather-description {
+.mylist-description {
 	
 	width: 365px; 
 	height: 80px; 
@@ -88,10 +87,35 @@
 	
 }
 
-.mylist-gather-wrapper {
+.mylist-wrapper {
 	width: 873px; 
 	height: 173px; 
 	margin: 10px 0 10px 0;
+	border-bottom: 0.30px #c0c0c0 solid; 
+}
+
+.mylist-state-box {
+	width: 200px;
+	height: 50px;
+	flex-shrink: 0;
+	text-align: center;
+	vertical-align : middle;
+	background-color: #7FDCBE;
+	border-radius: 100px;
+	position: relative; 
+	margin-top: 20px;
+}
+
+.mylist-state {
+	color: #787878;
+	font-family: Noto Sans;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+    background-color:#7FDCBE; 
+    display:inline-block;
+    margin-top: 8px;
 }
 
 #btn1:active, #btn1:hover, #btn2:active, #btn2:hover, #btn3:active, #btn3:hover,
@@ -101,8 +125,33 @@
 	cursor: pointer;
 }
 
-@media screen and (max-width: 1055px) {
-	#ct1, #ct2, #ct3, #ct4 {
-		display: none;
-	}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+ #btn1, #btn2 { 
+    font-family: "Noto Sans";
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    background: #7fdcbe;
+    border-radius: 100px;
+    width: 226px;
+    height: 70px;
 }

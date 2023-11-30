@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sportylight.domain.EnumVO;
 import com.sportylight.domain.GatherVO;
@@ -11,7 +12,9 @@ import com.sportylight.domain.SearchVO;
 import com.sportylight.mapper.GatherMapper;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
+@Log4j
 @Service
 @AllArgsConstructor
 public class GatherServiceImpl implements GatherService {
@@ -31,17 +34,47 @@ public class GatherServiceImpl implements GatherService {
 	
 	@Override
 	public List<GatherVO> getTypeList(EnumVO type) {
+
 		return mapper.getTypeList(type);
 	}
 	
 	@Override
+	@Transactional
 	public List<GatherVO> getMyList(int membersId) {
-		return mapper.getMyList(membersId);
+		List<GatherVO> vo = mapper.getMyList(membersId);
+		
+		for(GatherVO g: vo) {
+			g.setCnt(mapper.getJoinCount(g.getGatheringId()));
+		}
+
+		return vo;
 	}
 	
 	@Override
 	public List<GatherVO> getMyState(int membersId) {
-		return mapper.getMyState(membersId);
+		List<GatherVO> vo = mapper.getMyState(membersId);
+		
+		for(GatherVO g: vo) {
+			g.setCnt(mapper.getJoinCount(g.getGatheringId()));
+		}
+//		return mapper.getMyState(membersId);
+		return vo;
+	}
+	
+	@Override
+	public boolean modify(GatherVO vo) {
+
+		log.info("modify......" + vo);
+		
+		return mapper.update(vo) == 1;
+	}
+	
+	@Override
+	@Transactional
+	public void remove(int gatheringId) {
+
+		mapper.removeGathering(gatheringId);
+		mapper.removeState(gatheringId);
 	}
 	
 	@Override
@@ -55,6 +88,10 @@ public class GatherServiceImpl implements GatherService {
 	}
 	
 	@Override
+	public boolean deleteMyState(int gatheringId, int membersId) {
+		return mapper.deleteMyState(gatheringId, membersId) == 1;
+	}
+
 	public int getState(int gatheringId, int membersId) {
 		return mapper.getState(gatheringId, membersId);
 	}
