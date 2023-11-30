@@ -53,7 +53,7 @@
 	<select id="getMyList" resultMap="gatherMap">
 		select g.*
 		from gathering_members gm left join gathering g on gm.gathering_id = g.gathering_id
-		where gm.members_id = #{membersId} and gm.gathering_state = 2;
+		where gm.members_id = #{membersId} and gm.gathering_state = 2
 	</select>
 	
 	<select id="getMyState" resultMap="gatherMap">
@@ -68,13 +68,13 @@
 	<select id="getJoinCount" resultType="int">
 		select COUNT(gathering_id) as cnt 
 		from gathering_members gm
-		where gathering_state in (1, 2) and gathering_id = #{gatheringId};
+		where gathering_state in (1, 2) and gathering_id = #{gatheringId}
 	</select>
 	
 	<select id="getTypeList" resultMap="gatherMap">
 		select *
 		from gathering
-		where gathering_type = #{type};
+		where gathering_type = #{type}
 	</select>
 	
 	<insert id="insert">
@@ -124,7 +124,15 @@
 	<select id="getState" resultType="int">
 		select gathering_state
 		from gathering_members
-		where gathering_id = #{gatheringId} and members_id = #{membersId};
+		where gathering_id = #{gatheringId} and members_id = #{membersId}
 	</select>
+	
+	<select id="getManagerList" resultMap="gatherMap">
+		select *
+		from view_gathering_manager
+		where gathering_id = #{gatheringId}
+	</select>
+	
+	
 	
 </mapper>
