@@ -14,15 +14,17 @@
 		<!-- 검색창 -->
 		<div>
 			<form id="searchForm" method="get" class="d-flex">
-				<select name="option" class="form-select rounded-0 ml-1">
-					<option value="">-- 검색대상선택 --</option>
-					<option value="T">제목</option>
-					<option value="C">내용</option>
-					<option value="TC">제목+내용</option>
-				</select>
+				<div class="selectBox">
+					<select name="option" class="selectForm">
+						<option value="">--검색 선택--</option>
+						<option value="T">제목</option>
+						<option value="C">내용</option>
+						<option value="TC">제목+내용</option>
+					</select>
+				</div>
 				<div>
-					<input type="text" name="keyword"/>
-					<button style="left:260px;">
+					<input type="text" name="keyword" style="width:230px"/>
+					<button style="left:320px;">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
 		            	<circle cx="12" cy="12" r="11" fill="white" stroke="#7FDCBE" stroke-width="2" />
 		            	<line x1="20.7071" y1="20.2929" x2="28.7071" y2="28.2929" stroke="#7FDCBE" stroke-width="2" />
