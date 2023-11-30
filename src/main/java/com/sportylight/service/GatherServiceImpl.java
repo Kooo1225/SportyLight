@@ -44,7 +44,7 @@ public class GatherServiceImpl implements GatherService {
 		List<GatherVO> vo = mapper.getMyList(membersId);
 		
 		for(GatherVO g: vo) {
-			g.setCnt(mapper.getJoinCount(g.getGatheringId()));
+			g.setParticipate(mapper.getJoinCount(g.getGatheringId()));
 		}
 
 		return vo;
@@ -55,7 +55,7 @@ public class GatherServiceImpl implements GatherService {
 		List<GatherVO> vo = mapper.getMyState(membersId);
 		
 		for(GatherVO g: vo) {
-			g.setCnt(mapper.getJoinCount(g.getGatheringId()));
+			g.setParticipate(mapper.getJoinCount(g.getGatheringId()));
 		}
 //		return mapper.getMyState(membersId);
 		return vo;
@@ -92,6 +92,7 @@ public class GatherServiceImpl implements GatherService {
 		return mapper.deleteMyState(gatheringId, membersId) == 1;
 	}
 
+	@Override
 	public int getState(int gatheringId, int membersId) {
 		return mapper.getState(gatheringId, membersId);
 	}
