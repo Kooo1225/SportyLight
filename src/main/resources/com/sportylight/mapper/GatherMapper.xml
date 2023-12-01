@@ -52,7 +52,7 @@
 	<select id="getMyList" resultMap="gatherMap">
 		select *
 		from view_gathering_manager v
-
+		where v.members_id = #{membersId} and v.gathering_state = 2;
 	</select>
 	
 	<select id="getMyState" resultMap="gatherMap">

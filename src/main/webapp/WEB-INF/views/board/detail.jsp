@@ -112,9 +112,9 @@
 						<div class="container" style="margin-top: 0px;">
                              <a href="/"><button type="button" class="btn0">홈</button> </a>
                                  <sec:authentication property="principal.member.membersId" var="membersId" />
-							     <c:if test="${membersId == gather.membersId }"> <button type="button" class="btn0">관리</button></c:if>
+							     <c:if test="${membersId == gather.membersId }"> <button type="button" class="btn0" onclick="location.href='/board/manage/${gather.gatheringId}'">관리</button></c:if>
 							     <c:if test="${membersId != gather.membersId }"> <button type="button" class="btn0">신청</button></c:if>
-							 	 <button type="button" class="btn0" onclick="getState(${membersId}, ${gather.gatheringId})")>채팅</button>
+							 	 <button type="button" class="btn0" onclick="getState(${membersId}, ${gather.gatheringId})">채팅</button>
 						</div>
 					</div>
 				</cite>
@@ -144,6 +144,29 @@
 
 <script src="/resources/js/home/rest.js"></script>
 <script>
+	function getManage(gatheringId) {
+ 		let f = document.createElement('form');
+
+		let gatherIdObj;
+		gatherIdObj = document.createElement('input');
+		gatherIdObj.setAttribute('type', 'hidden');
+		gatherIdObj.setAttribute('name', 'gatheringId');
+		gatherIdObj.setAttribute('value', ${gather.gatheringId});
+		
+		let CSRFToken;
+		CSRFToken = document.createElement('input');
+		CSRFToken.setAttribute('type', 'hidden');
+		CSRFToken.setAttribute('name', '${_csrf.parameterName}');
+		CSRFToken.setAttribute('value', '${_csrf.token}'); 
+				
+		f.appendChild(gatherIdObj);
+ 		f.appendChild(CSRFToken);	
+		f.setAttribute('method', 'post');
+		f.setAttribute('action', 'manage');
+		document.body.appendChild(f);
+		f.submit(); 
+	}
+
 	function createChattingElement() {		
  		let f = document.createElement('form');
 

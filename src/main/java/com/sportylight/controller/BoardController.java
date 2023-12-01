@@ -1,12 +1,18 @@
 package com.sportylight.controller;
 
+import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sportylight.domain.GatherVO;
+import com.sportylight.domain.MemberVO;
+import com.sportylight.security.domain.CustomUser;
 import com.sportylight.domain.GatherMembersVO;
+import com.sportylight.service.GatherMembersService;
 import com.sportylight.service.GatherService;
+import com.sportylight.service.MemberService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -26,6 +36,12 @@ public class BoardController {
 	
 	@Autowired
 	private GatherService service;
+	
+	@Autowired
+	private MemberService mService;
+	
+	@Autowired
+	private GatherMembersService gmService;
 	
 	@GetMapping("/mylist")
 	public void mylist(int membersId, Model model) {
@@ -117,16 +133,35 @@ public class BoardController {
 
 	}
 	
-	@GetMapping("/manage")
-	public void manage(int membersId, Model model) {
-		log.info("mylist");
+	@GetMapping("/manage/{gatheringId}")
+	public String manage(@AuthenticationPrincipal CustomUser customUser, @ModelAttribute("gatherMemebers") GatherMembersVO gatherMembers, 
+			@PathVariable int gatheringId, Model model) {	
+
+		List<GatherVO> myGatherList = service.getMyList(customUser.getMembersId());
+		List<MemberVO> myMemberList = mService.getManageList(gatheringId);
 		
-		List<GatherVO> myList = service.getMyList(membersId);
+		model.addAttribute("membersId", customUser.getMembersId());
+		model.addAttribute("myGatherList", myGatherList);
+		model.addAttribute("myMemberList", myMemberList);
+		model.addAttribute("gatheringId", gatheringId);
 		
-		model.addAttribute("membersId", membersId);
-		model.addAttribute("myList", myList);
+		return "board/manage";
+	}
+	
+	@PostMapping("/manage")
+	public String manage(@ModelAttribute("gatherMembers") GatherMembersVO vo, Model model) {
+		gmService.updateState(vo.getGatheringId(), vo.getMembersId(), vo.getState());
 		
+		return "redirect:/board/manage/" + vo.getGatheringId();
+	}
+	
+	@PostMapping("/manage/apply")
+	public String apply(@ModelAttribute("gatherMembers") GatherMembersVO vo, RedirectAttributes rttr, Model model) {
+		gmService.updateState(vo.getGatheringId(), vo.getMembersId(), vo.getState());
+		System.out.println("apply완료");
+		rttr.addFlashAttribute("gatheringId", vo.getGatheringId());
 		
+		return "redirect:/board/manage";
 	}
 	
 }

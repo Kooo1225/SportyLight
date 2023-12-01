@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sportylight.mapper.GatherMembersMapper">
+
+	<resultMap id="gatherMembersMap" type="com.sportylight.domain.GatherMembersVO">
+		<id property="gatheringId" column="gathering_id" />
+		<id property="membersId" column="members_id" />
+		<result property="state" column="gathering_state" />
+	</resultMap>
+
+	<update id="updateState">
+		update gathering_members
+		set gathering_state = #{state}
+		where gathering_id = #{gatheringId} and members_id = #{membersId};
+	</update>
+	
+	<select id="getList" resultMap="gatherMembersMap">
+		select *
+		from gathering_members
+		where gathering_id = #{gatheringId}
+	</select>
+	
+</mapper>

@@ -4,6 +4,7 @@ import java.io.File;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -71,6 +72,11 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.readMypage(membersId);
 
 	}
+	
+	@Override
+	public List<MemberVO> getManageList(int gatheringId) {
+		return mapper.getManageList(gatheringId);
+	}
 
 	// 회원 비번 수정
 	@Override
@@ -117,5 +123,5 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO get2(String email) {
 		return mapper.read2(email);
 	}
-
+	
 }
