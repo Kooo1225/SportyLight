@@ -60,6 +60,12 @@ $(document).ready(function() {
             }
         }).open();
     });
+	
+	var now_utc = Date.now()
+	var timeOff = new Date().getTimezoneOffset()*60000; 
+	var today = new Date(now_utc-timeOff).toISOString().substring(0, 16);
+	 
+	document.getElementById("DateLocal").setAttribute("min", today);
 });
 </script>
 
@@ -84,7 +90,7 @@ $(document).ready(function() {
 					<input type="number" min="1" max="20" value="1" name="headCount" class="num">
 					
 					<i class="fa-solid fa-calendar-days fa-2x" style="color:#518E7B;"></i>
-					<input type="datetime-local" name="dateTime" class="date">
+					<input type="datetime-local" name="dateTime" class="date" id="DateLocal">
 				</div>
 				<div class="form-group mx-auto input-style">
 					<input type="text" id="sample5_address" name="address" placeholder=" 모임 장소를 선택해주세요." readonly><br>

@@ -202,7 +202,7 @@
 	      });
 	    
 	} else { 
-	    var position = new kakao.maps.LatLng(33.450701, 126.570667);    
+	    var position = new kakao.maps.LatLng(35.1781, 129.0736);    
 	    displayPosition(position);
 	}
 

@@ -10,7 +10,20 @@
 <%@ include file="../layouts/detailHeader.jsp"%>
 <link rel="stylesheet" href="/resources/css/board/detail.css?after" />
 
+<script>
 
+$(document).ready(function(e) {
+	document.getElementById('manageButton').addEventListener('click', function() {
+	    var hiddenButtons = document.getElementById('hiddenButtons');
+	    if (hiddenButtons.style.display === 'none') {
+	        hiddenButtons.style.display = 'block';
+	    } else {
+	        hiddenButtons.style.display = 'none';
+	    }
+	});	
+});
+
+</script>
 
 
 <div class="container-fluid" style="padding: 0;">
@@ -112,9 +125,17 @@
 						<div class="container" style="margin-top: 0px;">
                              <a href="/"><button type="button" class="btn0">홈</button> </a>
                                  <sec:authentication property="principal.member.membersId" var="membersId" />
-							     <c:if test="${membersId == gather.membersId }"> <button type="button" class="btn0">관리</button></c:if>
+                                 
+							     <c:if test="${membersId == gather.membersId }"> 
+								     <button type="button" class="btn0" id="manageButton">관리</button>
+								        
+							     </c:if>
 							     <c:if test="${membersId != gather.membersId }"> <button type="button" class="btn0">신청</button></c:if>
-							 	 <button type="button" class="btn0" onclick="getState(${membersId}, ${gather.gatheringId})")>채팅</button>
+							 	 <button type="button" class="btn0" onclick="getState(${membersId}, ${gather.gatheringId})">채팅</button>
+							 	 <div id="hiddenButtons" style="display: none;">
+						            <div><a href="/board/modify?gatheringId=${gather.gatheringId} "><button type="button" class="btn0">모임수정</button></a></div>
+						            <div><a href="#"><button type="button" class="btn0">신청관리</button></a></div>
+						        </div>
 						</div>
 					</div>
 				</cite>

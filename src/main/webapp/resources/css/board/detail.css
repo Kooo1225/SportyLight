@@ -282,6 +282,16 @@ h1 {
 	outline: none;
 }
 
+#hiddenButtons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#hiddenButtons button {
+    margin: 10px 0;
+}
+
 @media screen and (min-width: 1800px) {
 	.container1 {
 		display: none;

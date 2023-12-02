@@ -61,6 +61,12 @@ public class MemberServiceImpl implements MemberService {
 			Thumbnails.of(avatar.getInputStream())
 					.size(50, 50)
 					.toFile(pngDest);
+		} 
+		else {
+			File pngDest = new File(AVATAR_UPLOAD_DIR, "unknown.png");
+			Thumbnails.of(avatar.getInputStream())
+			.size(50, 50)
+			.toFile(pngDest);
 		}
 	}
 
