@@ -2,6 +2,7 @@ package com.sportylight.service;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,6 +21,8 @@ public interface MemberService {
 	// 회원 정보 조회
 	public MemberVO getMember(int membersId);
 
+	public List<MemberVO> getManageList(int gatheringId);
+	
 	// 회원 정보 수정
 	void updateMp (int membersId, String nickname,  MultipartFile avatar) throws IOException;;
 	
@@ -31,7 +34,6 @@ public interface MemberService {
 	
 	void withdrawalAuth(int membersId);
 	
-
 	public MemberVO get2(String email);
 
 	public MemberVO findId(Date birth, String name);

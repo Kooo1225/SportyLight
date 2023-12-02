@@ -3,7 +3,6 @@ package com.sportylight.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,9 +14,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sportylight.domain.GatherVO;
 import com.sportylight.domain.GatherMembersVO;
+import com.sportylight.service.GatherMembersService;
 import com.sportylight.service.GatherService;
 
-import retrofit2.http.POST;
 
 
 @RestController
@@ -26,6 +25,9 @@ public class BoardAjaxController {
 	
 	@Autowired
 	GatherService service;
+	
+	@Autowired
+	private GatherMembersService mService;
 	
 	@GetMapping("/mylist")
 	public List<GatherVO> MyUploadList(@RequestParam int membersId) {
