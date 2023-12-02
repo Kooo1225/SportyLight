@@ -18,7 +18,7 @@ function MyListTemplate(mylist) {
 	<div class="card">
 	
     	<div class="card-header">
-    	<div class="mylist-title">${mylist.title}</div>
+    	<div class="mylist-title" OnClick="location.href ='/board/manage/${mylist.gatheringId}'" style="cursor:pointer;">${mylist.title}</div>
     	</div>
     
     	<div class="card-body">
@@ -70,7 +70,7 @@ function MyStateTemplate(mystate) {
 	<div class="card">
 	
     	<div class="card-header">
-    		<div class="mylist-title">${mystate.title }</div>
+    		<div class="mylist-title" >${mystate.title }</div>
     	</div>
     
     	<div class="card-body">
