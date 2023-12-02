@@ -85,10 +85,10 @@ $(document).ready(function() {
 			</div>
 			<div class="form-group mx-auto select" >
 				<i class="fa-sharp fa-regular fa-calendar-days fa-2x" 
-				   style="color: #518E7B;"></i>
+				   style="color: #5A95F5;"></i>
 				<input type="date" id="date" name="birth"> 
 				
-				<i class="fa-solid fa-venus-double fa-2x" style="color: #518E7B;"></i>
+				<i class="fa-solid fa-venus-double fa-2x" style="color: #5A95F5;"></i>
 				
 				<form:radiobutton path="gender" id="select" value="male"></form:radiobutton><label for="select">남</label> 
 				<form:radiobutton path="gender" id="select2" value="female"></form:radiobutton><label for="select2">여</label>

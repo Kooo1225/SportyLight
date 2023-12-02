@@ -22,14 +22,14 @@
 /* header - SportyLight 큰 로고 */
 .jumbotron h1 {
 	margin-bottom: 20px;
-	color: #7FDCBE;
+	color: #5A95F5;
 	font-size: 50px;
 	font-family: 'Noto Sans', sans-serif;
 }
 
 /* header - SportyLight 밑 문장 */
 .jumbotron p {
-	color: #7FDCBE;
+	color: #5A95F5;
 	font-size: 15px;
 }
 
@@ -117,7 +117,7 @@ sample2 blockquote:before {
 .sample blockquote p {
 	color: #808080;
 	margin: 0 34px;
-	border-bottom: 2px solid rgba(0, 0, 0, .075);
+	border-bottom: 2px solid #7FB3FA;
 }
 
 .sample blockquote cite {
@@ -163,7 +163,7 @@ sample2 blockquote:before {
 	width: 88px;
 	height: 88px;
 	border-radius: 50%;
-	border: 2px solid rgba(0, 0, 0, .075);
+	border: 2px solid #bbbbbb;
 }
 
 /* Gathering */
@@ -187,7 +187,7 @@ h1 {
 	margin-bottom: 4px;
 	font-size: 13.5px;
 	font-family: "San Francisco";
-	/*  border-bottom: 2px solid #7FDCBE; */
+	/*  border-bottom: 2px solid #5A95F5; */
 	text-align: left;
 }
 /*  인원  */
@@ -197,7 +197,7 @@ h1 {
 	margin-bottom: 4px;
 	padding: 8px 10px;
 	font-size: 13.5px;
-	/* border-bottom: 2px solid #7FDCBE; */
+	/* border-bottom: 2px solid #5A95F5; */
 	font-family: "San Francisco";
 	text-align: left;
 }
@@ -208,7 +208,7 @@ h1 {
 	padding: 8px 10px;
 	font-size: 13.5px;
 	font-family: "San Francisco";
-	/* border-bottom: 2px solid #7FDCBE; */
+	/* border-bottom: 2px solid #5A95F5; */
 	text-align: left
 }
 /* 내용 */
@@ -218,7 +218,7 @@ h1 {
 	font-size: 12px;
 	border-radius: 15px;
 	position: relative;
-	border: 2px solid rgba(0, 0, 0, .075);
+	border: 2px solid #bbbbbb;
 	bottom: 15px;
 	height: 190px;
 	width: 490px;
@@ -266,12 +266,12 @@ h1 {
 	height: 40px;
 	margin: 21px 15px 0px 15px;
 	color: white;
-	background: #7FDCBE;
+	background: #5A95F5;
 	font-size: 20px;
 	font-family: 'San Francisco', sans-serif;
 	font-weight: 600;
 	border-radius: 10px;
-	border: 0px solid #7FDCBE;
+	border: 0px solid #5A95F5;
 }
 
 .btn0
@@ -318,7 +318,7 @@ h1 {
 	margin-bottom: 8px;
 	font-size: 13.5px;
 	font-family: "San Francisco";
-	border-bottom: 2px solid #7FDCBE;
+	border-bottom: 2px solid #5A95F5;
 	text-align: left;
 }
 /*  인원  */
@@ -328,7 +328,7 @@ h1 {
 	margin-bottom: 20px;
 	padding: 8px 10px;
 	font-size: 13.5px;
-	border-bottom: 2px solid #7FDCBE;
+	border-bottom: 2px solid #5A95F5;
 	font-family: "San Francisco";
 	text-align: left;
 }
@@ -339,7 +339,7 @@ h1 {
 	padding: 8px 10px;
 	font-size: 13.5px;
 	font-family: "San Francisco";
-	border-bottom: 2px solid #7FDCBE;
+	border-bottom: 2px solid #5A95F5;
 	text-align: left;
 }
 /* 내용 */
@@ -349,7 +349,7 @@ h1 {
 	font-size: 12px;
 	border-radius: 15px;
 	position: relative;
-	border: 2px solid #7FDCBE;
+	border: 2px solid #5A95F5;
 	bottom: 15px;
 	height: 190px;
 	width: 490px;
@@ -392,12 +392,12 @@ h1 {
 	height: 40px;
 	margin: 14px 15px 0px 15px;
 	color: white;
-	background: #7FDCBE;
+	background: #5A95F5;
 	font-size: 20px;
 	font-family: 'San Francisco', sans-serif;
 	font-weight: 600;
 	border-radius: 10px;
-	border: 0px solid #7FDCBE;
+	border: 0px solid #5A95F5;
 	box-shadow: 0px 5px 0px 0px #bdbdbd;
 }
 

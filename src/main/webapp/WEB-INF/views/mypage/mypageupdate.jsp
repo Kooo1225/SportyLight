@@ -30,9 +30,9 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 		<div class="form-group mx-auto check">
 			      <!-- 민트박스  -->
 			        <svg xmlns="http://www.w3.org/2000/svg" width="117" height="55"viewBox="0 0 117 52" fill="none"style="position: absolute; top: 0px; left: 0px;">
-                      <rect x="116.248" y="52" width="116" height="52" rx="10"transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" /> 
-                      <rect x="116.248" y="52" width="12.4923" height="52"transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" />
-                      <text x="50%" y="50%" dominant-baseline="middle"text-anchor="middle" fill="#B3B3B3" font-size="18"
+                      <rect x="116.248" y="52" width="116" height="52" rx="10"transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
+                      <rect x="116.248" y="52" width="12.4923" height="52"transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" />
+                      <text x="50%" y="50%" dominant-baseline="middle"text-anchor="middle" fill="#fff" font-size="18"
 					        font-family="Arial">이름</text>     
                    </svg>
 		     <input class="membername" name="name" value="${member.name}" readonly>
@@ -42,9 +42,9 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 		<div class="form-group mx-auto check">
 			       <!-- 민트박스  -->
 			       <svg xmlns="http://www.w3.org/2000/svg" width="117" height="55"viewBox="0 0 117 52" fill="none"style="position: absolute; top: 0px; left: 0px;">
-                      <rect x="116.248" y="52" width="116" height="52" rx="10"transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" /> 
-                      <rect x="116.248" y="52" width="12.4923" height="52"transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" />
-                      <text x="50%" y="50%" dominant-baseline="middle"text-anchor="middle" fill="#B3B3B3" font-size="18"
+                      <rect x="116.248" y="52" width="116" height="52" rx="10"transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
+                      <rect x="116.248" y="52" width="12.4923" height="52"transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" />
+                      <text x="50%" y="50%" dominant-baseline="middle"text-anchor="middle" fill="#fff" font-size="18"
 					        font-family="Arial">닉네임</text>     
                    </svg>
 			 <input type="nickname" class="membernickname" name="nickname" >
@@ -53,9 +53,9 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 		<div class="form-group2 mx-auto check" id="emailbox">
 			      <!-- 민트박스  -->
 			       <svg xmlns="http://www.w3.org/2000/svg" width="117" height="55"viewBox="0 0 117 52" fill="none"style="position: absolute; top: 0px; left: 0px;">
-                      <rect x="116.248" y="52" width="116" height="52" rx="10"transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" /> 
-                      <rect x="116.248" y="52" width="12.4923" height="52"transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" />
-                      <text x="50%" y="50%" dominant-baseline="middle"text-anchor="middle" fill="#B3B3B3" font-size="18"
+                      <rect x="116.248" y="52" width="116" height="52" rx="10"transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
+                      <rect x="116.248" y="52" width="12.4923" height="52"transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" />
+                      <text x="50%" y="50%" dominant-baseline="middle"text-anchor="middle" fill="#fff" font-size="18"
 					        font-family="Arial">이메일</text>     
                    </svg>
 			 <input class="memberemail" name="email" value="${member.email}" readonly>
@@ -64,18 +64,19 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 		<div class="row mx-auto" >
     <div class="col-4 mx-auto">
         <div class="form-group submitButton">
-            <button type="submit" class="btn btn-info" style="position: relative;left: 22px;">확인</button>
+            <button type="submit" class="btn btn-info" 
+            style="width:150px;height: 52px;position: relative;top: 7px;left: 94px;">확인</button>
         </div>
     </div>
     <div class="col-4 mx-auto">
         <div class="form-group submitButton">
-            <button type="button" class="btn btn-info" style="right: 85px;position: relative;"
+            <button type="button" class="btn btn-info" style="right: 90px;width: 150px;height: 52px;position: relative;top: 7px;"
             onclick="location.href='/mypage?membersId=${member.membersId }'">취소</button>
         </div>
     </div>
     <div class="col-4 mx-auto">
         <div class="form-group submitButton">
-            <button type="button" class="btn btn-info" style="position: relative;right: 199px;"
+            <button type="button" class="btn btn-info" style="right: 274px;width: 150px;height: 52px;position: relative;top: 7px;"
             onclick="location.href='/mypage/pwupdate?membersId=${membersId}'">비밀번호 변경</button>
         </div>
     </div>

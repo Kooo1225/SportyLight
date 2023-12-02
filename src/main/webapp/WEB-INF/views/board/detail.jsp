@@ -55,16 +55,16 @@ $(document).ready(function(e) {
 						<div class="row mx-auto"style="width: 550px; padding: 22px 30px 0 30px;">
 							<div class="col-md-6"style="padding: 0; width: 200px; margin-top: 12px;">
 							    <div><img src="/security/avatar/sm/${gather.membersId }" id="profile-image"alt="기본 이미지"></div>
-								     <div style="border: 2px solid rgba(0, 0, 0, .075); border-radius: 15px;">
+								     <div style="border: 2px solid #bbbbbb; border-radius: 15px;">
 									     <div class="gathermember0">
-										     <i class="fa-solid fa-check" style="color: #7FDCBE;"></i>&nbsp;&nbsp;모집인원 : ${gather.headCount}명
+										     <i class="fa-solid fa-check" style="color: #7FB3FA;"></i>&nbsp;&nbsp;모집인원 : ${gather.headCount}명
 									     </div>
 									         <div class="meetingtime0">
-										        <i class="fa-solid fa-check" style="color: #7FDCBE;"></i>&nbsp;&nbsp;
+										        <i class="fa-solid fa-check" style="color: #7FB3FA;"></i>&nbsp;&nbsp;
 										        <fmt:parseDate value="${gather.dateTime}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
 										        <fmt:formatDate pattern="yyyy년 MM월 dd일(EE) HH시 mm분" value="${parsedDateTime}" />
 									         </div>
-									      <div class="place0"><i class="fa-solid fa-check" style="color: #7FDCBE;"></i>&nbsp;&nbsp;${gather.address}
+									      <div class="place0"><i class="fa-solid fa-check" style="color: #7FB3FA;"></i>&nbsp;&nbsp;${gather.address}
 									      </div>
 								     </div>
 							 </div>

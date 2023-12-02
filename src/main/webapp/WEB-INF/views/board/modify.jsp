@@ -20,13 +20,13 @@ $(document).ready(function() {
 
 	
 	if (gatherType === '헬스') {
-		$('#select-health').prop('checked', true).css('background-color', '#518E7B'); // 헬스체크
+		$('#select-health').prop('checked', true).css('background-color', '#788FA1'); // 헬스체크
 	} else if (gatherType === '스포츠') {
-		$('#select-sport').prop('checked', true).css('background-color', '#518E7B');
+		$('#select-sport').prop('checked', true).css('background-color', '#788FA1');
 	} else if (gatherType === '등산') {
-		$('#select-climb').prop('checked', true).css('background-color', '#518E7B');
+		$('#select-climb').prop('checked', true).css('background-color', '#788FA1');
 	} else if (gatherType === '러닝') {
-		$('#select-run').prop('checked', true).css('background-color', '#518E7B');
+		$('#select-run').prop('checked', true).css('background-color', '#788FA1');
 	}
 	console.log(gatherType);
 	
@@ -105,7 +105,7 @@ $(document).ready(function() {
 				</div>
 				<div class="form-group mx-auto input-style">
 					<input type="text" id="sample5_address" name="address" value="${gather.address }" readonly><br>
-					<input type="button" class="openPostcode" value="주소 검색" style="background: #7FDCBE; color: white"><br>
+					<input type="button" class="openPostcode" value="주소 검색" style="background: #5A95F5; color: white"><br>
 					<div id="map" class="register-address"></div>
 				</div>
 				

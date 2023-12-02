@@ -26,18 +26,18 @@
 }
 
 #menu1, #menu2, #menu3, #login, #join, #logout {
-	color: #7fdcbe;
+	color: #5A95F5;
 	font-family: Noto Sans;
-	font-size: 18px;
+	font-size: 17px;
 	font-weight: 600;
 	text-decoration: none;
 }
 
 #login-nickname {
-	color: #7fdcbe;
+	color: #5A95F5;
 	font-family: Noto Sans;
-	font-size: 18px;
-	font-weight: 400;
+	font-size: 17px;
+    font-weight: 600;
 	text-decoration: none;
  
 }
@@ -61,7 +61,7 @@
 	font-size: 18px;
 	font-weight: 400;
 	color: #fff;
-	background: #7fdcbe;
+	background: #5A95F5;
 	border-radius: 100px;
 	height: 38px;
 }
@@ -78,7 +78,7 @@
 
 #ct1:active, #ct1:hover, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
 	#ct4:active, #ct4:hover, #join:active, #join:hover, #logout:active, #logout:hover {
-	background: #518e7b;
+	background: #788FA1;
 	color: #fff;
 }
 
@@ -123,7 +123,7 @@ select::-ms-expand {
 	position: relative;
 	width: 130px;
 	height: 43px;
-	border: 2px solid #7fdcbe;
+	border: 2px solid #5A95F5;
 	border-right: none;
 	box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -145,7 +145,7 @@ select::-ms-expand {
 /* 검색창 */
 input {
 /* 	border-radius: 10px; */
-	border: 2px solid #7fdcbe;
+	border: 2px solid #5A95F5;
 	background: #fff;
 	box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.25);
 /* 	width: 30px; */
@@ -206,7 +206,7 @@ button {
 /* 내용 */
 
 .txt-total {
-	color: #7FDCBE;
+	color: #5A95F5;
 	font-family: Noto Sans;
 	font-size: 23px;
 	font-style: normal;
@@ -245,10 +245,11 @@ button {
 }
 
 .board-title {
-	color: #000;
 	font-family: Noto Sans;
 	font-size: 16px;
 	font-weight: 400;
+	color:#5A95F5;
+	text-decoration:none;
 }
 
 .board-category {
@@ -304,11 +305,11 @@ button {
 }
 
 .register-button i {
-	color: #7fdcbe;
+	color: #5A95F5;
 }
 
 .register-button i:hover {
-	color: #518e7b;
+	color: #788FA1;
 }
 
 /* home.jsp 마커 overlay css */

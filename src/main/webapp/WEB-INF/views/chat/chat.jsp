@@ -11,7 +11,7 @@
 			<div class="col-md-12" id="list-container" style="overflow-y: auto; max-height: 100%;">
 			<div class="liststart">목록(${chattingList.size()})</div>
 				<!--------------프로필사진------------------>
-				<div class="scroll-container" style="height: 100%;">
+				<div class="scroll-container">
 
 					<c:forEach var="list" items="${chattingList}">
 						<div class="row" id="set1">

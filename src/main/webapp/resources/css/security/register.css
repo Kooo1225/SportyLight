@@ -14,7 +14,7 @@
 	background: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
-	border: 1px #7FDCBE solid;
+	border: 1px #5A95F5 solid;
 	font-size: 15px;
 }
 
@@ -26,13 +26,13 @@
 	height: 52px;
 	margin: 20px;
 	color: white;
-	background: #7FDCBE;
+	background: #5A95F5;
 	font-size: 28px;
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 700;
 	word-wrap: break-word;
 	border-radius: 10px;
-	border: 0px solid #7FDCBE
+	border: 0px solid #5A95F5
 }
 
 /* register - 제출버튼 하버 */
@@ -42,7 +42,7 @@
 
 /* register - 제목 */
 .page-header {
-	color: #7FDCBE;
+	color: #5A95F5;
 	font-family: 'Noto Sans', sans-serif;
 }
 
@@ -52,9 +52,9 @@
 	height: 45px;
 	margin: 8px;
 	color: white;
-	background: #7FDCBE;
+	background: #5A95F5;
 	border-radius: 100px;
-	border: 0px solid #7FDCBE;
+	border: 0px solid #5A95F5;
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 18px;
 }
@@ -102,7 +102,7 @@
 	background: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
-	border: 1px solid #7FDCBE;
+	border: 1px solid #5A95F5;
 }
 
 /* register - 모임 날짜 */
@@ -113,7 +113,7 @@
 	background: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
-	border: 1px solid #7FDCBE;
+	border: 1px solid #5A95F5;
 }
 
 /* register - 주소 검색 시 카카오맵 */
@@ -132,7 +132,7 @@
 	background: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
-	border: 1px solid #7FDCBE;
+	border: 1px solid #5A95F5;
 	resize: none;
 }
 
@@ -148,7 +148,7 @@
 	width: 116px;
 	margin: 8px;
 	border-radius: 100px;
-	border: 0px solid #7FDCBE;
+	border: 0px solid #5A95F5;
 	line-height: 45px;
 	text-align: center;
 	font-family: 'Noto Sans', sans-serif;
@@ -160,7 +160,7 @@
 }
 
 .main-select input[type=radio]+label {
-	background-color: #7FDCBE;
+	background-color: #5A95F5;
 	color: white;
 }
 
