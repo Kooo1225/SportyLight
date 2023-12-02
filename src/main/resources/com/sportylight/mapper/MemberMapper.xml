@@ -112,10 +112,17 @@
 		AND members_birth = #{birth}
 	</select>
 	
+	<select id="getNonManageList" resultMap="memberMap">
+		select *
+		from view_gathering_manager
+		where gathering_id = #{gatheringId} and gathering_state in (0);
+	</select>
+	
 	<select id="getManageList" resultMap="memberMap">
 		select *
 		from view_gathering_manager
-		where gathering_id = #{gatheringId} and gathering_state in (0, 1);
+		where gathering_id = #{gatheringId} and gathering_state in (1);
 	</select>
+	
 	
 </mapper>

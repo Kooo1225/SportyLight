@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
- <%@ include file="../layouts/joinHeader2.jsp" %>
+ <%@ include file="../layouts/loginHeader.jsp" %>
 <link rel="stylesheet" href="/resources/css/security/login.css"/>
 
 
@@ -52,8 +52,7 @@
 					</div>
 					<div class="form-group mx-auto submitButton" style="margin-top: 24px;">
 							<button type="submit">LOG-IN</button>
-							<button type="submit">LOG-IN</button>
-					
+							<button type="submit">JOIN</button>
 	 						<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=ad5f045a6d90afc878186d9093e76908&redirect_uri=http://localhost:8080/security/kakao/callback"><img src="/resources/images/layouts/kakao_login_button.png"/></a>
 					</div>
 				</div>

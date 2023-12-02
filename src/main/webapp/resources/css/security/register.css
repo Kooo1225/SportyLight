@@ -10,7 +10,7 @@
 	{
 	width: 520px;
 	height: 50px;
-	margin: 5px;
+	margin: 5px 5px 18px 5px;
 	background: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
@@ -37,7 +37,7 @@
 
 /* register - 제출버튼 하버 */
 .submitButton button:hover {
-	background: #518E7B;
+	background: #788FA1;
 }
 
 /* register - 제목 */
@@ -61,7 +61,7 @@
 
 /* register - button 하버 */
 .main-select button:hover {
-	background: #518E7B;
+	background: #788FA1;
 	transform: translateY(-5px);
 	box-shadow: 0px 15px 20px rgba(27, 39, 63, 0.4);
 }
@@ -91,7 +91,7 @@
 }
 
 .input-style #register-title {
-	margin-top: 50px;
+	margin-top: 14px;
 }
 
 /* register - 모임 인원 */
@@ -165,14 +165,14 @@
 }
 
 .main-select input[type=radio]:checked+label {
-	background-color: #518E7B;
+	background: #788FA1;
 	border: 0px solid #518E7B;
 	color: white;
 }
 
 /* register - (헬스, 등산, 러닝) 종목 버튼 디자인 하버 */
 .main-select input[type=radio]+label:hover {
-	background: #518E7B;
+	background: #788FA1;
 	transform: translateY(-5px);
 	box-shadow: 0px 15px 20px rgba(27, 39, 63, 0.4);
 }

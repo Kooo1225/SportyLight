@@ -19,6 +19,8 @@ public interface MemberMapper {
 	public MemberVO readMypage(int membersId);
 	
 	public List<MemberVO> getManageList(int gatheringId);
+	
+	public List<MemberVO> getNonManageList(int gatheringId);
 
 	public void insert(MemberVO member);
 
