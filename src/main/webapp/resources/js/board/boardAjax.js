@@ -15,37 +15,23 @@ function MyListTemplate(mylist) {
 	let formattedDate = `${year}년 ${month}월 ${day}일 ${hour}시${minute}분`;
 	
 	return `
-		<div class="mylist-wrapper mx-auto">
-			<div class="d-flex">
-				<div class="mr-auto">
-					<div class="mylist-title">
-						<span class="mylist-title-main">${mylist.title }</span> 
-						<span class="mylist-title-type">${mylist.type }</span>
-					</div>
-				</div>
-
-				<div class="p-2">
-					<a href="/board/modify?gatheringId=${mylist.gatheringId}" class="btn btn-primary" role="button">
-						<i class="fa-regular fa-pen-to-square"></i> 수정
-					</a>
-				</div>
-				
-				<div class="p-2">
-					<a href="#" class="btn btn-danger remove" onclick="remove(${mylist.gatheringId})">
-						<i class="fas fa-trash-alt"></i> 삭제
-					</a>
-				</div>
-			</div>
-			
-			<div class="mylist-dateTime">
-				${mylist.participate} / ${mylist.headCount}명 | ${formattedDate}
-			</div>
-			
-			<div class="d-flex justify-content-between mb-3">
-				<div class="p-2 mylist-description"></div>
-				<div class="mylist-state-box"></div>
-			</div>
-		</div>
+	<div class="card">
+	
+    	<div class="card-header">
+    	<div class="mylist-title">${mylist.title}</div>
+    	</div>
+    
+    	<div class="card-body">
+    		<div class="mylist-category">카테고리 : ${mylist.type}</div>
+    		<div class="mylist-state">참여 인원 : ${mylist.participate} / ${mylist.headCount} 명</div>
+    		<div class="mylist-datetime">날짜 : ${formattedDate}</div>
+    	</div> 
+    
+    	<div class="card-footer">
+    		<button class="btn7 btn--stripe btn--radius" onclick="location.href='/board/modify?gatheringId=${mylist.gatheringId}';">수정</button>
+    		<button class="btn8 btn--radius" onclick="remove(${mylist.gatheringId})">삭제</button>
+    	</div>
+    </div>
 			
 		
 	`;
@@ -72,42 +58,32 @@ function MyStateTemplate(mystate) {
 	let state;
 	
 	if(`${mystate.state}` == 0) {
-	  state=`<div class="mylist-state"> 승인중.. </div>`;
+	  state=`<button class="btn5 btn--stripe btn--radius">신청중..</button>`;
 	}else if(`${mystate.state}` == 1) {
-	  state=`<div class="mylist-state"> 승인완료 </div>`;
+	  state=`<button class="btn5 btn--stripe btn--radius">승인완료</button>`;
 	}else if(`${mystate.state}` == -1) {
-	  state=`<div class="mylist-state"> 다음기회에! </div>`;
+	  state=`<button class="btn5 btn--stripe btn--radius">다음기회에</button>`;
 	}else if(`${mystate.state}` == 3) {
-	  state=`<div class="mylist-state"> 모임글 삭제됨 </div>`;
+	  state=`<button class="btn5 btn--stripe btn--radius">모임글 삭제됨</button>`;
 	}
 	return `
-		<div class="mylist-wrapper mx-auto">
-			<div class="d-flex">
-				<div class="mr-auto">
-					<div class="mylist-title">
-						<span class="mylist-title-main">${mystate.title }</span> 
-						<span class="mylist-title-type">${mystate.type }</span>
-					</div>
-				</div>
-				
-				<div class="p-2">
-					<a href="#" class="btn btn-danger delete" onclick="deleteMyState(${mystate.gatheringId}, ${mystate.membersId})">
-						<i class="fa-solid fa-xmark"></i> 신청취소
-					</a>
-				</div>
-			</div>
-			
-			<div class="mylist-dateTime">
-				${mystate.participate} / ${mystate.headCount} 명| ${formattedDate}
-			</div>
-			
-			<div class="d-flex justify-content-between mb-3">
-				<div class="p-2 mylist-description"></div>
-				<div class="mylist-state-box">${state}</div>
-			</div>
-		</div>
-		
-
+	<div class="card">
+	
+    	<div class="card-header">
+    		<div class="mylist-title">${mystate.title }</div>
+    	</div>
+    
+    	<div class="card-body">
+    		<div class="mylist-category">카테고리 : ${mystate.type}</div>
+    		<div class="mylist-state">참여 인원 : ${mystate.participate} / ${mystate.headCount} 명</div>
+    		<div class="mylist-datetime">날짜 : ${formattedDate}</div>
+    	</div> 
+    
+    	<div class="card-footer">
+    		${state}
+    		<button class="btn6 btn--radius" onclick="deleteMyState(${mystate.gatheringId}, ${mystate.membersId})">신청 취소</button>
+    	</div>
+    </div>
 	`;
 	
 }
