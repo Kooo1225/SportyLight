@@ -103,6 +103,9 @@
 								});
 								marker.setMap(map);
 							</script>
+							
+														
+  
 						</div>
 						    <div class="col-md-12" style="padding: 0; margin-top: 48px;">
 							     <div class="description0 mx-auto">
@@ -113,8 +116,16 @@
                              <a href="/"><button type="button" class="btn0">홈</button> </a>
                                  <sec:authentication property="principal.member.membersId" var="membersId" />
 							     <c:if test="${membersId == gather.membersId }"> <button type="button" class="btn0">관리</button></c:if>
-							     <c:if test="${membersId != gather.membersId }"> <button type="button" class="btn0">신청</button></c:if>
-							 	 <button type="button" class="btn0" onclick="getState(${membersId}, ${gather.gatheringId})")>채팅</button>
+							     <c:if test="${membersId != gather.membersId }">
+							     	<c:if test="${state != 0}">
+					          	 		<button type="submit" class="btn0" 
+							     				onclick='location.href="/board/insertApply?gatheringId=${gather.gatheringId}&membersId=${membersId }&state=0";'>신청</button>
+				     				</c:if>
+				     				<c:if test="${state == 0}">
+				     					 <button type="button" class="btn0">신청완료</button>
+				     				</c:if>
+								 </c:if>
+							 	 <button type="button" class="btn0" onclick="getState(${membersId}, ${gather.gatheringId})">채팅</button>
 						</div>
 					</div>
 				</cite>
@@ -158,7 +169,7 @@
 		CSRFToken.setAttribute('type', 'hidden');
 		CSRFToken.setAttribute('name', '${_csrf.parameterName}');
 		CSRFToken.setAttribute('value', '${_csrf.token}');
-				
+			
 		f.appendChild(gatherIdObj);
 		f.appendChild(CSRFToken);
 		f.setAttribute('method', 'post');
@@ -179,6 +190,14 @@
 			alert("권한이 부여되지 않았습니다.");
 			return;
 		}
+	}
+	
+	async function getState2(membersId, gatheringId) {
+		const URL = "/api/board/getstate"
+		
+		let state = await rest_post(URL, ${gather.gatheringId}, membersId);
+
+		return state;
 	}
 
 </script>

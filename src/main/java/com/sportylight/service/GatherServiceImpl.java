@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sportylight.domain.EnumVO;
+import com.sportylight.domain.GatherMembersVO;
 import com.sportylight.domain.GatherVO;
 import com.sportylight.domain.SearchVO;
 import com.sportylight.mapper.GatherMapper;
@@ -81,6 +82,11 @@ public class GatherServiceImpl implements GatherService {
 	public void register(GatherVO vo) {
 		mapper.insert(vo);
 	}
+	
+	@Override
+	public void insertApply(GatherMembersVO vo) {
+		mapper.insertApply(vo);
+	}
 
 	@Override
 	public GatherVO get(int gatheringId) {
@@ -93,7 +99,7 @@ public class GatherServiceImpl implements GatherService {
 	}
 
 	@Override
-	public int getState(int gatheringId, int membersId) {
+	public Integer getState(int gatheringId, int membersId) {
 		return mapper.getState(gatheringId, membersId);
 	}
 		
