@@ -21,25 +21,26 @@ $(document).ready(function() {
  <style>
 	div#aa {
 	    left: 348px;
-        top: -327px;
-        position: relative;
+        top: 327px;
+        position: absolute;
         width: 50px;
         height: 50px;
         border-radius: 50%; /* 50%로 변경하여 원 모양이 됨 */
         background: url('/resources/images/home/basketball-ball.png') center/cover; /* 이미지 경로를 설정 */
-        animation: bounce 3s infinite, spin 3s linear infinite;
+        animation: bounce 4s infinite, spin 3s linear infinite;
         z-index: 2;
     }
 
     @keyframes bounce {
         0%, 100% {
-            left: 348px;
-            top: -327px;
+            left: 800px;
+            top: 750px;
             animation-timing-function: ease-out;
         }
 
         50% {
-            bottom: 200px;
+            top: 200px;
+            left: 800px;
             animation-timing-function: ease-in;
         }
     }
