@@ -16,10 +16,8 @@
 	<div class="pannel mx-auto">
 		<div class="mylist-box mx-auto">
 			<ul class="nav justify-content-center">
-				<li class="nav-mylist-item"><a class="nav-mylist-link" id="btn1">신청한
-						모임</a></li>
-				<li class="nav-mylist-item"><a class="nav-mylist-link" id="btn2">내가
-						올린 모임</a></li>
+				<li class="nav-mylist-item"><a class="nav-mylist-link" id="btn3">신청한모임</a></li>
+				<li class="nav-mylist-item"><a class="nav-mylist-link" id="btn4">내가 올린 모임</a></li>
 			</ul>
 		</div>
 	
@@ -33,27 +31,26 @@
 	
 		async function remove(gatheringId) {
 			if(!confirm('정말 삭제할까요?')) return;
-			
 			const result = await rest_get2(MYLIST_URL + "/remove?gatheringId=" + gatheringId);
 
 
-			$(this).closest('.mylist-wrapper').remove();
-		    $("#btn2").trigger("click");
-		   }
+			$(this).closest('.card').remove();
+		    $("#btn4").trigger("click");
+		}
 		
  		async function deleteMyState(gatheringId, membersId) {
 			if(!confirm('정말 삭제할까요?')) return;
 			
 			const result = await rest_get2(MYLIST_URL + "/delete?gatheringId=" + gatheringId + "&membersId=" + membersId);
 
-			$(this).closest('.mylist-wrapper').remove();
-		    $("#btn1").trigger("click");
+			$(this).closest('.card').remove();
+		    $("#btn3").trigger("click");
 		}
 		
 		$(document).ready(function(e) {
 	
-			$("#btn1").on("click", async function(e) { //내가 신청한 게시글(btn1) 버튼 클릭
-				$('.mylist-container').empty();
+			$("#btn3").on("click", async function(e) { //내가 신청한 게시글(btn1) 버튼 클릭
+				$('.container0').empty();
 				const myState = await rest_get(MYSTATE_URL + "/mystate?membersId=" + ${membersId});
 				console.log(myState);
 				
@@ -61,12 +58,12 @@
 	
 				$.each(myState, function(index, item) {
 					listEl = $(MyStateTemplate(item));
-					$('.mylist-container').append(listEl);
+					$('.container0').append(listEl);
 	 			})
 			})
 			
-			$("#btn2").on("click", async function(e) { //내가 올린 게시글(btn2) 버튼 클릭
-				$('.mylist-container').empty();
+			$("#btn4").on("click", async function(e) { //내가 올린 게시글(btn2) 버튼 클릭
+				$('.container0').empty();
 				
 				const myList = await rest_get(MYLIST_URL + "/mylist?membersId=" + ${membersId});
 				console.log(myList);
@@ -75,20 +72,21 @@
 				
 				$.each(myList, function(index, item) {
 					listEl = $(MyListTemplate(item));
-					$('.mylist-container').append(listEl);
+					$('.container0').append(listEl);
 	 			})	
 			})
 			
 			
-			$("#btn1").trigger("click"); // btn1(내가 신청한 모임글) 클릭 효과
+			$("#btn3").trigger("click"); // btn1(내가 신청한 모임글) 클릭 효과
 			
 		})
 		</script>
 	</div>
-	<div class="mylist-border mx-auto">
-		<div class="mylist-container mx-auto"></div>
+	<div class="scrollBar mx-auto" style="height: 100%;">
+		<div class="container0"></div>
 	</div>
 </body>
+
 
 <%-- 	<div class="mylist-border mx-auto">
 		<div class="mylist-container mx-auto">

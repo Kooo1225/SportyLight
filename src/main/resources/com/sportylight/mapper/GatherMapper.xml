@@ -18,6 +18,7 @@
 		<result property="participate" column="participate"/>
 	</resultMap>
 
+
 	<select id="get" resultMap="gatherMap">
 		select *
 		from gathering
@@ -52,7 +53,7 @@
 	<select id="getMyList" resultMap="gatherMap">
 		select *
 		from view_gathering_manager v
-		where v.members_id = #{membersId} and v.gathering_state = 2;
+		where v.members_id = #{membersId} and v.gathering_state = 2 and v.delete_yn = 1
 	</select>
 	
 	<select id="getMyState" resultMap="gatherMap">
@@ -76,6 +77,11 @@
 	<insert id="insert">
 		insert into gathering(gathering_title, members_id, gathering_datetime, gathering_description, gathering_headcount, gathering_address, gathering_type)
 		values (#{title}, #{membersId}, #{dateTime}, #{description}, #{headCount}, #{address}, #{type})
+	</insert>
+	
+	<insert id="insertApply">
+		insert into gathering_members(gathering_id, members_id, gathering_state)
+		values(#{gatheringId}, #{membersId}, 0)
 	</insert>
 	
 	<select id="read" resultMap="gatherMap">
