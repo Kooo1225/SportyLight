@@ -3,19 +3,21 @@ package com.sportylight.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sportylight.domain.GatherVO;
 import com.sportylight.domain.GatherMembersVO;
+import com.sportylight.service.GatherMembersService;
 import com.sportylight.service.GatherService;
 
-import retrofit2.http.POST;
+
 
 @RestController
 @RequestMapping("/api/board")
@@ -23,6 +25,9 @@ public class BoardAjaxController {
 	
 	@Autowired
 	GatherService service;
+	
+	@Autowired
+	private GatherMembersService mService;
 	
 	@GetMapping("/mylist")
 	public List<GatherVO> MyUploadList(@RequestParam int membersId) {
@@ -49,5 +54,17 @@ public class BoardAjaxController {
 		return service.getState(id.getGatheringId(),id.getMembersId());
 	}
 	
+	@GetMapping("/insertApply")
+	public void insertApply() {
+	}
+	
+	@PostMapping("/insertApply")
+	public String insertApply(@ModelAttribute GatherMembersVO vo, RedirectAttributes rttr) {
+		
+		service.insertApply(vo);
+		rttr.addFlashAttribute("result", vo.getGatheringId());
+		
+		return"redirect:/";
+	}
 
 }

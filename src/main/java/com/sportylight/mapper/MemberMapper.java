@@ -1,6 +1,7 @@
 package com.sportylight.mapper;
 
 import java.util.Date;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -16,6 +17,8 @@ public interface MemberMapper {
 	public MemberVO checkNickname(String nickname);
 
 	public MemberVO readMypage(int membersId);
+	
+	public List<MemberVO> getManageList(int gatheringId);
 
 	public void insert(MemberVO member);
 
