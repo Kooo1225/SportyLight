@@ -83,6 +83,11 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberVO> getManageList(int gatheringId) {
 		return mapper.getManageList(gatheringId);
 	}
+	
+	@Override
+	public List<MemberVO> getNonManageList(int gatheringId) {
+		return mapper.getNonManageList(gatheringId);
+	}
 
 	// 회원 비번 수정
 	@Override

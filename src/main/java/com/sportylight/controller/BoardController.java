@@ -151,12 +151,18 @@ public class BoardController {
 	public String manage(@AuthenticationPrincipal CustomUser customUser, @ModelAttribute("gatherMemebers") GatherMembersVO gatherMembers, 
 			@PathVariable int gatheringId, Model model) {	
 
+		System.out.println(customUser.getMembersId());
+		
 		List<GatherVO> myGatherList = service.getMyList(customUser.getMembersId());
 		List<MemberVO> myMemberList = mService.getManageList(gatheringId);
+		List<MemberVO> myNonMemberList = mService.getNonManageList(gatheringId);
+		
+		System.out.println(myGatherList);
 		
 		model.addAttribute("membersId", customUser.getMembersId());
 		model.addAttribute("myGatherList", myGatherList);
 		model.addAttribute("myMemberList", myMemberList);
+		model.addAttribute("myNonMemberList", myNonMemberList);
 		model.addAttribute("gatheringId", gatheringId);
 		
 		return "board/manage";
@@ -164,6 +170,7 @@ public class BoardController {
 	
 	@PostMapping("/manage")
 	public String manage(@ModelAttribute("gatherMembers") GatherMembersVO vo, Model model) {
+		System.out.println(vo);
 		gmService.updateState(vo.getGatheringId(), vo.getMembersId(), vo.getState());
 		
 		return "redirect:/board/manage/" + vo.getGatheringId();

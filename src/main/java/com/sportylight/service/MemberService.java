@@ -23,6 +23,8 @@ public interface MemberService {
 
 	public List<MemberVO> getManageList(int gatheringId);
 	
+	public List<MemberVO> getNonManageList(int gatheringId);
+	
 	// 회원 정보 수정
 	void updateMp (int membersId, String nickname,  MultipartFile avatar) throws IOException;;
 	
