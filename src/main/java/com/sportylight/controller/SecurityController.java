@@ -257,7 +257,7 @@ public class SecurityController {
 		
 		String gender = kakaoProfile.getKakao_account().getGender();
 		EnumVO gen;
-		if(gender == "male") {
+		if(gender.equals("male")) {
 			gen = EnumVO.male;
 		} else {
 			gen = EnumVO.female;

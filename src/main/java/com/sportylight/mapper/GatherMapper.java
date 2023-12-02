@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.sportylight.domain.EnumVO;
+import com.sportylight.domain.GatherMembersVO;
 import com.sportylight.domain.GatherVO;
 import com.sportylight.domain.SearchVO;
 
@@ -33,8 +34,13 @@ public interface GatherMapper {
 	
 	public void insert(GatherVO vo); // gathering register를 위해 선언
 	
+	public void insertApply(GatherMembersVO vo);
+	
 	public GatherVO read(int gatheringId); // gathering detail를 위해 선언
 	
-	public int getState(@Param("gatheringId") int gatheringId, @Param("membersId") int membersId);
+	public Integer getState(@Param("gatheringId") int gatheringId, @Param("membersId") int membersId);
+	
+	public List<GatherMembersVO> getManagerList(int gatheringId);
+	
 	
 }

@@ -8,8 +8,14 @@ $("#file").on('change',function(){
 	  var fileName = $("#file").val();
 	  $(".upload-name").val(fileName);
 	});
-	
 
+$(document).ready(function() {
+	var now_utc = Date.now() 
+	var timeOff = new Date().getTimezoneOffset()*60000; 
+	var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
+	document.getElementById("date").setAttribute("max", today);
+});
+	
 </script>
 
  <style>

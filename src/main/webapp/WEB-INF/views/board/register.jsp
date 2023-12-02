@@ -60,6 +60,12 @@ $(document).ready(function() {
             }
         }).open();
     });
+	
+	var now_utc = Date.now()
+	var timeOff = new Date().getTimezoneOffset()*60000; 
+	var today = new Date(now_utc-timeOff).toISOString().substring(0, 16);
+	 
+	document.getElementById("DateLocal").setAttribute("min", today);
 });
 </script>
 
@@ -82,7 +88,7 @@ $(document).ready(function() {
 				<div class="form-group mx-auto" >
 					<i class="fa-solid fa-user-group fa-2x" style="color:#5A95F5;"></i>
 					<input type="number" min="1" max="20" value="1" name="headCount" class="num">
-					
+
 					<i class="fa-solid fa-calendar-days fa-2x" style="color:#5A95F5;"></i>
 					<input type="datetime-local" name="dateTime" class="date">
 				</div>

@@ -153,9 +153,8 @@ input[type=file]::file-selector-button {
 	color: red;
 	font-size: 0.9rem;
 	display: block;
-	text-align: right;
+	text-align: left;
 	width: 520px;
-	margin-right: 300px;
 	margin-top: 3px;
 }
 

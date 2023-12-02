@@ -48,4 +48,24 @@ public class ServletConfig implements WebMvcConfigurer {
 		
 		return resolver;
 	}
+	
+//	@Bean
+//	public JavaMailSenderImpl mailSender() {
+//	    JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+//	    mailSender.setHost("smtp.gmail.com");
+//	    mailSender.setPort(587);
+//	    mailSender.setUsername("sportylight4@gmail.com");
+//	    mailSender.setPassword("pqohkitdoqnqjhvg"); 
+//	    mailSender.setDefaultEncoding("utf-8");
+//
+//	    Properties javaMailProperties = new Properties();
+//	    javaMailProperties.put("mail.transport.protocol", "smtp");
+//	    javaMailProperties.put("mail.smtp.auth", "true");
+//	    javaMailProperties.put("mail.smtp.starttls.enable", "true");
+//	    javaMailProperties.put("mail.debug", "true");
+//
+//	    mailSender.setJavaMailProperties(javaMailProperties);
+//
+//	    return mailSender;
+//	}
 }

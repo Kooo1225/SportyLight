@@ -4,6 +4,7 @@ import java.io.File;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,7 +22,7 @@ import net.coobird.thumbnailator.Thumbnails;
 @Log4j
 public class MemberServiceImpl implements MemberService {
 
-	public static final String AVATAR_UPLOAD_DIR = "c:/upload/avatar";
+	public static final String AVATAR_UPLOAD_DIR = "/home/avatar";
 
 	@Autowired
 	MemberMapper mapper;
@@ -61,6 +62,12 @@ public class MemberServiceImpl implements MemberService {
 			Thumbnails.of(avatar.getInputStream())
 					.size(50, 50)
 					.toFile(pngDest);
+		} 
+		else {
+			File pngDest = new File(AVATAR_UPLOAD_DIR, "unknown.png");
+			Thumbnails.of(avatar.getInputStream())
+			.size(50, 50)
+			.toFile(pngDest);
 		}
 	}
 
@@ -70,6 +77,11 @@ public class MemberServiceImpl implements MemberService {
 
 		return mapper.readMypage(membersId);
 
+	}
+	
+	@Override
+	public List<MemberVO> getManageList(int gatheringId) {
+		return mapper.getManageList(gatheringId);
 	}
 
 	// 회원 비번 수정
@@ -117,5 +129,5 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO get2(String email) {
 		return mapper.read2(email);
 	}
-
+	
 }

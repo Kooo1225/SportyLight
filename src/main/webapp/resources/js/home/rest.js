@@ -39,6 +39,8 @@ async function rest_post(url, gatheringId, membersId) {
 		membersId: membersId
 	};
 
+	console.log(data);
+
 	try {
 		let res = await fetch(url, {
 			method : "POST",
@@ -47,6 +49,27 @@ async function rest_post(url, gatheringId, membersId) {
 		});
 				
 		return await res.json();
+	}
+	catch(e) {
+		console.log(e);
+	}		
+}
+
+async function rest_post2(url, gatheringId, membersId) {
+	const data = {
+		gatheringId: gatheringId,
+		membersId: membersId
+	};
+
+	console.log(data);
+
+	try {
+		let res = await fetch(url, {
+			method : "POST",
+			headers : { "Content-Type" : "application/json" },
+			body: JSON.stringify(data), 
+		});
+
 	}
 	catch(e) {
 		console.log(e);
