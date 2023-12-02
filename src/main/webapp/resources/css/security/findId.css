@@ -5,7 +5,7 @@
 	text-align: center;
 }
 .page2-header {
-	color: #7FDCBE;
+	color: #5A95F5;
 	font-family: 'Noto Sans', sans-serif;
 }
 /* ------------findId ------------*/
@@ -13,7 +13,7 @@
 	background: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
-	border: 1px solid #7FDCBE;
+	border: 1px solid #5A95F5;
 	text-align: center;
 	font-family: sans-serif;
 	font-color: #727272;
@@ -40,7 +40,7 @@
 	background: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
-	border: 1px solid #7FDCBE;
+	border: 1px solid #5A95F5;
 	text-align: center;
 	font-family: sans-serif;
 	font-color: #727272;
@@ -58,12 +58,12 @@
 	height: 52px;
 	margin: 20px;
 	color: white;
-	background: #7FDCBE;
+	background: #5A95F5;
 	font-size: 20px;
 	font-family: 'Noto Sans', sans-serif;
 	font-weight: 700;
 	border-radius: 10px;
-	border: 0px solid #7FDCBE;
+	border: 0px solid #5A95F5;
 }
 
 #id-find:hover {

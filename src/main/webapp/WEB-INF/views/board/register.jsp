@@ -80,15 +80,15 @@ $(document).ready(function() {
 					<input type="text" name="title" id="register-title" placeholder=" 제목을 작성해주세요.">
 				</div>
 				<div class="form-group mx-auto" >
-					<i class="fa-solid fa-user-group fa-2x" style="color:#518E7B;"></i>
+					<i class="fa-solid fa-user-group fa-2x" style="color:#5A95F5;"></i>
 					<input type="number" min="1" max="20" value="1" name="headCount" class="num">
 					
-					<i class="fa-solid fa-calendar-days fa-2x" style="color:#518E7B;"></i>
+					<i class="fa-solid fa-calendar-days fa-2x" style="color:#5A95F5;"></i>
 					<input type="datetime-local" name="dateTime" class="date">
 				</div>
 				<div class="form-group mx-auto input-style">
 					<input type="text" id="sample5_address" name="address" placeholder=" 모임 장소를 선택해주세요." readonly><br>
-					<input type="button" class="openPostcode" value="주소 검색" style="background: #7FDCBE; color: white"><br>
+					<input type="button" class="openPostcode" value="주소 검색" style="background: #5A95F5; color: white"><br>
 					<div id="map" class="register-address"></div>
 				</div>
 				

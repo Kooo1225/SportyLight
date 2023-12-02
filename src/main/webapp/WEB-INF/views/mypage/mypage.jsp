@@ -28,12 +28,12 @@
 					viewBox="0 0 117 52" fill="none"
 					style="position: absolute; top: 0px; left: 0px;">
                       <rect x="116.248" y="52" width="116" height="52"
-						rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" /> 
+						rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
                       <rect x="116.248" y="52" width="12.4923"
 						height="52" transform="rotate(179.72 116.248 50.9995)"
-						fill="#CFF8EB" />
+						fill="#7FB3FA" />
                       <text x="50%" y="50%" dominant-baseline="middle"
-						text-anchor="middle" fill="#B3B3B3" font-size="18"
+						text-anchor="middle" fill="#FFF" font-size="18"
 						font-family="Arial">이름</text>     
                    </svg>
 				<input class="membername" value="${member.name}" readonly>
@@ -41,10 +41,10 @@
 			<!-- -------------------------생년월일,성별---------------------------------- -->
 			<div class="form-group mx-auto "  style="display: flex; align-items: center;">
 
-				 <i class="fa-sharp fa-regular fa-calendar-days fa-2x"></i> 
+				 <i class="fa-sharp fa-regular fa-calendar-days fa-2x" style="color:#5A95F5;"></i> 
 				  <input class="date" 
 				         value="<fmt:formatDate value='${member.birth}' pattern='yyyy-MM-dd' />" readonly> 
-				<i class="fa-solid fa-venus-double fa-2x" style="color: #518E7B;"></i> 
+				<i class="fa-solid fa-venus-double fa-2x" style="color: #5A95F5;"></i> 
 				<!-- 여성 라디오 버튼 -->
 				   <input id="select" name="gender" value="남" readonly>
 				<!-- 남성 라디오 버튼 -->
@@ -56,9 +56,9 @@
 
 				  // 초기 회원 성별에 따라 색상 설정
 				  if (memberGender === 'male') {
-				      document.getElementById('select').style.backgroundColor = '#7FDCBE'; // 남자 색상
+				      document.getElementById('select').style.backgroundColor = '#7FB3FA'; // 남자 색상
 				  } else if (memberGender === 'female') {
-					document.getElementById('select2').style.backgroundColor = '#7FDCBE'; // 여자 색상
+					document.getElementById('select2').style.backgroundColor = '#7FB3FA'; // 여자 색상
 				  }
 			  </script>
 			<!-- -------------------------닉네임---------------------------------------- -->
@@ -68,12 +68,12 @@
 					viewBox="0 0 117 52" fill="none"
 					style="position: absolute; top: 0px; left: 0px;">
                       <rect x="116.248" y="52" width="116" height="52"
-						rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" /> 
+						rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
                       <rect x="116.248" y="52" width="12.4923"
 						height="52" transform="rotate(179.72 116.248 50.9995)"
-						fill="#CFF8EB" />
+						fill="#7FB3FA" />
                       <text x="50%" y="50%" dominant-baseline="middle"
-						text-anchor="middle" fill="#B3B3B3" font-size="18"
+						text-anchor="middle" fill="#FFF" font-size="18"
 						font-family="Arial">닉네임</text>     
                    </svg>
 				<input class="membernickname" value="${member.nickname}" readonly>
@@ -85,12 +85,12 @@
 					viewBox="0 0 117 52" fill="none"
 					style="position: absolute; top: 0px; left: 0px;">
                       <rect x="116.248" y="52" width="116" height="52"
-						rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" /> 
+						rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
                       <rect x="116.248" y="52" width="12.4923"
 						height="52" transform="rotate(179.72 116.248 50.9995)"
-						fill="#CFF8EB" />
+						fill="#7FB3FA" />
                       <text x="50%" y="50%" dominant-baseline="middle"
-						text-anchor="middle" fill="#B3B3B3" font-size="18"
+						text-anchor="middle" fill="#FFF" font-size="18"
 						font-family="Arial">이메일</text>     
                    </svg>
 				<input class="memberemail" value="${member.email}" readonly>

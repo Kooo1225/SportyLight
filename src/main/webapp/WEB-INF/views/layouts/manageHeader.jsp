@@ -10,7 +10,7 @@
 <title>chat header</title>
 
 
-<link rel="stylesheet" href="/resources/css/chat/chat.css">
+<link rel="stylesheet" href="/resources/css/board/manage.css">
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />

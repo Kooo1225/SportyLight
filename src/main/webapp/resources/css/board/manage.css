@@ -1,0 +1,278 @@
+@import
+	url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+	
+	
+.navbar h1{
+	color: #5A95F5;
+	font-family: Noto Sans;
+	font-size: 50px;
+	position: relative;
+    top: 22px;
+    left: 161px;
+}
+.navbar span {
+	display: inline;
+    position: relative;
+    bottom: 17px;
+    left: 469px;
+}
+
+.home-avatar {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+}
+
+/*--------------------------------*/
+#login-nickname, #logout {
+	margin-right: 20px;
+	margin-left: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color:#5A95F5;
+	font-size:20px;
+}
+
+#logout {
+	color:#fff;
+	background-color:#5A95F5;
+	border: 1px solid #5A95F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+	}
+@media screen and (max-width: 660px) {
+	#login, #join, #logout {
+		text-decoration:none;
+	}
+}
+
+	
+	
+/* 천체 틀 */
+.container11-fluid {
+	background: #7FB3FA;
+    box-shadow: 0px 5px 17px 8px rgba(0, 0, 0, .075);
+    text-align: center;
+    border: 2px solid #dddddd;
+    border-radius: 30px;
+    width: 1000px;
+    margin-top: 35px;
+    color: gray;
+    margin-bottom: 65px;
+}
+
+.manage-list {
+	box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+	background: white;
+	border-radius: 15px;
+	margin: 50px 30px 45px 45px;
+}
+
+.non-apply {
+	background: white;
+    box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+	border-radius: 8px;
+	height: 250px;
+}
+
+.apply {
+	background: white;
+    box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+	border-radius: 8px;
+	margin: 44px 0 0;
+    height: 250px;
+}
+
+/* 모임 목록 */
+.list {
+	border-bottom: 2px solid #dddddd;
+	padding: 10px;
+}
+
+#profile1-image {
+	position: relative;
+	width: 69px;
+	border-radius: 50px;
+	top: 27px;
+	left: 20px;
+	height: 69px;
+}
+
+.manage-category {
+	font-size: 11px;
+}
+
+.gather-list {
+	padding:0;
+	background: white;
+    border: 0px;
+    font-size: 13px;
+    color: #393939;
+}
+
+.meetingdate {
+	font-size: 12px;
+}
+
+.count {
+	font-size: 12px;
+}
+
+#set3 {
+	height: 125px;
+	border-bottom: 2px solid #dddddd;
+}
+
+#detail {
+	text-align: left;
+	padding: 11px 0 0 47px;
+}
+
+/* 스크롤바 */
+.scroll3-container {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 498px;
+}
+
+.scroll3-container::-webkit-scrollbar {
+	display: none;
+}
+
+/* 회원 목록 */
+.list2 {
+	border-bottom: 2px solid #dddddd;
+	padding: 10px;
+}
+
+table {
+	width: 100%;
+}
+tr{
+	border-bottom: 1px solid #dddddd;
+	height: 51px;
+}
+th{
+	border-right: 1px solid #dddddd;
+	
+}
+
+/* 스크롤바 */
+.scroll4-container {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 200px;
+}
+
+.scroll4-container::-webkit-scrollbar {
+	display: none;
+}
+
+/* 승인 목록 */
+
+.list3{
+	padding: 10px;
+	border-bottom: 2px solid #dddddd;
+}
+
+#submit {
+    background: white;
+    border: 3px solid #dddddd;
+    border-radius: 23px;
+    width: 72px;
+    position: relative;
+}
+
+#submit:hover {
+	background: #dddddd;
+	color: white;
+	
+}
+
+.scroll5-container {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 200px;
+}
+
+.scroll5-container::-webkit-scrollbar {
+	display: none;
+}
+
+/* 체크박스 */
+
+/* 첫 번째 체크박스 스타일 */
+#check_btn1 {
+    box-sizing: border-box;
+    padding: 0;
+    display: none;
+}
+
+#check_btn1 + label {
+    cursor: pointer;
+}
+
+#check_btn1 + label > span {
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+#check_btn1 + label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #5A95F5;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+#check_btn1:checked + label:before {
+    content: "✓";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 13px;
+    text-align: center;
+    color: white;
+    background-color: #5A95F5;
+    border-color: #5A95F5;
+}
+
+/* 두 번째 체크박스 스타일 */
+#check_btn2 {
+    box-sizing: border-box;
+    padding: 0;
+    display: none;
+}
+
+#check_btn2 + label {
+    cursor: pointer;
+}
+
+#check_btn2 + label > span {
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+#check_btn2 + label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #5A95F5;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+#check_btn2:checked + label:before {
+    content: "✓";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 13px;
+    text-align: center;
+    color: white;
+    background-color: #5A95F5;
+    border-color: #5A95F5;
+}
