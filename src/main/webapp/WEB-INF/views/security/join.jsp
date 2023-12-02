@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ include file="../layouts/joinHeader.jsp" %>
+<%@ include file="../layouts/joinHeader2.jsp" %>
 
 <script type="text/javascript">
 $("#file").on('change',function(){
@@ -20,7 +20,9 @@ $(document).ready(function() {
 
  <style>
 	div#aa {
-        position: absolute;
+	    left: 348px;
+        top: -327px;
+        position: relative;
         width: 50px;
         height: 50px;
         border-radius: 50%; /* 50%로 변경하여 원 모양이 됨 */
@@ -31,7 +33,8 @@ $(document).ready(function() {
 
     @keyframes bounce {
         0%, 100% {
-            bottom: 0px;
+            left: 348px;
+            top: -327px;
             animation-timing-function: ease-out;
         }
 
@@ -51,16 +54,18 @@ $(document).ready(function() {
         }
     }
      #basketballHoop {
-        position: absolute;
-        width: 25vw;
-        height: auto; /* 높이 자동 조정 */
-        bottom: 0; /* 농구골대를 아래에 배치 */
-        left: 10px; /* 오른쪽으로 이동할 거리 조정 */
+        position: relative;
+        width: 23vw;
+        height: auto;
+        bottom: 682px;
+        right: 364px;
         z-index: 2;
     }
-
 </style>
-<h1 class="page-header"> JOIN</h1><br>
+
+<div class="container7">
+<a href="/" style="text-decoration:none;"><h1 class="page-header" style="font-size: 45px;"> SportyLight</h1><br></a>
+<h2 class="page-header" style="font-size: 25px;">join</h2><br>
 
 <div class="mx-auto">
 	<form:form modelAttribute="member"
@@ -85,10 +90,9 @@ $(document).ready(function() {
 			</div>
 			<div class="form-group mx-auto select" >
 				<i class="fa-sharp fa-regular fa-calendar-days fa-2x" 
-				   style="color: #5A95F5;"></i>
+				   style="color: #5A95F5;top: 5px;position: relative;"></i>
 				<input type="date" id="date" name="birth"> 
-				
-				<i class="fa-solid fa-venus-double fa-2x" style="color: #5A95F5;"></i>
+				<i class="fa-solid fa-venus-double fa-2x" style="color: #5A95F5;top: 4px;position: relative;"></i>
 				
 				<form:radiobutton path="gender" id="select" value="male"></form:radiobutton><label for="select">남</label> 
 				<form:radiobutton path="gender" id="select2" value="female"></form:radiobutton><label for="select2">여</label>
@@ -103,16 +107,15 @@ $(document).ready(function() {
 			<input type="file" name="avatar" id="file">
 		</div>
 		
-		 <div id="aa"></div>
-		 <div><img id="basketballHoop" src="/resources/images/home/hoop.png" alt="Basketball Hoop"></div>
-		 <div class="runner"></div>
-		
 		<div class="form-group mx-auto submitButton">
 			<button type="submit" class="btn btn-info">JOIN</button>
 		</div>
 	</form:form>
 </div>
+</div>
+
+<div id="aa"></div>
+		 <div><img id="basketballHoop" src="/resources/images/home/hoop.png" alt="Basketball Hoop"></div>
+		 <div class="runner"></div>
 
 </body>
-
-<%@ include file="../layouts/footer.jsp"%>
