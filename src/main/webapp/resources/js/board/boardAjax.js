@@ -18,7 +18,7 @@ function MyListTemplate(mylist) {
 	<div class="card">
 	
     	<div class="card-header">
-    	<div class="mylist-title" OnClick="location.href ='/board/manage/${mylist.gatheringId}'" style="cursor:pointer;">${mylist.title}</div>
+		<div class="mylist-title" OnClick="location.href ='/board/detail?gatheringId=${mylist.gatheringId}'" style="cursor:pointer;">${mylist.title}</div>
     	</div>
     
     	<div class="card-body">
