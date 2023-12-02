@@ -40,15 +40,15 @@ input[type=file]::file-selector-button {
 }
 
 #file {
-	margin:0 235px 20px 0;
-	
+	margin: 0 0 20px 0;
+    width: 332px;
 }
 
 /* join - 생년월일 */
 .input-style input:not([type="radio"]):not([type="file"]):not([type="checkbox"])
 	{
-	width: 290px;
-	height: 50px;
+	width: 320px;
+	height: 45px;
 	margin: 5px;
 	background: white;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -59,14 +59,14 @@ input[type=file]::file-selector-button {
 
 /* join - 생년월일 */
 .input-style #date {
-	width: 260px;
-	height: 50px;
-	margin: 0 15px 0 5px;
+    width: 108px;
+    height: 45px;
+    margin: 1px 3px 0px 5px;
 }
 
 /* join - 제출버튼 */
 .submitButton button {
-	width: 136px;
+	width: 322px;
     height: 52px;
     margin: 12px;
 	color: white;
@@ -120,7 +120,7 @@ input[type=file]::file-selector-button {
 .select input[type=radio]+label {
 	display: inline-block;
 	cursor: pointer;
-	height: 50px;
+	height: 45px;
 	width: 60px;
 	margin: 0;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -133,7 +133,7 @@ input[type=file]::file-selector-button {
 }
 
 .select input[id=select]+label {
-	margin: 0 13px 0 0;
+	margin: 0px 1px 0 0;
 }
 
 .select input[type=radio]+label {
@@ -207,10 +207,10 @@ input[type=file]::file-selector-button {
 }
 
 .container7 {
-	margin: 40px 50px 0px 595px;
+	margin: 0px 50px 35px 595px;
     width: 433px;
     border-radius: 40px;
-    padding: 50px 11px 39px 11px;
+    padding: 29px 11px 17px 11px;
     box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
-
+}
 

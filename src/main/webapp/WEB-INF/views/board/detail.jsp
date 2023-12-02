@@ -32,8 +32,7 @@ $(document).ready(function(e) {
 		<div class="sample2 col-md-1" style="padding: 78px 50px 50px 0px;">
 			<blockquote>
 				<div id="container1">
-					<!-- <img class="col-md-12" src="/resources/images/detail/24example.png"
-					id="secondimg"> -->
+					 <img class="col-md-12" src="/resources/images/detail/2.png" id="firstimg"> 
 				</div>
 			</blockquote>
 		</div>
@@ -160,7 +159,7 @@ $(document).ready(function(e) {
 		<div class="sample1 col-md-3" style="padding: 78px 28px 50px 58px;">
 			<blockquote>
 				<div id="container4">
-					<img class="col-md-12" src="/resources/images/detail/123.png" id="secondimg">
+					<img class="col-md-12" src="/resources/images/detail/123.png" id="fourimg">
 				</div>
 			</blockquote>
 		</div>
@@ -169,8 +168,7 @@ $(document).ready(function(e) {
 			style="padding: 78px 0px 50px 50px;">
 			<blockquote>
 				<div id="container5">
-					<!-- <img class="col-md-12" src="/resources/images/detail/24example.png"
-					id="secondimg"> -->
+					<img class="col-md-12" src="/resources/images/detail/3.png" id="fiveimg">
 				</div>
 			</blockquote>
 		</div>

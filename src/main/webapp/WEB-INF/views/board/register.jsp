@@ -82,7 +82,7 @@ $(document).ready(function() {
 					<input type="radio" id="select-run" name="type" value="러닝"><label for="select-run">러닝</label>
 				</div>
 				
-				<div class="form-group mx-auto input-style">
+				<div class="form-group mx-auto input-style" style="height: 71px;">
 					<input type="text" name="title" id="register-title" placeholder=" 제목을 작성해주세요.">
 				</div>
 				<div class="form-group mx-auto" >
@@ -92,7 +92,7 @@ $(document).ready(function() {
 					<i class="fa-solid fa-calendar-days fa-2x" style="color:#5A95F5;"></i>
 					<input type="datetime-local" name="dateTime" class="date">
 				</div>
-				<div class="form-group mx-auto input-style">
+				<div class="form-group mx-auto input-style" style="margin: 0;">
 					<input type="text" id="sample5_address" name="address" placeholder=" 모임 장소를 선택해주세요." readonly><br>
 					<input type="button" class="openPostcode" value="주소 검색" style="background: #5A95F5; color: white"><br>
 					<div id="map" class="register-address"></div>
@@ -106,7 +106,7 @@ $(document).ready(function() {
 					<input type="hidden" name="membersId" value="${membersId }" />
 
 				<div class="form-group mx-auto submitButton" >
-					<button type="submit" style="margin-top:10px;">REGISTER</button>
+					<button type="submit" style="width: 222px; margin-top: 4px;">REGISTER</button>
 				</div>
 			</form>
 		</div>
