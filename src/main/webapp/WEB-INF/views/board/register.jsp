@@ -10,9 +10,6 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services"></script>
 
-<style>
-
-</style>
 <script>
 $(document).ready(function() {
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div
@@ -90,7 +87,7 @@ $(document).ready(function() {
 					<input type="number" min="1" max="20" value="1" name="headCount" class="num">
 
 					<i class="fa-solid fa-calendar-days fa-2x" style="color:#5A95F5;"></i>
-					<input type="datetime-local" name="dateTime" class="date">
+					<input type="datetime-local" name="dateTime" class="date" id="DateLocal">
 				</div>
 				<div class="form-group mx-auto input-style" style="margin: 0;">
 					<input type="text" id="sample5_address" name="address" placeholder=" 모임 장소를 선택해주세요." readonly><br>
