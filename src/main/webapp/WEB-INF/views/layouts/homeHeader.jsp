@@ -67,7 +67,7 @@
 						href="/board/mylist?membersId=${membersId}">목록</a></li>
 				</sec:authorize>
 
-				<li class="nav-item"><a id="menu3" class="nav-link" href="/">대회</a></li>
+				<li class="nav-item"><a id="menu3" class="nav-link" href="/contest/list">대회</a></li>
 			</ul>
 		</div>
 

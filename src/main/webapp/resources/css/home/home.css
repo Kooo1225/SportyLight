@@ -9,9 +9,9 @@
 
 /*--------------------------------*/
 #logo img {
-	max-width: 200px;
-	height: auto;
-	margin: -15px 15px 8px 20px;
+	max-width: 329px;
+    height: auto;
+    margin: -5px 17px 8px 20px;
 }
 
 .home-avatar {
@@ -76,8 +76,13 @@
 	padding: 6px 21px 6px 21px;
 }
 
-#ct1:active, #ct1:hover, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
+#ct1:active, #ct1:hover, #ct1:checked, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
 	#ct4:active, #ct4:hover, #join:active, #join:hover, #logout:active, #logout:hover {
+	background: #788FA1;
+	color: #fff;
+}
+
+#ct1:checked {
 	background: #788FA1;
 	color: #fff;
 }
@@ -123,9 +128,12 @@ select::-ms-expand {
 	position: relative;
 	width: 130px;
 	height: 43px;
-	border: 2px solid #5A95F5;
-	border-right: none;
-	box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 10px 0 0 10px;
+    border-right: none;
+    border-bottom: 2px solid #5A95F5;
+    border-left: 2px solid #5A95F5;
+    border-top: 2px solid #5A95F5;
 }
 .selectBox .selectForm {
 	width: inherit;
@@ -144,7 +152,7 @@ select::-ms-expand {
 
 /* 검색창 */
 input {
-/* 	border-radius: 10px; */
+  	border-radius:0 10px 10px 0;
 	border: 2px solid #5A95F5;
 	background: #fff;
 	box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.25);
@@ -154,6 +162,9 @@ input {
 	left: 29px;
 	outline: none;
 	padding: 10px;
+}
+.selectBox {
+	
 }
 
 button {
@@ -326,7 +337,14 @@ button {
  .desc .type {font-size: 11px;color: #888;margin-top: -2px;}
  .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
  .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
- .info .link {color: #5085BB;}
+ .info .link {color: white;font-family: "Noto Sans";
+	font-size: 13px;
+	font-weight: 400;
+	background: #5A95F5;
+	border-radius: 10px;
+	height: 38px;
+	padding: 0px 7px 0px 7px;
+	text-decoration: none}
 
  
 

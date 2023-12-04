@@ -31,7 +31,7 @@
 	color: #7FB3FA;
 }
 
-#btn3:hover, #btn4:hover {
+#btn3:hover, #btn4:hover,.nav-mylist-link:active, #btn4.active {
 	box-shadow: 200px 0 0 0 #7FB3FA inset, -200px 0 0 0 #7FB3FA inset;
 	color: #fff;
 }
