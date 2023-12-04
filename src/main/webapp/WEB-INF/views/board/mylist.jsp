@@ -138,34 +138,12 @@
 			
 		})
 		</script>
+		
 	</div>
 	<div class="scrollBar mx-auto" style="height: 100%;">
 		<div class="container0"></div>
 	</div>
 </body>
 
-
-<%-- 	<div class="mylist-border mx-auto">
-		<div class="mylist-container mx-auto">
-			
-			<c:forEach var="mystate" items="${myState}">
-				<div class="mylist-wrapper mx-auto">
-					<div class="mylist-title">
-						<span class="mylist-title-main">${mystate.title }</span> <span
-							class="mylist-title-type">${mystate.type }</span>
-					</div>
-					<div class="mylist-dateTime">
-						${mystate.headCount}명 |
-						<fmt:parseDate value="${mystate.dateTime}"
-							pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
-						<fmt:formatDate pattern="yyyy년 MM월 dd일(EE) HH시 mm분"
-							value="${parsedDateTime}" />
-					</div>
-					<div class="mylist-description"> ${mystate.description}</div>
-				</div>
-			</c:forEach>
-			
-		</div>
-	</div> --%>
 	
 <%-- 	<%@ include file="../layouts/chatFooter.jsp"%> --%>

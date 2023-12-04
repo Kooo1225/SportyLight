@@ -22,7 +22,8 @@ import net.coobird.thumbnailator.Thumbnails;
 @Log4j
 public class MemberServiceImpl implements MemberService {
 
-	public static final String AVATAR_UPLOAD_DIR = "/home/avatar";
+	public static final String AVATAR_UPLOAD_DIR = "/home/avatar"; 
+	// 캡슐화 ->  private로 설정하고 return 해주는 코드를 사용해줜다
 
 	@Autowired
 	MemberMapper mapper;

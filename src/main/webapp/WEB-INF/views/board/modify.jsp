@@ -115,6 +115,7 @@ $(document).ready(function() {
 				
 				<div class="form-group mx-auto submitButton" >
 					<button type="submit" style="margin-top:10px;">MODIFY</button>
+					<button style="margin-top:10px;" onclick="location.href='/board/detail?gatheringId=${gatheringId}}';">돌아가기</button>
 				</div>
 			</form>
 		</div>

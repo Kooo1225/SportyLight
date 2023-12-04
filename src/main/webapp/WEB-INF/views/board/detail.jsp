@@ -134,13 +134,19 @@ $(document).ready(function(e) {
             
 							       <c:if test="${membersId != gather.membersId }">
                        
-                      <c:if test="${state != 0}">
+                      <c:if test="${state == null}">
                             <button type="submit" class="btn0" 
-                            onclick='location.href="/board/insertApply?gatheringId=${gather.gatheringId}&membersId=${membersId }&state=0";'>신청</button>
+                            onclick="location.href='/board/insertApply?gatheringId=${gather.gatheringId}&membersId=${membersId }&state=0';">신청</button>
                       </c:if>
                      
                       <c:if test="${state == 0}">
-                         <button type="button" class="btn0">신청완료</button>
+                         <button type="button" class="btn0">승인 중</button>
+                      </c:if>
+                      <c:if test="${state == 1}">
+                         <button type="button" class="btn0">승인완료</button>
+                      </c:if>
+                      <c:if test="${state == -1}">
+                         <button type="button" class="btn0">다음 기회에..</button>
                       </c:if>
                        
 								    </c:if>

@@ -54,7 +54,7 @@
 	<select id="getMyList" resultMap="gatherMap">
 		select *
 		from view_gathering_manager v
-		where v.members_id = #{membersId} and v.gathering_state = 2 and v.delete_yn = 0
+		where v.members_id = #{membersId} and v.gathering_state in (1, 2) and v.delete_yn = 0
 	</select>
 	
 	<select id="getMyState" resultMap="gatherMap">
