@@ -123,9 +123,12 @@ select::-ms-expand {
 	position: relative;
 	width: 130px;
 	height: 43px;
-	border: 2px solid #5A95F5;
-	border-right: none;
-	box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 10px 0 0 10px;
+    border-right: none;
+    border-bottom: 2px solid #5A95F5;
+    border-left: 2px solid #5A95F5;
+    border-top: 2px solid #5A95F5;
 }
 .selectBox .selectForm {
 	width: inherit;
@@ -144,7 +147,7 @@ select::-ms-expand {
 
 /* 검색창 */
 input {
-/* 	border-radius: 10px; */
+  	border-radius:0 10px 10px 0;
 	border: 2px solid #5A95F5;
 	background: #fff;
 	box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.25);
@@ -154,6 +157,9 @@ input {
 	left: 29px;
 	outline: none;
 	padding: 10px;
+}
+.selectBox {
+	
 }
 
 button {
