@@ -19,6 +19,25 @@
 				<li class="nav-mylist-item"><a class="nav-mylist-link" id="btn4">내가 올린 모임</a></li>
 			</ul>
 		</div>
+	    
+	    <script>
+	    $(document).ready(function () {
+	        // 공통의 클릭 이벤트 핸들러
+	        $(".nav-mylist-link").on("click", function () {
+	          // 모든 링크의 색상을 초기화
+	          $(".nav-mylist-link").css({
+	            'background-color': '', // 초기 배경색으로 되돌리기
+	            'color': '#7FB3FA' // 초기 글자색으로 되돌리기
+	          });
+
+	          // 클릭된 링크의 색상을 변경
+	          $(this).css({
+	            'background-color': '#7FB3FA',
+	            'color': 'white'
+	          });
+	        });
+	    });  
+	    </script>
 	
 		<script src="/resources/js/home/rest.js"></script>
 		<script src="/resources/js/board/boardAjax.js"></script>
