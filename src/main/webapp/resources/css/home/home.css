@@ -76,8 +76,13 @@
 	padding: 6px 21px 6px 21px;
 }
 
-#ct1:active, #ct1:hover, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
+#ct1:active, #ct1:hover, #ct1:checked, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
 	#ct4:active, #ct4:hover, #join:active, #join:hover, #logout:active, #logout:hover {
+	background: #788FA1;
+	color: #fff;
+}
+
+#ct1:checked {
 	background: #788FA1;
 	color: #fff;
 }
@@ -332,7 +337,14 @@ button {
  .desc .type {font-size: 11px;color: #888;margin-top: -2px;}
  .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
  .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
- .info .link {color: #5085BB;}
+ .info .link {color: white;font-family: "Noto Sans";
+	font-size: 13px;
+	font-weight: 400;
+	background: #5A95F5;
+	border-radius: 10px;
+	height: 38px;
+	padding: 0px 7px 0px 7px;
+	text-decoration: none}
 
  
 
