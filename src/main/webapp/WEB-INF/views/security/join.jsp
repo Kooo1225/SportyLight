@@ -26,13 +26,14 @@ function previewFile() {
 
         reader.onload = function (e) {
             // 이미지를 미리보기로 출력
-            preview.innerHTML = '<img src="' + e.target.result + '" alt="프로필 이미지" style="width:50px; height:50px">';
+            preview.innerHTML = '<img src="' + e.target.result + '" alt="프로필 이미지" style="border-radius: 30px;left: -5px;top: -80px;position: relative;width: 50px;height: 50px;">';
         }
 
         // 파일을 읽어오기
         reader.readAsDataURL(fileInput.files[0]);
-    }
+     }
 }
+   
 	
 </script>
 
@@ -107,6 +108,14 @@ function previewFile() {
 		<form:form modelAttribute="member"
 			action="/security/join?_csrf=${_csrf.token }" method="post" enctype="multipart/form-data">
 			<div class="input-style">
+                
+                <div style="padding: 0 42px;height: 66px;margin: 24px 0 0 0;">
+                <label class="file-button" for="file">
+					&nbsp;프로필 선택
+				</label>
+				<input type="file" name="avatar" id="file" style="display:none" accept="image/*" onchange="previewFile()">
+				<span id="preview"></span>   			
+			    </div>
 			
 				<div class="form-group check">
 				<form:input path="email" class="email" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
@@ -143,11 +152,7 @@ function previewFile() {
 					<form:errors path="nickname" cssClass="error mx-auto"></form:errors>
 				</div>
 				
-				<label class="file-button" for="file">
-					&nbsp;프로필 선택
-				</label>
-				<input type="file" name="avatar" id="file" style="display:none" accept="image/*" onchange="previewFile()">
-				<span id="preview"></span>
+				
 			</div>
 			
 			<div class="form-group mx-auto submitButton">
