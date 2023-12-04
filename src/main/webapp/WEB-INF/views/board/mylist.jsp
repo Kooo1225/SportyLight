@@ -27,11 +27,46 @@
 		const MYLIST_URL = "/api/board"
 		const MYSTATE_URL = "/api/board"
 		
+		function getChatting(gatheringId) {
+	 		let f = document.createElement('form');
+
+			let gatherIdObj;
+			gatherIdObj = document.createElement('input');
+			gatherIdObj.setAttribute('type', 'hidden');
+			gatherIdObj.setAttribute('name', 'gatheringId');
+			gatherIdObj.setAttribute('value', gatheringId);
+			
+			let CSRFToken;
+			CSRFToken = document.createElement('input');
+			CSRFToken.setAttribute('type', 'hidden');
+			CSRFToken.setAttribute('name', '${_csrf.parameterName}');
+			CSRFToken.setAttribute('value', '${_csrf.token}');
+				
+			f.appendChild(gatherIdObj);
+			f.appendChild(CSRFToken);
+			f.setAttribute('method', 'post');
+			f.setAttribute('action', '../chat');
+			document.body.appendChild(f);
+			f.submit(); 
+		}
+		
+		async function getState(membersId, gatheringId) {
+			const URL = "/api/board/getstate"
+			
+			let state = await rest_post(URL, gatheringId, membersId);
+
+			if (state === 2 || state === 1) {
+				getChatting(gatheringId);
+			}
+			else {
+				alert("권한이 부여되지 않았습니다.");
+				return;
+			}
+		}
 	
 		async function remove(gatheringId) {
 			if(!confirm('정말 삭제할까요?')) return;
 			const result = await rest_get2(MYLIST_URL + "/remove?gatheringId=" + gatheringId);
-
 
 			$(this).closest('.card').remove();
 		    $("#btn4").trigger("click");
@@ -77,6 +112,29 @@
 			
 			
 			$("#btn3").trigger("click"); // btn1(내가 신청한 모임글) 클릭 효과
+			
+/* 			$('.mylist-title').on('click', { gatheringId : gatheringId }, function(e) {
+			 	let f = document.createElement('form');
+
+				let gatherIdObj;
+				gatherIdObj = document.createElement('input');
+				gatherIdObj.setAttribute('type', 'hidden');
+				gatherIdObj.setAttribute('name', 'gatheringId');
+				gatherIdObj.setAttribute('value', gatheringId);
+				
+				let CSRFToken;
+				CSRFToken = document.createElement('input');
+				CSRFToken.setAttribute('type', 'hidden');
+				CSRFToken.setAttribute('name', '${_csrf.parameterName}');
+				CSRFToken.setAttribute('value', '${_csrf.token}');
+					
+				f.appendChild(gatherIdObj);
+				f.appendChild(CSRFToken);
+				f.setAttribute('method', 'post');
+				f.setAttribute('action', '../chat');
+				document.body.appendChild(f);
+				f.submit(); 
+			}) */
 			
 		})
 		</script>

@@ -161,3 +161,20 @@ function previewFile() {
 		<div><img id="basketballCourt" src="/resources/images/home/basketball-court.png" alt="Basketball Court"></div>
 
 </body>
+
+<script>
+$(document).ready(function(e) {
+	$('#email').on('click', async function(e) {
+		const BASE_URL = '/api/mail/certification/';
+		
+		$.ajax({
+			type:"GET",
+			url:BASE_URL + $(this).val(),
+			success: function(data) {
+				console.log('data : ' + data);
+			}
+			
+		})
+	});
+});
+</script>
