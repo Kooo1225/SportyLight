@@ -16,7 +16,6 @@ async function rest_get2(url) {
 		let res = await fetch(url); //await fetch(url) : 비동기방식으로 url에 접속하겠다
 		
 		console.log(res);
-		
 	}
 	catch(e) {
 		console.log(e);
