@@ -109,9 +109,12 @@ function previewFile() {
 			<div class="input-style">
 			
 				<div class="form-group check">
-					<form:input path="email" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
-					<form:errors path="email" cssClass="error mx-auto" />
-				</div>
+				<form:input path="email" class="email" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
+				<form:errors path="email" cssClass="error mx-auto" />
+				<button type="button" class="email2" data-toggle="modal" data-target="#exampleModalCenter">
+                    인증
+                </button>
+			  </div>
 				<div class="form-group mx-auto">
 					<form:password path="password" placeholder=" 비밀번호를 작성해주세요."></form:password>
 					<form:errors path="password" cssClass="error mx-auto" />

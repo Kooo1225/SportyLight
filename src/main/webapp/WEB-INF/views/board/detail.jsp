@@ -247,3 +247,5 @@ $(document).ready(function(e) {
 	}
 
 </script>
+
+<%@ include file="../layouts/footer.jsp"%>

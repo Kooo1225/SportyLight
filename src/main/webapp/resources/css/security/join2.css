@@ -141,9 +141,21 @@ input[type=file]::file-selector-button {
 }
 
 .select input[type=radio]:checked+label {
-	background-color: #788FA1;
-	border: 1px solid #788FA1;
+
+	background-color: #5A95F5;
+	border: 1px solid #5A95F5;
 	color: #fff;
+}
+.email2{
+	padding: 5px 12px;
+    color: #ffffff;
+    font-size: 13px;
+    border: 0px solid #5A95F5;
+    background: #5A95F5;
+    right: 49px;
+    position: relative;
+    border-radius: 10px;
+    bottom: 1px;
 }
 
 /* join 프로필 선택 디자인 */
@@ -160,6 +172,11 @@ input[type=file]::file-selector-button {
 	cursor: pointer;
 	margin: 0px 205px 10px 5px;
 	text-align: left;
+}
+
+.email{
+	position: relative;
+    left: 27px;
 }
 
 /* -----에러메시지----- */
