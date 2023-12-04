@@ -1,0 +1,111 @@
+@import
+	url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap")
+	;
+
+@font-face {
+	font-family: "San Francisco";
+	font-weight: 600;
+	src:
+		url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+}
+
+body {
+	overflow-y: scroll;
+}
+
+.container8 {
+	width: 400px;
+}
+
+.contest-title {
+	margin: 25px 0px;
+	text-align: center;
+	border-radius: 40px;
+	color: gray;
+	padding: 17px 10px 10px 17px;
+}
+
+.contest-list {
+	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+	background: #dbdada;
+	height: 41px;
+	border-radius: 16px;
+	width: 850px;
+}
+
+.contest-detail {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+	width: 861px;
+	margin-top: 44px;
+}
+
+.btncategory {
+	font-size: 12px;
+	position: relative;
+	top: 7px;
+	left: 19px;
+	text-decoration: none;
+	color: #535353;
+}
+.btncategory:hover {
+	text-decoration: none;
+	color: #535353;
+}
+
+.button1, .button2, .button3, .button4, .button5, .button6,.button0 {
+	color: #535353;
+	position: relative;
+	padding: 3px 10px 3px 10px;
+	font-size: 12px;
+	border-radius: 30px;
+	margin: 0 11px;
+	top: 7px;
+	left: 25px;
+}
+.button0:hover{
+	background:gray;
+	text-decoration: none;
+}
+.button1:hover{
+	background:#7fccdd;
+	text-decoration: none;	
+}
+.button2:hover{
+	background:#8bcba0; 
+text-decoration: none;}
+.button3:hover{
+	background:#ffb79a; 
+text-decoration: none;
+}
+.button4:hover{
+	background:#fdabad; 
+text-decoration: none;
+}
+.button5:hover{
+	background:#c7aadf; 
+text-decoration: none;
+}
+.button6:hover{
+	background:#fbfac3;
+text-decoration: none;
+}
+
+
+.contest-title2 {
+	font-size: 14px;
+}
+
+.card {
+	font-family: 'San Francisco';
+	color: #4f4f4f;
+	border-radius: 12px;
+	box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
+	border: 0px;
+}
+
+
+.card-body {
+	font-size: 14px;
+}
