@@ -18,7 +18,7 @@ function MyListTemplate(mylist) {
 	<div class="card">
 	
     	<div class="card-header">
-		<div class="mylist-title" OnClick="location.href ='/board/detail?gatheringId=${mylist.gatheringId}'" style="cursor:pointer;">${mylist.title}</div>
+		<div class="mylist-title" OnClick="location.href ='/board/manage/${mylist.gatheringId}'" style="cursor:pointer;">${mylist.title}</div>
     	</div>
     
     	<div class="card-body">
@@ -28,8 +28,8 @@ function MyListTemplate(mylist) {
     	</div> 
     
     	<div class="card-footer">
-    		<button class="btn7 btn--stripe btn--radius" onclick="location.href='/board/modify?gatheringId=${mylist.gatheringId}';">수정</button>
-    		<button class="btn8 btn--radius" onclick="remove(${mylist.gatheringId})">삭제</button>
+    		<button class="btn7 btn--stripe btn--radius" onclick="location.href='/board/detail?gatheringId=${mylist.gatheringId}';" style="cursor:pointer;">관리</button>
+    		<button class="btn8 btn--radius" onclick="remove(${mylist.gatheringId})" style="cursor:pointer;">삭제</button>
     	</div>
     </div>
 			
@@ -70,7 +70,7 @@ function MyStateTemplate(mystate) {
 	<div class="card">
 	
     	<div class="card-header">
-    		<div class="mylist-title" >${mystate.title }</div>
+    		<div class="mylist-title" onclick="location.href='/board/detail?gatheringId=${mystate.gatheringId}';" style="cursor:pointer;">${mystate.title }</div>
     	</div>
     
     	<div class="card-body">
@@ -81,7 +81,7 @@ function MyStateTemplate(mystate) {
     
     	<div class="card-footer">
     		${state}
-    		<button class="btn6 btn--radius" onclick="deleteMyState(${mystate.gatheringId}, ${mystate.membersId})">신청 취소</button>
+    		<button class="btn6 btn--radius" onclick="deleteMyState(${mystate.gatheringId}, ${mystate.membersId})" style="cursor:pointer;">신청 취소</button>
     	</div>
     </div>
 	`;

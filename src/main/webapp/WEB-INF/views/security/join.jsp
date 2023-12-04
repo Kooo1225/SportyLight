@@ -101,7 +101,7 @@ $(document).ready(function() {
 				<form:errors path="gender" cssClass="error2 mx-auto"></form:errors>
 			</div>
 			<div class="form-group mx-auto check">
-				<form:input path="nickname" placeholder=" 닉네임"></form:input>
+				<form:input path="nickname" placeholder="닉네임"></form:input>
 				<form:errors path="nickname" cssClass="error mx-auto"></form:errors>
 			</div>
 			
