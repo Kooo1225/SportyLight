@@ -44,6 +44,21 @@
 		
 	</div>
 </nav>
+<script>
+$(document).ready(function () {
+    $(".nav-link").on("click", function () {
+      // 모든 링크의 색상을 초기화
+      $(".nav-link").css({
+        'background-color': '', // 초기 배경색으로 되돌리기
+        'color': 'white' // 초기 글자색으로 되돌리기
+      });
+      $(this).css({
+          'background-color': '#788FA1',
+          'color': 'white'
+        });
+      });
+});
+</script>
 
 <script src="/resources/js/home/rest.js" ></script>
 <script src="/resources/js/home/homeAjax.js" ></script>
