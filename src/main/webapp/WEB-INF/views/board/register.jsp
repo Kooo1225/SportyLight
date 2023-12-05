@@ -12,6 +12,7 @@
 
 <script>
 $(document).ready(function() {
+	
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 		mapOption = {
 		    center: new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표
@@ -104,6 +105,7 @@ $(document).ready(function() {
 
 				<div class="form-group mx-auto submitButton" >
 					<button type="submit" style="width: 222px; margin-top: 4px;">REGISTER</button>
+					<a href="/" class="homebtn" > Go Back? </a>
 				</div>
 			</form>
 		</div>

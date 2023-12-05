@@ -19,6 +19,25 @@
 				<li class="nav-mylist-item"><a class="nav-mylist-link" id="btn4">내가 올린 모임</a></li>
 			</ul>
 		</div>
+	    
+	    <script>
+	    $(document).ready(function () {
+	        // 공통의 클릭 이벤트 핸들러
+	        $(".nav-mylist-link").on("click", function () {
+	          // 모든 링크의 색상을 초기화
+	          $(".nav-mylist-link").css({
+	            'background-color': 'white', // 초기 배경색으로 되돌리기
+	            'color': '#7FB3FA' // 초기 글자색으로 되돌리기
+	          });
+
+	          // 클릭된 링크의 색상을 변경
+	          $(this).css({
+	            'background-color': '#7FB3FA',
+	            'color': 'white'
+	          });
+	        });
+	    });  
+	    </script>
 	
 		<script src="/resources/js/home/rest.js"></script>
 		<script src="/resources/js/board/boardAjax.js"></script>
@@ -138,34 +157,12 @@
 			
 		})
 		</script>
+		
 	</div>
 	<div class="scrollBar mx-auto" style="height: 100%;">
 		<div class="container0"></div>
 	</div>
 </body>
 
-
-<%-- 	<div class="mylist-border mx-auto">
-		<div class="mylist-container mx-auto">
-			
-			<c:forEach var="mystate" items="${myState}">
-				<div class="mylist-wrapper mx-auto">
-					<div class="mylist-title">
-						<span class="mylist-title-main">${mystate.title }</span> <span
-							class="mylist-title-type">${mystate.type }</span>
-					</div>
-					<div class="mylist-dateTime">
-						${mystate.headCount}명 |
-						<fmt:parseDate value="${mystate.dateTime}"
-							pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
-						<fmt:formatDate pattern="yyyy년 MM월 dd일(EE) HH시 mm분"
-							value="${parsedDateTime}" />
-					</div>
-					<div class="mylist-description"> ${mystate.description}</div>
-				</div>
-			</c:forEach>
-			
-		</div>
-	</div> --%>
 	
 <%-- 	<%@ include file="../layouts/chatFooter.jsp"%> --%>

@@ -1,4 +1,6 @@
-package com.sportylight.mapper;
+package com.sportylight.service;
+
+import static org.junit.Assert.*;
 
 import java.util.List;
 
@@ -13,38 +15,25 @@ import com.sportylight.config.RootConfig;
 import com.sportylight.config.SecurityConfig;
 import com.sportylight.domain.EnumVO;
 import com.sportylight.domain.GatherVO;
-import com.sportylight.domain.SearchVO;
+import com.sportylight.mapper.GatherMapperTest;
 
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {RootConfig.class, SecurityConfig.class, EmailConfig.class })
 @Log4j
-public class GatherMapperTest {
+public class GatherServiceTest2 {
 
 	@Autowired
-	private GatherMapper mapper;
-	
-	public void testSearch() {
-		SearchVO search = new SearchVO();
-		
-		search.setKeyword("갈비찜");
-		search.setOption("TC");
-		
-		List<GatherVO> list = mapper.getSearch(search);
-		
-		for(GatherVO gather: list) {
-			log.info(gather);
-		}
-	}
+	private GatherService service;
 	
 	@Test
-	public void testRegion() {
-		List<GatherVO> vo = mapper.getRegionList("경남");
+	public void test() {
+		EnumVO type = EnumVO.valueOf("헬스");
+		
+		List<GatherVO> vo = service.getTypeList(type, "경남");
 		
 		log.info(vo);
 	}
-	
+
 }
-
-

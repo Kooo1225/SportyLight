@@ -25,6 +25,18 @@
 		where gathering_id = #{gatheringId}
 	</select>
 
+	<select id="getRegionList" resultMap="gatherMap">
+		select * 
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.delete_yn != 1 and g.gathering_address like CONCAT(#{region},'%');
+	</select>
+	
+	<select id="getNotRegionList" resultMap="gatherMap">
+		select * 
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.delete_yn != 1 and g.gathering_address not like CONCAT(#{region},'%');
+	</select>
+
 	<select id="getList" resultMap="gatherMap">
 		select * 
 		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
@@ -60,7 +72,7 @@
 	<select id="getMyList" resultMap="gatherMap">
 		select *
 		from view_gathering_manager v
-		where v.members_id = #{membersId} and v.gathering_state = 2 and v.delete_yn = 0
+		where v.members_id = #{membersId} and v.gathering_state in (1, 2) and v.delete_yn = 0
 	</select>
 	
 	<select id="getMyState" resultMap="gatherMap">
@@ -86,9 +98,15 @@
 	</select>
 	
 	<select id="getTypeList" resultMap="gatherMap">
-		select *
-		from gathering
-		where gathering_type = #{type} and delete_yn = 0
+		select * 
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.gathering_type = #{type} and g.delete_yn != 1 and g.gathering_address like CONCAT(#{region},'%');
+	</select>
+	
+	<select id="getNonTypeList" resultMap="gatherMap">
+		select * 
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.gathering_type = #{type} and g.delete_yn != 1 and g.gathering_address not like CONCAT(#{region},'%');
 	</select>
 	
 	<insert id="insert">

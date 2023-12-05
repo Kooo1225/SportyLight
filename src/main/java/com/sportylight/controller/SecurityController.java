@@ -96,7 +96,7 @@ public class SecurityController {
 			}
 		}
 
-		if (!errors.hasFieldErrors("nickname")) { // username 유효성 통과한 경우에
+		if (!errors.hasFieldErrors("nickname")) { // nick name 유효성 통과한 경우에
 			// DB에서 nickname을 검사
 			if (service.checkNickname(member.getNickname()) != null) { // 중복일 때
 				errors.rejectValue("nickname", "nickname 중복", "이미 사용중인 닉네임입니다.");

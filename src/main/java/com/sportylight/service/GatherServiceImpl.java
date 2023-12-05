@@ -32,6 +32,16 @@ public class GatherServiceImpl implements GatherService {
 	public List<GatherVO> getTopic() {
 		return mapper.getTopic();
 	}
+
+  @Override
+	@Transactional
+	public List<GatherVO> getRegionList(String region){
+		List<GatherVO> vo = mapper.getRegionList(region);
+		vo.addAll(mapper.getNotRegionList(region));
+		
+		return vo;
+	};
+
 	
 	@Override
 	public List<GatherVO> getSearch(SearchVO search) {
@@ -39,9 +49,12 @@ public class GatherServiceImpl implements GatherService {
 	}
 	
 	@Override
-	public List<GatherVO> getTypeList(EnumVO type) {
-
-		return mapper.getTypeList(type);
+	@Transactional
+	public List<GatherVO> getTypeList(EnumVO type, String region) {
+		List<GatherVO> vo = mapper.getTypeList(type, region);
+		vo.addAll(mapper.getNonTypeList(type, region));
+		
+		return vo;
 	}
 	
 	@Override
