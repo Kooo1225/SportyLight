@@ -14,9 +14,15 @@ public interface GatherMapper {
 	
 	public List<GatherVO> getList();
 	
+	public List<GatherVO> getRegionList(String region);
+	
+	public List<GatherVO> getNotRegionList(String region);
+	
 	public List<GatherVO> getSearch(SearchVO search);
 	
-	public List<GatherVO> getTypeList(EnumVO type);
+	public List<GatherVO> getTypeList(@Param("type") EnumVO type, @Param("region") String region);
+	
+	public List<GatherVO> getNonTypeList(@Param("type") EnumVO type, @Param("region") String region);
 	
 	public List<GatherVO> getMyList(int membersId); // 내가 작성한 모임글
 	
