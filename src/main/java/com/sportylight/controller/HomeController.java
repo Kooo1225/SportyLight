@@ -21,13 +21,6 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String Home(Model model) {
-
-		List<GatherVO> vo = service.getList();
-		
-		System.out.println(vo);
-		
-		model.addAttribute("GatherList", vo);
-		model.addAttribute("count", vo.size());
 		
 		return "home/home";
 	}
