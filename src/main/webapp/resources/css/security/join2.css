@@ -44,6 +44,7 @@ input[type=file]::file-selector-button {
     width: 332px;
 }
 
+
 /* join - 생년월일 */
 .input-style input:not([type="radio"]):not([type="file"]):not([type="checkbox"])
 	{

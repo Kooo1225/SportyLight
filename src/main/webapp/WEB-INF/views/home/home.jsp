@@ -36,10 +36,10 @@
 		
 		<!-- 카테고리  -->
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-			<li class="nav-item d-md-none d-lg-block"><a id="ct1" class="nav-link" value="헬스">헬스</a></li>
-			<li class="nav-item d-md-none d-lg-block"><a id="ct2" class="nav-link" value="스포츠">스포츠</a></li>
-			<li class="nav-item d-md-none d-lg-block"><a id="ct3" class="nav-link" value="등산">등산</a></li>
-			<li class="nav-item d-md-none d-lg-block"><a id="ct4" class="nav-link" value="러닝">러닝</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct1" class="nav-link" >헬스</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct2" class="nav-link" >스포츠</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct3" class="nav-link" >등산</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct4" class="nav-link" >러닝</a></li>
 		</ul>
 		
 	</div>
@@ -47,16 +47,53 @@
 
 <script src="/resources/js/home/rest.js" ></script>
 <script src="/resources/js/home/homeAjax.js" ></script>
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services,clusterer"></script>
 <script>
 	const BASE_URL = "/api/home"
+	let mylatitude;
+	let mylongitude;
+	let myRegion;
 
 	$(document).ready(function(e) {
+		if(navigator.geolocation) {
+		    navigator.geolocation.getCurrentPosition(function(position) {
+ 	        var geocoder = new kakao.maps.services.Geocoder();
+ 	        
+			geocoder.coord2Address(mylongitude, mylatitude, async function(result, status) {
+				
+				if(status === kakao.maps.services.Status.OK) {
+					$('.sidebar-board').empty();
+					$('.scroll-container').empty();
+					
+					myRegion = result[0].address.region_1depth_name;
+					
+					const gatherList = await rest_get(BASE_URL + '/regionList?region=' + myRegion);
+					gatherCount = Object.keys(gatherList).length;
+					
+					let countEl = $(createListCountTemplate(gatherCount));
+					
+					$('.sidebar-board').append(countEl);
+					
+		 			let listEl;
+					
+		 			$.each(gatherList, function(index, item) {
+						listEl = $(createTypeListTemplate(item));
+						$('.scroll-container').append(listEl);
+		 				})	
+					}
+				});
+	   		});
+		}
+			
 		
 		$(".nav-link").on("click", async function(e) {
 			$('.sidebar-board').empty();
 			$('.scroll-container').empty();
 			
-			const gatherList = await rest_get(BASE_URL + '/typelist?types=' + $(this).text());
+			console.log(BASE_URL + '/typelist/' + $(this).val() + '/' + myRegion);
+			
+			const gatherList = await rest_get(BASE_URL + '/typelist/' + $(this).text()+ '/' + myRegion);
+			
 			gatherCount = Object.keys(gatherList).length;
 			
 			let countEl = $(createListCountTemplate(gatherCount));
@@ -118,43 +155,12 @@
 	<nav id="container3-fluid" style="padding: 0px;" class="navbar navbar-expand-sm navbar-light bg-white">
 		<div class="sidebar">
 			<div class="sidebar-board">
-				<span class="board-txt">모임</span> 
-				<span class="board-total">${count} 건</span>
+
 			</div>
 			<!--------------프로필사진------------------>
 			<div class="col-sm-12" style="height: 100%;">
 				<div class="scroll-container" style="height: 100%;">
-					<c:forEach var="gather" items="${GatherList}">
-						<div class="row" id="set1">
-							<div class="col-4">
-								<div class="sidebar-board-get">
-									<img src="/security/avatar/m/${gather.membersId}" class="board-avatar" />
-								</div>
-							</div>
-							
-							<!---------------------------------------->
-							<div class="col-8" id="detail">
-							
-								<div class="board-info-wrapper" style="width: 100%;position: relative; bottom: 12px;left: -4px;">
-								    <span class="board-category">[${gather.type}]</span> 
-								    <br>
-									<span class="board-title"><a href="#" onclick="setCenter('${gather.address}')">${gather.title}</a></span> 									
-									<br>
-									<span class="board-info">
-										인원 ${gather.headCount} 명 | <fmt:parseDate value="${gather.dateTime}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
-										<fmt:formatDate pattern="yyyy년 MM월 dd일 HH시 mm분" value="${parsedDateTime}" />
-									</span>
-									<br>
-									<c:if test="${gather.headCount == gather.participate}">
-										<span class="board-info"><b>모임마감</b></span>
-									</c:if>
-									<c:if test="${gather.headCount != gather.participate}">
-									<span class="board-info"><a href="/board/detail?gatheringId=${gather.gatheringId}">상세보기 ></a></span>
-									</c:if>
-								</div>
-							</div>
-						</div>
-					</c:forEach>
+
 				</div>
 			</div>
 		</div>
@@ -168,7 +174,6 @@
 
 </body>
 
-<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services,clusterer"></script>
 <script>
 	var container = document.getElementById('map');
 	var options = {
@@ -177,6 +182,8 @@
 	};
 	
 	var map = new kakao.maps.Map(container, options);
+	
+	var address;
 	
 	/* title 클릭 시 해당 마커 중심좌표로 이동 */
 	function setCenter(address) {
@@ -196,6 +203,10 @@
 	    navigator.geolocation.getCurrentPosition(function(position) {
 	        var latitude = position.coords.latitude,
 	            longitude = position.coords.longitude; 
+	        
+	        mylatitude = position.coords.latitude;
+	        mylongitude = position.coords.longitude;
+	        
 	        var position = new kakao.maps.LatLng(latitude, longitude); 
 	        
 	        displayPosition(position);

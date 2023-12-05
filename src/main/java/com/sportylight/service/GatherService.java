@@ -2,6 +2,8 @@ package com.sportylight.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.sportylight.domain.EnumVO;
 import com.sportylight.domain.GatherMembersVO;
 import com.sportylight.domain.GatherVO;
@@ -12,7 +14,9 @@ public interface GatherService {
 	
 	public List<GatherVO> getSearch(SearchVO search);
 	
-	public List<GatherVO> getTypeList(EnumVO type);
+	public List<GatherVO> getRegionList(String region);
+	
+	public List<GatherVO> getTypeList(EnumVO type, String region);
 	
 	public List<GatherVO> getMyList(int membersId);
 	

@@ -104,16 +104,43 @@ function previewFile() {
 	<h2 class="page-header" style="font-size: 25px;">join</h2><br>
 	
 	<div class="mx-auto">
-		<form:form modelAttribute="member"
-			action="/security/join?_csrf=${_csrf.token }" method="post" enctype="multipart/form-data">
+		<form:form modelAttribute="member" action="/security/join?_csrf=${_csrf.token }" method="post" enctype="multipart/form-data">
 			<div class="input-style">
 			
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+				    <div class="modal-content">
+				    
+				      <div class="modal-header">
+				      
+				        <h5 class="modal-title" id="exampleModalLongTitle">이메일 인증</h5>
+				        
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				        
+				      </div>
+				      
+				      <div class="modal-body">
+			            <label for="message-text" class="col-form-label">Message:</label>
+			            <textarea class="form-control" id="message-text"></textarea>
+				      </div>
+				      
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+						
 				<div class="form-group check">
 				<form:input path="email" class="email" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
 				<form:errors path="email" cssClass="error mx-auto" />
-				<button type="button" class="email2" data-toggle="modal" data-target="#exampleModalCenter">
-                    인증
-                </button>
+				<button type="button" class="email2">
+				  인증
+				</button>
 			  </div>
 				<div class="form-group mx-auto">
 					<form:password path="password" placeholder=" 비밀번호를 작성해주세요."></form:password>
@@ -164,17 +191,32 @@ function previewFile() {
 
 <script>
 $(document).ready(function(e) {
-	$('#email').on('click', async function(e) {
-		const BASE_URL = '/api/mail/certification/';
-		
-		$.ajax({
-			type:"GET",
-			url:BASE_URL + $(this).val(),
-			success: function(data) {
-				console.log('data : ' + data);
-			}
+	const email = document.getElementById('email');
+	
+	$('.email2').on('click', async function(e) {
+		if (email.value == '') {
+			alert("이메일을 입력해주세요.");
+		}
+		else {
+			$('#exampleModalCenter').modal();
 			
-		})
-	});
+			const BASE_URL = '/api/mail/certification/';
+
+	        $.ajax({
+	            type:"GET",
+	            url:BASE_URL + email.value,
+	            success: function(data) {
+	                console.log('data : ' + data);
+            	}
+
+	        })
+		}
+		
+		
+		
+		console.log(email.value);
+		  
+
+	})
 });
 </script>
