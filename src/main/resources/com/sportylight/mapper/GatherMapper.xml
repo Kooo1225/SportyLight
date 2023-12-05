@@ -28,7 +28,13 @@
 	<select id="getList" resultMap="gatherMap">
 		select * 
 		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
-		where g.delete_yn != 1;
+		where g.delete_yn != 1
+	</select>
+	
+	<select id="getTopic" resultMap="gatherMap">
+		select *
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.delete_yn != 1 AND (g.gathering_headcount - v.participate = 1);
 	</select>
 	
 	<select id="getSearch" resultMap="gatherMap">
@@ -66,13 +72,23 @@
 	<select id="getJoinCount" resultType="int">
 		select participate
 		from view_gathering 
-		where gathering_id = #{gatheringId};
+		where gathering_id = #{gatheringId}
+	</select>
+	
+	<select id="getSumJoinCount" resultType="int">
+		select sum(participate) as total_participate
+		from view_gathering
+	</select>
+	
+	<select id="getSumHeadCount" resultType="int">
+		select sum(gathering_headcount) as total_headCount
+		from gathering 
 	</select>
 	
 	<select id="getTypeList" resultMap="gatherMap">
 		select *
 		from gathering
-		where gathering_type = #{type} and delete_yn = 0;
+		where gathering_type = #{type} and delete_yn = 0
 	</select>
 	
 	<insert id="insert">

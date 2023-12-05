@@ -29,6 +29,11 @@ public class GatherServiceImpl implements GatherService {
 	}
 	
 	@Override
+	public List<GatherVO> getTopic() {
+		return mapper.getTopic();
+	}
+	
+	@Override
 	public List<GatherVO> getSearch(SearchVO search) {
 		return mapper.getSearch(search);
 	}
@@ -60,6 +65,16 @@ public class GatherServiceImpl implements GatherService {
 		}
 //		return mapper.getMyState(membersId);
 		return vo;
+	}
+	
+	@Override
+	public int getSumJoin() {
+		return mapper.getSumJoinCount();
+	}
+	
+	@Override
+	public int getSumHead() {
+		return mapper.getSumHeadCount();
 	}
 	
 	@Override

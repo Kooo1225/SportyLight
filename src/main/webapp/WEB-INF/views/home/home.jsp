@@ -41,10 +41,17 @@
 			<li class="nav-item d-md-none d-lg-block"><a id="ct3" class="nav-link" value="등산">등산</a></li>
 			<li class="nav-item d-md-none d-lg-block"><a id="ct4" class="nav-link" value="러닝">러닝</a></li>
 		</ul>
-		
+			<div class="swiper-container" style="height:30px">
+		    	<div class="swiper-wrapper">
+		    	<c:forEach var="topic" items="${topic}">
+		      		<div class="swiper-slide" style="height:30px"><b>[신청마감 임박!]</b> ${topic.title}<a href="/board/detail?gatheringId=${gather.gatheringId}"> 신청하기</a></div>
+		      	</c:forEach>	
+		    	</div>
+		  	</div>
 	</div>
 </nav>
 
+<script defer src="/resources/js/home/swiper.js"></script>
 <script src="/resources/js/home/rest.js" ></script>
 <script src="/resources/js/home/homeAjax.js" ></script>
 <script>

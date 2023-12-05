@@ -14,6 +14,8 @@ public interface GatherMapper {
 	
 	public List<GatherVO> getList();
 	
+	public List<GatherVO> getTopic();
+	
 	public List<GatherVO> getSearch(SearchVO search);
 	
 	public List<GatherVO> getTypeList(EnumVO type);
@@ -23,6 +25,10 @@ public interface GatherMapper {
 	public List<GatherVO> getMyState(int membersId); // 내가 신청한 모임글
 	
 	public int getJoinCount(int gatheringId); // 내가 신청한 모임글 개수
+	
+	public int getSumJoinCount(); // 등록된 모임의 신청한 인원 총합
+	
+	public int getSumHeadCount(); // 등록된 모임의 모집인원 총합
 	
 	public int removeGathering(int gatheringId); // gathering에서 delete_ny 1로 바꿈
 	
