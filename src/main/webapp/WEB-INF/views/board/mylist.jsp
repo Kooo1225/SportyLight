@@ -26,7 +26,7 @@
 	        $(".nav-mylist-link").on("click", function () {
 	          // 모든 링크의 색상을 초기화
 	          $(".nav-mylist-link").css({
-	            'background-color': '', // 초기 배경색으로 되돌리기
+	            'background-color': 'white', // 초기 배경색으로 되돌리기
 	            'color': '#7FB3FA' // 초기 글자색으로 되돌리기
 	          });
 
