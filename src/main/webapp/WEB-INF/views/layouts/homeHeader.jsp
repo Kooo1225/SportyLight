@@ -40,6 +40,11 @@
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
 
+<!-- swiper 라이브러리 -->	
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 
 <body style="overflow-y: hidden">
