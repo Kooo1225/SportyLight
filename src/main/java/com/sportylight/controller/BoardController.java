@@ -121,7 +121,7 @@ public class BoardController {
 			
 		}
 		
-		return "redirect:/board/mylist?membersId=" + vo.getMembersId();
+		return "redirect:/board/detail?gatheringId=" + vo.getGatheringId();
 	}
 	
 	@GetMapping("/remove")
