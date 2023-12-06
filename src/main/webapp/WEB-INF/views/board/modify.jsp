@@ -84,6 +84,7 @@ $(document).ready(function() {
 		<div class="panel-body">
 			<form action="/board/modify" method="post">
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			<div class="scroll3-container">
 			<input type="hidden" name="gatheringId" value="${gather.gatheringId}"> <%-- gatheringId값 추가 --%>
 			
 				<div class="form-group mx-auto main-select" style="margin-bottom:0;">
@@ -117,6 +118,7 @@ $(document).ready(function() {
 					<button type="submit" style="margin-top:10px;">수정</button>
 					<button style="margin-top:10px;" onclick="location.href='/board/detail?gatheringId=${gatheringId}}';">돌아가기</button>
 				</div>
+			  </div>
 			</form>
 		</div>
 	</div>

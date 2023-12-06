@@ -73,6 +73,7 @@ $(document).ready(function() {
 		<div class="panel-body">
 			<form action="/board/register" method="post">
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			    <div class="scroll3-container">
 				<div class="form-group mx-auto main-select" style="margin-bottom:0;">
 					<input type="radio" id="select-health" name="type" value="헬스"><label for="select-health">헬스</label>
 					<input type="radio" id="select-sport" name="type" value="스포츠"><label for="select-sport">스포츠</label>
@@ -106,6 +107,7 @@ $(document).ready(function() {
 				<div class="form-group mx-auto submitButton" >
 					<button type="submit">등록</button>
 					<a href="/" class="homebtn" > 홈으로 </a>
+				</div>
 				</div>
 			</form>
 		</div>
