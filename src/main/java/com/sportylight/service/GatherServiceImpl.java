@@ -29,6 +29,11 @@ public class GatherServiceImpl implements GatherService {
 	}
 	
 	@Override
+	public List<GatherVO> getTopic() {
+		return mapper.getTopic();
+	}
+
+  @Override
 	@Transactional
 	public List<GatherVO> getRegionList(String region){
 		List<GatherVO> vo = mapper.getRegionList(region);
@@ -36,6 +41,7 @@ public class GatherServiceImpl implements GatherService {
 		
 		return vo;
 	};
+
 	
 	@Override
 	public List<GatherVO> getSearch(SearchVO search) {
@@ -72,6 +78,16 @@ public class GatherServiceImpl implements GatherService {
 		}
 //		return mapper.getMyState(membersId);
 		return vo;
+	}
+	
+	@Override
+	public int getSumJoin() {
+		return mapper.getSumJoinCount();
+	}
+	
+	@Override
+	public int getSumHead() {
+		return mapper.getSumHeadCount();
 	}
 	
 	@Override

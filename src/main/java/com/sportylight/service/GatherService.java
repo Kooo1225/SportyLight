@@ -12,6 +12,8 @@ import com.sportylight.domain.SearchVO;
 public interface GatherService {
 	public List<GatherVO> getList();
 	
+	public List<GatherVO> getTopic();
+	
 	public List<GatherVO> getSearch(SearchVO search);
 	
 	public List<GatherVO> getRegionList(String region);
@@ -21,6 +23,10 @@ public interface GatherService {
 	public List<GatherVO> getMyList(int membersId);
 	
 	public List<GatherVO> getMyState(int membersId);
+	
+	public int getSumJoin();
+	
+	public int getSumHead();
 		
 	public void remove(int gatheringId); // gathering에서 delete_ny 1로 바꿈
 	
