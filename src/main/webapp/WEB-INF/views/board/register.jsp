@@ -69,7 +69,6 @@ $(document).ready(function() {
 
 
 	<h1 class="page-header"> REGISTER</h1><br>
-
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<form action="/board/register" method="post">
@@ -87,7 +86,7 @@ $(document).ready(function() {
 				<div class="form-group mx-auto" >
 					<i class="fa-solid fa-user-group fa-2x" style="color:#5A95F5;"></i>
 					<input type="number" min="1" max="20" value="1" name="headCount" class="num">
-
+	
 					<i class="fa-solid fa-calendar-days fa-2x" style="color:#5A95F5;"></i>
 					<input type="datetime-local" name="dateTime" class="date" id="DateLocal">
 				</div>
@@ -103,10 +102,10 @@ $(document).ready(function() {
 				
 				<sec:authentication property="principal.member.membersId" var="membersId" />
 					<input type="hidden" name="membersId" value="${membersId }" />
-
+	
 				<div class="form-group mx-auto submitButton" >
-					<button type="submit">REGISTER</button>
-					<a href="/" class="homebtn" > Go Back? </a>
+					<button type="submit">등록</button>
+					<a href="/" class="homebtn" > 홈으로 </a>
 				</div>
 			</form>
 		</div>

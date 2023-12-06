@@ -36,10 +36,10 @@
 		
 		<!-- 카테고리  -->
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-			<li class="nav-item d-md-none d-lg-block"><a id="ct1" class="nav-link" >헬스</a></li>
-			<li class="nav-item d-md-none d-lg-block"><a id="ct2" class="nav-link" >스포츠</a></li>
-			<li class="nav-item d-md-none d-lg-block"><a id="ct3" class="nav-link" >등산</a></li>
-			<li class="nav-item d-md-none d-lg-block"><a id="ct4" class="nav-link" >러닝</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct1" class="nav-link" ><span><img src="resources/images/icon/dumbell.png" class="icon"></span>헬스</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct2" class="nav-link" ><span><img src="resources/images/icon/sports.png" class="icon"></span>스포츠</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct3" class="nav-link" ><span><img src="resources/images/icon/hiking1.png" class="icon"></span>등산</a></li>
+			<li class="nav-item d-md-none d-lg-block"><a id="ct4" class="nav-link" ><span><img src="resources/images/icon/running.png" class="icon"></span>러닝</a></li>
 		</ul>
 			<div class="swiper-container" style="height:30px;overflow: hidden;margin-left:30px;">
 		    	<div class="swiper-wrapper">
