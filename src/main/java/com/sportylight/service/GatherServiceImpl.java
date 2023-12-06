@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sportylight.domain.EnumVO;
+import com.sportylight.domain.CategoryEnumVO;
 import com.sportylight.domain.GatherMembersVO;
 import com.sportylight.domain.GatherVO;
 import com.sportylight.domain.SearchVO;
@@ -41,6 +41,13 @@ public class GatherServiceImpl implements GatherService {
 		
 		return vo;
 	};
+	
+	@Override
+	public List<GatherVO> getRegionCount(String region) {
+		List<GatherVO> vo = mapper.getRegionList(region);
+		
+		return vo;
+	}
 
 	
 	@Override
@@ -50,7 +57,7 @@ public class GatherServiceImpl implements GatherService {
 	
 	@Override
 	@Transactional
-	public List<GatherVO> getTypeList(EnumVO type, String region) {
+	public List<GatherVO> getTypeList(CategoryEnumVO type, String region) {
 		List<GatherVO> vo = mapper.getTypeList(type, region);
 		vo.addAll(mapper.getNonTypeList(type, region));
 		

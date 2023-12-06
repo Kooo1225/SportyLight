@@ -18,7 +18,7 @@ function MyListTemplate(mylist) {
 	<div class="card">
 	
     	<div class="card-header">
-		    <div class="mylist-title" onclick="getChatting(${mylist.gatheringId})" style="cursor:pointer;">${mylist.title}</div>
+		    <div class="mylist-title">${mylist.title}</div>
     	</div>
     
     	<div class="card-body">
@@ -60,7 +60,10 @@ function MyStateTemplate(mystate) {
 	if(`${mystate.state}` == 0) {
 	  state=`<button class="btn5 btn--stripe btn--radius">신청중..</button>`;
 	}else if(`${mystate.state}` == 1) {
-	  state=`<button class="btn5 btn--stripe btn--radius">승인완료</button>`;
+	  state=`<button class="btn5 btn--stripe btn--radius" 
+	  onmouseover="this.innerText='채팅하기'"
+	  onmouseout="this.innerText='승인완료'"
+	  onclick="getState(${mystate.membersId}, ${mystate.gatheringId})">승인완료</button>`;
 	}else if(`${mystate.state}` == -1) {
 	  state=`<button class="btn5 btn--stripe btn--radius">다음기회에</button>`;
 	}else if(`${mystate.state}` == 3) {
@@ -70,7 +73,7 @@ function MyStateTemplate(mystate) {
 	<div class="card">
 	
     	<div class="card-header">
-    		<div class="mylist-title" onclick="getState(${mystate.membersId}, ${mystate.gatheringId})">${mystate.title }</div>
+    		<div class="mylist-title" >${mystate.title }</div>
     	</div>
     
     	<div class="card-body">

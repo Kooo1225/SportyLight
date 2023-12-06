@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.sportylight.config.EmailConfig;
 import com.sportylight.config.RootConfig;
 import com.sportylight.config.SecurityConfig;
-import com.sportylight.domain.EnumVO;
+import com.sportylight.domain.CategoryEnumVO;
 import com.sportylight.domain.GatherVO;
 import com.sportylight.mapper.GatherMapperTest;
 
@@ -29,11 +29,14 @@ public class GatherServiceTest2 {
 	
 	@Test
 	public void test() {
-		EnumVO type = EnumVO.valueOf("헬스");
+		CategoryEnumVO type = CategoryEnumVO.valueOf("헬스");
 		
 		List<GatherVO> vo = service.getTypeList(type, "경남");
+		List<GatherVO> vo2 = service.getRegionList("부산");
 		
 		log.info(vo);
+		log.info("경남,헬스" + vo.size());
+		log.info("부산" + vo2.size());
 	}
 
 }

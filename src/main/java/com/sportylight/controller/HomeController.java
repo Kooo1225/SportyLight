@@ -24,11 +24,8 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String Home(Model model) {
-
 		List<GatherVO> vo = service.getList();
 		List<GatherVO> vo2 = service.getTopic();
-		
-		System.out.println(vo);
 		
 		for(GatherVO top :vo2) {
 			log.info("topic gathering" + top);
@@ -45,14 +42,22 @@ public class HomeController {
 	public String gate(Model model) {
 		List<GatherVO> vo = service.getList();
 		List<GatherVO> vo2 = service.getTopic();
-		int total_joinCount = service.getSumJoin();
-		int total_headCount = service.getSumHead();
+		int totalJoinCount = service.getSumJoin();
+		int totalHeadCount = service.getSumHead();
+		List<GatherVO> seoulList = service.getRegionCount("서울");
+		List<GatherVO> gyunggiList = service.getRegionCount("경기");
+		List<GatherVO> busanList = service.getRegionCount("부산");
+		List<GatherVO> daeguList = service.getRegionCount("대구");
 		
 		model.addAttribute("GatherList", vo);
 		model.addAttribute("count", vo.size());
 		model.addAttribute("topic", vo2);
-		model.addAttribute("total_joinCount", total_joinCount);
-		model.addAttribute("total_headCount", total_headCount);
+		model.addAttribute("totalJoinCount", totalJoinCount);
+		model.addAttribute("totalHeadCount", totalHeadCount);
+		model.addAttribute("seoul", seoulList.size());
+		model.addAttribute("gyunggi", gyunggiList.size());
+		model.addAttribute("busan", busanList.size());
+		model.addAttribute("daegu", daeguList.size());
 		
 		return "home/gate";
 	}

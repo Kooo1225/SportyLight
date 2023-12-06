@@ -40,6 +40,7 @@ $(document).ready(function(e) {
 			</blockquote>
 			</div>
 		</div>
+
 		<!---------------- 두번째 상자---------------->
 		<div class="sample col-md-6" >
 			<div class="container14">
@@ -55,10 +56,9 @@ $(document).ready(function(e) {
 					<span style="display:inline-block;">
 		 				<sec:authentication property="principal.member.membersId" var="membersId" /> 
 		 					<c:if test="${membersId == gather.membersId }"> 
-                        		<button type="button" class="btn5" id="manageButton">관리</button>
-                     		</c:if>
-            				<c:if test="${membersId != gather.membersId }">
-                       
+                  <button type="button" class="btn5" id="manageButton">관리</button>
+              </c:if>
+              <c:if test="${membersId != gather.membersId }"> 
                       <c:if test="${state == null}">
                             <button type="submit" class="btn5" 
                             onclick="location.href='/board/insertApply?gatheringId=${gather.gatheringId}&membersId=${membersId }&state=0';">신청</button>
@@ -194,6 +194,52 @@ $(document).ready(function(e) {
 	</div>
 </div>
 </body>
+
+<script
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services"></script>
+<script>
+	// GeoCode
+	let geocoder = new kakao.maps.services.Geocoder();
+	let address = '${gather.address}';
+
+	geocoder
+			.addressSearch(
+					address,
+					function(result, status) {
+						if (status == kakao.maps.services.Status.OK) {
+							var coords = new kakao.maps.LatLng(
+									result[0].y,
+									result[0].x); // 지도의 중심좌표와 마커의 위치
+							var marker = new kakao.maps.Marker(
+									{
+										map : map,
+										position : coords
+									});
+							map.setCenter(coords);
+						}
+					});
+	let mapContainer = document
+			.getElementById('map');
+	//  지도 제어 코딩
+	let mapOption = {
+		center : new kakao.maps.LatLng(36.0132159,
+				127.7586034),
+		level : 3
+	};
+	let map = new kakao.maps.Map(mapContainer,
+			mapOption); // 두번째 인자는 지도의 위치를 어디에 둘 것인지 설정
+	map.setDraggable(false);
+	function setDraggable(draggable) {
+		// 마우스 드래그로 지도 이동 가능여부를 설정합니다
+		map.setDraggable(draggable);
+	}
+	var marker = new kakao.maps.Marker({
+		map : map,
+		position : new kakao.maps.LatLng(
+				36.0132159, 127.7586034)
+	});
+	marker.setMap(map);
+</script>
 
 <script src="/resources/js/home/rest.js"></script>
 <script>
