@@ -40,9 +40,10 @@ public class GatherMapperTest {
 	
 	@Test
 	public void testRegion() {
-		List<GatherVO> vo = mapper.getRegionList("경남");
+		List<GatherVO> vo = mapper.getRegionList("경기");
 		
 		log.info(vo);
+		log.info(vo.size());
 	}
 	
 }

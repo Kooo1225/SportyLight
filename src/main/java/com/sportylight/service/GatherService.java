@@ -18,6 +18,8 @@ public interface GatherService {
 	
 	public List<GatherVO> getRegionList(String region);
 	
+	public List<GatherVO> getRegionCount(String region);
+	
 	public List<GatherVO> getTypeList(EnumVO type, String region);
 	
 	public List<GatherVO> getMyList(int membersId);

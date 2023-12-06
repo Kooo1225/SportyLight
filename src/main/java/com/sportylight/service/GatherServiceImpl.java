@@ -41,6 +41,13 @@ public class GatherServiceImpl implements GatherService {
 		
 		return vo;
 	};
+	
+	@Override
+	public List<GatherVO> getRegionCount(String region) {
+		List<GatherVO> vo = mapper.getRegionList(region);
+		
+		return vo;
+	}
 
 	
 	@Override
