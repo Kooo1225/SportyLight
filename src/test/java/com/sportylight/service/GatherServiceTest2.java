@@ -32,8 +32,11 @@ public class GatherServiceTest2 {
 		CategoryEnumVO type = CategoryEnumVO.valueOf("헬스");
 		
 		List<GatherVO> vo = service.getTypeList(type, "경남");
+		List<GatherVO> vo2 = service.getRegionList("부산");
 		
 		log.info(vo);
+		log.info("경남,헬스" + vo.size());
+		log.info("부산" + vo2.size());
 	}
 
 }
