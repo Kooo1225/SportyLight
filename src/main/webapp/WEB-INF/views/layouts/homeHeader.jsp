@@ -47,7 +47,7 @@
 
 </head>
 
-<body style="overflow-y: hidden">
+<body style="overflow-y: hidden;overflow-x: hidden">
 
 	<!-- 로고 -->
 	<nav id="container" class="navbar navbar-expand-sm navbar-light bg-white">

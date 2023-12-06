@@ -41,7 +41,7 @@
 			<li class="nav-item d-md-none d-lg-block"><a id="ct3" class="nav-link" >등산</a></li>
 			<li class="nav-item d-md-none d-lg-block"><a id="ct4" class="nav-link" >러닝</a></li>
 		</ul>
-			<div class="swiper-container" style="height:30px">
+			<div class="swiper-container" style="height:30px;overflow: hidden;margin-left:30px;">
 		    	<div class="swiper-wrapper">
 		    	<c:forEach var="topic" items="${topic}">
 		      		<div class="swiper-slide" style="height:30px"><b>[신청마감 임박!]</b> ${topic.title}<a href="/board/detail?gatheringId=${gather.gatheringId}"> 신청하기</a></div>
@@ -50,21 +50,7 @@
 		  	</div>
 	</div>
 </nav>
-<script>
-$(document).ready(function () {
-    $(".nav-link").on("click", function () {
-      // 모든 링크의 색상을 초기화
-      $(".nav-link").css({
-        'background-color': '', // 초기 배경색으로 되돌리기
-        'color': 'white' // 초기 글자색으로 되돌리기
-      });
-      $(this).css({
-          'background-color': '#788FA1',
-          'color': 'white'
-        });
-      });
-});
-</script>
+
 
 <script defer src="/resources/js/home/swiper.js"></script>
 <script src="/resources/js/home/rest.js" ></script>
@@ -187,7 +173,7 @@ $(document).ready(function () {
 			</div>
 		</div>
 		<!-------------------Kakao Maps--------------------->
-		<div class="col-sm-12" id="map" style="left: 380px; width: calc(100vw - 325px); height: 100%; position: absolute;"></div>
+		<div class="col-sm-12" id="map" style="left: 380px; width: calc(100vw - 355px); height: 100%; position: absolute;"></div>
 		<div class="register-button">
 			<a href="/board/register"><i class="fa-solid fa-circle-plus fa-beat fa-3x"></i></a>
 		</div>
