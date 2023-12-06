@@ -151,10 +151,6 @@ sample2 blockquote:before {
 	filter: blur(5px);
 }
 
-#row1 {
-	display: flex;
-	flex-wrap: wrap;
-}
 /* 프로필 사진 */
 #profile-image {
 	padding: 5px;

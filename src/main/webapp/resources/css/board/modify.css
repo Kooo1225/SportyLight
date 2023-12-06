@@ -1,0 +1,268 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap')
+	;
+body {
+	overflow: hidden; 
+	scroll: no;
+}
+body::-webkit-scrollbar {
+	display:none;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+.container {
+	text-align: center;
+    width: 600px;
+    margin-right: 304px;
+    position: relative;
+    bottom: 735px;
+    left: 100px;
+    padding: 10px;
+    box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+    border-radius: 40px;
+}
+
+/* SportyLight 부분 */
+.jumbotron h1 {
+    margin-bottom: 10px;
+    color: #5A95F5;
+    font-size: 45px;
+    font-family: 'Noto Sans', sans-serif;
+}
+.jumbotron {
+	padding: 15px;
+    margin-bottom: 0px;
+    background-color: #fff;
+    border-radius: 0.3rem;
+}
+
+/* play sports with others 부분 */
+.jumbotron p {
+    color: #5A95F5;
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+
+
+/* 인원, 달력 아이콘 */
+.fa-2x {
+    font-size: 23px;
+}
+
+/* join - 생년월일 */
+.input-style input:not([type="radio"]):not([type="file"]):not([type="checkbox"])
+	{
+	width: 440px;
+	height: 45px;
+	margin: 10px 5px 10px 5px;
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	border: 1px #5A95F5 solid;
+	font-size: 15px;
+}
+
+
+
+/* register - 제출버튼 */
+.submitButton button {
+	width: 185px;
+	height: 45px;
+	margin: 0px 15px 15px 15px;
+	color: white;
+	background: #5A95F5;
+	font-size: 25px;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 700;
+	word-wrap: break-word;
+	border-radius: 10px;
+	border: 0px solid #5A95F5
+}
+/* register - go back버튼 */
+.homebtn {
+	width: 185px;
+	height: 45px;
+	margin: 0px 15px 15px 15px;
+	color: white;
+	background: #5A95F5;
+	font-size: 25px;
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 700;
+	word-wrap: break-word;
+	border-radius: 10px;
+	border: 0px solid #5A95F5;
+	display: inline-block;
+	text-align: center; /* 중앙 정렬을 위해 추가 */
+	text-decoration: none; /* 링크의 기본 밑줄 제거를 위해 추가 */
+	line-height: 45px; /* 텍스트 수직 정렬을 위해 추가 */
+}
+
+/* register - 제출버튼 하버 */
+.submitButton button:hover {
+	background: #788FA1;
+}
+
+/* register - 제목 */
+.page-header {
+	color: #5A95F5;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 28px;
+	margin-bottom: 0px;
+}
+
+/* register - 스포츠 버튼 */
+.main-select button {
+	width: 116px;
+	height: 45px;
+	margin: 8px;
+	color: white;
+	background: #5A95F5;
+	border-radius: 100px;
+	border: 0px solid #5A95F5;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 18px;
+}
+
+/* register - button 하버 */
+.main-select button:hover {
+	background: #788FA1;
+	transform: translateY(-5px);
+	box-shadow: 0px 15px 20px rgba(27, 39, 63, 0.4);
+}
+
+.hidden-radios {
+	display: none;
+	position: absolute;
+	top: 100%; /* 숨겨진 버튼을 주요 버튼 아래로 배치 */
+	left: 50%; /* 가운데 정렬을 위해 left 속성을 50%로 설정 */
+	transform: translateX(-50%); /* left 속성의 50%만큼 왼쪽으로 이동 */
+	display: none;
+	justify-content: center; /* 가운데 정렬 */
+	backdrop-filter: blur(5px); /* 호버 시 배경 블러 효과를 추가 */
+}
+
+.main-select button[name="sports"]:hover+.hidden-radios, .main-select button[name="sports"]:focus+.hidden-radios,
+	.hidden-radios:hover {
+	display: flex;
+}
+
+.hidden-radios input[type="radio"] {
+	display: inline;
+}
+
+.main-select {
+	position: relative;
+}
+
+.input-style #register-title {
+	margin-top: 14px;
+}
+
+/* register - 모임 인원 */
+.num {
+	width: 75px;
+	height: 45px;
+	margin: 0 45px 0 5px;
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	border: 1px solid #5A95F5;
+}
+
+/* register - 모임 날짜 */
+.date {
+	width: 250px;
+	height: 45px;
+	margin-left: 5px;
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	border: 1px solid #5A95F5;
+}
+
+/* register - 주소 검색 시 카카오맵 */
+.register-address {
+	width: 520px;
+	height: 300px;
+	margin: 10px auto;
+	display: none
+}
+
+/* register - 게시글 메모란 */
+.register-text {
+	width: 440px;
+	height: 125px;
+	margin-top: 5px;
+	background: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	border: 1px solid #5A95F5;
+	resize: none;
+}
+
+/* register - (헬스, 등산, 러닝) 종목 버튼 디자인 */
+.main-select input[type=radio] {
+	display: none;
+}
+
+.main-select input[type=radio]+label {
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 4px;
+	height: 40px;
+	width: 100px;
+	border-radius: 100px;
+	border: 0px solid #5A95F5;
+	line-height: 43px;
+	text-align: center;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 16px;
+}
+
+.main-select input[id=select]+label {
+	margin: 0 13px 0 0;
+}
+
+.main-select input[type=radio]+label {
+	background-color: #5A95F5;
+	color: white;
+}
+
+.main-select input[type=radio]:checked+label {
+	background: #788FA1;
+	border: 0px solid #518E7B;
+	color: white;
+}
+
+/* register - (헬스, 등산, 러닝) 종목 버튼 디자인 하버 */
+.main-select input[type=radio]+label:hover {
+	background: #788FA1;
+	transform: translateY(-5px);
+	box-shadow: 0px 15px 20px rgba(27, 39, 63, 0.4);
+}
+
+
+
+/* register - go back버튼 */
+.homebtn:hover {
+	text-decoration: none;
+    color: white;
+    background: #788FA1;
+}
+
+.image {
+	position: relative; 
+	height: 725px; 
+	width: 800px; 
+	border-radius: 15px;
+}
+.carousel {
+	display: inline-block;
+	margin: 50px 50px 0px 110px;
+}
+
+

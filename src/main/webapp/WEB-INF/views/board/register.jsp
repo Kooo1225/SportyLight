@@ -3,8 +3,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 
-<%@ include file="../layouts/joinHeader.jsp" %>
-<link rel="stylesheet" href="/resources/css/security/register.css"/>
+<%@ include file="../layouts/registerHeader.jsp" %>
+<link rel="stylesheet" href="/resources/css/board/register.css"/>
 
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -67,7 +67,8 @@ $(document).ready(function() {
 });
 </script>
 
-<h1 class="page-header"> REGISTER</h1><br>
+
+	<h1 class="page-header"> REGISTER</h1><br>
 
 	<div class="panel panel-default">
 		<div class="panel-body">
@@ -104,10 +105,13 @@ $(document).ready(function() {
 					<input type="hidden" name="membersId" value="${membersId }" />
 
 				<div class="form-group mx-auto submitButton" >
-					<button type="submit" style="width: 222px; margin-top: 4px;">REGISTER</button>
+					<button type="submit">REGISTER</button>
 					<a href="/" class="homebtn" > Go Back? </a>
 				</div>
 			</form>
 		</div>
 	</div>
+</div>
+
+
 </body>
