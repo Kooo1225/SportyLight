@@ -322,6 +322,13 @@ h1 {
     border: 0px;
 }
 
+.btn0:hover{
+	margin-top:1px;
+	margin-left:1px;
+	box-shadow:none;
+}
+
+
 
 
 #hiddenButtons {
