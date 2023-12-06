@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.sportylight.domain.EnumVO;
+import com.sportylight.domain.CategoryEnumVO;
 import com.sportylight.domain.GatherMembersVO;
 import com.sportylight.domain.GatherVO;
 import com.sportylight.domain.SearchVO;
@@ -20,9 +20,9 @@ public interface GatherMapper {
 	
 	public List<GatherVO> getSearch(SearchVO search);
 	
-	public List<GatherVO> getTypeList(@Param("type") EnumVO type, @Param("region") String region);
+	public List<GatherVO> getTypeList(@Param("type") CategoryEnumVO type, @Param("region") String region);
 	
-	public List<GatherVO> getNonTypeList(@Param("type") EnumVO type, @Param("region") String region);
+	public List<GatherVO> getNonTypeList(@Param("type") CategoryEnumVO type, @Param("region") String region);
 	
 	public List<GatherVO> getMyList(int membersId); // 내가 작성한 모임글
 	

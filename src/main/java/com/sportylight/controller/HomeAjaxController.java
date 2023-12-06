@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sportylight.domain.EnumVO;
+import com.sportylight.domain.CategoryEnumVO;
 import com.sportylight.domain.GatherVO;
 import com.sportylight.domain.SearchVO;
 import com.sportylight.service.GatherService;
@@ -29,7 +29,7 @@ public class HomeAjaxController {
 	
 	@GetMapping("/typelist/{types}/{region}")
 	public List<GatherVO> HikingList(@PathVariable String types, @PathVariable String region) {
-		EnumVO type = EnumVO.valueOf(types);
+		CategoryEnumVO type = CategoryEnumVO.valueOf(types);
 	
 		return service.getTypeList(type, region); //데이터를 반환해주어야 함 
 	}

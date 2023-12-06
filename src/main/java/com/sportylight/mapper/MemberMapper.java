@@ -34,7 +34,6 @@ public interface MemberMapper {
 	
 	public void deleteAuth(int membersId);
 	
-
 //	public int emailCheck(String email);
 
 	public MemberVO read2(String email);

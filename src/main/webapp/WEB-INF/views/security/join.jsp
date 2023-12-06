@@ -109,60 +109,40 @@ function previewFile() {
 			<div class="input-style">
                 
                 <div style="padding: 0 42px;height: 66px;margin: 24px 0 0 0;">
-                <label class="file-button" for="file">
-					&nbsp;프로필 선택
-				</label>
-				<input type="file" name="avatar" id="file" style="display:none" accept="image/*" onchange="previewFile()">
-				<span id="preview"></span>   			
+	                <label class="file-button" for="file">
+						&nbsp;프로필 선택
+					</label>
+					<input type="file" name="avatar" id="file" style="display:none" accept="image/*" onchange="previewFile()">
+					<span id="preview"></span>   			
 			    </div>
-			
-				<!-- Modal -->
-				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-				  <div class="modal-dialog modal-dialog-centered" role="document">
-				    <div class="modal-content">
-				    
-				      <div class="modal-header">
-				      
-				        <h5 class="modal-title" id="exampleModalLongTitle">이메일 인증</h5>
-				        
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				          <span aria-hidden="true">&times;</span>
-				        </button>
-				        
-				      </div>
-				      
-				      <div class="modal-body">
-			            <label for="message-text" class="col-form-label">Message:</label>
-			            <textarea class="form-control" id="message-text"></textarea>
-				      </div>
-				      
-				      <div class="modal-footer">
-				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				        <button type="button" class="btn btn-primary">Save changes</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
 						
 				<div class="form-group check">
-				<form:input path="email" class="email" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
-				<form:errors path="email" cssClass="error mx-auto" />
-				<button type="button" class="email2">
-				  인증
-				</button>
-			  </div>
+					<form:input path="email" class="email" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
+					<form:errors path="email" cssClass="error mx-auto" />
+					
+					<button type="button" class="email2" id="sendMail">인증</button>
+					
+	                <div class="form-group mx-auto">
+	                	<input class="email3" id="certNum" placeholder=" 인증번호를 입력해주세요." disabled>
+	                	<button type="button" class="email2" id="emailCheck" disabled>확인</button>
+	                </div>
+				</div>
+	
 				<div class="form-group mx-auto">
 					<form:password path="password" placeholder=" 비밀번호를 작성해주세요."></form:password>
 					<form:errors path="password" cssClass="error mx-auto" />
 				</div>
+			
 				<div class="form-group mx-auto">
 					<form:password path="password2" placeholder=" 비밀번호를 확인해주세요."></form:password>
 					<form:errors path="password2" cssClass="error mx-auto" />
 				</div>
+				
 				<div class="form-group mx-auto">
 					<form:input path="name" placeholder="이름을 입력해주세요."></form:input>
 					<form:errors path="name" cssClass="error mx-auto" />
 				</div>
+				
 				<div class="form-group mx-auto select" >
 					<i class="fa-sharp fa-regular fa-calendar-days fa-2x" 
 					   style="color: #5A95F5;top: 5px;position: relative;"></i>
@@ -174,6 +154,7 @@ function previewFile() {
 					<form:errors path="birth" cssClass="error mx-auto"></form:errors>
 					<form:errors path="gender" cssClass="error2 mx-auto"></form:errors>
 				</div>
+				
 				<div class="form-group mx-auto check">
 					<form:input path="nickname" placeholder=" 닉네임"></form:input>
 					<form:errors path="nickname" cssClass="error mx-auto"></form:errors>
@@ -183,7 +164,7 @@ function previewFile() {
 			</div>
 			
 			<div class="form-group mx-auto submitButton">
-				<button type="submit" class="btn btn-info">JOIN</button>
+				<button type="submit" class="btn btn-info" id="join" disabled>JOIN</button>
 			</div>
 		</form:form>
 	</div>
@@ -194,34 +175,43 @@ function previewFile() {
 
 </body>
 
+<script src="/resources/js/home/rest.js" ></script>
 <script>
 $(document).ready(function(e) {
 	const email = document.getElementById('email');
+	const regexp = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 	
-	$('.email2').on('click', async function(e) {
-		if (email.value == '') {
-			alert("이메일을 입력해주세요.");
-		}
-		else {
-			$('#exampleModalCenter').modal();
+	$('#sendMail').on('click', async function(e) {
+		if (email.value == '' || !regexp.test(email.value)) {
+			console.log();
+			alert("이메일 형식으로 입력해주세요");
 			
+			return;
+		}
+		else {			
 			const BASE_URL = '/api/mail/certification/';
-
-	        $.ajax({
-	            type:"GET",
-	            url:BASE_URL + email.value,
-	            success: function(data) {
-	                console.log('data : ' + data);
-            	}
-
-	        })
+			
+			alert("인증번호를 전송하였습니다.");
+			$('.email3').attr('disabled', false);
+			$('#emailCheck').attr('disabled', false);
+			
+			let res = await rest_get(BASE_URL + '?Email=' + email.value);
+			console.log(res);
+			
+			$('#emailCheck').on('click', function(e) {
+				const certNum = document.getElementById('certNum');
+				
+				if(certNum.value != res) {
+					console.log(certNum.value);
+					alert("잘못된 인증번호입니다.");
+				}
+				else {
+					alert('인증에 성공했습니다.');
+					$('#join').attr("disabled", false);
+				}
+			})
 		}
 		
-		
-		
-		console.log(email.value);
-		  
-
 	})
 });
 </script>
