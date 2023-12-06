@@ -24,9 +24,9 @@
 					<div class="form-group mx-auto check">
 						<!-- 민트박스  -->
 						<svg xmlns="http://www.w3.org/2000/svg" width="117" height="55"viewBox="0 0 117 52" fill="none" style="position: absolute; top: 0px; left: 0px;">
-                            <rect x="116.248" y="52" width="116" height="52" rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" /> 
-                            <rect x="116.248" y="52" width="12.4923" height="52" transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" />
-                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#B3B3B3" font-size="18" font-family="Arial">현재비밀번호</text>     
+                            <rect x="116.248" y="52" width="116" height="52" rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
+                            <rect x="116.248" y="52" width="12.4923" height="52" transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" />
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="18" font-family="Arial">현재비밀번호</text>     
                        </svg>
 						    <input type="password" id="password5" name="password" required>
 					</div>
@@ -34,9 +34,9 @@
 					<div class="form-group mx-auto check">
 						<!-- 민트박스  -->
 						<svg xmlns="http://www.w3.org/2000/svg" width="117" height="55" viewBox="0 0 117 52" fill="none" style="position: absolute; top: 0px; left: 0px;">
-                            <rect x="116.248" y="52" width="116" height="52" rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" /> 
-                            <rect x="116.248" y="52" width="12.4923" height="52" transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" />
-                            <text x="50%" y="50%" dominant-baseline="middle"  text-anchor="middle" fill="#B3B3B3" font-size="18" font-family="Arial">변경비밀번호</text>     
+                            <rect x="116.248" y="52" width="116" height="52" rx="10" transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
+                            <rect x="116.248" y="52" width="12.4923" height="52" transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" />
+                            <text x="50%" y="50%" dominant-baseline="middle"  text-anchor="middle" fill="#fff" font-size="18" font-family="Arial">변경비밀번호</text>     
                         </svg>
 						    <input type="password" id="newPassword" name="newPassword" required>
 					</div>
@@ -44,9 +44,9 @@
 					<div class="form-group mx-auto check">
 						<!-- 민트박스  -->
 						<svg xmlns="http://www.w3.org/2000/svg" width="117" height="55" viewBox="0 0 117 52" fill="none"  style="position: absolute; top: 0px; left: 0px;">
-                             <rect x="116.248" y="52" width="116" height="52" rx="10" transform="rotate(179.72 116.248 50.9995)"  fill="#CFF8EB" /> 
-                             <rect x="116.248" y="52" width="12.4923" height="52" transform="rotate(179.72 116.248 50.9995)" fill="#CFF8EB" />
-                             <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#B3B3B3" font-size="18" font-family="Arial">변경비밀번호</text>     
+                             <rect x="116.248" y="52" width="116" height="52" rx="10" transform="rotate(179.72 116.248 50.9995)"  fill="#7FB3FA" /> 
+                             <rect x="116.248" y="52" width="12.4923" height="52" transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" />
+                             <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff" font-size="18" font-family="Arial">변경비밀번호</text>     
                         </svg>
 						     <input type="password" id="newPassword2" name="newPassword2" required>
 					</div>
