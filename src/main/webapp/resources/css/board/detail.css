@@ -113,23 +113,23 @@ sample2 blockquote:before {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	background: white;
 	border-radius: 25px;
-	height: 570px;
+	    height: 590px;
 }
 .container14{
-	padding: 0px 11px 43px 11px;
+	padding: 0px 0px 43px 0px;
     border-radius: 25px 25px 0 0;
     background: #e7f4ff;
-    width: 920px;
+    width: 1105px;
     box-shadow: 0px -1px 9px #bfbfbf;
 }
 	
 
 .sample blockquote {
-	margin: 0 78px;
+	margin: 0 155px;
     position: relative;
     background: #7FB3FA;
     border-radius: 25px;
-    padding: 46px 37px 37px 37px;
+    padding: 46px 63px 37px 67px;
     height: 684px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -315,7 +315,7 @@ h1 {
     color: gray;
     width: 132px;
     height: 44px;
-    margin-left: 30px;
+    margin-left: 79px;
     background: white;
     font-size: 19px;
     border-radius: 6px;
@@ -474,8 +474,9 @@ h1 {
     background-color: transparent;
 }
 .url{
-	text-align: center;
-	width: 470px;
+	margin-left: 56px;
+    text-align: center;
+    width: 567px;
 	font-size: 19px;
     position: relative;
     color: #5d5c5c;

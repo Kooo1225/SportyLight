@@ -31,7 +31,7 @@ $(document).ready(function(e) {
 	<div class="row" id="row1">
 		
 		<!---------------- 첫번째 상자---------------->
-		<div class="sample1 col-md-3" style="padding: 78px 143px 50px 0; text-align: center;">
+		<div class="sample1 col-md-2" style="padding: 78px 56px 50px 0; text-align: center;">
 		 <div class="container15">
 			<blockquote>
 				<div id="container2">
@@ -42,8 +42,8 @@ $(document).ready(function(e) {
 		</div>
 
 		<!---------------- 두번째 상자---------------->
-		<div class="sample col-md-6" >
-			<div class="container14">
+		<div class="sample col-md-8 mx-auto" >
+			<div class="container14 mx-auto">
 				<div class="icon">
 					<span><i class="fa-solid fa-circle-xmark"></i></span>
 					<span><i class="fa-solid fa-circle-minus"></i></span>
@@ -86,7 +86,7 @@ $(document).ready(function(e) {
 				
 				<cite>
 					<div id="container3">
-						<div style="padding: 26px 36px 0 36px;">
+						<div style="padding: 35px 36px 0 36px;">
 							<div style="border: 5px solid #bbbbbb;height:204px;border-radius: 15px;box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);">
 								<div class="title-detail">information</div>
 							   		<span style="display: flex;">
@@ -175,7 +175,7 @@ $(document).ready(function(e) {
 			</div>
 		</div>
 		<!---------------- 세번째 상자---------------->
-		<div class="sample2 col-md-3" style="padding: 78px 0 50px 143px;">
+		<div class="sample2 col-md-2" style="padding: 78px 0 50px 56px;">
 			<div class="container16">
 			<div class="icon2">
 					<span><i class="fa-solid fa-circle-xmark"></i></span>
