@@ -70,51 +70,7 @@ $(document).ready(function(e) {
                         <div class="col-md-6" style="padding: 0;">
 							 <div id="map" style="height: 233px; left: 27px; width: 215px; background: gray; border-radius: 30px;"></div>
 						</div>
-							<script
-								src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services"></script>
-							<script>
-								// GeoCode
-								let geocoder = new kakao.maps.services.Geocoder();
-								let address = '${gather.address}';
 
-								geocoder
-										.addressSearch(
-												address,
-												function(result, status) {
-													if (status == kakao.maps.services.Status.OK) {
-														var coords = new kakao.maps.LatLng(
-																result[0].y,
-																result[0].x); // 지도의 중심좌표와 마커의 위치
-														var marker = new kakao.maps.Marker(
-																{
-																	map : map,
-																	position : coords
-																});
-														map.setCenter(coords);
-													}
-												});
-								let mapContainer = document
-										.getElementById('map');
-								//  지도 제어 코딩
-								let mapOption = {
-									center : new kakao.maps.LatLng(36.0132159,
-											127.7586034),
-									level : 3
-								};
-								let map = new kakao.maps.Map(mapContainer,
-										mapOption); // 두번째 인자는 지도의 위치를 어디에 둘 것인지 설정
-								map.setDraggable(false);
-								function setDraggable(draggable) {
-									// 마우스 드래그로 지도 이동 가능여부를 설정합니다
-									map.setDraggable(draggable);
-								}
-								var marker = new kakao.maps.Marker({
-									map : map,
-									position : new kakao.maps.LatLng(
-											36.0132159, 127.7586034)
-								});
-								marker.setMap(map);
-							</script>
 							
 														
   
@@ -181,6 +137,52 @@ $(document).ready(function(e) {
 	</div>
 </div>
 </body>
+
+<script
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a214bd6b5af9abe29536c813436a779&libraries=services"></script>
+<script>
+	// GeoCode
+	let geocoder = new kakao.maps.services.Geocoder();
+	let address = '${gather.address}';
+
+	geocoder
+			.addressSearch(
+					address,
+					function(result, status) {
+						if (status == kakao.maps.services.Status.OK) {
+							var coords = new kakao.maps.LatLng(
+									result[0].y,
+									result[0].x); // 지도의 중심좌표와 마커의 위치
+							var marker = new kakao.maps.Marker(
+									{
+										map : map,
+										position : coords
+									});
+							map.setCenter(coords);
+						}
+					});
+	let mapContainer = document
+			.getElementById('map');
+	//  지도 제어 코딩
+	let mapOption = {
+		center : new kakao.maps.LatLng(36.0132159,
+				127.7586034),
+		level : 3
+	};
+	let map = new kakao.maps.Map(mapContainer,
+			mapOption); // 두번째 인자는 지도의 위치를 어디에 둘 것인지 설정
+	map.setDraggable(false);
+	function setDraggable(draggable) {
+		// 마우스 드래그로 지도 이동 가능여부를 설정합니다
+		map.setDraggable(draggable);
+	}
+	var marker = new kakao.maps.Marker({
+		map : map,
+		position : new kakao.maps.LatLng(
+				36.0132159, 127.7586034)
+	});
+	marker.setMap(map);
+</script>
 
 <script src="/resources/js/home/rest.js"></script>
 <script>

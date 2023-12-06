@@ -48,7 +48,7 @@ public class MemberVO {
 	private String avatarPath;
 
 	@NotNull(message = "사용자 성별은 필수항목입니다.")
-	private EnumVO gender;
+	private GenderEnumVO gender;
 	
 	private String oauth;
 

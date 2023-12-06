@@ -98,14 +98,24 @@ $(document).ready(function () {
 					
 		 			let listEl;
 					
+		 			var previousRegion;
 		 			$.each(gatherList, function(index, item) {
+		 				var region = item.address.substr(0,3);
+		 				
+		 				if(previousRegion != region) {
+		 					var regionDiv = '<div class="local" id="local">' + region + '</div>';
+		 					
+	 						$('.scroll-container').append(regionDiv);
+	 						previousRegion = region;
+		 				}
+
 						listEl = $(createTypeListTemplate(item));
 						$('.scroll-container').append(listEl);
-		 				})	
-					}
-				});
-	   		});
-		}
+	 				})	
+				}
+			});
+   		});
+	}
 			
 		
 		$(".nav-link").on("click", async function(e) {
@@ -115,7 +125,6 @@ $(document).ready(function () {
 			console.log(BASE_URL + '/typelist/' + $(this).val() + '/' + myRegion);
 			
 			const gatherList = await rest_get(BASE_URL + '/typelist/' + $(this).text()+ '/' + myRegion);
-			
 			gatherCount = Object.keys(gatherList).length;
 			
 			let countEl = $(createListCountTemplate(gatherCount));
@@ -124,7 +133,17 @@ $(document).ready(function () {
 			
  			let listEl;
 			
+ 			var previousRegion;
  			$.each(gatherList, function(index, item) {
+ 				var region = item.address.substr(0,3);
+ 				
+ 				if(previousRegion != region) {
+ 					var regionDiv = '<div class="local" id="local">' + region + '</div>';
+ 					
+						$('.scroll-container').append(regionDiv);
+						previousRegion = region;
+ 				}
+ 				
 				listEl = $(createTypeListTemplate(item));
 				$('.scroll-container').append(listEl);
  			})	
