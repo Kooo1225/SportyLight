@@ -34,20 +34,21 @@
 }
 
 .jumbotron {
-	padding-top: 20px;
-	margin-bottom: 15px;
+	padding-top: 15px;
+    margin-bottom: 2px;
 }
 
 /* 전체 틀 */
-#container1 {
-	margin: 79px 0 0 0;
-}
 
+/* 3번째 */
 .sample2 blockquote {
-	border-radius: 10px;
-	padding: 20px;
-	height: 552px;
-	box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+	margin-left: 82px;
+	position: relative;
+    background: #7FB3FA;
+    border-radius: 25px 0 0 25px;
+    padding: 36px 0px 0 40px;
+    height: 671px;
+    box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
 }
 
 sample2 blockquote:before {
@@ -61,7 +62,18 @@ sample2 blockquote:before {
 	text-align: left;
 	font-size: 40px;
 }
+.container16{
+	margin-top: 62px;
+    background: #e7f4ff;
+    padding: 0;
+    border-radius: 25px 0 0 25px;
+    box-shadow: 0px -1px 9px #bfbfbf;
+}
+.icon2{
+	    padding: 28px 13px 25px 46px;
+}
 
+/* 첫번째 */
 #container2 {
 	height: 200px;
 	padding: 0 10px 0 10px;
@@ -69,11 +81,11 @@ sample2 blockquote:before {
 
 .sample1 blockquote {
 	position: relative;
-	background: #fff;
-	border-radius: 10px;
-	padding: 20px;
-	height: 552px;
-	box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+    background: #7FB3FA;
+    border-radius: 0 25px 25px 0;
+    padding: 36px 19px 0 0;
+    height: 671px;
+    box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
 }
 
 .sample1 blockquote:before {
@@ -87,19 +99,39 @@ sample2 blockquote:before {
 	text-align: left;
 	font-size: 40px;
 }
-
-#container3 {
-	border-radius: 30px;
-	height: 677px;
+.container15{
+	margin-top: 62px;
+    background: #e7f4ff;
+    padding: 80px 82px 0 0;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 0px -1px 9px #bfbfbf;
 }
 
+/* 두번쨰 */
+
+#container3 {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background: white;
+	border-radius: 25px;
+	height: 570px;
+}
+.container14{
+	padding: 0px 11px 43px 11px;
+    border-radius: 25px 25px 0 0;
+    background: #e7f4ff;
+    width: 920px;
+    box-shadow: 0px -1px 9px #bfbfbf;
+}
+	
+
 .sample blockquote {
-	position: relative;
-	background: #fff;
-	border-radius: 10px;
-	padding: 20px;
-	height: 674px;
-	box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+	margin: 0 78px;
+    position: relative;
+    background: #7FB3FA;
+    border-radius: 25px;
+    padding: 46px 37px 37px 37px;
+    height: 684px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .sample blockquote:before {
@@ -127,41 +159,25 @@ sample2 blockquote:before {
 	font-style: normal;
 }
 
-#container4 {
-	text-align:center;
-}
-
-#container5 {
-	margin: 79px 0 0 0;
-}
-
-#firstimg, #fiveimg {
-	bottom: 96px;
-    position: relative;
-    padding: 0;
-	width: 140px;
-	height: 550px;
-	filter: blur(5px);
-}
 
 #secondimg, #fourimg {
 	padding: 30px 0 30px 0;
-	width: 350px;
-	height: 550px;
+	width: 440px;
+	height: 644px;
 	filter: blur(5px);
 }
 
 /* 프로필 사진 */
 #profile-image {
 	padding: 5px;
-	position: relative;
-	margin-bottom: 7px;
-	top: -10px;
-	left: 77px;
-	width: 88px;
-	height: 88px;
-	border-radius: 50%;
-	border: 2px solid #bbbbbb;
+    position: relative;
+    margin-bottom: 7px;
+    top: 29px;
+    left: 46px;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 5px solid #bbbbbb;
 }
 
 /* Gathering */
@@ -191,7 +207,7 @@ h1 {
 /*  인원  */
 .gathermember0 {
 	width: 230px;
-	margin-top: 5px;
+	margin-top: 19px;
 	margin-bottom: 4px;
 	padding: 8px 10px;
 	font-size: 13.5px;
@@ -210,27 +226,49 @@ h1 {
 	text-align: left
 }
 /* 내용 */
+.title-detail{
+    padding: 0 14px;
+    position: relative;
+    top: 0px;
+    border-bottom: 5px solid #bbbbbb;
+    font-size: 20px;
+}
+.des-detail{
+	padding: 0 14px;
+    position: relative;
+    top: -34px;
+    border-bottom: 5px solid #bbbbbb;
+    font-size: 20px;
+}
 .description0 {
-	white-space: pre;
-	font-family: "San Francisco";
-	font-size: 12px;
-	border-radius: 15px;
-	position: relative;
-	border: 2px solid #bbbbbb;
-	bottom: 15px;
-	height: 190px;
-	width: 490px;
-	text-align: left;
+	box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    white-space: pre;
+    font-family: "San Francisco";
+    font-size: 12px;
+    border-radius: 15px;
+    position: relative;
+    border: 5px solid #bbbbbb;
+    height: 285px;
+    width: 292px;
+    text-align: left;
+}
+
+.map2{
+	margin-left: 27px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    width: 275px;
+    border: 5px solid #bbbbbb;
+    border-radius: 15px;
 }
 
 .scrollbar {
 	overflow-y: scroll;
-	overflow-x: hidden;
-	position: relative;
-	height: 159px;
-	left: 28px;
-	top: -22px;
-	width: 419px;
+    overflow-x: hidden;
+    position: relative;
+    height: 159px;
+    left: 14px;
+    top: -53px;
+    width: 419px;
 }
 
 /* 스크롤바의 폭 너비 */
@@ -260,25 +298,31 @@ h1 {
 }
 
 .btn0 {
-	width: 133px;
-	height: 40px;
-	margin: 21px 15px 0px 15px;
 	color: white;
-	background: #5A95F5;
-	font-size: 20px;
-	font-family: 'San Francisco', sans-serif;
-	font-weight: 600;
-	border-radius: 10px;
-	border: 0px solid #5A95F5;
+    position: relative;
+    margin-bottom: 14px;
+    width: 100px;
+    height: 40px;
+    background: #ccc;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 0px;
+    box-shadow: 3px 3px 1px #6b6b6b;
+}
+.btn5 {
+	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    color: gray;
+    width: 132px;
+    height: 44px;
+    margin-left: 30px;
+    background: white;
+    font-size: 19px;
+    border-radius: 6px;
+    border: 0px;
 }
 
-.btn0
-:hover, .btn0, :active, button
-:focus {
-	box-shadow: 0px 0px 0px 0px #bdbdbd;
-	color: white;
-	outline: none;
-}
+
 
 #hiddenButtons {
     margin: 0;
@@ -385,30 +429,65 @@ h1 {
 	margin-bottom: 17px;
 }
 
-.btn {
-	width: 133px;
-	height: 40px;
-	margin: 14px 15px 0px 15px;
-	color: white;
-	background: #5A95F5;
-	font-size: 20px;
-	font-family: 'San Francisco', sans-serif;
-	font-weight: 600;
-	border-radius: 10px;
-	border: 0px solid #5A95F5;
-	box-shadow: 0px 5px 0px 0px #bdbdbd;
-}
-
-.btn:hover, .btm:active, button:focus {
-	box-shadow: 0px 0px 0px 0px #bdbdbd;
-	color: white;
-	outline: none;
-	margin-top: 0px;
-	margin-bottom: -30px;
-}
-
 @media screen and (min-width: 1800px) {
 	.container1 {
 		display: none;
 	}
+}
+
+/* 상단 아이콘 */
+.icon{
+	padding: 24px 25px 31px 38px;
+}
+.fa-circle-xmark{
+	border-radius: 50%;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    color: #fe6262;
+    font-size: 25px;
+    margin-right: 5px;
+}
+.fa-circle-minus{
+	border-radius: 50%;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+	margin-right: 5px;
+	color: #f3c53b;
+	font-size: 25px;
+}
+.fa-circle-plus{
+	border-radius: 50%;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+	margin-right: 80px;
+    position: relative;
+	color: #2ad97f;
+	font-size: 25px;
+}
+
+.fa-shield-halved{
+	color: #a6a6a6;
+	position: relative;
+    /* top: 38px;
+    left: 114px; */
+}
+#urltitle{
+    color: #5A95F5;
+    text-decoration: none;
+    background-color: transparent;
+}
+.url{
+	text-align: center;
+	width: 470px;
+	font-size: 19px;
+    position: relative;
+    color: #5d5c5c;
+    background: #ffffff;
+    padding: 8px 60px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}
+.fa-lock{
+	color: #c2c2c2;
+	font-size: 13px;
+	left: -3px;
+    position: relative;
+    bottom: 3px;
 }

@@ -7,13 +7,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>chat header</title>
+<title>manageheader</title>
 
 
 <link rel="stylesheet" href="/resources/css/board/manage.css">
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -43,13 +44,22 @@
 </head>
 
 <body style="background-color: #fff;">
-	<nav id="container" class="navbar bg-white">
-		<a href="/" style="text-decoration: none;">
-			<h1>SportyLight</h1> <span>Play Sports with others</span>
-		</a>
+	
+	<div class="container13 mx-auto">
 		
+		<div class="icon" style="padding: 18px 26px 0 26px;">
+			<span><i class="fa-solid fa-circle-xmark"></i></span>
+			<span><i class="fa-solid fa-circle-minus"></i></span>
+			<span><i class="fa-solid fa-circle-plus"></i></span>
+			<span><i class="fa-solid fa-chevron-left"></i></span>
+			<span><i class="fa-solid fa-chevron-right"></i></span>
+			<span><i class="fa-solid fa-bars"></i></span>
+			<span><i class="fa-solid fa-shield-halved"></i></span>
+			<span class="url"><a href="/">
+			      <i class="fa-solid fa-lock"></i>www.sportylight.online</a></span>
+	
 		<sec:authorize access="isAuthenticated()">
-			<div class="ml-auto" style="position: relative; top: 17px; right: 73px;">
+			<!-- <div class="ml-auto" style="position: relative; top: 17px; right: 73px;"> -->
 				<sec:authentication property="principal.member.nickname" var="nickname" />
 				
 					<a id="login-nickname" href="/mypage">
@@ -57,9 +67,12 @@
 					</a> 
 				
 				<a id="logout" href="/security/logout" class="btn btn-link" style="text-decoration: none;">로그아웃</a>
-			</div>
+			<!-- </div> -->
 		</sec:authorize>
-	</nav>
+		</span>
+		</div>
+		
+	
 	<!-- 로그아웃 처리 -->
 	<form id="logoutForm" action="/security/logout" method="post">
 		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />

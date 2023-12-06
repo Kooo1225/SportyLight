@@ -12,6 +12,6 @@
 
 <footer class="footer" style="text-align:center;">
   <aside>
-    <p2 style="color: #7FDCBE;">Copyright © 2023 - All right reserved by SPORTYLIGHT Industries Ltd</p2>
+    <p2 style="color: gray;">Copyright © 2023 - All right reserved by SPORTYLIGHT Industries Ltd</p2>
   </aside>
 </footer>

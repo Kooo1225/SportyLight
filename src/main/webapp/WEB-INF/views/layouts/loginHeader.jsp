@@ -22,7 +22,7 @@
 	
 </head>
 
-<body>
+<body style="overflow-y: hidden;">
 	<div class="container">
 		<header class="jumbotron mb-0 rounded-0">
 			

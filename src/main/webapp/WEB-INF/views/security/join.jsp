@@ -122,12 +122,15 @@ function previewFile() {
 					
 					<button type="button" class="email2" id="sendMail">인증</button>
 					
-	                <div class="form-group mx-auto">
-	                	<input class="email3" id="certNum" placeholder=" 인증번호를 입력해주세요." disabled>
-	                	<button type="button" class="email2" id="emailCheck" disabled>확인</button>
-	                </div>
+          <div class="form-group mx-auto">
+            <input class="email3" id="certNum" placeholder=" 인증번호를 입력해주세요." disabled>
+            <button type="button" class="email2" id="emailCheck" disabled>확인</button>
+          </div>
 				</div>
-	
+        
+				<div class="form-group mx-auto">
+  					<input class="email3" placeholder=" 인증번호를 입력해주세요." disabled>
+				</div>
 				<div class="form-group mx-auto">
 					<form:password path="password" placeholder=" 비밀번호를 작성해주세요."></form:password>
 					<form:errors path="password" cssClass="error mx-auto" />
@@ -185,7 +188,7 @@ $(document).ready(function(e) {
 		if (email.value == '' || !regexp.test(email.value)) {
 			console.log();
 			alert("이메일 형식으로 입력해주세요");
-			
+      
 			return;
 		}
 		else {			

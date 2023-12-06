@@ -165,4 +165,4 @@
 </body>
 
 	
-<%-- 	<%@ include file="../layouts/chatFooter.jsp"%> --%>
+<%@ include file="../layouts/chatFooter.jsp"%>

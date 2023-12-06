@@ -33,7 +33,7 @@
 	}
 </style>
 
-<div id="chat-container"></div>
+<div id="chat-container"></div></div>
 
 <textarea id="messageInput" placeholder="Type your message"></textarea>
 <button id="sendButton">Send</button>
