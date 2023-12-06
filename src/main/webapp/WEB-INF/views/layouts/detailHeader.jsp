@@ -21,8 +21,8 @@
 	
 </head>
 
-<body>
-	<div class="container-fluid">
+<body style="overflow-y: hidden;">
+	<div class="container-fluid" >
 		<header class="jumbotron mx-auto text-center">
 			<a href="/" style="text-decoration:none;"><h1>SportyLight</h1></a>
 			<p>Play Sports with others</p>
