@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.sportylight.domain.EnumVO;
+import com.sportylight.domain.CategoryEnumVO;
 import com.sportylight.domain.GatherMembersVO;
 import com.sportylight.domain.GatherVO;
 import com.sportylight.domain.SearchVO;
@@ -18,7 +18,7 @@ public interface GatherService {
 	
 	public List<GatherVO> getRegionList(String region);
 	
-	public List<GatherVO> getTypeList(EnumVO type, String region);
+	public List<GatherVO> getTypeList(CategoryEnumVO type, String region);
 	
 	public List<GatherVO> getMyList(int membersId);
 	

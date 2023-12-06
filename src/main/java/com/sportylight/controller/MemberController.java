@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 
-import com.sportylight.domain.EnumVO;
+import com.sportylight.domain.CategoryEnumVO;
 import com.sportylight.domain.MemberVO;
 import com.sportylight.mapper.MemberMapper;
 import com.sportylight.security.domain.CustomUser;

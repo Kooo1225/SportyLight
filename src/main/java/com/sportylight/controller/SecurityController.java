@@ -42,7 +42,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sportylight.domain.EnumVO;
+import com.sportylight.domain.CategoryEnumVO;
+import com.sportylight.domain.GenderEnumVO;
 import com.sportylight.domain.KakaoProfile;
 import com.sportylight.domain.MemberVO;
 import com.sportylight.domain.OAuthToken;
@@ -256,11 +257,11 @@ public class SecurityController {
 		System.out.println(date);
 		
 		String gender = kakaoProfile.getKakao_account().getGender();
-		EnumVO gen;
+		GenderEnumVO gen;
 		if(gender.equals("male")) {
-			gen = EnumVO.male;
+			gen = GenderEnumVO.male;
 		} else {
-			gen = EnumVO.female;
+			gen = GenderEnumVO.female;
 		}
 		
 		MemberVO kakaoUser = MemberVO.builder()
