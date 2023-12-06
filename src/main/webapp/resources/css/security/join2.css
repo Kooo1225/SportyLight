@@ -172,7 +172,7 @@ input[type=file]::file-selector-button {
     height: 42px;
 	background: #fff;
 	cursor: pointer;
-	margin: 7px 205px 10px 5px;
+	margin: -6px 205px 10px 5px;
 	text-align: left;
 }
 
