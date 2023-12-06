@@ -147,10 +147,13 @@ function previewFile() {
 				<div class="form-group check">
 				<form:input path="email" class="email" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
 				<form:errors path="email" cssClass="error mx-auto" />
-				<button type="button" class="email2">
+				<button type="button" class="email2" id="authButton">
 				  인증
 				</button>
 			  </div>
+				<div class="form-group mx-auto">
+  					<input class="email3" placeholder=" 인증번호를 입력해주세요." disabled>
+				</div>
 				<div class="form-group mx-auto">
 					<form:password path="password" placeholder=" 비밀번호를 작성해주세요."></form:password>
 					<form:errors path="password" cssClass="error mx-auto" />
@@ -194,10 +197,13 @@ function previewFile() {
 
 </body>
 
+
 <script>
 $(document).ready(function(e) {
 	const email = document.getElementById('email');
+	const email3 = $('.email3');
 	
+	email3.prop('disabled', true);
 	$('.email2').on('click', async function(e) {
 		if (email.value == '') {
 			alert("이메일을 입력해주세요.");
@@ -212,6 +218,7 @@ $(document).ready(function(e) {
 	            url:BASE_URL + email.value,
 	            success: function(data) {
 	                console.log('data : ' + data);
+	                email3.prop('disabled', false);   
             	}
 
 	        })

@@ -36,8 +36,9 @@ function createTypeListTemplate(gather) {
 			
 				<div class="board-info-wrapper" style="width: 100%;">
 				
+					<span class="board-category">[${gather.type}]</span> <br>
 					<span class="board-title"><a href="#" onclick="setCenter('${gather.address}')">${gather.title}</a></span> 
-					<span class="board-category">${gather.type}</span> 
+					
 					
 					<br>
 					
