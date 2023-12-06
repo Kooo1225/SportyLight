@@ -5,4 +5,10 @@
 	<select id="getList" resultType="ContestVO">
 		select * from Contest
 	</select>
+	
+	<select id="getTypeList" resultType="ContestVO">
+		select *
+		from Contest
+		where title = #{types};
+	</select>
 </mapper>

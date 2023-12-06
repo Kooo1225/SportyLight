@@ -24,11 +24,8 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String Home(Model model) {
-
 		List<GatherVO> vo = service.getList();
 		List<GatherVO> vo2 = service.getTopic();
-		
-		System.out.println(vo);
 		
 		for(GatherVO top :vo2) {
 			log.info("topic gathering" + top);
