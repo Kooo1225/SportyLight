@@ -97,10 +97,10 @@ $(document).ready(function() {
 					<input type="text" name="title" id="register-title" value="${gather.title}">
 				</div>
 				<div class="form-group mx-auto" >
-					<i class="fa-solid fa-user-group fa-2x" style="color:#518E7B;"></i>
+					<i class="fa-solid fa-user-group fa-2x" style="color:#5A95F5;"></i>
 					<input type="number" min="1" max="20" value="${gather.headCount }" name="headCount" class="num">
 					
-					<i class="fa-solid fa-calendar-days fa-2x" style="color:#518E7B;"></i>
+					<i class="fa-solid fa-calendar-days fa-2x" style="color:#5A95F5;"></i>
 					<input type="datetime-local" name="dateTime" class="date" value="${gather.dateTime }">
 				</div>
 				<div class="form-group mx-auto input-style">
@@ -114,8 +114,8 @@ $(document).ready(function() {
 				</div>
 				
 				<div class="form-group mx-auto submitButton" >
-					<button type="submit" style="margin-top:10px;">MODIFY</button>
-					<button style="margin-top:10px;" onclick="location.href='/board/detail?gatheringId=${gatheringId}}';">Go Back?</button>
+					<button type="submit" style="margin-top:10px;">수정</button>
+					<button style="margin-top:10px;" onclick="location.href='/board/detail?gatheringId=${gatheringId}}';">돌아가기</button>
 				</div>
 			</form>
 		</div>

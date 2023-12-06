@@ -130,7 +130,7 @@
 			})
 			
 			
-			$("#btn3").trigger("click"); // btn1(내가 신청한 모임글) 클릭 효과
+			$("#btn4").trigger("click"); // btn1(내가 신청한 모임글) 클릭 효과
 			
 /* 			$('.mylist-title').on('click', { gatheringId : gatheringId }, function(e) {
 			 	let f = document.createElement('form');

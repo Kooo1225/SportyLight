@@ -54,6 +54,13 @@
 	}
 }
 
+.icon {
+	vertical-align: middle;
+    border-style: none;
+    width: 23px;
+    height: 23px;
+    margin: 0 5px 3px 0px;
+}
 
 /*-----------첫번째 카테고리---------------*/
 #ct1, #ct2, #ct3, #ct4, #join, #logout {
@@ -68,12 +75,12 @@
 
 #ct1, #ct3, #ct4 {
 	margin-left: 40px;
-	padding: 6px 30px 0 30px;
+	padding: 6px 32px 0px 20px;
 }
 
 #ct2 {
 	margin-left: 40px;
-	padding: 6px 21px 6px 21px;
+	padding: 6px 25px 0px 20px;
 }
 
 #ct1:active, #ct1:hover, #ct1:checked, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
