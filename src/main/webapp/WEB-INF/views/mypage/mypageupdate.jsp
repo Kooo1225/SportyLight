@@ -20,7 +20,7 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 <form action="/mypage/update?_csrf=${_csrf.token }" method="post" enctype="multipart/form-data">
 
 <div class="panel panel-default">
-	    <div class="input-style2" style="padding: 50px 0 50px 0;">
+	    <div class="input-style2" style="padding: 50px 0 0 0;">
 		<!-- -------------------------프로필--------------------------------------->
 		<div class="profile-fluid mx-auto"> 
 	       <img src="/security/avatar/sm/${member.membersId}" class="home-avatar2"/>
@@ -87,3 +87,5 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 </div>
 </form>
 </body>
+
+<%@ include file="../layouts/footer.jsp"%>

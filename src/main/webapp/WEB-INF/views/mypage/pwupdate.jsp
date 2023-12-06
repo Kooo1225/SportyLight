@@ -18,7 +18,7 @@
 	<form action="/mypage/pwupdate" method="post">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<div class="panel panel-default">
-			<div class="input-style2" style="padding: 50px 0 50px 0;">
+			<div class="input-style2" style="padding: 50px 0 220px 0;">
 				<!-- ------------------------------현비밀번호------------------------------- -->
 				<form action="/mypage/update" method="post">
 					<div class="form-group mx-auto check">
@@ -67,3 +67,4 @@
 		</div>
 	</form>
 </body>
+<%@ include file="../layouts/footer.jsp"%>

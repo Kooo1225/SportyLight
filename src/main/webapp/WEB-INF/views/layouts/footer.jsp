@@ -9,9 +9,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>footer</title>
 
+<footer>
+<!-- copyright -->
+	<div class="copyright">
+		
+			<div class="row" style="justify-content:center;color:gray;">
+				
+					<p>Copyrights &copy; 2023 - Sportylight (Java Backend Project),  All Rights Reserved.</p>
+				
+			</div>
+		
+	</div>
+	<!-- end copyright -->
+	
+	
+	<style>
 
-<footer class="footer" style="text-align:center;">
-  <aside>
-    <p2 style="color: gray;">Copyright © 2023 - All right reserved by SPORTYLIGHT Industries Ltd</p2>
-  </aside>
-</footer>
+	
+	</style>
+	</footer>
