@@ -74,10 +74,10 @@ $(document).ready(function(e) {
                          <button type="button" class="btn5">다음 기회에..</button>
                       </c:if>
                        
-								    </c:if>
-								     <div id="hiddenButtons" style="display: none;">
-						            <div><a href="/board/modify?gatheringId=${gather.gatheringId} "><button type="button" class="btn5">모임수정</button></a></div>
-						            <div><a href="/board/manage/${gather.gatheringId}"><button type="button" class="btn5">신청관리</button></a></div>
+				    </c:if>
+				     <div id="hiddenButtons" style="display: none;">
+		            <div><a href="/board/modify?gatheringId=${gather.gatheringId}"><button type="button" class="btn5">모임수정</button></a></div>
+		            <div><a href="/board/manage/${gather.gatheringId}"><button type="button" class="btn5">신청관리</button></a></div>
                  </div>
                  </span>
 		
