@@ -154,7 +154,7 @@ $(document).ready(function () {
 				   
 					<div class="contest-category">${list.title}</div>
 					<div class="contest-site">사이트 링크<br>
-						<a href="${list.link}">${list.link}</a>
+						<a href="${list.link}" class="contest-link">바로가기</a>
 					</div>
 					</div>
 				</div>
