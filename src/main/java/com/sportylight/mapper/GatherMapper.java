@@ -30,6 +30,8 @@ public interface GatherMapper {
 	
 	public List<GatherVO> getMyState(int membersId); // 내가 신청한 모임글
 	
+	public int getParticipateCount(int gatheringId);
+	
 	public int getJoinCount(int gatheringId); // 내가 신청한 모임글 개수
 	
 	public int getSumJoinCount(); // 등록된 모임의 신청한 인원 총합

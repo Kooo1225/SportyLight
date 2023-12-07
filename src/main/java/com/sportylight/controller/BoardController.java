@@ -78,7 +78,7 @@ public class BoardController {
 		
 		rttr.addFlashAttribute("result", vo.getGatheringId());
 		
-		return "redirect:/";
+		return "redirect:/map";
 	}
 	
 //	@GetMapping("/insertApply")
@@ -150,39 +150,37 @@ public class BoardController {
 	@GetMapping("/manage/{gatheringId}")
 	public String manage(@AuthenticationPrincipal CustomUser customUser, @ModelAttribute("gatherMemebers") GatherMembersVO gatherMembers, 
 			@PathVariable int gatheringId, Model model) {	
-
-		System.out.println(customUser.getMembersId());
-		
+	
+		GatherVO gatherVO = service.get(gatheringId);
 		List<GatherVO> myGatherList = service.getMyList(customUser.getMembersId());
 		List<MemberVO> myMemberList = mService.getManageList(gatheringId);
 		List<MemberVO> myNonMemberList = mService.getNonManageList(gatheringId);
-		
-		System.out.println(myGatherList);
 		
 		model.addAttribute("membersId", customUser.getMembersId());
 		model.addAttribute("myGatherList", myGatherList);
 		model.addAttribute("myMemberList", myMemberList);
 		model.addAttribute("myNonMemberList", myNonMemberList);
-		model.addAttribute("gatheringId", gatheringId);
+		model.addAttribute("gatherVO", gatherVO);
 		
 		return "board/manage";
 	}
 	
 	@PostMapping("/manage")
-	public String manage(@ModelAttribute("gatherMembers") GatherMembersVO vo, Model model) {
-		System.out.println(vo);
-		gmService.updateState(vo.getGatheringId(), vo.getMembersId(), vo.getState());
+	public String manage(int gatheringId, int membersId, int state, Model model) {
+		System.out.println("선택된 ID : " + membersId);
+		gmService.updateState(gatheringId, membersId, state);
 		
-		return "redirect:/board/manage/" + vo.getGatheringId();
+		return "redirect:/board/manage/" + gatheringId;
 	}
 	
-	@PostMapping("/manage/apply")
-	public String apply(@ModelAttribute("gatherMembers") GatherMembersVO vo, RedirectAttributes rttr, Model model) {
-		gmService.updateState(vo.getGatheringId(), vo.getMembersId(), vo.getState());
-		System.out.println("apply완료");
-		rttr.addFlashAttribute("gatheringId", vo.getGatheringId());
-		
-		return "redirect:/board/manage";
-	}
+//	@PostMapping("/manage/apply")
+//	public String apply(GatherMembersVO vo, RedirectAttributes rttr, Model model) {
+//		System.out.println("선택된 ID : " + vo.getMembersId());
+//		gmService.updateState(vo.getGatheringId(), vo.getMembersId(), vo.getState());
+//		System.out.println("apply완료");
+//		rttr.addFlashAttribute("gatheringId", vo.getGatheringId());
+//		
+//		return "redirect:/board/manage";
+//	}
 	
 }

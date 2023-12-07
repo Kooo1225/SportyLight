@@ -53,6 +53,6 @@
 </div>
 	<div class="container">
 		<header class="jumbotron">
-			<a href="/" style="text-decoration:none;"><h1>SportyLight</h1></a>
+			<a href="/map" style="text-decoration:none;"><h1>SportyLight</h1></a>
 			<p>Play Sports with others</p>
 		</header>

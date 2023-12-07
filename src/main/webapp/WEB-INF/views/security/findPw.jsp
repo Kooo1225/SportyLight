@@ -4,6 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ include file="../layouts/joinHeader.jsp"%>
 
+<link rel="stylesheet" href="/resources/css/security/findId.css"/>
 
 <h1 class="page-header">FIND PASSWORD</h1>
 <br>
@@ -52,8 +53,8 @@ $(document).ready(function(e) {
 						alert('잘못된 이름 혹은 이메일 입니다.');
 					}
 					else if(data == true) {
-						alert('비밀번호 변경이 완료되었습니다. 재접속 시 비밀번호를 변경해주시기 바랍니다.');
-						window.location.href = '/';
+						alert('임시 비밀번호 발급이 완료되었습니다. 재접속 시 비밀번호를 변경해주시기 바랍니다.');
+						window.location.href = '/map';
 					}
 				}
 			})

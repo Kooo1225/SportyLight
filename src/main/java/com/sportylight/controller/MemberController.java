@@ -162,7 +162,7 @@ public class MemberController {
 		 memberService.withdrawalMember(membersId);
 		// 3. 로그아웃
 		SecurityContextHolder.clearContext(); // 현재 사용자의 인증 정보를 제거
-	    return "redirect:/"; // 탈퇴 후 홈페이지로 리다이렉트
+	    return "redirect:/map"; // 탈퇴 후 홈페이지로 리다이렉트
 	}
 
 }

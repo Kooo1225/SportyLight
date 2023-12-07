@@ -58,19 +58,25 @@ public class MailServiceImpl implements MailService {
 		Random random = new Random();
 		int checkNum = random.nextInt(888888) + 111111;
 		
-		System.out.println(email);
-		String content = "홈페이지를 방문해주셔서 대단히 감사합니다. ( 사실 않감사 )" +
-						 "<br><br>" +
-						 "인증 번호는 " + checkNum + " 입니다." +
-						 "<br>" +
-						 "해당 인증 번호를 확인란에 기입하여 주시던가요";
-		SimpleMailMessage simpleMessage = new SimpleMailMessage();
-		
-		simpleMessage.setTo(email);
-		simpleMessage.setSubject("Test JavaMailSender 2");
-		simpleMessage.setText(content);
-		
-		mailSender.send(simpleMessage);
+		try {
+			this.mail = mailSender.createMimeMessage();
+			this.mailHelper = new MimeMessageHelper(mail, true, "UTF-8");
+			
+			mailHelper.setSubject("[SportyLight 회원가입 인증번호 입니다.]");
+			mailHelper.setText("<h1>인증번호 발급</h1>" +
+	              "<br/>" + email + "님 " +
+	              "<br/>회원가입을 위한 인증번호 입니다." +
+	              "<br/>인증번호 : <h2>" + checkNum + "</h2>" +
+	              "<br/>인증번호란에 해당 번호를 기입하고 회원가입을 진행해주세요.", true);
+			
+			mailHelper.setFrom("sportylight4@gmail.com", "SPORTYLIGHT");
+			mailHelper.setTo(email);
+			
+			mailSender.send(mail);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		return checkNum;
 	}

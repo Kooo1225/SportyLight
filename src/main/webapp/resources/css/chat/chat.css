@@ -67,7 +67,7 @@
 	background: #ffffff;
 	padding: 5px 241px;
 	border-radius: 6px;
-	margin-right: 150px;
+	margin-right: 100px;
 	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
 }
 .fa-lock{
@@ -100,12 +100,12 @@
 /* 목록 */
 #set1 {
 	border-bottom: 1px solid #e3e3e3;
-	border-top: 1px solid #e3e3e3;
 	padding: 15px 0 10px 0;
 }
 
 .liststart {
 	padding: 10px;
+	border-bottom: 1px solid #e3e3e3;
 }
 
 #detail {
@@ -114,9 +114,9 @@
 }
 
 .list-title {
-	top: -3px;
+	top: 0px;
 	position: relative;
-	font-size: 13px;
+	font-size: 15px;
 }
 
 .list-time, .liststart {
@@ -181,11 +181,13 @@
 }
 
 #sendButton {
-	background: #fff;
+	background: #7FB3FA;
 	border: none;
-	color: #7FB3FA;
+	border-radius: 17px;
+	color: #ffffff;
 	font-size: 25px;
 	font-family: 'Noto Sans', sans-serif;
+	margin-right: 0px;
 }
 
 #send-bubble {

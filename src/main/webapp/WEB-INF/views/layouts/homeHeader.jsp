@@ -51,7 +51,7 @@
 
 	<!-- 로고 -->
 	<nav id="container" class="navbar navbar-expand-sm navbar-light bg-white">
-		<a id="logo" class="navbar-brand" href="/"> 
+		<a id="logo" class="navbar-brand" href="/map"> 
 			<img src="/resources/images/layouts/logo.png">
 		</a>
 
@@ -63,7 +63,7 @@
 
 
 				<li class="nav-item active"><a id="menu1" class="nav-link"
-					href="/">모임</a></li>
+					href="/map">모임</a></li>
 
 				<sec:authorize access="isAuthenticated()">
 					<sec:authentication property="principal.member.membersId"
