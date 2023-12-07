@@ -32,12 +32,13 @@ public class SecurityAjaxController {
 			String tempKey = mailService.getKey(8, true);
 			
 			try {
-				mailService.sendPasswordMail(vo.getEmail(), mailService.getKey(8, true));
+				mailService.sendPasswordMail(vo.getEmail(), tempKey);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
 			service.updatePassword(service.get2(vo.getEmail()).getMembersId(), passwordEncoder.encode(tempKey));
+			System.out.println(tempKey);
 			System.out.println(passwordEncoder.matches(tempKey, service.get2(vo.getEmail()).getPassword()));
 			
 			return result;
