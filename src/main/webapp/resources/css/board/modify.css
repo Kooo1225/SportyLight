@@ -1,7 +1,13 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap')
 	;
-
+body {
+	overflow: hidden; 
+	scroll: no;
+}
+body::-webkit-scrollbar {
+	display:none;
+}
 
 .form-group {
     margin-bottom: 8px;
@@ -64,7 +70,7 @@
 
 /* register - 제출버튼 */
 .submitButton button {
-	width: 185px;
+	width: 204px;
 	height: 45px;
 	margin: 0px 15px 15px 15px;
 	color: white;

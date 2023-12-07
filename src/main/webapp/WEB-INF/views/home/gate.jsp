@@ -56,7 +56,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="#">
+							<a href="/">
 								<img src="/resources/images/layouts/logo.png" alt="">
 							</a>
 						</div>
@@ -65,12 +65,12 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="/">모임</a></li>
+								<li><a href="/">모임</a></li>
 								<li><a href="/contest/list">대회</a></li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="/"><i class="fas fa-search"></i>&nbsp;&nbsp;둘러보기</a>
-										<a class="mobile-hide search-bar-icon" href="/security/login"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;로그인</a>
+										<a class="shopping-cart" href="/"><i class="fas fa-search"></i> 둘러보기</a>
+										<a class="mobile-hide search-bar-icon" href="/security/login"><i class="fa-solid fa-right-to-bracket"></i> 로그인</a>
 									</div>
 								</li>
 							</ul>
@@ -84,6 +84,7 @@
 		</div>
 	</div>
 	<!-- end header -->
+	
 
 	<!-- home page slider -->
 	<div class="homepage-slider">
@@ -95,7 +96,7 @@
 						<div class="hero-text">
 							<div class="hero-text-tablecell">
 								<p class="subtitle">Your area & Sports Gathering</p>
-								<h1>당신의 동네에서 시작하는 스포츠 모임</h1>
+								<h1>나의 동네에서 <br> 시작하는 스포츠 모임</h1>
 								<div class="hero-btns">
 									<a href="/" class="boxed-btn">지금 시작하기</a>
 									<a href="/security/login" class="bordered-btn">로그인</a>
@@ -113,8 +114,8 @@
 					<div class="col-lg-10 offset-lg-1 text-center">
 						<div class="hero-text">
 							<div class="hero-text-tablecell">
-								<p class="subtitle">You make it</p>
-								<h1>당신이 만드는<br>당신만의 스포츠 모임</h1>
+								<p class="subtitle">When you want, Where you want</p>
+								<h1>원하는 시간, 원하는 장소에서<br> 이루어지는 스포츠활동</h1>
 								<div class="hero-btns">
 									<a href="/" class="boxed-btn">지금 시작하기</a>
 									<a href="/security/login" class="bordered-btn">로그인</a>
@@ -132,8 +133,8 @@
 					<div class="col-lg-10 offset-lg-1 text-right">
 						<div class="hero-text">
 							<div class="hero-text-tablecell">
-								<p class="subtitle">Not alone!</p>
-								<h1>혼자 운동하고 계신가요? 지금, 시작해보세요.</h1>
+								<p class="subtitle">You are not alone</p>
+								<h1>혼자 운동하고 계신가요? <br>지금 시작해보세요!</h1>
 								<div class="hero-btns">
 									<a href="/" class="boxed-btn">지금 시작하기</a>
 									<a href="/security/login" class="bordered-btn">로그인</a>
@@ -380,18 +381,36 @@
                 </div>
                 <!--Content Column-->
                 <div class="content-column col-lg-6">
-					<h3><span class="orange-text">전국</span>의 모임</h3>
-                    <h4>주요 도시별 모임현황</h4>
+					<h3>주요 도시별 모임현황</h3>
                     <div class="text">찾아보세요. 전국의 지역의 모임 현황을 볼 수 있습니다.<br>더 자세한 정보는 메인페이지를 방문해주세요.</div>
                     <!--Countdown Timer-->
-                    <div class="time-counter">
-                    	<div class="time-countdown clearfix">
-                    	<div class="counter-column"><div class="inner"><span class="count">${seoul}</span>서울</div></div> 
-                    	<div class="counter-column"><div class="inner"><span class="count">${gyunggi}</span>경기</div></div>  
-                    	<div class="counter-column"><div class="inner"><span class="count">${busan}</span>부산</div></div>  
-                    	<div class="counter-column"><div class="inner"><span class="count">${daegu}</span>대구</div></div></div></div>
-                	<a href="/" class="cart-btn mt-3"><i class="fa-brands fa-golang"></i> 모임신청</a>
-                </div>
+					<div class="region-counter">
+						<div class="region-countup clearfix">
+							<div class="counter-column">
+								<div class="inner">
+									<span class="count">${seoul}</span>서울
+								</div>
+							</div>
+							<div class="counter-column">
+								<div class="inner">
+									<span class="count">${gyunggi}</span>경기
+								</div>
+							</div>
+							<div class="counter-column">
+								<div class="inner">
+									<span class="count">${busan}</span>부산
+								</div>
+							</div>
+							<div class="counter-column">
+								<div class="inner">
+									<span class="count">${daegu}</span>대구
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="/" class="cart-btn mt-3"><i
+						class="fa-brands fa-golang"></i> 모임신청</a>
+				</div>
             </div>
         </div>
     </section>
@@ -424,7 +443,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="single-team-item" style="width: 300px">
 						<div class="team-bg team-bg-1" style="width: 300px"> <img src="/resources/images/gate/jeonghyeon.jpg" alt="" style="height: 400px;"></div>
-						<h4>정현 <span>일찍자면 현타오는 개발자</span></h4>
+						<h4>정현 <span>내 걸음마는 개 발자</span></h4>
 						<ul class="social-link-team">
 							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
 							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
@@ -474,7 +493,7 @@
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-meta">
-								<h3>정현 <span>일찍자면 현타오는 개발자</span></h3>
+								<h3>정현 <span>내 걸음마는 개 발자</span></h3>
 								<p class="testimonial-body">
 									"어라? 새벽은 저녁 아닌가요?"
 								</p>
@@ -515,9 +534,18 @@
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
-			<div class="row" style="justify-content:center">
+			<div class="row">
 				<div class="col-lg-6 col-md-12">
 					<p>Copyrights &copy; 2023 - Sportylight (Java Backend Project),  All Rights Reserved.</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="https://www.google.com/intl/ko/gmail/about/" target="_blank"><i class="fa-brands fa-google"></i></a></li>
+							<li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

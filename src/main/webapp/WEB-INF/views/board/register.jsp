@@ -104,10 +104,23 @@ $(document).ready(function() {
 					<input type="hidden" name="membersId" value="${membersId }" />
 	
 				<div class="form-group mx-auto submitButton" >
-					<button type="submit">등록</button>
+					<button type="submit" onclick="return Register()" >등록</button>
 					<a href="/" class="homebtn" > 홈으로 </a>
 				</div>
-			</form>
+
+			<script>
+				function Register() {
+					var r = confirm("등록하시겠습니까?");
+					if (r == true) {
+						// 예를 클릭했을 때 폼이 제출됩니다.
+						return true;
+					} else {
+						// 아니오를 클릭했을 때 폼이 제출되지 않습니다.
+						return false;
+					}
+				}
+			</script>
+		</form>
 		</div>
 	</div>
 </div>

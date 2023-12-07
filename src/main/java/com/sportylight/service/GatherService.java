@@ -3,12 +3,14 @@ package com.sportylight.service;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
 
 import com.sportylight.domain.CategoryEnumVO;
 import com.sportylight.domain.GatherMembersVO;
 import com.sportylight.domain.GatherVO;
 import com.sportylight.domain.SearchVO;
 
+@Service
 public interface GatherService {
 	public List<GatherVO> getList();
 	
