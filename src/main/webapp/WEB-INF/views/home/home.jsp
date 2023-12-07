@@ -44,7 +44,7 @@
 			<div class="swiper-container" style="height:30px;overflow: hidden;margin-left:30px;">
 		    	<div class="swiper-wrapper">
 		    	<c:forEach var="topic" items="${topic}">
-		      		<div class="swiper-slide" style="height:30px"><b>[신청마감 임박!]</b> ${topic.title}<a href="/board/detail?gatheringId=${gather.gatheringId}"> 신청하기</a></div>
+		      		<div class="swiper-slide" style="height:30px"><b>[신청마감 임박!]</b> ${topic.title}<a href="/board/detail?gatheringId=${topic.gatheringId}"> 신청하기</a></div>
 		      	</c:forEach>	
 		    	</div>
 		  	</div>
@@ -254,7 +254,8 @@
 	 var positions = [
         <c:forEach var="gather" items="${GatherList}">
             {
-            	id: '${gather.gatheringId}',
+            	gatheringId: '${gather.gatheringId}',
+            	membersId: '${gather.membersId}',
                 title: '${gather.title}',
                 address: '${gather.address}',
                 type: '${gather.type}',
@@ -263,11 +264,17 @@
             },
         </c:forEach>
     ];
-	var imageSrc = "/resources/images/home/placeholder.png", // 마커이미지 주소
-	    imageSize = new kakao.maps.Size(44, 46), // 마커이미지 크기
+	var imageHealthSrc = "/resources/images/home/marker/healthMarker.png",	// 마커이미지 주소
+		imageSportshSrc = "/resources/images/home/marker/sportsMarker.png",
+		imagehikingSrc = "/resources/images/home/marker/hikingMarker.png",
+		imagerunSrc = "/resources/images/home/marker/runMarker.png",
+	    imageSize = new kakao.maps.Size(50, 52), // 마커이미지 크기
 	    imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지 옵션
 	    
-	var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+	var healthMarkerImage = new kakao.maps.MarkerImage(imageHealthSrc, imageSize, imageOption);
+	var sportsMarkerImage = new kakao.maps.MarkerImage(imageSportshSrc, imageSize, imageOption);
+	var hikingMarkerImage = new kakao.maps.MarkerImage(imagehikingSrc, imageSize, imageOption);
+	var runMarkerImage = new kakao.maps.MarkerImage(imagerunSrc, imageSize, imageOption);
 	
 /* -----------------주소를 좌표로 변환하여 마커를 생성하는 함수---------------- */
 	var clusterer = new kakao.maps.MarkerClusterer({
@@ -282,6 +289,17 @@
         geocoder.addressSearch(position.address, function(result, status) {
             if (status == kakao.maps.services.Status.OK) {
             	
+				var contentsImage = "/security/avatar/sm/" + position.membersId; 
+            	
+            	if (position.type == '헬스') {
+            		markerImage = healthMarkerImage;
+            	} else if (position.type == '스포츠') {
+            		markerImage = sportsMarkerImage;
+            	} else if(position.type == '등산') {
+            		markerImage = hikingMarkerImage;
+            	} else 
+            		markerImage = runMarkerImage;
+            	
             	var marker = new kakao.maps.Marker({
                     position: new kakao.maps.LatLng(result[0].y, result[0].x),
 					image: markerImage
@@ -289,22 +307,11 @@
             	
             	clusterer.addMarker(marker);
             	
-            	var contentsImage;
-            	
-            	if (position.type == '헬스') {
-            		contentsImage = "/resources/images/home/health.png"	
-            	} else if (position.type == '스포츠') {
-            		contentsImage = "/resources/images/home/sports.png"
-            	} else if(position.type == '등산') {
-            		contentsImage = "/resources/images/home/hiking.png"
-            	} else 
-            		contentsImage = "/resources/images/home/run.png"
-            		
             	var contents = document.createElement('div');
             	contents.innerHTML = 
             	'<div class="wrap">' +
 	            	'	<div class="info">' +
-	            	'		<div class="title">' + position.title +
+	            	(position.type == '헬스' ? '<div class="healthTitle">' : (position.type == '스포츠' ? '<div class="sportsTitle">' : (position.type == '등산' ? '<div class="hikingTitle">' : '<div class="runTitle">'))) + position.title +
 	            	'			<div class="close" title="닫기"></div>' +
 	            	'		</div>' +
 	            	'		<div class="body">' +
@@ -314,7 +321,7 @@
 	                '            <div class="content">' + 
 	                '                <div class="addr"><b>' + position.address + '</b></div>' + 
 	                '                <div class="type addr"><b>' + position.type + '</b></div>' + 
-	                (position.headCount === position.participate ? '<span><b>모임마감</b></span>' : '<span><a href="/board/detail?gatheringId='+ position.id + '" class="link">모임 신청</a></span>') +
+	                (position.headCount === position.participate ? '<span><b>모임마감</b></span>' : '<span><a href="/board/detail?gatheringId='+ position.gatheringId + '" class="link">모임 신청</a></span>') +
 	               	'				 <span><i class="fa-solid fa-user-group"></i> ' + position.participate + ' / ' + position.headCount +'명</span>' + 
 	                '            </div>' + 
 	                '        </div>' +
