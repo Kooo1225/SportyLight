@@ -33,8 +33,8 @@ function createCardTemplate(list) {
 		
 			<div class="card-body">
 				<div class="contest-category">${list.title}</div>
-				<div class="contest-site">사이트 링크<br>
-					<a href="${list.link}">${list.link}</a>
+				<div class="contest-site">사이트 링크
+						<a href="${list.link}" class="contest-link">바로가기</a>
 				</div>
 			</div>
 			

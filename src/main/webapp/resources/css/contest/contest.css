@@ -42,15 +42,16 @@ body {
 }
 
 .contest-link {
-	color: white;
+	color: gray;
 	font-family: "Noto Sans";
 	font-size: 13px;
 	font-weight: 400;
-	background: #5A95F5;
+	background: white;
 	border-radius: 10px;
-	height: 38px;
-	padding: 0px 7px 0px 7px;
-	text-decoration: none
+	padding: 2px 6px;
+    text-decoration: none;
+    border: 2px solid gray;
+    margin-left: 76px;
 }
 
 .btncategory {

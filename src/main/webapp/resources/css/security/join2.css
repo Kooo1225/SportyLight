@@ -180,6 +180,17 @@ input[type=file]::file-selector-button {
 	position: relative;
     left: 27px;
 }
+/* 스크롤바 */
+.scroll3-container {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 595px;
+}
+
+.scroll3-container::-webkit-scrollbar {
+	display: none;
+}
+
 
 /* -----에러메시지----- */
 .error2 {
@@ -196,11 +207,11 @@ input[type=file]::file-selector-button {
 	font-size: 0.9rem;
 	display: block;
 	text-align: left;
-	width: 520px;
+	width: 310px;
     margin-top: 3px;
 }
 
-#error {
+/* error {
     width: 331px;
     height: 20px;
     background: white;
@@ -209,7 +220,7 @@ input[type=file]::file-selector-button {
     border: 1px solid white;
     font-size: 12px;
     margin: 0 0 0 71px;
-}
+} */
 
 .input-style input[class="error"]::placeholder {
 	color: red; /* 플레이스홀더의 색상을 빨간색으로 설정 */

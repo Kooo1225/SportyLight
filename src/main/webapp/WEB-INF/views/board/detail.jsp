@@ -9,10 +9,61 @@
 
 <%@ include file="../layouts/detailHeader.jsp"%>
 <link rel="stylesheet" href="/resources/css/board/detail.css?after" />
+<style>
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+.dropdown{
+  position : relative;
+  display : inline-block;
+}
+
+.dropbtn{
+    margin-left: 44px;
+    position: relative;
+    bottom: 3px;
+    border: 0px;
+    background-color: white;
+    font-weight: 400;
+    color: rgb(37, 37, 37);
+    padding: 11px;
+    width: 155px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+}
+.dropdown-content{
+    border-radius: 6px;
+    left: 45px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    font-weight: 400;
+    background-color: #f9f9f9;
+    min-width: 155px;
+    text-align: center;
+}
+
+.dropdown-content a{
+  display : block;
+  text-decoration : none;
+  color : rgb(37, 37, 37);
+  font-size: 12px;
+  padding : 12px 20px;
+}
+
+.dropdown-content a:hover{
+  background-color : #ececec
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
 <script>
 
-$(document).ready(function(e) {
+/* $(document).ready(function(e) {
 	document.getElementById('manageButton').addEventListener('click', function() {
 	    var hiddenButtons = document.getElementById('hiddenButtons');
 	    if (hiddenButtons.style.display === 'none') {
@@ -23,6 +74,7 @@ $(document).ready(function(e) {
 	});	
 });
 
+ */
 </script>
 
 
@@ -56,8 +108,14 @@ $(document).ready(function(e) {
 					<span style="display:inline-block;">
 		 				<sec:authentication property="principal.member.membersId" var="membersId" /> 
 		 					<c:if test="${membersId == gather.membersId }"> 
-                  <button type="button" class="btn5" id="manageButton">관리</button>
-              </c:if>
+			                  	<div class="dropdown">
+			      					<button type="button" id="manageButton" class="dropbtn">관리</button>
+			      						<div class="dropdown-content">
+			        						<a href="/board/modify?gatheringId=${gather.gatheringId}">모임수정</a>
+			       							 <a href="/board/manage/${gather.gatheringId}">신청 관리</a>
+			      						</div>
+			    				  </div>
+              				</c:if>
               <c:if test="${membersId != gather.membersId }"> 
                       <c:if test="${state == null}">
                             <button type="submit" class="btn5" 
@@ -75,12 +133,7 @@ $(document).ready(function(e) {
                       </c:if>
                        
 				    </c:if>
-				     <div id="hiddenButtons" style="display: none;">
-		            <div><a href="/board/modify?gatheringId=${gather.gatheringId}"><button type="button" class="btn5">모임수정</button></a></div>
-		            <div><a href="/board/manage/${gather.gatheringId}"><button type="button" class="btn5">신청관리</button></a></div>
-                 </div>
                  </span>
-		
 		</div>
 			<blockquote>
 				

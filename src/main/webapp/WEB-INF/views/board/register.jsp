@@ -121,10 +121,9 @@ $(document).ready(function() {
 					}
 				}
 			</script>
+			</div>
 		</form>
         
 		</div>
 	</div>
 </body>
-
-<%@ include file="../layouts/footer.jsp"%>

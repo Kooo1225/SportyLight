@@ -106,9 +106,10 @@ function previewFile() {
 	
 	<div class="mx-auto">
 		<form:form modelAttribute="member" action="/security/join?_csrf=${_csrf.token }" method="post" enctype="multipart/form-data">
+		<div class="scroll3-container">
 			<div class="input-style">
                 
-                <div style="padding: 0 42px;height: 66px;margin: 24px 0 0 0;">
+                <div style="padding: 0 42px;height: 66px;margin: 37px 0 0 0;">
 	                <label class="file-button" for="file">
 						&nbsp;프로필 선택
 					</label>
@@ -151,7 +152,6 @@ function previewFile() {
 					<form:radiobutton path="gender" id="select" value="male"></form:radiobutton><label for="select">남</label> 
 					<form:radiobutton path="gender" id="select2" value="female"></form:radiobutton><label for="select2">여</label>
 					<form:errors path="birth" cssClass="error mx-auto"></form:errors>
-					<form:errors path="gender" cssClass="error2 mx-auto"></form:errors>
 				</div>
 				
 				<div class="form-group mx-auto check">
@@ -164,6 +164,7 @@ function previewFile() {
 			
 			<div class="form-group mx-auto submitButton">
 				<button type="submit" class="btn btn-info" id="join" disabled>JOIN</button>
+			</div>
 			</div>
 		</form:form>
 	</div>
