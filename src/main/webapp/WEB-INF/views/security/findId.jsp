@@ -17,7 +17,7 @@
 			<input type="text" name="name" id="name2" placeholder="이름">
 		</div>
 		<div class="form-group2 mx-auto">
-			<i class="fa-sharp fa-regular fa-calendar-days fa-2x" style="color: #518E7B;"></i> 
+			<i class="fa-sharp fa-regular fa-calendar-days fa-2x" style="color: #5A95F5;"></i> 
 			<input type="date" id="date2" name="birth">
 		</div>
 		<div class="form-group3 mx-auto submitbutton">

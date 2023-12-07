@@ -335,6 +335,8 @@ h1 {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex; /* Flexbox를 사용하여 오른쪽으로 정렬 */
+    justify-content: flex-end; /* 오른쪽으로 정렬 */
 }
 
 #hiddenButtons button {
@@ -407,12 +409,12 @@ h1 {
 
 .scrollbar {
 	overflow-y: scroll;
-	overflow-x: hidden;
-	position: relative;
-	height: 159px;
-	left: 28px;
-	top: -22px;
-	width: 419px;
+    overflow-x: hidden;
+    position: relative;
+    height: 159px;
+    left: 12px;
+    top: -61px;
+    width: 270px;
 }
 
 /* 스크롤바의 폭 너비 */

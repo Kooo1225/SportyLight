@@ -121,8 +121,10 @@ $(document).ready(function() {
 					}
 				}
 			</script>
+			</div>
 		</form>
         
 		</div>
 	</div>
 </body>
+

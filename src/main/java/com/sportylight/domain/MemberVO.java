@@ -38,7 +38,7 @@ public class MemberVO {
 	@NotBlank(message = "사용자 이름은 필수항목입니다.")
 	private String name;
 
-	@NotNull(message = "사용자 생년월일은 필수항목입니다.")
+	@NotNull(message = "사용자 생년월일,성별은 필수항목입니다.")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date birth;
 

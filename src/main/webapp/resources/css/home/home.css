@@ -10,8 +10,8 @@
 /*--------------------------------*/
 #logo img {
 	max-width: 329px;
-    height: auto;
-    margin: -5px 17px 8px 20px;
+    height: 61px;
+    margin: -3px 17px -3px 7px
 }
 
 .home-avatar {
@@ -107,6 +107,16 @@
 		display: none;
 	}
 }
+#btn14{
+	text-decoration:none;
+	color:gray;
+	background:white;
+	border: 2px solid gray;
+    margin-left:10px;
+    border-radius:10px;
+    font-size:12px;
+    padding: 2px 4px;
+}
 /*--------------------------------*/
 #join, #logout {
 	margin-right: 20px;
@@ -183,6 +193,8 @@ input {
 }
 
 .local{
+	width: 380px;
+	border-right: 1px solid #D9D9D9;
     font-size: 15px;
     border-bottom: 1px solid #D9D9D9;
     padding: 4px 0 4px 27px;
