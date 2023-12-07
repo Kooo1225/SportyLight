@@ -12,7 +12,7 @@
 </div>
 
 
-<div class="container11 mx-auto" style="margin-bottom: 220px;">
+<div class="container11 mx-auto" style="margin-bottom: 80px;">
 
 	<div class="contest-list mx-auto">
 
