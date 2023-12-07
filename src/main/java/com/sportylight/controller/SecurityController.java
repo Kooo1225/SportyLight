@@ -43,13 +43,11 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sportylight.domain.CategoryEnumVO;
 import com.sportylight.domain.GenderEnumVO;
 import com.sportylight.domain.KakaoProfile;
 import com.sportylight.domain.MemberVO;
 import com.sportylight.domain.OAuthToken;
 import com.sportylight.service.MemberService;
-import com.sportylight.service.MemberServiceImpl;
 
 import lombok.extern.log4j.Log4j;
 import net.coobird.thumbnailator.Thumbnails;
@@ -106,7 +104,7 @@ public class SecurityController {
 
 		// DB에 저장
 		service.register(member, avatar); // null
-		return "redirect:/";
+		return "redirect:/map";
 	}
 
 	@GetMapping("/findId")
@@ -279,6 +277,6 @@ public class SecurityController {
 		log.info(kakaoUser);
 		log.info(authentication);
 
-		return "redirect:/";
+		return "redirect:/map";
 	}
 }

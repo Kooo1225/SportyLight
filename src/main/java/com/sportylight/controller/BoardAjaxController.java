@@ -64,7 +64,7 @@ public class BoardAjaxController {
 		service.insertApply(vo);
 		rttr.addFlashAttribute("result", vo.getGatheringId());
 		
-		return"redirect:/";
+		return"redirect:/map";
 	}
 
 }

@@ -12,7 +12,7 @@
 
 
 <div class="container3">
-<a href="/" style="text-decoration:none;"><h1 class="page-header" style="font-size: 45px;"> SportyLight</h1><br></a>
+<a href="/map" style="text-decoration:none;"><h1 class="page-header" style="font-size: 45px;"> SportyLight</h1><br></a>
 <h2 class="page-header" style="font-size: 25px;"> WELCOME</h2><br>
 
 	<div class="panel panel-default">

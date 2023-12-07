@@ -23,22 +23,6 @@ public class HomeController {
 	private GatherService service;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String Home(Model model) {
-		List<GatherVO> vo = service.getList();
-		List<GatherVO> vo2 = service.getTopic();
-		
-		for(GatherVO top :vo2) {
-			log.info("topic gathering" + top);
-		}
-		
-		model.addAttribute("GatherList", vo);
-		model.addAttribute("count", vo.size());
-		model.addAttribute("topic", vo2);
-		
-		return "home/home";
-	}
-	
-	@RequestMapping(value = "/gate", method = RequestMethod.GET)
 	public String gate(Model model) {
 		List<GatherVO> vo = service.getList();
 		List<GatherVO> vo2 = service.getTopic();
@@ -60,5 +44,21 @@ public class HomeController {
 		model.addAttribute("daegu", daeguList.size());
 		
 		return "home/gate";
+	}
+	
+	@RequestMapping(value = "/map", method = RequestMethod.GET)
+	public String map(Model model) {
+		List<GatherVO> vo = service.getList();
+		List<GatherVO> vo2 = service.getTopic();
+		
+		for(GatherVO top :vo2) {
+			log.info("topic gathering" + top);
+		}
+		
+		model.addAttribute("GatherList", vo);
+		model.addAttribute("count", vo.size());
+		model.addAttribute("topic", vo2);
+		
+		return "home/home";
 	}
 }

@@ -56,7 +56,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="/">
+							<a href="/map">
 								<img src="/resources/images/layouts/logo.png" alt="">
 							</a>
 						</div>
@@ -65,11 +65,11 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="/">모임</a></li>
+								<li><a href="/map">모임</a></li>
 								<li><a href="/contest/list">대회</a></li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="/"><i class="fas fa-search"></i> 둘러보기</a>
+										<a class="shopping-cart" href="/map"><i class="fas fa-search"></i> 둘러보기</a>
 										<a class="mobile-hide search-bar-icon" href="/security/login"><i class="fa-solid fa-right-to-bracket"></i> 로그인</a>
 									</div>
 								</li>
@@ -98,7 +98,7 @@
 								<p class="subtitle">Your area & Sports Gathering</p>
 								<h1>나의 동네에서 <br> 시작하는 스포츠 모임</h1>
 								<div class="hero-btns">
-									<a href="/" class="boxed-btn">지금 시작하기</a>
+									<a href="/map" class="boxed-btn">지금 시작하기</a>
 									<a href="/security/login" class="bordered-btn">로그인</a>
 								</div>
 							</div>
@@ -117,7 +117,7 @@
 								<p class="subtitle">When you want, Where you want</p>
 								<h1>원하는 시간, 원하는 장소에서<br> 이루어지는 스포츠활동</h1>
 								<div class="hero-btns">
-									<a href="/" class="boxed-btn">지금 시작하기</a>
+									<a href="/map" class="boxed-btn">지금 시작하기</a>
 									<a href="/security/login" class="bordered-btn">로그인</a>
 								</div>
 							</div>
@@ -136,7 +136,7 @@
 								<p class="subtitle">You are not alone</p>
 								<h1>혼자 운동하고 계신가요? <br>지금 시작해보세요!</h1>
 								<div class="hero-btns">
-									<a href="/" class="boxed-btn">지금 시작하기</a>
+									<a href="/map" class="boxed-btn">지금 시작하기</a>
 									<a href="/security/login" class="bordered-btn">로그인</a>
 								</div>
 							</div>
@@ -408,7 +408,7 @@
 							</div>
 						</div>
 					</div>
-					<a href="/" class="cart-btn mt-3"><i
+					<a href="/map" class="cart-btn mt-3"><i
 						class="fa-brands fa-golang"></i> 모임신청</a>
 				</div>
             </div>
