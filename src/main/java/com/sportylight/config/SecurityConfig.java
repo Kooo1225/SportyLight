@@ -1,5 +1,7 @@
 package com.sportylight.config;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -28,6 +31,8 @@ import lombok.extern.log4j.Log4j;
 @EnableWebSecurity
 @Log4j
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
+	
+	private CustomAuthenticationSucessHandler customAuthenticationSuccessHandler;
 	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -76,6 +81,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.formLogin()
 			.loginPage("/security/login?error=login_required") 
 			.loginProcessingUrl("/security/login") 
+			.successHandler(customAuthenticationSuccessHandler)
 			.defaultSuccessUrl("/map")
 			.failureUrl("/security/login?error=true") 
 			.usernameParameter("email");
@@ -105,4 +111,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManager();
 	}
+	
 }
