@@ -145,7 +145,7 @@
 
 .form-group {
 	width: 520px;
-	padding-bottom: 10px;
+	
 	position: relative;
 }
 
@@ -210,7 +210,15 @@
 	border-radius: 10px;
 	border: 0px solid #7FB3FA
 }
-
+.nickname2{
+	color: white;
+    border: 2px solid rgb(127, 179, 250);
+    background: rgb(127, 179, 250);
+    border-radius: 10px;
+    position: relative;
+    bottom: 41px;
+    left: 218px;
+}
 #newPassword, #newPassword2, #password5 {
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
 	text-align: center;
