@@ -21,8 +21,8 @@
 
 	<select id="get" resultMap="gatherMap">
 		select *
-		from gathering
-		where gathering_id = #{gatheringId}
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.gathering_id = #{gatheringId}
 	</select>
 
 	<select id="getRegionList" resultMap="gatherMap">
@@ -72,7 +72,7 @@
 	<select id="getMyList" resultMap="gatherMap">
 		select *
 		from view_gathering_manager v
-		where v.members_id = #{membersId} and v.gathering_state in (1, 2) and v.delete_yn = 0
+		where v.members_id = #{membersId} and v.gathering_state in (2) and v.delete_yn = 0
 	</select>
 	
 	<select id="getMyState" resultMap="gatherMap">

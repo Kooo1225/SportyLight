@@ -19,7 +19,7 @@
 		<div>
 			<span><a href="#" class="btncategory">카테고리 :</a></span> 
 			<span><a href="#" class="common-button button0">전체</a></span> 
-			<span><a href="#" class="common-button button1">러닝</a></span> 
+			<span><a href="#" class="common-button button1">마라톤</a></span> 
 			<span><a href="#" class="common-button button2">축구</a></span> 
 			<span><a href="#" class="common-button button3">농구</a></span> 
 			<span><a href="#" class="common-button button4">야구</a></span> 
@@ -107,7 +107,7 @@ $(document).ready(function () {
 			<div class="card">
 				
 				<c:choose>
-					<c:when test="${list.title eq '러닝'}">
+					<c:when test="${list.title eq '마라톤'}">
 						<div class="card-header" style="background: #7fccdd; border-radius: 12px 11px 0px 0px;">
 							<div class="contest-title2">${list.association}</div>
 						</div>

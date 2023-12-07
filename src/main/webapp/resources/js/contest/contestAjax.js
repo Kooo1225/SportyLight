@@ -2,7 +2,7 @@ function createCardTemplate(list) {
 	let style;
 	
 	switch (list.title) {
-		case '러닝':
+		case '마라톤':
 			style="#7fccdd";
 			break;
 		case '축구':

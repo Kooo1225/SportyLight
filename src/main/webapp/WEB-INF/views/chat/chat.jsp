@@ -17,16 +17,13 @@
 						<div class="row" id="set1">
 							<div class="col-2">
 								<div class="sidebar-board-get">
-									<img src="/security/avatar/sm/${list.membersId}" id="profile1-image" alt="기본 이미지">
+									<img src="/security/avatar/sm/${list.membersId}" id="profile1-image" alt="1">
 								</div>
 							</div>
 	
 							<!---------------------------------------->
 							<div class="col-10" id="detail">
-									<span class="list-title" data-value="${list.gatheringId}"><b>${list.title}</b></span> 
-<!-- 								<span class="list-time" >&nbsp;1일전</span>
-									<br>
-									<span> 감사합니다.</span> -->									
+								<span class="list-title" data-value="${list.gatheringId}"><b>${list.title}</b></span> 							
 							</div>
 						</div>
 					</c:forEach>

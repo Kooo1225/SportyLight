@@ -55,7 +55,7 @@
 			<span><i class="fa-solid fa-chevron-right"></i></span>
 			<span><i class="fa-solid fa-bars"></i></span>
 			<span><i class="fa-solid fa-shield-halved"></i></span>
-			<span class="url"><a href="/">
+			<span class="url"><a href="/map">
 			      <i class="fa-solid fa-lock"></i>www.sportylight.online</a></span>
 	
 		<sec:authorize access="isAuthenticated()">

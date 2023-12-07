@@ -101,7 +101,7 @@ function previewFile() {
 </style>
 
 <div class="container7">
-	<a href="/" style="text-decoration:none;"><h1 class="page-header" style="font-size: 45px;"> SportyLight</h1><br></a>
+	<a href="/map" style="text-decoration:none;"><h1 class="page-header" style="font-size: 45px;"> SportyLight</h1><br></a>
 	<h2 class="page-header" style="font-size: 25px;">join</h2><br>
 	
 	<div class="mx-auto">

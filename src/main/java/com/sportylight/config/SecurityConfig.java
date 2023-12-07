@@ -76,7 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.formLogin()
 			.loginPage("/security/login?error=login_required") 
 			.loginProcessingUrl("/security/login") 
-			.defaultSuccessUrl("/")
+			.defaultSuccessUrl("/map")
 			.failureUrl("/security/login?error=true") 
 			.usernameParameter("email");
 		
@@ -84,7 +84,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.logoutUrl("/security/logout")
 			.invalidateHttpSession(true) 
 			.deleteCookies("remember-me", "JSESSION-ID") 
-			.logoutSuccessUrl("/"); 
+			.logoutSuccessUrl("/map"); 
 		
 		http.rememberMe()
 				.key("SportyLight") 
