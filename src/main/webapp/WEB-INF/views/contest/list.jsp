@@ -101,9 +101,8 @@ $(document).ready(function () {
 	});
 });
 </script>
-
+ <div class="scroll4-container">
 	<div class="contest-detail mx-auto">
-
 		<c:forEach var="list" items="${contest}">
 			<div class="card">
 				
@@ -152,14 +151,15 @@ $(document).ready(function () {
 				</c:choose>
 
 				<div class="card-body">
+				   
 					<div class="contest-category">${list.title}</div>
 					<div class="contest-site">사이트 링크<br>
 						<a href="${list.link}">${list.link}</a>
 					</div>
+					</div>
 				</div>
-			
-			</div>
 		</c:forEach>
+		</div>
 	</div>
 </div>
 </body>

@@ -8,7 +8,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 <link rel="stylesheet" href="/resources/css/board/mylist.css" />
 
-
+<style>
+body {
+height:670px;
+}
+</style>
 
 
 
@@ -165,4 +169,10 @@
 </body>
 
 	
-<%@ include file="../layouts/chatFooter.jsp"%>
+<%@ include file="../layouts/footer.jsp"%>
+
+<style>
+.copyright{
+
+}
+</style>

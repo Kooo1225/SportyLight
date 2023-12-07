@@ -286,4 +286,4 @@ $(document).ready(function(e) {
 })
 </script>
 
-<%@ include file="../layouts/chatFooter.jsp"%>
+<%@ include file="../layouts/footer.jsp"%>

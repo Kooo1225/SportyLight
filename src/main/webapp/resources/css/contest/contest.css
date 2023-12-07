@@ -18,7 +18,7 @@ body {
 }
 
 .contest-title {
-	margin: 25px 0px;
+	margin: 7px 0px;
 	text-align: center;
 	border-radius: 40px;
 	color: gray;
@@ -35,10 +35,10 @@ body {
 
 .contest-detail {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 40px;
-	width: 861px;
-	margin-top: 44px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 861px;
+    margin-top: 43px;
 }
 
 .btncategory {
@@ -108,4 +108,15 @@ text-decoration: none;
 
 .card-body {
 	font-size: 14px;
+}
+
+/* 스크롤바 */
+.scroll4-container {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 687px;
+}
+
+.scroll4-container::-webkit-scrollbar {
+	display: none;
 }

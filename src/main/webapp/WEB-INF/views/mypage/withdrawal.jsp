@@ -53,3 +53,4 @@
 		</div>
 	</form>
 </body>
+<%@ include file="../layouts/footer.jsp"%>

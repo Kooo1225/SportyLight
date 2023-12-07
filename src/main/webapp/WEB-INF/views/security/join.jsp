@@ -117,19 +117,15 @@ function previewFile() {
 			    </div>
 						
 				<div class="form-group check">
-					<form:input path="email" class="email" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
+					<form:input path="email" class="email" style="left: 28px;position: relative;bottom:16px;" placeholder=" 아이디(e-mail)를 작성해주세요."></form:input>
 					<form:errors path="email" cssClass="error mx-auto" />
 					
-					<button type="button" class="email2" id="sendMail">인증</button>
+					<button type="button" class="email2" style="position: relative;bottom: 16px;" id="sendMail">인증</button>
 					
-          <div class="form-group mx-auto">
-            <input class="email3" id="certNum" placeholder=" 인증번호를 입력해주세요." disabled>
-            <button type="button" class="email2" id="emailCheck" disabled>확인</button>
-          </div>
-				</div>
-        
-				<div class="form-group mx-auto">
-  					<input class="email3" placeholder=" 인증번호를 입력해주세요." disabled>
+		          <div class="form-group mx-auto">
+		            <input class="email3" style="left: 28px;position: relative;" id="certNum" placeholder=" 인증번호를 입력해주세요." disabled>
+		            <button type="button" class="email2" id="emailCheck" disabled>확인</button>
+		          </div>
 				</div>
 				<div class="form-group mx-auto">
 					<form:password path="password" placeholder=" 비밀번호를 작성해주세요."></form:password>
