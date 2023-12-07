@@ -68,10 +68,18 @@
 	font-size: 18px;
 	font-weight: 400;
 	color: #fff;
-	background: #5A95F5;
 	border-radius: 100px;
 	height: 38px;
 }
+
+#join, #logout {
+	background: #5A95F5;
+}
+
+#ct1 {background: #a7bbe1 ;}
+#ct2 {background: #82AFD7 ;}
+#ct3 {background: #5E83A8 ;}
+#ct4 {background: #406077 ;}
 
 #ct1, #ct3, #ct4 {
 	margin-left: 40px;
@@ -347,12 +355,15 @@ button {
 }
 
 /* home.jsp 마커 overlay css */
- .wrap {position: absolute;left: 0;bottom: 70px;width: 288px;height: 132px;margin-left: -149px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Noto Sans";line-height: 1.5;}
+ .wrap {position: absolute;left: 0;bottom: 70px;width: 295px;height: 132px;margin-left: -149px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Noto Sans";line-height: 1.5;}
  .wrap * {padding: 0;margin: 0;}
  .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
  .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
- .info .title {padding: 5px 0 30px 10px;height: 30px;background: #518e7b;border-bottom: 1px solid #518e7b;font-size: 18px;font-weight: bold;}
- .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+ .info .healthTitle {padding: 5px 0 30px 10px;height: 30px;background: #a7bbe1 ;border-bottom: 1px solid #a7bbe1;font-size: 18px;font-weight: bold;}
+ .info .sportsTitle {padding: 5px 0 30px 10px;height: 30px;background: #82AFD7 ;border-bottom: 1px solid #82AFD7;font-size: 18px;font-weight: bold;}
+ .info .hikingTitle {padding: 5px 0 30px 10px;height: 30px;background: #5E83A8 ;border-bottom: 1px solid #5E83A8;font-size: 18px;font-weight: bold;}
+ .info .runTitle {padding: 5px 0 30px 10px;height: 30px;background: #406077 ;border-bottom: 1px solid #406077;font-size: 18px;font-weight: bold;}
+ .info .close {position: absolute;top: 10px;right: 18px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
  .info .close:hover {cursor: pointer;}
  .info .body {position: relative;overflow: hidden;}
  .info .content {position: relative;margin: 13px 0 0 90px;height: 75px;}
@@ -368,10 +379,6 @@ button {
 	height: 38px;
 	padding: 0px 7px 0px 7px;
 	text-decoration: none}
-
- 
-
-
 
 
 
