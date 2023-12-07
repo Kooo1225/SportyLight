@@ -403,19 +403,11 @@ p:last-child {
 }
 
 a.boxed-btn {
-  font-family: 'Poppins', sans-serif;
-  display: inline-block;
-  background-color: #5A95F5;
-  color: #fff;
-  padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;    display: inline-block;    background-color: #fff;    border: 2px solid #fff;    color: #5a95f5;    padding: 10px 20px;  
 }
 
 a.bordered-btn {
-  font-family: 'Poppins', sans-serif;
-  display: inline-block;
-  color: #fff;
-  border: 2px solid #5A95F5;
-  padding: 7px 20px;
+    font-family: 'Poppins', sans-serif;    display: inline-block;    background-color: #5a95f5;    border: 2px solid #fff;    color: #fff;    padding: 10px 20px;
 }
 
 a.read-more-btn {
@@ -521,7 +513,7 @@ ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-lin
   position: absolute;
   z-index: 999;
   width: 100%;
-  padding: 25px 0;
+  padding: 25px 0;  background: #5a95f5;
 }
 
 .top-header-area.white ul.navbar-nav li.nav-item a.nav-link, .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
@@ -715,7 +707,7 @@ nav.main-menu li a {
 }
 
 .sticky-wrapper.is-sticky .top-header-area {
-  background-color: #051922;
+  background-color: #5A95F5;
   padding: 15px 0;
 }
 
@@ -1006,8 +998,8 @@ a.boxed-btn {
 }
 
 a.boxed-btn:hover {
-  background-color: #788FA1;
-  color: #5A95F5;
+  background-color: #adb5bd;
+  color: #fff;  border: 1px solid #fff;
 }
 
 a.bordered-btn {
@@ -1017,8 +1009,8 @@ a.bordered-btn {
 }
 
 a.bordered-btn:hover {
-  background-color: #788FA1;
-  color: #fff;
+  background-color: #adb5bd;
+  color: #fff;  border: 1px solid #fff;
 }
 
 ul.sub-menu a {
@@ -1392,7 +1384,7 @@ html, body {
 }
 
 .hero-text p.subtitle {
-  color: #5A95F5;
+  color: #fff;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 7px;
@@ -1498,7 +1490,7 @@ input[type="submit"] {
 .single-homepage-slider {
   background-size: cover;
   background-position: center;
-  background-color: #020C0E;
+  background-color: #2f4d7f;
   position: relative;
   z-index: 1;
 }
@@ -1509,17 +1501,15 @@ input[type="submit"] {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #051922;
+  background-color: #5a95f5;
   content: "";
   z-index: -1;
-  opacity: 0.7;
 }
 
 div.owl-controls, .owl-controls div {
-  height: auto;
-  top: 50%;
-  color: #5A95F5;
-  font-size: 48px;
+	height: auto;
+	top: 50%;
+	color: #fff;    font-size: 60px;
 }
 
 .homepage-slider {
@@ -1955,16 +1945,16 @@ span.comment-date {
   margin-bottom: 25px;
 }
 
-.time-counter {
+.region-counter {
   position: relative;
   margin-bottom: 25px;
 }
 
-.time-counter .time-countdown {
+.region-counter .region-countup {
   position: relative;
 }
 
-.time-countdown .counter-column {
+.region-countup .counter-column {
   position: relative;
   display: inline-block;
   margin: 0px 0px 5px;
@@ -1976,7 +1966,7 @@ span.comment-date {
   border: 2px solid #5A95F5;
 }
 
-.time-countdown .counter-column .count {
+.region-countup .counter-column .count {
   position: relative;
   display: block;
   font-size: 30px;

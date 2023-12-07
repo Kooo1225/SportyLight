@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sportylight.domain.MemberVO;
 
+@Service
 public interface MemberService {
 
 	// 회원정보 email로 가져오기(email 중복체크)

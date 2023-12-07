@@ -115,11 +115,24 @@ $(document).ready(function() {
 				</div>
 				
 				<div class="form-group mx-auto submitButton" >
-					<button type="submit" style="margin-top:10px;">수정</button>
+					<button type="submit" style="margin-top:10px;" onclick="return Modify()">수정</button>
 					<button style="margin-top:10px;" onclick="location.href='/board/detail?gatheringId=${gatheringId}}';">돌아가기</button>
 				</div>
-			  </div>
-			</form>
+
+			<script>
+				function Modify() {
+					var r = confirm("수정하시겠습니까?");
+					if (r == true) {
+						// 예를 클릭했을 때 폼이 제출됩니다.
+						return true;
+					} else {
+						// 아니오를 클릭했을 때 폼이 제출되지 않습니다.
+						return false;
+					}
+				}
+			</script>
+		</form>
+
 		</div>
 	</div>
 </body>
