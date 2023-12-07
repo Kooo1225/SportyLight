@@ -26,7 +26,7 @@ public class MemberServiceImpl implements MemberService {
 	// 캡슐화 ->  private로 설정하고 return 해주는 코드를 사용해줜다
 
 	@Autowired
-	MemberMapper mapper;
+	private MemberMapper mapper;
 
 	@Autowired
 	private PasswordEncoder pwEncoder;
@@ -40,13 +40,10 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.checkNickname(nickname);
 	}
 
-	// 아이디 중복체크 mapper 접근
-//	@Override
-//	public int emailCheck(String email) {
-//		int cnt = mapper.emailCheck(email);
-//		System.out.println("cnt: " + cnt);
-//		return cnt;
-//	}
+	@Override
+	public String getAvatarPath() {
+		return AVATAR_UPLOAD_DIR;
+	}
 
 	@Override
 	public void register(MemberVO member, MultipartFile avatar) throws IOException {
@@ -75,9 +72,7 @@ public class MemberServiceImpl implements MemberService {
 	// 회원 정보 보기
 	@Override
 	public MemberVO getMember(int membersId) {
-
 		return mapper.readMypage(membersId);
-
 	}
 	
 	@Override
@@ -118,11 +113,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	// 회원 탈퇴
-		@Override
-		public void withdrawalAuth(int membersId) {
-			mapper.deleteAuth(membersId); // 회원 정보 삭제
+	@Override
+	public void withdrawalAuth(int membersId) {
+		mapper.deleteAuth(membersId); // 회원 정보 삭제
 
-		}
+	}
 
 	// 아이디찾기
 	@Override
@@ -136,4 +131,18 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.read2(email);
 	}
 	
+	@Override
+	public boolean findPw(String userName, String userId) {
+		MemberVO vo = mapper.findPw(userName, userId);
+		boolean result;
+		
+		if (vo == null) {
+			result = false;
+		}
+		else {
+			result = true;
+		}
+		
+		return result;
+	}
 }

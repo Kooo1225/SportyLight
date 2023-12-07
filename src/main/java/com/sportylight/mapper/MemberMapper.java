@@ -33,13 +33,13 @@ public interface MemberMapper {
 	public void delete(int membersId);
 	
 	public void deleteAuth(int membersId);
-	
-//	public int emailCheck(String email);
 
 	public MemberVO read2(String email);
 
 	public void insertAuth(AuthVO auth);
 
 	public MemberVO findId(@Param("birth") Date birth, @Param("name") String name);
+	
+	public MemberVO findPw(@Param("userName") String userName, @Param("userId") String userId);
 
 }

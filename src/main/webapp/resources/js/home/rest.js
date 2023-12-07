@@ -72,5 +72,5 @@ async function rest_post2(url, gatheringId, membersId) {
 	}
 	catch(e) {
 		console.log(e);
-	}		
+	}
 }

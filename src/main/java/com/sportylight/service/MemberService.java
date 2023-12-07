@@ -17,6 +17,8 @@ public interface MemberService {
 
 	// 회원정보 email로 가져오기
 	public MemberVO checkNickname(String nickname);
+	
+	public String getAvatarPath();
 
 	public void register(MemberVO member, MultipartFile avatar) throws IOException;
 
@@ -42,5 +44,5 @@ public interface MemberService {
 
 	public MemberVO findId(Date birth, String name);
 
-//	public int emailCheck(String email);
+	public boolean findPw(String userName, String userId);
 }

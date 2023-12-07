@@ -20,7 +20,6 @@
 		<div class="panel panel-default">
 			<div class="input-style2" style="padding: 50px 0 220px 0;">
 				<!-- ------------------------------현비밀번호------------------------------- -->
-				<form action="/mypage/update" method="post">
 					<div class="form-group mx-auto check">
 						<!-- 민트박스  -->
 						<svg xmlns="http://www.w3.org/2000/svg" width="117" height="55"viewBox="0 0 117 52" fill="none" style="position: absolute; top: 0px; left: 0px;">

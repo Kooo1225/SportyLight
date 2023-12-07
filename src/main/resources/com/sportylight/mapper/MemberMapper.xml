@@ -112,6 +112,12 @@
 		AND members_birth = #{birth}
 	</select>
 	
+	<select id="findPw" resultMap="memberMap">
+		SELECT *
+		FROM members
+		WHERE members_name = #{userName} AND members_email = #{userId}
+	</select>
+	
 	<select id="getNonManageList" resultMap="memberMap">
 		select *
 		from view_gathering_manager
@@ -123,6 +129,5 @@
 		from view_gathering_manager
 		where gathering_id = #{gatheringId} and gathering_state in (1);
 	</select>
-	
-	
+
 </mapper>

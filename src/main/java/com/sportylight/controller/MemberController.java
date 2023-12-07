@@ -2,7 +2,13 @@ package com.sportylight.controller;
 
 import java.io.IOException;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -90,6 +96,7 @@ public class MemberController {
 	 // 비밀번호 수정 처리
 	@PostMapping("/pwupdate")
 		public String savepwupdate(@AuthenticationPrincipal CustomUser customUser,
+				HttpSession session, HttpServletRequest request, HttpServletResponse response,
 				String password,String newPassword,String newPassword2) {
 		
 		int membersId = customUser.getMembersId();
@@ -112,10 +119,16 @@ public class MemberController {
 		 String encoderPw = passwordEncoder.encode(newPassword);
 	        memberService.updatePassword(membersId, encoderPw);
 		 System.out.println("비밀번호 변경 완료 ");
-		// 4. 로그아웃
-	    	SecurityContextHolder.clearContext(); // 현재 사용자의 인증 정보를 제거
+		 
+		 // 4. 로그아웃
+		 // session invalidate
+		 // cookie delete 
+		 session.invalidate();
+	 	
+		// 해당 구문은 웹에 저장된게 아닌 서버에 저장된 CustomUserData를 제거하는 구문
+    	SecurityContextHolder.clearContext(); // 현재 사용자의 인증 정보를 제거
 	   
-		return "/security/logout";
+		return "redirect:/security/login";
 	
 		}
 	

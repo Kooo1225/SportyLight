@@ -72,8 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 						 "/mypage",
 						 "/mypage/withdrawal",
 						 "/chat").authenticated();
-
-		
+	
 		http.formLogin()
 			.loginPage("/security/login?error=login_required") 
 			.loginProcessingUrl("/security/login") 
