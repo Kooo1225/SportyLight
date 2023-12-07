@@ -24,7 +24,7 @@ import com.sportylight.service.GatherService;
 public class BoardAjaxController {
 	
 	@Autowired
-	GatherService service;
+	private GatherService service;
 	
 	@Autowired
 	private GatherMembersService mService;

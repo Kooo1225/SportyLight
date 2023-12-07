@@ -46,7 +46,7 @@
 						</div>
 						<div class="category10 mx-auto">
 							<a href="/security/findId">아이디 찾기 |</a>
-							<a href="#">비밀번호 찾기 |</a>
+							<a href="/security/findpw">비밀번호 찾기 |</a>
 							<a href="/security/join">회원가입</a>
 						</div>
 					</div>

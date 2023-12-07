@@ -44,7 +44,7 @@
 			<div class="swiper-container" style="height:30px">
 		    	<div class="swiper-wrapper">
 		    	<c:forEach var="topic" items="${topic}">
-		      		<div class="swiper-slide" style="height:30px"><b>[신청마감 임박!]</b> ${topic.title}<a href="/board/detail?gatheringId=${gather.gatheringId}"> 신청하기</a></div>
+		      		<div class="swiper-slide" style="height:30px"><b>[신청마감 임박!]</b> ${topic.title}<a href="/board/detail?gatheringId=${topic.gatheringId}"> 신청하기</a></div>
 		      	</c:forEach>	
 		    	</div>
 		  	</div>
