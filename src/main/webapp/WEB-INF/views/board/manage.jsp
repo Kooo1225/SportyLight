@@ -55,67 +55,62 @@
 				<div class="non-apply">
 					<div class="list2">회원 목록</div>
                     
-
 					<div class="scroll4-container">
-					
-						<form:form modelAttribute="gatherMemebers" role="form" action="/board/manage" method="post">
-							<c:forEach var="user" items="${myNonMemberList}">
-								<table>
-									<tr>
-										<th>${user.nickname}</th>
+						<c:forEach var="user" items="${myNonMemberList}">
+							<div class="container" style="padding: 0px 0px">
+							<input type="hidden" name="membersId" id="membersId" value="${user.membersId}"/>
+
+							<table>
+								<tr>
+									<th>${user.nickname}</th>
+									
+									<td style="border-right: 1px solid gray;">
+										<input type="radio" id="state" name="state" value="1"/>
+										<label for="state1">
+											<span>&nbsp;승인&nbsp;&nbsp;</span>
+										</label>
 										
-										<form:hidden path="membersId" name="membersId" value="${user.membersId}"/>
-										<form:hidden path="gatheringId" name="gatheringId" value="${gatheringId}"/>
-										
-										<td style="border-right: 1px solid gray;">
-											<form:checkbox path="state" value="1"/>
-											<label for="state1">
-												<span>&nbsp;승인&nbsp;&nbsp;</span>
-											</label>
-											
-											<form:checkbox path="state" value="-1"/>
-											<label for="state2">
-												<span>&nbsp;거부</span>
-											</label>
-										</td>
-										
-										<td style="width: 95px;">
-											<form:button type="submit" id="submit">확인</form:button>
-										</td>
-									</tr>
-								</table>
-							</c:forEach>
-						</form:form>
+										<input type="radio" id="state" name="state" value="-1"/>
+										<label for="state2">
+											<span>&nbsp;거부</span>
+										</label>
+									</td>
+									
+									<td style="width: 95px;">
+										<button id="submit" onclick="checkCount(this)">확인</button>
+									</td>
+								</tr>
+							</table>
+							</div>
+						</c:forEach>
+						
 					</div>
 				</div>
 
 				<div class="apply">
 					<div class="list3">승인 목록</div>
-						<div class="scroll4-container">
-					
-							<form:form modelAttribute="gatherMemebers" role="form" action="/board/manage" method="post">
-								<c:forEach var="user" items="${myMemberList}">
+						<div class="scroll4-container" >
+							<c:forEach var="user" items="${myMemberList}">
+								<div class="container" style="padding: 0px 0px">									
+									<input type="hidden" name="membersId" id="membersId" value="${user.membersId}"/>
 									<table>
 										<tr>
 											<th>${user.nickname}</th>
 											
-											<form:hidden path="membersId" name="membersId" value="${user.membersId}"/>
-											<form:hidden path="gatheringId" name="gatheringId" value="${gatheringId}"/>
-											
 											<td style="border-right: 1px solid gray;">
-												<form:checkbox path="state" value="0"/>
+												<input type="radio" id="state" name="state" value="0" data-id="${user.membersId}"/>
 												<label for="state1">
 													<span>&nbsp;취소</span>
 												</label>
 											</td>
 											
-											<td style="width: 95px;">
-												<form:button type="submit" id="submit">확인</form:button>
+											<td style="width: 95px;" data-id="${user.membersId }">
+												<button id="submit" onclick="checkCount(this)">확인</button>
 											</td>
 										</tr>
 									</table>
-								</c:forEach>
-							</form:form>
+								</div>
+							</c:forEach>
 						</div>
 					
 				</div>
@@ -135,8 +130,71 @@
 
 <script src="/resources/js/home/rest.js"></script>
 <script>
-$(document).ready(function(e) {
+
+function checkCount(btn) {
+	const headCount = ${gatherVO.headCount};
+	const participate = ${gatherVO.participate};
+	const gatheringId = ${gatherVO.gatheringId};
+	const container = btn.closest('.container');
+	
+	var radioElement = container.querySelector("input[name=state]:checked");
+	const radioValue = radioElement ? radioElement.value : null;
+	
+	var idElement = container.querySelector("[name='membersId']");
+	const idValue = idElement ? idElement.value : null;
+	
+	if(radioValue == 0){
+		getManage(gatheringId, idValue, radioValue);
+	}
+	else if (radioValue != 0 && participate >= headCount) {
+		alert("신청 인원이 초과되었습니다.");
+		return;
+	}
+	else {
+		getManage(gatheringId, idValue, radioValue);
+	}
+}
+
+function getManage(gatheringId, membersId, state) {
+	let f = document.createElement('form');
+
+	let gatheringIdObj;
+	gatheringIdObj = document.createElement('input');
+	gatheringIdObj.setAttribute('type', 'hidden');
+	gatheringIdObj.setAttribute('name', 'gatheringId');
+	gatheringIdObj.setAttribute('value', gatheringId);
+	
+	let membersIdObj;
+	membersIdObj = document.createElement('input');
+	membersIdObj.setAttribute('type', 'hidden');
+	membersIdObj.setAttribute('name', 'membersId');
+	membersIdObj.setAttribute('value', membersId);
+	
+	let stateObj;
+	stateObj = document.createElement('input');
+	stateObj.setAttribute('type', 'hidden');
+	stateObj.setAttribute('name', 'state');
+	stateObj.setAttribute('value', state);
+	
+	let CSRFToken;
+	CSRFToken = document.createElement('input');
+	CSRFToken.setAttribute('type', 'hidden');
+	CSRFToken.setAttribute('name', '${_csrf.parameterName}');
+	CSRFToken.setAttribute('value', '${_csrf.token}'); 
+			
+	f.appendChild(gatheringIdObj);
+	f.appendChild(membersIdObj);
+	f.appendChild(stateObj);
+	f.appendChild(CSRFToken);
+	f.setAttribute('method', 'post');
+	f.setAttribute('action', '/board/manage');
+	document.body.appendChild(f);
+	f.submit(); 
+}
+
+$(document).ready(function(e) { 
 	
 })
+
 
 </script>

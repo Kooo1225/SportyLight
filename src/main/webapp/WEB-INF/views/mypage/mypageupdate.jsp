@@ -47,8 +47,8 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
                       <text x="50%" y="50%" dominant-baseline="middle"text-anchor="middle" fill="#fff" font-size="18"
 					        font-family="Arial">닉네임</text>     
                    </svg>
-			 <input type="nickname" class="membernickname" name="nickname" >
-			 <span><button type="button" class="nickname2" id="nickname2">인증</button></span>
+			 <input type="text" class="membernickname" name="nickname">
+			 <span><button type="button" class="nickname2" id="nickname2">중복확인</button></span>
 		</div>
 		<!-- ------------------------------이메일------------------------------- -->
 		<div class="form-group2 mx-auto check" id="emailbox">
@@ -65,8 +65,7 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 		<div class="row mx-auto" >
     <div class="col-4 mx-auto">
         <div class="form-group submitButton">
-            <button type="submit" class="btn btn-info" 
-            style="width:150px;height: 52px;position: relative;top: 7px;left: 94px;">확인</button>
+            <button type="submit" id="confirm" class="btn btn-info" style="width:150px;height: 52px;position: relative;top: 7px;left: 94px;" disabled>확인</button>
         </div>
     </div>
     <div class="col-4 mx-auto">
@@ -88,5 +87,26 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 </div>
 </form>
 </body>
+
+<script src="/resources/js/home/rest.js" ></script>
+<script>
+$(document).ready(function(e) {
+	$('#nickname2').on('click', async function(e) {
+		const nickname = $('.membernickname');
+		const confirm = $('#confirm');
+		
+		let res = await rest_get('/mypage/check/' + nickname.val()); 
+		if(res == true) {
+			alert('사용 가능한 닉네임 입니다.');
+			nickname.attr('disabled', true);
+			confirm.attr('disabled', false);
+		}
+		else {
+			alert('이미 사용 중인 닉네임 입니다.');
+			nickname.val('');
+		}
+	})
+})
+</script>
 
 <%@ include file="../layouts/footer.jsp"%>

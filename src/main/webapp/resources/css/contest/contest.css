@@ -116,6 +116,7 @@ text-decoration: none;
 	border-radius: 12px;
 	box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.25);
 	border: 0px;
+	margin-bottom: 5px;
 }
 
 
@@ -127,7 +128,8 @@ text-decoration: none;
 .scroll4-container {
 	overflow-y: auto;
 	overflow-x: hidden;
-	height: 687px;
+	height: 600px;
+	margin-top: 15px;
 }
 
 .scroll4-container::-webkit-scrollbar {

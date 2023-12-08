@@ -47,9 +47,7 @@ public class MessageController {
 	public String testChat(@AuthenticationPrincipal CustomUser customUser, int gatheringId, Model model) {
 		List<MessageVO> vo = service.beforeChatRead(gatheringId);
 		List<GatherVO> chatList = service.getChattingList(customUser.getMembersId());
-		
-		System.out.println(vo);
-		
+
 		model.addAttribute("chattingList", chatList);
 		model.addAttribute("customUser", customUser);
 		model.addAttribute("chatList", vo);

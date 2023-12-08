@@ -2,6 +2,8 @@ package com.sportylight.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,9 +49,11 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/map", method = RequestMethod.GET)
-	public String map(Model model) {
+	public String map(HttpServletRequest request, Model model) {
 		List<GatherVO> vo = service.getList();
 		List<GatherVO> vo2 = service.getTopic();
+		
+		model.addAttribute("test", request.getHeader("Referer"));
 		
 		for(GatherVO top :vo2) {
 			log.info("topic gathering" + top);

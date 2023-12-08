@@ -32,8 +32,9 @@
 			</div>
 		</div>
 		
+		
 		<div class="col-md-8 mx-auto" id="chat-container1">
-			<div class="col-2 col-md-12" id="chat-container" style="overflow-y: auto; max-height: 500px;">
+			<div class="col-2 col-md-12 scroll-container" id="chat-container" style="overflow-y: auto; max-height: 500px;">
 			
 				
 

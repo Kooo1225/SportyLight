@@ -15,9 +15,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -69,7 +71,6 @@ public class MemberController {
 	@PostMapping("/update")
 		public String savempupdate(@AuthenticationPrincipal CustomUser customUser,String nickname,MultipartFile avatar) throws IOException {
 		int membersId = customUser.getMembersId();
-		 MemberVO db2VO = memberService.getMember(membersId);
 		 
 		 memberService.updateMp(membersId, nickname, avatar);
 		 
@@ -77,6 +78,16 @@ public class MemberController {
 	
 		}
 	
+	@GetMapping("/check/{nickname}")
+	@ResponseBody
+	public boolean checkNickName(@PathVariable String nickname) {
+		if(memberService.checkNickname(nickname) == null) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 	// 비밀번호 수정 페이지로 이동
 	@GetMapping("/pwupdate")

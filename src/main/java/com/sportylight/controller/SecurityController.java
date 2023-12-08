@@ -12,6 +12,7 @@ import java.util.UUID;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +65,13 @@ public class SecurityController {
 	private AuthenticationManager authenticationManager;
 
 	@GetMapping("/login")
-	public void login() {
+	public void login(HttpServletRequest request, Model model) {
+		String referer = request.getHeader("Referer");
+		if(referer != null && !referer.isEmpty()) {
+			model.addAttribute("referrer", referer);
+		}
+		
+		System.out.println(referer);
 		log.info("login page");
 	}
 
@@ -140,7 +147,7 @@ public class SecurityController {
 	public void avatar(@PathVariable("size") String size, @PathVariable("membersId") String membersId,
 			HttpServletResponse response) throws IOException {
 		File src = new File(service.getAvatarPath(), membersId + ".png");
-
+		
 		if (!src.exists()) {
 			src = new File(service.getAvatarPath(), "unknown.png");
 		}
@@ -171,7 +178,7 @@ public class SecurityController {
 		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
 		params.add("grant_type", "authorization_code");
 		params.add("client_id", "ad5f045a6d90afc878186d9093e76908");
-		params.add("redirect_uri", "http://localhost:8080/security/kakao/callback");
+		params.add("redirect_uri", "https://sportylight.online/security/kakao/callback");
 		params.add("code", code);
 
 		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = new HttpEntity<>(params, headers);
