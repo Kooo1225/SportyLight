@@ -5,7 +5,7 @@
 
 	<resultMap id="gatherMap" type="com.sportylight.domain.GatherVO">
 		<id property="gatheringId" column="gathering_id" />
-		<result property="gatheringId" column="gatheringid" />
+		<result property="gatheringId" column="gathering_id" />
 		<result property="membersId" column="members_id" />
 		<result property="title" column="gathering_title" />
 		<result property="dateTime" column="gathering_datetime" />
@@ -13,22 +13,163 @@
 		<result property="headCount" column="gathering_headcount" />
 		<result property="address" column="gathering_address" />
 		<result property="type" column="gathering_type" />
+		<result property="state" column="gathering_state"/>
+		<result property="deleteYn" column="delete_yn"/>
+		<result property="participate" column="participate"/>
 	</resultMap>
+
 
 	<select id="get" resultMap="gatherMap">
 		select *
-		from gathering
-		where gathering_id = #{gatheringId}
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.gathering_id = #{gatheringId}
+	</select>
+
+	<select id="getRegionList" resultMap="gatherMap">
+		select * 
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.delete_yn != 1 and g.gathering_address like CONCAT(#{region},'%');
+	</select>
+	
+	<select id="getNotRegionList" resultMap="gatherMap">
+		select * 
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.delete_yn != 1 and g.gathering_address not like CONCAT(#{region},'%');
 	</select>
 
 	<select id="getList" resultMap="gatherMap">
-		select * from gathering
+		select * 
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.delete_yn != 1
 	</select>
-
-	<select id="getTypeList" resultMap="gatherMap">
+	
+	<select id="getTopic" resultMap="gatherMap">
 		select *
-		from gathering
-		where gathering_type = #{type};
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.delete_yn != 1 AND (g.gathering_headcount - v.participate = 1);
 	</select>
+	
+	<select id="getSearch" resultMap="gatherMap">
+		select * from gathering
+		<where>
+			<trim prefixOverrides = "OR">
+				<foreach item="option" collection="optionArr">
+					<trim prefix="OR">
+						<choose>
+		 					<when test="option == 'T'.toString()">
+	 							gathering_title like CONCAT('%', #{keyword}, '%')
+							</when>
+	 						<when test="option == 'C'.toString()">
+		 						gathering_description like CONCAT('%', #{keyword}, '%')
+	 						</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</where>
+	</select>
+	
+	<select id="getMyList" resultMap="gatherMap">
+		select *
+		from view_gathering_manager v
+		where v.members_id = #{membersId} and v.gathering_state in (2) and v.delete_yn = 0
+	</select>
+	
+	<select id="getMyState" resultMap="gatherMap">
+		select *
+		from view_gathering_manager v
+		where v.members_id = #{membersId} and v.gathering_state in (-1, 0, 1)
+	</select>
+	
+	<select id="getJoinCount" resultType="int">
+		select participate
+		from view_gathering 
+		where gathering_id = #{gatheringId}
+	</select>
+	
+	<select id="getSumJoinCount" resultType="int">
+		select sum(participate) as total_participate
+		from view_gathering
+	</select>
+	
+	<select id="getSumHeadCount" resultType="int">
+		select sum(gathering_headcount) as total_headCount
+		from gathering 
+	</select>
+	
+	<select id="getTypeList" resultMap="gatherMap">
+		select * 
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.gathering_type = #{type} and g.delete_yn != 1 and g.gathering_address like CONCAT(#{region},'%');
+	</select>
+	
+	<select id="getNonTypeList" resultMap="gatherMap">
+		select * 
+		from gathering g left join view_gathering v on g.gathering_id = v.gathering_id
+		where g.gathering_type = #{type} and g.delete_yn != 1 and g.gathering_address not like CONCAT(#{region},'%');
+	</select>
+	
+	<insert id="insert">
+		insert into gathering(gathering_title, members_id, gathering_datetime, gathering_description, gathering_headcount, gathering_address, gathering_type)
+		values (#{title}, #{membersId}, #{dateTime}, #{description}, #{headCount}, #{address}, #{type})
+	</insert>
+	
+	<insert id="insertApply">
+		insert into gathering_members(gathering_id, members_id, gathering_state)
+		values(#{gatheringId}, #{membersId}, 0)
+	</insert>
+	
+	<select id="read" resultMap="gatherMap">
+		select *
+		from view_gathering
+		where gathering_id = #{gatheringId}
+	</select>
+  
+	<update id="update">
+		update gathering set
+			gathering_title = #{title},
+			gathering_datetime = #{dateTime},
+			gathering_address = #{address},
+			gathering_description = #{description},
+			gathering_type = #{type},
+			gathering_headcount = #{headCount},
+			update_date = now()
+		where gathering_id = #{gatheringId}
+	</update>
+	
+	<update id="removeGathering">
+		update gathering g 
+		set
+			delete_yn = true,
+			update_date = now()
+		where gathering_id = #{gatheringId}
+	</update>
+	
+	<update id="removeState">
+		update gathering_members gm 
+		set
+			gathering_state = 3
+		where gathering_id = #{gatheringId}
+	</update>
+	
+	<delete id="deleteMyState">
+		delete from gathering_members
+		where gathering_id = #{gatheringId}
+		and members_id = #{membersId}
+	</delete>
+
+	<select id="getState" resultType="int">
+		select gathering_state
+		from gathering_members
+		where gathering_id = #{gatheringId} and members_id = #{membersId}
+	</select>
+	
+	<select id="getManagerList" resultMap="gatherMap">
+		select *
+		from view_gathering_manager
+		where gathering_id = #{gatheringId}
+	</select>
+	
+	
 	
 </mapper>

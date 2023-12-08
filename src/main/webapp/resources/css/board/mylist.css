@@ -1,0 +1,162 @@
+@import
+	url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap")
+	;
+/* 
+.pannel {
+	width: 1050px;
+	height: 100%;
+	position: relative;
+	margin-top: 20px;
+}*/
+.nav {
+	margin: 60px 0 30px 0;
+}
+
+.container0 {
+	margin-left: 22px;
+	margin-top: 11px;
+	margin-bottom: 410px;
+	padding-top: 25px;
+	padding-bottom: 23px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 45px;
+	max-height: calc(100vh - 405px);
+}
+
+#btn3 {
+	margin-right: 154px;
+	padding: 12px 26px;
+	border-radius: 24px;
+	border: 2px solid #7FB3FA;
+	color: #7FB3FA;
+}
+
+#btn3:hover, #btn4:hover{
+	background: #7FB3FA;
+	color: #fff;
+}
+
+#btn4 {
+	padding: 12px 26px;
+	border-radius: 24px;
+	border: 2px solid #7FB3FA;
+	color: #7FB3FA;
+}
+
+
+.card {
+	width: 230px;
+	border: 1px solid #fff;
+	box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+	border-radius: 10px;
+}
+
+.card:hover {
+	transform: translateY(-.5rem);
+}
+
+.card-header, .card-body, .card-footer {
+	font-size: 12px;
+	color: #595959;
+	background: #fff
+}
+
+.mylist-category, .mylist-state {
+	padding-bottom: 7px;
+}
+
+.btn6 {
+	left: 118px;
+}
+
+.btn5, .btn6 {
+	font-size: 12px;
+	padding: 4px 17px 11px 17px;
+	background-color: #fff;
+	color: #595959; 
+	border : 2px solid #7FB3FA;
+	padding: 4px 17px 11px 17px;
+}
+.btn7 {
+	margin-left: 22px;
+    margin-right: 17px;
+}
+
+.btn7, .btn8 {
+	font-size: 12px;
+	padding: 4px 17px 11px 17px;
+	background-color: #fff;
+	color: #595959; 
+	border : 2px solid #7FB3FA;
+	padding: 4px 17px 11px 17px;
+}
+
+.btn--stripe {
+	overflow: hidden;
+	position: relative;
+}
+
+.btn--stripe:after {
+	content: '';
+	display: block;
+	height: 7px;
+	width: 100%;
+	background-image: repeating-linear-gradient(45deg, #7FB3FA, #7FB3FA 1px, #fff 2px, rgba(0,
+		0, 0, .075) 5px);
+	border-top: 1px solid #7FB3FA;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-size: 7px 7px;
+}
+
+.btn--stripe:hover, .btn6:hover,.btn8:hover {
+	background-color: #7FB3FA;
+	color: #fff;
+	border-color: #7FB3FA;
+}
+
+.btn--stripe:hover:after {
+	background-image: repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 2px,
+		transparent 5px);
+	border-top: 1px solid #7FB3FA;
+	animation: stripe-slide 12s infinite linear forwards;
+}
+
+.btn--radius {
+	border-radius: 36px;
+}
+
+@keyframes stripe-slide {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* 스크롤바 */
+.scrollBar {
+	width: 1190px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.scrollBar::-webkit-scrollbar {
+	width: 10px; /* 스크롤바의 너비 */
+	
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+	height: 70%; /* 스크롤바의 길이 */
+	background: #fff; /* 스크롤바의 색상 */
+	border-radius: 10px;
+	
+}
+
+.scrollBar::-webkit-scrollbar-track {
+	background: #fff; /*스크롤바 뒷 배경 색상*/
+	margin-top: 33px;
+}

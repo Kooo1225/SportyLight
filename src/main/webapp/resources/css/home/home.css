@@ -1,0 +1,398 @@
+@import
+	url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap")
+	;
+
+/* 홈헤더 */
+#container {
+	border-bottom: 0.3px solid #D9D9D9;
+}
+
+/*--------------------------------*/
+#logo img {
+	max-width: 329px;
+    height: 61px;
+    margin: -3px 17px -3px 7px
+}
+
+.home-avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+/*-----------두번째 카테고리---------------*/
+#menu1, #menu2, #menu3 {
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
+#menu1, #menu2, #menu3, #login, #join, #logout {
+	color: #5A95F5;
+	font-family: Noto Sans;
+	font-size: 17px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+#login-nickname {
+	color: #5A95F5;
+	font-family: Noto Sans;
+	font-size: 17px;
+    font-weight: 600;
+	text-decoration: none;
+ 
+}
+
+#menu1:active, #menu1:hover, #menu2:active, #menu2:hover, #menu3:active,
+	#menu3:hover {
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-weight: 700;
+}
+
+@media screen and (max-width: 920px) {
+	#menu1, #menu2, #menu3, #menu4 {
+		display: none;
+	}
+}
+
+.icon {
+	vertical-align: middle;
+    border-style: none;
+    width: 23px;
+    height: 23px;
+    margin: 0 5px 3px 0px;
+}
+
+/*-----------첫번째 카테고리---------------*/
+#ct1, #ct2, #ct3, #ct4, #join, #logout {
+	font-family: "Noto Sans";
+	font-size: 18px;
+	font-weight: 400;
+	color: #fff;
+	border-radius: 100px;
+	height: 38px;
+}
+
+#join, #logout {
+	background: #5A95F5;
+}
+
+#ct1 {background: #a7bbe1 ;}
+#ct2 {background: #82AFD7 ;}
+#ct3 {background: #5E83A8 ;}
+#ct4 {background: #406077 ;}
+
+#ct1, #ct3, #ct4 {
+	margin-left: 40px;
+	padding: 6px 32px 0px 20px;
+}
+
+#ct2 {
+	margin-left: 40px;
+	padding: 6px 25px 0px 20px;
+}
+
+#ct1:active, #ct1:hover, #ct1:checked, #ct2:active, #ct2:hover, #ct3:active, #ct3:hover,
+	#ct4:active, #ct4:hover, #join:active, #join:hover, #logout:active, #logout:hover {
+	background: #788FA1;
+	color: #fff;
+}
+
+#ct1:checked {
+	background: #788FA1;
+	color: #fff;
+}
+
+@media screen and (max-width: 1055px) {
+	#ct1, #ct2, #ct3, #ct4 {
+		display: none;
+	}
+}
+#btn14{
+	text-decoration:none;
+	color:gray;
+	background:white;
+	border: 2px solid gray;
+    margin-left:10px;
+    border-radius:10px;
+    font-size:12px;
+    padding: 2px 4px;
+}
+/*--------------------------------*/
+#join, #logout {
+	margin-right: 20px;
+	margin-left: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+@media screen and (max-width: 660px) {
+	#login, #join, #logout {
+		display: none;
+	}
+}
+
+/* 세컨 메뉴 */
+#container2 {
+	border-bottom: 0.3px solid #D9D9D9;
+	padding: 12px 12px 12px 16px;
+}
+
+/* 검색선택박스 */
+select::-ms-expand { 
+	display: none;
+}
+.selectForm {
+	-o-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	text-align:center;
+}
+
+.selectBox {
+	position: relative;
+	width: 130px;
+	height: 43px;
+	box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 10px 0 0 10px;
+    border-right: none;
+    border-bottom: 2px solid #5A95F5;
+    border-left: 2px solid #5A95F5;
+    border-top: 2px solid #5A95F5;
+}
+.selectBox .selectForm {
+	width: inherit;
+	height: inherit;
+	background: transparent;
+	border: 0 none;
+	outline: 0 none;
+	padding: 0 3px;
+	position: relative;
+	z-index: 3; // 
+}
+.selectBox .selectForm option {
+	padding: 3px 0;
+	font-size: 16px;
+}
+
+/* 검색창 */
+input {
+  	border-radius:0 10px 10px 0;
+	border: 2px solid #5A95F5;
+	background: #fff;
+	box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.25);
+/* 	width: 30px; */
+	height: 43px;
+	top: 122px;
+	left: 29px;
+	outline: none;
+	padding: 10px;
+}
+.selectBox {
+	
+}
+
+.local{
+	width: 380px;
+	border-right: 1px solid #D9D9D9;
+    font-size: 15px;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 4px 0 4px 27px;
+    background-color: #ffffff;
+    color: #5A95F5;
+}
+
+button {
+	position: absolute;
+	border: 2px;
+	background-color: #fff;
+	outline: none;
+	margin-top: 5px;
+}
+
+/* 사이드바 */
+
+/* .sidebar-info-title {
+	color: #000;
+	font-family: Noto Sans;
+	font-size: 20px;
+	font-weight: 400;
+	padding: 15px 25px 2px 25px;
+} */
+
+.text-total {
+	padding: 0px 10px 20px 23px;
+	border-bottom: 0.3px solid rgba(0, 0, 0, 0.30);
+	margin-top: 10px;
+}
+
+#detail {
+	padding:16px 0px 0px 0px;
+}
+/* 사진 */
+#set1 {
+	border-bottom: 0.3px solid #D9D9D9;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	height: 140px;
+}
+
+#set1:hover {
+	background: #dadada;
+	cursor: pointer;
+}
+.board-avatar {
+    width: 83px;
+    height: 83px;
+    margin: 25px 27px 27px 17px;
+    border-radius: 30px;
+}
+
+/* 내용 */
+
+.txt-total {
+	color: #5A95F5;
+	font-family: Noto Sans;
+	font-size: 23px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.sidebar {
+	padding: 0px;
+	border-right: 0.3px solid rgba(0, 0, 0, 0.30);
+	width: 380px;
+	position: relative;
+	height: 100vh;
+}
+
+.sidebar-board {
+	padding: 15px 0px 15px 0px;
+	border-bottom: 0.3px solid #D9D9D9;
+}
+
+.board-txt {
+	color: #000;
+	font-family: Noto Sans;
+	font-size: 18px;
+	padding: 20px 5px 0px 25px;
+	font-weight: 400;
+}
+
+.board-total {
+	color: #787878;
+	font-family: Noto Sans;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.board-title {
+	font-family: Noto Sans;
+	font-size: 16px;
+	font-weight: 400;
+	color:#5A95F5;
+	text-decoration:none;
+}
+
+.board-category {
+	color: #787878;
+	font-family: Noto Sans;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.board-info {
+	display: inline-block;
+	color: #787878;
+	font-family: Noto Sans;
+	font-size: 12px;
+	font-weight: 400;
+	padding: 0 0 5px 0;
+}
+
+/* 사이드바 스크롤바 */
+.scroll-container {
+	max-height: 80vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	margin-left: 0;
+	width: 391px;
+}
+
+.scroll-container::-webkit-scrollbar {
+	width: 10px;
+	left: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+	background: #fff;
+	border-radius: 10px;
+	height: 70%;
+}
+
+
+
+
+
+
+.col-sm-12 {
+	padding-right: 0 !important; /* 중요도 설정 */
+	padding-left: 0 !important;
+}
+
+.col-4 {
+	padding-left: 0 !important;
+}
+
+
+/* 오른쪽 하단 register button */
+
+.register-button {
+	z-index:2;
+	position:absolute;
+	right: 60px; 
+	bottom: 250px;
+}
+
+.register-button i {
+	color: #5A95F5;
+}
+
+.register-button i:hover {
+	color: #788FA1;
+}
+
+/* home.jsp 마커 overlay css */
+ .wrap {position: absolute;left: 0;bottom: 70px;width: 295px;height: 132px;margin-left: -149px;text-align: left;overflow: hidden;font-size: 12px;font-family: "Noto Sans";line-height: 1.5;}
+ .wrap * {padding: 0;margin: 0;}
+ .wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+ .wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+ .info .healthTitle {padding: 5px 0 30px 10px;height: 30px;background: #a7bbe1 ;border-bottom: 1px solid #a7bbe1;font-size: 18px;font-weight: bold;}
+ .info .sportsTitle {padding: 5px 0 30px 10px;height: 30px;background: #82AFD7 ;border-bottom: 1px solid #82AFD7;font-size: 18px;font-weight: bold;}
+ .info .hikingTitle {padding: 5px 0 30px 10px;height: 30px;background: #5E83A8 ;border-bottom: 1px solid #5E83A8;font-size: 18px;font-weight: bold;}
+ .info .runTitle {padding: 5px 0 30px 10px;height: 30px;background: #406077 ;border-bottom: 1px solid #406077;font-size: 18px;font-weight: bold;}
+ .info .close {position: absolute;top: 10px;right: 18px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+ .info .close:hover {cursor: pointer;}
+ .info .body {position: relative;overflow: hidden;}
+ .info .content {position: relative;margin: 13px 0 0 90px;height: 75px;}
+ .desc .addr {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+ .desc .type {font-size: 11px;color: #888;margin-top: -2px;}
+ .info .img {position: absolute;top: 6px;left: 5px;width: 73px;height: 71px;border: 1px solid #ddd;color: #888;overflow: hidden;}
+ .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+ .info .link {color: white;font-family: "Noto Sans";
+	font-size: 13px;
+	font-weight: 400;
+	background: #5A95F5;
+	border-radius: 10px;
+	height: 38px;
+	padding: 0px 7px 0px 7px;
+	text-decoration: none}
+
+
+
+
+

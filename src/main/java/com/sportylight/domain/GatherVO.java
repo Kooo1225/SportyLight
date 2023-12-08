@@ -19,5 +19,8 @@ public class GatherVO {
     private String description;
     private int headCount;
     private String address;
-    private EnumVO type;
+    private CategoryEnumVO type;
+    private int state;
+    private int deleteYn;
+    private int participate;
 }

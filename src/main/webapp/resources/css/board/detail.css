@@ -1,0 +1,503 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap')
+	;
+
+@font-face {
+	font-family: "San Francisco";
+	font-weight: 600;
+	src:
+		url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-medium-webfont.woff");
+}
+
+.container {
+	text-align: center;
+}
+
+/* header - jumbotron */
+.jumbotron {
+	background-color: white;
+	padding-bottom: 10px;
+}
+
+/* header - SportyLight 큰 로고 */
+.jumbotron h1 {
+	margin-bottom: 20px;
+	color: #5A95F5;
+	font-size: 50px;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+/* header - SportyLight 밑 문장 */
+.jumbotron p {
+	color: #5A95F5;
+	font-size: 15px;
+}
+
+.jumbotron {
+	padding-top: 62px;
+    margin-bottom: 2px;
+}
+
+/* 전체 틀 */
+
+/* 3번째 */
+.sample2 blockquote {
+	margin-left: 82px;
+	position: relative;
+    background: #7FB3FA;
+    border-radius: 25px 0 0 25px;
+    padding: 36px 0px 0 40px;
+    height: 671px;
+    box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+}
+
+sample2 blockquote:before {
+	position: absolute;
+	left: 5%;
+	top: -24px;
+	color: #808080;
+	box-sizing: border-box;
+	line-height: 1;
+	padding-top: 12px;
+	text-align: left;
+	font-size: 40px;
+}
+.container16{
+	margin-top: 62px;
+    background: #e7f4ff;
+    padding: 0;
+    border-radius: 25px 0 0 25px;
+    box-shadow: 0px -1px 9px #bfbfbf;
+}
+.icon2{
+	    padding: 28px 13px 25px 46px;
+}
+
+/* 첫번째 */
+#container2 {
+	height: 200px;
+	padding: 0 10px 0 10px;
+}
+
+.sample1 blockquote {
+	position: relative;
+    background: #7FB3FA;
+    border-radius: 0 25px 25px 0;
+    padding: 36px 19px 0 0;
+    height: 671px;
+    box-shadow: 0px 0px 17px 8px rgba(0, 0, 0, .075);
+}
+
+.sample1 blockquote:before {
+	position: absolute;
+	left: 5%;
+	top: -24px;
+	color: #808080;
+	box-sizing: border-box;
+	line-height: 1;
+	padding-top: 12px;
+	text-align: left;
+	font-size: 40px;
+}
+.container15{
+	margin-top: 62px;
+    background: #e7f4ff;
+    padding: 80px 82px 0 0;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 0px -1px 9px #bfbfbf;
+}
+
+/* 두번쨰 */
+
+#container3 {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background: white;
+	border-radius: 25px;
+	    height: 590px;
+}
+.container14{
+	padding: 0px 0px 90px 0px;
+    border-radius: 25px 25px 0 0;
+    background: #e7f4ff;
+    width: 1105px;
+    box-shadow: 0px -1px 9px #bfbfbf;
+}
+	
+
+.sample blockquote {
+	margin: 0 155px;
+    position: relative;
+    background: #7FB3FA;
+    border-radius: 25px;
+    padding: 46px 63px 37px 67px;
+    height: 700px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sample blockquote:before {
+	position: absolute;
+	left: 5%;
+	top: -24px;
+	color: #808080;
+	box-sizing: border-box;
+	line-height: 1;
+	padding-top: 12px;
+	text-align: left;
+	font-size: 40px;
+}
+
+.sample blockquote p {
+	color: #808080;
+	margin: 0 34px;
+	border-bottom: 2px solid #7FB3FA;
+}
+
+.sample blockquote cite {
+	display: block;
+	padding-top: 10px;
+	color: #808080;
+	font-style: normal;
+}
+
+
+#secondimg, #fourimg {
+	padding: 30px 0 30px 0;
+	width: 440px;
+	height: 644px;
+	filter: blur(5px);
+}
+
+/* 프로필 사진 */
+#profile-image {
+	padding: 5px;
+    position: relative;
+    margin-bottom: 7px;
+    top: 29px;
+    left: 46px;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 5px solid #bbbbbb;
+}
+
+/* Gathering */
+h1 {
+	margin-top: 10px;
+}
+
+/* 제목 */
+.title {
+	margin: 0;
+	padding: 0px 0 15px 0px;
+	font-family: "San Francisco";
+	font-size: 20px;
+	text-align: center;
+}
+
+/* 장소  */
+.place0 {
+	width: 230px;
+	padding: 8px 10px;
+	margin-bottom: 4px;
+	font-size: 13.5px;
+	font-family: "San Francisco";
+	/*  border-bottom: 2px solid #5A95F5; */
+	text-align: left;
+}
+/*  인원  */
+.gathermember0 {
+	width: 230px;
+	margin-top: 19px;
+	margin-bottom: 4px;
+	padding: 8px 10px;
+	font-size: 13.5px;
+	/* border-bottom: 2px solid #5A95F5; */
+	font-family: "San Francisco";
+	text-align: left;
+}
+/* 날짜 */
+.meetingtime0 {
+	width: 230px;
+	margin-bottom: 4px;
+	padding: 8px 10px;
+	font-size: 13.5px;
+	font-family: "San Francisco";
+	/* border-bottom: 2px solid #5A95F5; */
+	text-align: left
+}
+/* 내용 */
+.title-detail{
+    padding: 0 14px;
+    position: relative;
+    top: 0px;
+    border-bottom: 5px solid #bbbbbb;
+    font-size: 20px;
+}
+.des-detail{
+	padding: 0 14px;
+    position: relative;
+    top: -34px;
+    border-bottom: 5px solid #bbbbbb;
+    font-size: 20px;
+}
+.description0 {
+	box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    white-space: pre;
+    font-family: "San Francisco";
+    font-size: 12px;
+    border-radius: 15px;
+    position: relative;
+    border: 5px solid #bbbbbb;
+    height: 285px;
+    width: 292px;
+    text-align: left;
+}
+
+.map2{
+	margin-left: 27px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    width: 275px;
+    border: 5px solid #bbbbbb;
+    border-radius: 15px;
+}
+
+.scrollbar {
+	overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    height: 159px;
+    left: 14px;
+    top: -53px;
+    width: 419px;
+}
+
+/* 스크롤바의 폭 너비 */
+.scrollbar
+:
+:-webkit-scrollbar {
+	width: 10px;
+}
+
+.scrollbar
+:
+:-webkit-scrollbar-thumb {
+	background: #ffffff00; /* 스크롤바 색상 */
+	border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+
+.scrollbar
+:
+:-webkit-scrollbar-track {
+	background: #ffffff00; /*스크롤바 뒷 배경 색상*/
+}
+
+.testbox { /* background: #eafff8; */
+	width: 400px;
+	border-radius: 30px;
+	margin-bottom: 17px;
+}
+
+.btn0 {
+	color: white;
+    position: relative;
+    margin-bottom: 14px;
+    width: 100px;
+    height: 40px;
+    background: #ccc;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 0px;
+    box-shadow: 3px 3px 1px #6b6b6b;
+}
+.btn5 {
+	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    color: gray;
+    width: 132px;
+    height: 44px;
+    margin-left: 79px;
+    background: white;
+    font-size: 19px;
+    border-radius: 6px;
+    border: 0px;
+}
+
+.btn0:hover{
+	margin-top:1px;
+	margin-left:1px;
+	box-shadow:none;
+}
+
+
+
+
+#hiddenButtons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* Flexbox를 사용하여 오른쪽으로 정렬 */
+    justify-content: flex-end; /* 오른쪽으로 정렬 */
+}
+
+#hiddenButtons button {
+    margin: 10px 0;
+}
+
+@media screen and (min-width: 1800px) {
+	.container1 {
+		display: none;
+	}
+}
+
+h1 {
+	margin-top: 10px;
+}
+
+/* 제목 */
+.title {
+	margin: 0;
+	padding: 0px 0 15px 0px;
+	font-family: "San Francisco";
+	font-size: 20px;
+	text-align: center;
+}
+
+/* 장소  */
+.place {
+	width: 230px;
+	padding: 8px 10px;
+	margin-bottom: 8px;
+	font-size: 13.5px;
+	font-family: "San Francisco";
+	border-bottom: 2px solid #5A95F5;
+	text-align: left;
+}
+/*  인원  */
+.gathermember {
+	width: 146px;
+	margin-top: 22px;
+	margin-bottom: 20px;
+	padding: 8px 10px;
+	font-size: 13.5px;
+	border-bottom: 2px solid #5A95F5;
+	font-family: "San Francisco";
+	text-align: left;
+}
+/* 날짜 */
+.meetingtime {
+	width: 230px;
+	margin-bottom: 20px;
+	padding: 8px 10px;
+	font-size: 13.5px;
+	font-family: "San Francisco";
+	border-bottom: 2px solid #5A95F5;
+	text-align: left;
+}
+/* 내용 */
+.description {
+	white-space: pre;
+	font-family: "San Francisco";
+	font-size: 12px;
+	border-radius: 15px;
+	position: relative;
+	border: 2px solid #5A95F5;
+	bottom: 15px;
+	height: 190px;
+	width: 490px;
+	text-align: left;
+}
+
+.scrollbar {
+	overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    height: 214px;
+    left: 12px;
+    top: -61px;
+    width: 270px;
+}
+
+/* 스크롤바의 폭 너비 */
+.scrollbar::-webkit-scrollbar {
+	width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	background: #ffffff00; /* 스크롤바 색상 */
+	border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+	background: #ffffff00; /*스크롤바 뒷 배경 색상*/
+}
+
+.testbox {
+	/* background: #eafff8; */
+	width: 400px;
+	border-radius: 30px;
+	margin-bottom: 17px;
+}
+
+@media screen and (min-width: 1800px) {
+	.container1 {
+		display: none;
+	}
+}
+
+/* 상단 아이콘 */
+.icon{
+	padding: 24px 25px 31px 38px;
+}
+.fa-circle-xmark{
+	border-radius: 50%;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    color: #fe6262;
+    font-size: 25px;
+    margin-right: 5px;
+}
+.fa-circle-minus{
+	border-radius: 50%;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+	margin-right: 5px;
+	color: #f3c53b;
+	font-size: 25px;
+}
+.fa-circle-plus{
+	border-radius: 50%;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+	margin-right: 80px;
+    position: relative;
+	color: #2ad97f;
+	font-size: 25px;
+}
+
+.fa-shield-halved{
+	color: #a6a6a6;
+	position: relative;
+    /* top: 38px;
+    left: 114px; */
+}
+#urltitle{
+    color: #5A95F5;
+    text-decoration: none;
+    background-color: transparent;
+}
+.url{
+	margin-left: 56px;
+    text-align: center;
+    width: 567px;
+	font-size: 19px;
+    position: relative;
+    color: #5d5c5c;
+    background: #ffffff;
+    padding: 8px 60px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}
+.fa-lock{
+	color: #c2c2c2;
+	font-size: 13px;
+	left: -3px;
+    position: relative;
+    bottom: 3px;
+}

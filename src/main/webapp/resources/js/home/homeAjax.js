@@ -27,7 +27,7 @@ function createTypeListTemplate(gather) {
 		
 			<div class="col-4">
 				<div class="sidebar-board-get">
-					<img src="/resources/images/home/cat.jpeg" class="board-avatar" />
+					<img src="/security/avatar/m/${gather.membersId}" class="board-avatar" />
 				</div>
 			</div>
 			
@@ -36,14 +36,19 @@ function createTypeListTemplate(gather) {
 			
 				<div class="board-info-wrapper" style="width: 100%;">
 				
-					<span class="board-title">${gather.title}</span> 
-					<span class="board-category">${gather.type}</span> 
+					<span class="board-category">[${gather.type}]</span> <br>
+					<span class="board-title"><a href="#" onclick="setCenter('${gather.address}')">${gather.title}</a></span> 
+					
 					
 					<br>
 					
 					<span class="board-info">
 						인원 ${gather.headCount} 명 | ${formattedDate}
 					</span>
+					
+					<br>
+					<span class="board-info"><a href="/board/detail?gatheringId=${gather.gatheringId}">상세보기</a></span>
+					
 					
 				</div>
 			</div>
