@@ -46,7 +46,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void register(MemberVO member, MultipartFile avatar) throws IOException {
+	public void register(MemberVO member, MultipartFile avatar) throws Exception {
+
 		String encodedPassword = pwEncoder.encode(member.getPassword());
 		member.setPassword(encodedPassword);
 		// 데이터베이스 members 테이블에 저장
@@ -55,17 +56,17 @@ public class MemberServiceImpl implements MemberService {
 		AuthVO auth = new AuthVO(member.getMembersId(), "ROLE_USER");
 		mapper.insertAuth(auth);
 
-		if(!avatar.isEmpty()) { 
-			File pngDest = new File(AVATAR_UPLOAD_DIR, member.getMembersId() + ".png"); // png 파일 넣는 부분
-			Thumbnails.of(avatar.getInputStream())
-					.size(50, 50)
-					.toFile(pngDest);
-		} 
-		else {
-			File pngDest = new File(AVATAR_UPLOAD_DIR, "unknown.png");
-			Thumbnails.of(avatar.getInputStream())
-			.size(50, 50)
-			.toFile(pngDest);
+		File pngDest = new File(AVATAR_UPLOAD_DIR, member.getMembersId() + ".png");
+		
+		try {
+			if(!avatar.isEmpty()) { 
+				Thumbnails.of(avatar.getInputStream())
+						.size(50, 50)
+						.toFile(pngDest);
+			}
+		}
+		catch(Exception e) {
+			
 		}
 	}
 

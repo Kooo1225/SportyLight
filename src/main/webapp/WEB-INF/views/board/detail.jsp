@@ -116,28 +116,28 @@
 			      						</div>
 			    				  </div>
               				</c:if>
-              <c:if test="${membersId != gather.membersId }"> 
-              		<c:choose>
-              			<c:when test="${state == null && gather.participate >= gather.headCount}">
-              				<button type="button" class="btn5" disabled>모집 마감</button>
-            			</c:when>
-              		
-              			<c:when test="${gather.participate < gather.headCount}">
-	               	          <c:if test="${state == null }">
-								  <button type="submit" class="btn5" onclick="location.href='/board/insertApply?gatheringId=${gather.gatheringId}&membersId=${membersId }&state=0';">신청</button>
-							  </c:if>
-		                      <c:if test="${state == 0}">
-		                         <button type="button" class="btn5">승인 중</button>
-		                      </c:if>
-		                      <c:if test="${state == 1}">
-		                         <button type="button" class="btn5">승인완료</button>
-		                      </c:if>
-		                      <c:if test="${state == -1}">
-		                         <button type="button" class="btn5">다음 기회에..</button>
-		                      </c:if>
-              			</c:when>
-              		</c:choose>     
-			</c:if>
+			              	<c:if test="${membersId != gather.membersId }"> 
+			              		<c:choose>
+			              			<c:when test="${state == null && gather.participate >= gather.headCount}">
+			              				<button type="button" class="btn5" disabled>모집 마감</button>
+			            			</c:when>
+			              		
+			              			<c:when test="${gather.participate < gather.headCount}">
+				               	          <c:if test="${state == null }">
+											  <button type="submit" class="btn5" onclick="location.href='/board/insertApply?gatheringId=${gather.gatheringId}&membersId=${membersId }&state=0';">신청</button>
+										  </c:if>
+					                      <c:if test="${state == 0}">
+					                         <button type="button" class="btn5">승인 중</button>
+					                      </c:if>
+					                      <c:if test="${state == 1}">
+					                         <button type="button" class="btn5">승인완료</button>
+					                      </c:if>
+					                      <c:if test="${state == -1}">
+					                         <button type="button" class="btn5">다음 기회에..</button>
+					                      </c:if>
+			              			</c:when>
+			              		</c:choose>     
+							</c:if>
 				     <div id="hiddenButtons" style="display: none;">
 		            <div><a href="/board/modify?gatheringId=${gather.gatheringId}"><button type="button" class="btn5">모임수정</button></a></div>
 		            <div><a href="/board/manage/${gather.gatheringId}"><button type="button" class="btn5">신청관리</button></a></div>

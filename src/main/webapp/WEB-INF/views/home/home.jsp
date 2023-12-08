@@ -10,7 +10,6 @@
 
 <nav id="container2" class="navbar navbar-expand-sm navbar-light bg-white">
 	<div class="collapse navbar-collapse" id="secondmenu">
-		${test}
 		<!-- 검색창 -->
 		<div>
 			<form id="searchForm" method="get" class="d-flex">

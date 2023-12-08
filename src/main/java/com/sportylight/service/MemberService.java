@@ -20,7 +20,7 @@ public interface MemberService {
 	
 	public String getAvatarPath();
 
-	public void register(MemberVO member, MultipartFile avatar) throws IOException;
+	public void register(MemberVO member, MultipartFile avatar) throws Exception;
 
 	// 회원 정보 조회
 	public MemberVO getMember(int membersId);
