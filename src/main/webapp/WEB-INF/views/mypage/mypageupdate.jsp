@@ -27,7 +27,7 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 		</div>
              <input type="file" name="avatar" id="profile-fluid">
 		<!-- -------------------------이름--------------------------------------- -->		
-		<div class="form-group mx-auto check">
+		<div class="form-group mx-auto check" style="margin-bottom:30px;">
 			      <!-- 민트박스  -->
 			        <svg xmlns="http://www.w3.org/2000/svg" width="117" height="55"viewBox="0 0 117 52" fill="none"style="position: absolute; top: 0px; left: 0px;">
                       <rect x="116.248" y="52" width="116" height="52" rx="10"transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
@@ -39,7 +39,7 @@ text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 	    </div>
 
 		<!-- -------------------------닉네임---------------------------------------- -->		
-		<div class="form-group mx-auto check">
+		<div class="form-group mx-auto check" style="margin-bottom:0px;">
 			       <!-- 민트박스  -->
 			       <svg xmlns="http://www.w3.org/2000/svg" width="117" height="55"viewBox="0 0 117 52" fill="none"style="position: absolute; top: 0px; left: 0px;">
                       <rect x="116.248" y="52" width="116" height="52" rx="10"transform="rotate(179.72 116.248 50.9995)" fill="#7FB3FA" /> 
