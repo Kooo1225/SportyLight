@@ -1,6 +1,7 @@
 package com.sportylight.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,10 +22,17 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.DefaultRedirectStrategy;
+import org.springframework.security.web.RedirectStrategy;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
+import org.springframework.security.web.savedrequest.RequestCache;
+import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
@@ -64,14 +72,9 @@ public class SecurityController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
+
 	@GetMapping("/login")
-	public void login(HttpServletRequest request, Model model) {
-		String referer = request.getHeader("Referer");
-		if(referer != null && !referer.isEmpty()) {
-			model.addAttribute("referrer", referer);
-		}
-		
-		System.out.println(referer);
+	public void login(Model model) {
 		log.info("login page");
 	}
 
@@ -80,8 +83,7 @@ public class SecurityController {
 	}
 
 	@PostMapping("/join")
-	public String join(@Valid @ModelAttribute("member") MemberVO member, Errors errors, MultipartFile avatar)
-			throws IOException, ServletException {
+	public String join(@Valid @ModelAttribute("member") MemberVO member, Errors errors, MultipartFile avatar) throws Exception {
 
 		// 1. 비밀번호, 비밀번호 확인 일치여부
 		if (!member.getPassword().equals(member.getPassword2())) {
@@ -168,8 +170,8 @@ public class SecurityController {
 	}
 
 	@GetMapping("/kakao/callback")
-	public String kakaoCallback(String code) throws ParseException {
-
+	public String kakaoCallback(String code) throws Exception {
+		
 		RestTemplate rt = new RestTemplate();
 
 		HttpHeaders headers = new HttpHeaders();
@@ -178,14 +180,16 @@ public class SecurityController {
 		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
 		params.add("grant_type", "authorization_code");
 		params.add("client_id", "ad5f045a6d90afc878186d9093e76908");
-		params.add("redirect_uri", "https://sportylight.online/security/kakao/callback");
+		params.add("redirect_uri", "https://www.sportylight.online/security/kakao/callback");
 		params.add("code", code);
-
+		
 		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = new HttpEntity<>(params, headers);
-
+		
+		System.out.println(kakaoTokenRequest);
+		
 		ResponseEntity<String> response = rt.exchange("https://kauth.kakao.com/oauth/token", HttpMethod.POST,
 				kakaoTokenRequest, String.class);
-
+		
 		ObjectMapper objectMapper = new ObjectMapper();
 		OAuthToken oauthToken = null;
 
@@ -266,6 +270,8 @@ public class SecurityController {
 		System.out.println(kakaoUser.getOauth());
 		System.out.println(kakaoUser.getAvatarPath());
 
+		System.out.println(kakaoUser);
+		
 		// 가입자 혹은 미가입자 체크
 		if (service.checkEmail(kakaoUser.getEmail()) == null) {
 			System.out.println("새로 오셨군요. 자동 회원가입을 진행합니다.");

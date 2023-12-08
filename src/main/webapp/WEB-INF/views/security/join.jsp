@@ -183,6 +183,7 @@ $(document).ready(function(e) {
 	
 	$('#sendMail').on('click', async function(e) {
 		if (email.value == '' || !regexp.test(email.value)) {
+			console.log($('#file').val());
 			console.log();
 			alert("이메일 형식으로 입력해주세요");
       

@@ -31,9 +31,7 @@ import lombok.extern.log4j.Log4j;
 @EnableWebSecurity
 @Log4j
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
-	
-	private CustomAuthenticationSucessHandler customAuthenticationSuccessHandler;
-	
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
@@ -81,7 +79,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.formLogin()
 			.loginPage("/security/login?error=login_required") 
 			.loginProcessingUrl("/security/login") 
-			.successHandler(customAuthenticationSuccessHandler)
 			.defaultSuccessUrl("/map")
 			.failureUrl("/security/login?error=true") 
 			.usernameParameter("email");
